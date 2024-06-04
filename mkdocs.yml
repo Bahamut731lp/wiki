@@ -1,5 +1,12 @@
 site_name: Wiki
+site_url: https://bahamut731lp.github.io/wiki
 dev_addr: "0.0.0.0:8000"
+
+nav:
+  - Domů: index.md
+  - Lineární algebra: linearni_algebra
+  - Blog:
+     - blog/index.md
 
 markdown_extensions:
   - admonition
@@ -21,14 +28,30 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
+plugins:
+  - blog:
+      blog_toc: true
+      authors_profiles: true
+
 theme:
   name: material
+  language: cs
+  custom_dir: overrides
   features:
+    - header.autohide
     - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - announce.dismiss
   palette:
     scheme: slate
     primary: purple
     accent: blue
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/bahamut731lp
 
 extra_javascript:
   - js/mathjax.js
