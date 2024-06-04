@@ -61,3 +61,4 @@ A -  \begin{bmatrix}\lambda & 0 & 0\\0 & \lambda & 0\\0 & 0 & \lambda\end{bmatri
 
 
 ## Použití
+Vlastní čísla a vektory se používá v algoritmu PCA ([Principal Component Analysis]()).

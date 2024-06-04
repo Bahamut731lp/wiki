@@ -2,11 +2,11 @@ site_name: Wiki
 site_url: https://bahamut731lp.github.io/wiki
 dev_addr: "0.0.0.0:8000"
 
-nav:
-  - Domů: index.md
-  - Lineární algebra: linearni_algebra
-  - Blog:
-     - blog/index.md
+plugins:
+  - search
+  - blog:
+      blog_toc: true
+      authors_profiles: true
 
 markdown_extensions:
   - admonition
@@ -28,10 +28,23 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
-plugins:
-  - blog:
-      blog_toc: true
-      authors_profiles: true
+nav:
+  - Domů: index.md
+  - Kombinatorika:
+      - kombinatorika/index.md
+      - kombinatorika/kombinatoricka_pravidla.md
+  - Statistika:
+      - statistika/index.md
+      - statistika/teorie_pravdepodobnosti/jevy.md
+      - statistika/teorie_pravdepodobnosti/pravdepodobnost.md
+  - Lineární algebra:
+      - linearni_algebra/index.md
+      - linearni_algebra\linearni_kombinace.md
+      - linearni_algebra\matice.md
+      - linearni_algebra\vektorove_prostory.md
+      - linearni_algebra\vlastni_cisla_vektory.md
+  - Blog:
+      - blog/index.md
 
 theme:
   name: material
@@ -42,6 +55,7 @@ theme:
     - content.code.copy
     - navigation.footer
     - navigation.indexes
+    - navigation.sections
     - announce.dismiss
   palette:
     scheme: slate
