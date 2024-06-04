@@ -37,6 +37,9 @@ nav:
       - statistika/index.md
       - statistika/teorie_pravdepodobnosti/jevy.md
       - statistika/teorie_pravdepodobnosti/pravdepodobnost.md
+      - statistika/teorie_pravdepodobnosti/podminena_pravdepodobnost.md
+      - statistika/teorie_pravdepodobnosti/nahodna_velicina.md
+      - statistika/teorie_pravdepodobnosti/ciselne_charakteristiky.md
   - Lineární algebra:
       - linearni_algebra/index.md
       - linearni_algebra\linearni_kombinace.md
