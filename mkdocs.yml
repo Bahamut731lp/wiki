@@ -41,6 +41,10 @@ nav:
     - algoritmy_a_programovani/slozitost.md
     - algoritmy_a_programovani/vyhledavani_razeni.md
     - algoritmy_a_programovani/rekurze.md
+  - Databázové systémy:
+    - databazove_systemy/index.md
+    - Relační:
+      - databazove_systemy/relacni/navrh.md
   - Kombinatorika:
     - kombinatorika/index.md
     - kombinatorika/kombinatoricka_pravidla.md
