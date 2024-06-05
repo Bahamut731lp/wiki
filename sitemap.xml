@@ -11,12 +11,42 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/algoritmizace/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/ciselne_soustavy/</loc>
          <lastmod>2024-06-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/rekurze/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/slozitost/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/vyhledavani_razeni/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bahamut731lp.github.io/wiki/blog/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/databazove_systemy/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/databazove_systemy/relacni/navrh/</loc>
          <lastmod>2024-06-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -62,6 +92,11 @@
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/ad_prevod/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/filtry/</loc>
          <lastmod>2024-06-05</lastmod>
          <changefreq>daily</changefreq>
     </url>

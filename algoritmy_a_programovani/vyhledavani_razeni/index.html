@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/signaly_a_informace/spektrum/">
+        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/vyhledavani_razeni/">
       
       
-        <link rel="prev" href="../fourierovy_rady/">
+        <link rel="prev" href="../slozitost/">
       
       
-        <link rel="next" href="../filtry/">
+        <link rel="next" href="../rekurze/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Spektrum signálu - Wiki</title>
+        <title>Vyhledávání a řazení - Wiki</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#spektrum-signalu" class="md-skip">
+        <a href="#vyhledavani-a-razeni" class="md-skip">
           Přeskočit obsah
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Spektrum signálu
+              Vyhledávání a řazení
             
           </span>
         </div>
@@ -241,6 +241,8 @@
       
   
   
+    
+  
   
     
     
@@ -266,17 +268,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../algoritmy_a_programovani/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -293,7 +295,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Algoritmy a programování
@@ -308,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algoritmy_a_programovani/ciselne_soustavy/" class="md-nav__link">
+      <a href="../ciselne_soustavy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -328,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algoritmy_a_programovani/algoritmizace/" class="md-nav__link">
+      <a href="../algoritmizace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -348,7 +350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algoritmy_a_programovani/slozitost/" class="md-nav__link">
+      <a href="../slozitost/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -366,9 +368,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../algoritmy_a_programovani/vyhledavani_razeni/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Vyhledávání a řazení
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -377,6 +399,136 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vyhledavaci-algoritmy" class="md-nav__link">
+    Vyhledávací algoritmy
+  </a>
+  
+    <nav class="md-nav" aria-label="Vyhledávací algoritmy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linearni-vyhledavani" class="md-nav__link">
+    Lineární vyhledávání
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binarni-vyhledavani" class="md-nav__link">
+    Binární vyhledávání
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpolacni-vyhledavani" class="md-nav__link">
+    Interpolační vyhledávání
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radici-algoritmy" class="md-nav__link">
+    Řadící algoritmy
+  </a>
+  
+    <nav class="md-nav" aria-label="Řadící algoritmy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bubblesort" class="md-nav__link">
+    Bubblesort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shakersort" class="md-nav__link">
+    Shakersort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combsort" class="md-nav__link">
+    Combsort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selectsort" class="md-nav__link">
+    Selectsort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertsort" class="md-nav__link">
+    Insertsort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mergesort" class="md-nav__link">
+    Mergesort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heapsort" class="md-nav__link">
+    Heapsort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quicksort" class="md-nav__link">
+    Quicksort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bogosort" class="md-nav__link">
+    Bogosort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -388,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algoritmy_a_programovani/rekurze/" class="md-nav__link">
+      <a href="../rekurze/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -951,8 +1103,6 @@
       
   
   
-    
-  
   
     
     
@@ -982,17 +1132,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../signaly_a_informace/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1009,7 +1159,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Signály a informace
@@ -1024,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../signaly/" class="md-nav__link">
+      <a href="../../signaly_a_informace/signaly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1044,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ad_prevod/" class="md-nav__link">
+      <a href="../../signaly_a_informace/ad_prevod/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1064,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../systemy/" class="md-nav__link">
+      <a href="../../signaly_a_informace/systemy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1084,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../konvoluce/" class="md-nav__link">
+      <a href="../../signaly_a_informace/konvoluce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1104,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fourierovy_rady/" class="md-nav__link">
+      <a href="../../signaly_a_informace/fourierovy_rady/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1122,29 +1272,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Spektrum signálu
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/spektrum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1153,33 +1283,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Obsah">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Obsah
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rozmazani-spektra" class="md-nav__link">
-    Rozmazání spektra
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1191,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../filtry/" class="md-nav__link">
+      <a href="../../signaly_a_informace/filtry/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1323,9 +1426,112 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rozmazani-spektra" class="md-nav__link">
-    Rozmazání spektra
+  <a href="#vyhledavaci-algoritmy" class="md-nav__link">
+    Vyhledávací algoritmy
   </a>
+  
+    <nav class="md-nav" aria-label="Vyhledávací algoritmy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linearni-vyhledavani" class="md-nav__link">
+    Lineární vyhledávání
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#binarni-vyhledavani" class="md-nav__link">
+    Binární vyhledávání
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpolacni-vyhledavani" class="md-nav__link">
+    Interpolační vyhledávání
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radici-algoritmy" class="md-nav__link">
+    Řadící algoritmy
+  </a>
+  
+    <nav class="md-nav" aria-label="Řadící algoritmy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bubblesort" class="md-nav__link">
+    Bubblesort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shakersort" class="md-nav__link">
+    Shakersort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combsort" class="md-nav__link">
+    Combsort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selectsort" class="md-nav__link">
+    Selectsort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertsort" class="md-nav__link">
+    Insertsort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mergesort" class="md-nav__link">
+    Mergesort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heapsort" class="md-nav__link">
+    Heapsort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quicksort" class="md-nav__link">
+    Quicksort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bogosort" class="md-nav__link">
+    Bogosort
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1345,7 +1551,7 @@
                   
 
   
-    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/signaly_a_informace/spektrum.md" title="Upravit tuto stránku" class="md-content__button md-icon">
+    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/algoritmy_a_programovani/vyhledavani_razeni.md" title="Upravit tuto stránku" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -1353,15 +1559,150 @@
   
 
 
-<h1 id="spektrum-signalu">Spektrum signálu</h1>
-<p>Spektrum signálu vyjadřuje závislost amplitud a fází harmonických složek signálu na frekvenci. Podle typu závislosti se dělí na</p>
+<h1 id="vyhledavani-a-razeni">Vyhledávání a řazení</h1>
+<p>Vyhledávací a řadící (třídící) algoritmy jsou takové algoritmy, které mají za úkol vyhledat a respektive setřídy prvky v kolekci dat.</p>
+<h2 id="vyhledavaci-algoritmy">Vyhledávací algoritmy</h2>
+<p>Vyhledávací algoritmy slouží k nalezení určitého prvku v kolekci dat. Existuje mnoho různých vyhledávacích algoritmů, z nichž některé jsou vhodné pro různé typy dat a různé podmínky.</p>
+<h3 id="linearni-vyhledavani">Lineární vyhledávání</h3>
+<p><strong>Lineární vyhledávání</strong> je algoritmus pro vyhledávání, kdy procházíme prohledávaný prostor, dokud nenalezneme hledaný prvek.</p>
+<h3 id="binarni-vyhledavani">Binární vyhledávání</h3>
+<p><strong>Binární vyhledávání</strong> je vyhledávácí algoritmus, který používá metodu půlení intervalu k nalezení hledaného prvku.</p>
+<div class="admonition warning o prohledávaném prostoru">
+<p class="admonition-title">Warning</p>
+<p>Pro binární vyhledávání musí být prohledávaný prostor <strong>seřazen</strong></p>
+</div>
+<h3 id="interpolacni-vyhledavani">Interpolační vyhledávání</h3>
+<p><strong>Interpolační vyhledávání</strong> je varianta binárního vyhledávání, která se snaží simulovat lidské chování při prohledávání.</p>
+<div class="admonition example">
+<p class="admonition-title">Vzorec pro interpolační vyhledávání</p>
+<div class="arithmatex">\[
+\text{approx} = \text{first} + \frac{(\text{last} - \text{first})(k - a[\text{first}])}{a[\text{last}] - a[\text{first}]}
+\]</div>
+</div>
+<h2 id="radici-algoritmy">Řadící algoritmy</h2>
+<p><strong>Řadící</strong> (nebo taky <em>třídící</em>) algoritmy se používají k uspořádání prvků v kolekci dat v pořadí podle nějakého pravidla (predikátu). Řadící algoritmy můžeme mezi sebou porovnávat na základě jejich vlastností:</p>
 <ul>
-<li>Amplitudové spektrum</li>
-<li>Fázové spektrum</li>
+<li>Algoritmus je <strong>přirozený</strong>, pokud je na seřazených datech rychlejší než na seřazených datech.</li>
+<li>Algoritmus je <strong>stabilní</strong>, pokud jsou prvky se stejnou hodnotou ponechány neseřazeny.</li>
 </ul>
-<h2 id="rozmazani-spektra">Rozmazání spektra</h2>
-<div class="arithmatex">\[\Delta{f} = \frac{f_s}{N}\]</div>
-<div class="arithmatex">\[F = \frac{f_s}{N}\]</div>
+<h3 id="bubblesort">Bubblesort</h3>
+<p><strong>Bubblesort</strong> je jednoduchý třídící algoritmus, který postupně prochází kolekci dat a v každém průchodu porovnává sousední prvky a vyměňuje je, pokud nejsou ve správném pořadí. Tento proces se opakuje, dokud nejsou všechny prvky ve správném pořadí. Algoritmus je vnitřní, stabilní a přirozený. </p>
+<div class="admonition abstract">
+<p class="admonition-title">Princip Bubblesortu</p>
+<ol>
+<li>Porovnej dva sousední prvky</li>
+<li>Prohoď je tak, aby byly správně seřazeny</li>
+<li>Opakuj, dokud není celá posloupnost seřazená</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Průběh Bubblesortu</p>
+<p><img alt="bubblesort" src="../../images/bubblesort.png" /></p>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">Problém želv a zajíců</p>
+<p>Dopsat</p>
+</div>
+<h3 id="shakersort">Shakersort</h3>
+<p><strong>Shakersort</strong> je vylepšená varianta <strong>bubblesortu</strong>, která řadí posloupnost v obou směrech. Algoritmus nejdříve provede bubblesort dopředu, čímž probublá největší prvky na konec, a následně provede ještě jeden bubblesort směrem na začátek, čímž probublá nejmenší prvky na začátek.</p>
+<p>Tímto algoritmem se dá předejít problémů <em>želv a zajíců</em></p>
+<h3 id="combsort">Combsort</h3>
+<p><strong>Combsort</strong> je třídící algoritmus založený na principu původního algoritmu bubblesort, ale s vylepšeným mechanismem pro vyhledání a výměnu nevhodných prvků. Neporovnávají se prvky vedle sebe, ale prvky, které jsou od sebe vzdáleny s určitým rozestupem. </p>
+<div class="admonition abstract">
+<p class="admonition-title">Princip Combsortu</p>
+<ol>
+<li><strong>Nastavení rozestupu na celou délku kolekce</strong></li>
+<li><strong>Porovnání prvků s rozestupem</strong>. Pokud jsou v nesprávném pořadí, jsou vyměněny.</li>
+<li><strong>Zmenšení rozestupu</strong>. Rozestup se zmenší pomocí určitého faktoru zmenšení. Typicky je tento faktor zvolen tak, aby byl blízko k hodnotě <span class="arithmatex">\(\frac{1}{\sqrt{2}}\)</span> pro optimální výkon algoritmu.</li>
+<li><strong>Opakování</strong></li>
+</ol>
+</div>
+<h3 id="selectsort">Selectsort</h3>
+<p><strong>Selectsort</strong> je jednoduchý třídící algoritmus, který postupně prochází kolekci dat a ve každém kroku vybírá nejmenší (nebo největší) prvek a umísťuje ho na správné místo. Tento proces je opakován, dokud nejsou všechny prvky ve správném pořadí. Algoritmus je vnitřní, nestabilní a nepřirozený.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Princip Selectsortu</p>
+<ol>
+<li>Algoritmus najde <strong>nejmenší</strong> prvek v nesetříděné části</li>
+<li>Nejmenší prvek je přesunut na konec setřízené části</li>
+<li>Opakuj, dokud není celý vstup setřízený</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Průběh Selectsortu</p>
+<p><img alt="insertsort" src="../../images/selectsort.png" /></p>
+</div>
+<h3 id="insertsort">Insertsort</h3>
+<p><strong>Insertsort</strong> je algoritmus, který postupně prochází kolekci dat a v každém kroku vkládá jeden prvek do již seřazené části kolekce, dokud nejsou všechny prvky seřazené. Algoritmus je vnitřní i vnější, stabilní a přirozený.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Princip Insertsortu</p>
+<ol>
+<li>Vyber nultý prvek, se kterým nic dělat nebudem</li>
+<li>Vyber druhý prvek a porovnej ho s prvním, pokud je menší, dej ho před první</li>
+<li>Vyber třetí prvek a porovnej ho s prvníma dvěma, zařaď ho na správné místo</li>
+<li>Opakuj, dokud nebude pole seřazeno</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Průběh Insertsortu</p>
+<p><img alt="insertsort" src="../../images/insertsort.png" /></p>
+</div>
+<h3 id="mergesort">Mergesort</h3>
+<p><strong>Mergesort</strong> je třídící algoritmus typu <a href="../algoritmizace/#divide-and-conquer">Divide and Conquer</a>, který je vnitřní, stabilní a přirozený.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Princip Mergesortu</p>
+<ol>
+<li>Rozdělit posloupnost na dvě cca stejně velké podposloupnosti</li>
+<li>Pokračovat v rozdělování, dokud se z toho nestane problém porovnání dvou čísel</li>
+<li>Seřazené výsledky sloučit dohromady</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Průběh Mergesortu</p>
+<p><img alt="mergesort" src="../../images/mergesort.png" /></p>
+</div>
+<h3 id="heapsort">Heapsort</h3>
+<p><strong>Heapsort</strong> je třídící algoritmus, který používá haldy k třízení vstupní posloupnosti dat.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Princip Heapsortu</p>
+<ol>
+<li>Ze vstupních dat sestav haldu</li>
+<li>Vyber kořen haldy</li>
+<li>Umísti kořen na začátek výstupní posloupnosti</li>
+<li>Znovusestav haldu ze zbývajících prvků</li>
+<li>Opakuj, dokud není z čeho dělat haldu.</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Průběh Heapsortu</p>
+<p><img alt="heapsort" src="../../images/heapsort.png" /></p>
+</div>
+<h3 id="quicksort">Quicksort</h3>
+<p><strong>Quicksort</strong> je třídící algoritmus typu <a href="../algoritmizace/#divide-and-conquer">Divide and Conquer</a>. V každém kroku vybere jeden prvek z kolekce dat jako pivot a rozdělí zbývající prvky na dvě skupiny podle toho, zda jsou menší nebo větší než pivot. Poté opakuje tento proces pro každou skupinu. Algoritmus je vnitřní, nestabilní a nepřirozený, ovšem v terénu je nejrychlejší ze všech obecných třídících algoritmů.</p>
+<div class="admonition info">
+<p class="admonition-title">Princip Quicksortu</p>
+<ol>
+<li>Zvolit dělící prvek (pivot)</li>
+<li>Projdeme pole zleva dokud nenalezneme větší prvek než dělící prvek</li>
+<li>Dále ho projdeme zprava, dokud nenalezneme menší prvek než dělící prvek</li>
+<li>Tyto podposloupnosti následně řadíme </li>
+<li><em>Rinse and repeat</em></li>
+</ol>
+</div>
+<h3 id="bogosort">Bogosort</h3>
+<p>Bogosort je třídící algoritmus, který ke setřízení dat spoléhá na opakování náhodného rozmístění prvků, dokud se netrefí do seřazené permutace.</p>
+<div class="admonition example pseudokód bogosortu">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">bogosort</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">isOrdered</span><span class="p">(</span><span class="nx">array</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">shuffle</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">Neber tohle vážně</p>
+<p>Tenhle algoritmus byl vymyšlenej jako vtip a reálně nikde není použitej, ani by to nikoho normálního nenapadlo použít.</p>
+</div>
 
 
 
@@ -1395,7 +1736,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Zápatí" >
         
           
-          <a href="../fourierovy_rady/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Fourierovy řady">
+          <a href="../slozitost/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Složitost">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1405,20 +1746,20 @@
                 Předchozí
               </span>
               <div class="md-ellipsis">
-                Fourierovy řady
+                Složitost
               </div>
             </div>
           </a>
         
         
           
-          <a href="../filtry/" class="md-footer__link md-footer__link--next" aria-label="Další: Filtry">
+          <a href="../rekurze/" class="md-footer__link md-footer__link--next" aria-label="Další: Rekurze">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Další
               </span>
               <div class="md-ellipsis">
-                Filtry
+                Rekurze
               </div>
             </div>
             <div class="md-footer__button md-icon">

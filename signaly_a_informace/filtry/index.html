@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/signaly_a_informace/spektrum/">
+        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/signaly_a_informace/filtry/">
       
       
-        <link rel="prev" href="../fourierovy_rady/">
+        <link rel="prev" href="../spektrum/">
       
       
-        <link rel="next" href="../filtry/">
+        <link rel="next" href="../../blog/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Spektrum signálu - Wiki</title>
+        <title>Filtry - Wiki</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#spektrum-signalu" class="md-skip">
+        <a href="#filtry" class="md-skip">
           Přeskočit obsah
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Spektrum signálu
+              Filtry
             
           </span>
         </div>
@@ -1122,6 +1122,26 @@
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../spektrum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spektrum signálu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1137,7 +1157,7 @@
           
   
   <span class="md-ellipsis">
-    Spektrum signálu
+    Filtry
   </span>
   
 
@@ -1148,7 +1168,7 @@
         
   
   <span class="md-ellipsis">
-    Spektrum signálu
+    Filtry
   </span>
   
 
@@ -1170,8 +1190,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rozmazani-spektra" class="md-nav__link">
-    Rozmazání spektra
+  <a href="#filtry-s-konecnou-impulzni-odezvou" class="md-nav__link">
+    Filtry s konečnou impulzní odezvou
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtry-s-nekonecnou-impulzni-odezvou" class="md-nav__link">
+    Filtry s nekonečnou impulzní odezvou
   </a>
   
 </li>
@@ -1180,26 +1207,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../filtry/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Filtry
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1323,8 +1330,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rozmazani-spektra" class="md-nav__link">
-    Rozmazání spektra
+  <a href="#filtry-s-konecnou-impulzni-odezvou" class="md-nav__link">
+    Filtry s konečnou impulzní odezvou
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filtry-s-nekonecnou-impulzni-odezvou" class="md-nav__link">
+    Filtry s nekonečnou impulzní odezvou
   </a>
   
 </li>
@@ -1345,7 +1359,7 @@
                   
 
   
-    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/signaly_a_informace/spektrum.md" title="Upravit tuto stránku" class="md-content__button md-icon">
+    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/signaly_a_informace/filtry.md" title="Upravit tuto stránku" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -1353,15 +1367,12 @@
   
 
 
-<h1 id="spektrum-signalu">Spektrum signálu</h1>
-<p>Spektrum signálu vyjadřuje závislost amplitud a fází harmonických složek signálu na frekvenci. Podle typu závislosti se dělí na</p>
-<ul>
-<li>Amplitudové spektrum</li>
-<li>Fázové spektrum</li>
-</ul>
-<h2 id="rozmazani-spektra">Rozmazání spektra</h2>
-<div class="arithmatex">\[\Delta{f} = \frac{f_s}{N}\]</div>
-<div class="arithmatex">\[F = \frac{f_s}{N}\]</div>
+<h1 id="filtry">Filtry</h1>
+<p>Filtry jsou druhem <a href="../systemy/">systému</a>, který přijímá signál a vysílá jeho upravenou verzi. Filtry jsou takové systémy, které zasahují jak do časové, tak i frekvenční charakteristiky. Jejich návrh spočívá v navržení vhodné <a href="../systemy/#impulzní-odezva">impulzní odezvy</a> a <a href="../systemy/#přenosová-funkce">přenosové funkce</a>.</p>
+<h2 id="filtry-s-konecnou-impulzni-odezvou">Filtry s konečnou impulzní odezvou</h2>
+<p><strong>Filtry s konečnou impulzní odezvou</strong> (FIR) jsou typem digitálního filtru, který má konečnou reakci na vstupní signál. To znamená, že jeho výstup se stabilizuje po konečném čase a nemá žádné zpoždění nebo kmitání. FIR filtry jsou charakterizovány tím, že mají konečný počet koeficientů, které určují jejich chování.</p>
+<h2 id="filtry-s-nekonecnou-impulzni-odezvou">Filtry s nekonečnou impulzní odezvou</h2>
+<p>Filtry s nekonečnou impulzní odezvou (IIR) jsou dalším typem digitálních filtrů, které mají nekonečně dlouhou odezvu na vstupní signál. To znamená, že výstupní signál může reagovat na vstupní signál i po jeho ukončení. IIR filtry jsou obvykle charakterizovány tím, že mají zpětnou vazbu, což znamená, že jejich výstup je závislý nejen na současném vstupu, ale také na minulých výstupech.</p>
 
 
 
@@ -1395,7 +1406,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Zápatí" >
         
           
-          <a href="../fourierovy_rady/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Fourierovy řady">
+          <a href="../spektrum/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Spektrum signálu">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1405,20 +1416,20 @@
                 Předchozí
               </span>
               <div class="md-ellipsis">
-                Fourierovy řady
+                Spektrum signálu
               </div>
             </div>
           </a>
         
         
           
-          <a href="../filtry/" class="md-footer__link md-footer__link--next" aria-label="Další: Filtry">
+          <a href="../../blog/" class="md-footer__link md-footer__link--next" aria-label="Další: Index">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Další
               </span>
               <div class="md-ellipsis">
-                Filtry
+                Index
               </div>
             </div>
             <div class="md-footer__button md-icon">
