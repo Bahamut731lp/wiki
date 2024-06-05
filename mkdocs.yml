@@ -37,6 +37,9 @@ nav:
   - Algoritmy a programování:
     - algoritmy_a_programovani/index.md
     - algoritmy_a_programovani/ciselne_soustavy.md
+    - algoritmy_a_programovani/algoritmizace.md
+    - algoritmy_a_programovani/slozitost.md
+    - algoritmy_a_programovani/vyhledavani_razeni.md
   - Kombinatorika:
     - kombinatorika/index.md
     - kombinatorika/kombinatoricka_pravidla.md
