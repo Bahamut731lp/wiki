@@ -5,7 +5,7 @@ $$\begin{aligned}
 (x[n] \ast h[n]) = \sum_{k=-\infty}^{\infty} x[k] \cdot h[n-k]
 \end{aligned}$$
 
-Kde $x[n]$ je vstupní (diskrétní) signál a $h[n]$ je konvoluční jádro. Konvoluční jádro určuje, jak bude každá hodnota vstupní funkce upravena a jak budou okolní hodnoty zahrnuty do výsledku. Výsledná hodnota konvoluce v každém bodě je tak vážený součet hodnot vstupní funkce v malém okolí tohoto bodu.
+Kde $x[n]$ je vstupní (diskrétní) signál a $h[n]$ je konvoluční jádro. Konvoluční jádro určuje, jak moc ovlivní okolní hodnoty výsledek v daném bodě. Výsledná hodnota konvoluce v každém bodě je tak vážený součet hodnot vstupní funkce v malém okolí tohoto bodu.
 
 Mezi dvě nejdůležitější vlastnosti konvoluce patří __komunativita__ $x \ast h = h \ast x$, což nám říká, že oba signály jsou rovnocenné a zaměnitelné, a __asociativita__ $(x \ast h_1) \ast h_2 = x \ast (h_1 \ast h_2)$, což znamená, že můžeme více systémů sloučit do jednoho a získat tak jednu, finální, [impulzní odezvu](systemy.md#impulzní-odezva).
 
