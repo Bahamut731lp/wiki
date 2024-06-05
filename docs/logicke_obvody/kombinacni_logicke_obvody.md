@@ -1,9 +1,10 @@
 # Kombinační logické obvody
+Kombinační obvod nemá vnitřní paměť. Odezva ideálního kombinačního obvodu v čase $t$ je podmíněna
+pouze vstupními hodnotami v čase $t$. (V realitě je třeba počítat se zanedbatelným zpožděním při změně vstupů)
 
-Kombinační obvod nemá vnitřní paměť. Odezva ideálního kombinačního obvodu v čase t je podmíněna
-pouze vstupními hodnotami v čase t. (V realitě je třeba počítat se zanedbatelným zpožděním při změně vstupů)
-# Základní logické funkce
-## Negace
+## Základní logické funkce
+
+### Negace
 Negace je unární operace, to znamená, že má pouze jeden operand. Funkce negace mění
 hodnotu proměnné z '0' na '1' a opačně. V literatuře lze najít jako INVERT/NON/NOT.
 Ve schématu obvodu je nejčastěji reprezentována jako symbol kroužku. 
@@ -13,7 +14,7 @@ Ve schématu obvodu je nejčastěji reprezentována jako symbol kroužku.
 | 0   | 1      |
 | 1   | 0      |
 
-## Logický součin
+### Logický součin
 Operace se dvěma nebo více operandy. Na výstupu je '1' pokud jsou všechny operandy '1'. V literatuře lze najít jako AND.
 
 | B   | A   | AND(A,B) |
@@ -22,7 +23,8 @@ Operace se dvěma nebo více operandy. Na výstupu je '1' pokud jsou všechny op
 | 0   | 1   | 0        |
 | 1   | 0   | 0        |
 | 1   | 1   | 1        |
-## Logický součet
+
+### Logický součet
 Operace se dvěma nebo více operandy. Na výstupu je '1' pokud je alespoň jeden operand '1'. V literatuře lze najít jako OR.
 
 | B   | A   | OR(A,B) |
@@ -31,7 +33,8 @@ Operace se dvěma nebo více operandy. Na výstupu je '1' pokud je alespoň jede
 | 0   | 1   | 1       |
 | 1   | 0   | 1       |
 | 1   | 1   | 1       |
-## Negovaný součin
+
+### Negovaný součin
 Operace se dvěma nebo více operandy. Na výstupu je '1' pokud je alespoň jeden operand '0'. V literatuře lze najít jako NAND.
 
 | B   | A   | NAND(A,B) |
@@ -40,7 +43,8 @@ Operace se dvěma nebo více operandy. Na výstupu je '1' pokud je alespoň jede
 | 0   | 1   | 1         |
 | 1   | 0   | 1         |
 | 1   | 1   | 0         |
-## Negovaný součet
+
+### Negovaný součet
 Operace se dvěma nebo více operandy. Na výstupu je '1' pokud jsou všechny operandy '0'. V literatuře lze najít jako NOR.
 
 | B   | A   | NOR(A,B) |
@@ -50,7 +54,7 @@ Operace se dvěma nebo více operandy. Na výstupu je '1' pokud jsou všechny op
 | 1   | 0   | 0        |
 | 1   | 1   | 0        |
 
-## Nonekvivalence (výhradní logický součet)
+### Nonekvivalence (výhradní logický součet)
 Operace se dvěma operandy. Na výstupu je '1' pokud jsou oba operandy různé. V literatuře lze najít jako XOR.
 
 | B   | A   | XOR(A,B) |
@@ -59,7 +63,8 @@ Operace se dvěma operandy. Na výstupu je '1' pokud jsou oba operandy různé. 
 | 0   | 1   | 1        |
 | 1   | 0   | 1        |
 | 1   | 1   | 0        |
-## Ekvivalence
+
+### Ekvivalence
 Operace se dvěma operandy. Na výstupu je '1' pokud jsou oba operandy shodné. V literatuře lze najít jako XNOR.
 
 | B   | A   | XNOR(A,B) |
@@ -71,12 +76,13 @@ Operace se dvěma operandy. Na výstupu je '1' pokud jsou oba operandy shodné. 
 
 DEJ SEM (OR DONT) OBRÁZEK HRADEL LOL 
 
-# Úplný soubor logických funkcí
+## Úplný soubor logických funkcí
 Množina základních funkcí, které společně dokáží popsat libovolnou funkci.
 - AND + NOT
 - OR + NOT
 - NAND
 - NOR
+
 # Booleova algebra
 Dvě hodnoty, využívá logických funkcí, tady jsou axiomy :)
 
@@ -90,7 +96,6 @@ Dvě hodnoty, využívá logických funkcí, tady jsou axiomy :)
 | Vlastnosti komplementu | a+1=1              | a∙0=0              |
 | Idemnpotence           | a+a=a              | a∙a=a              |
 | Absorbce               | a+a∙b=a            | a(a+b)=a           |
-a odvozeniny
 
 | Zákon           | Součet                                      | Součin                                                |
 | --------------- | ------------------------------------------- | ----------------------------------------------------- |
@@ -136,19 +141,19 @@ Dekadická reprezentace hodnot v tabulce z hodnot DCBA
 
 # Návrh klopného logického obvodu
 
-1) rozbor úlohy
-	1) blokové schéma
-	2) definice IO proměnných
-2) Sestavení tabulky chování
-	1) nalezení závislostí proměnných
-	2) pravdivostní tabulka
-3) Sestavení logické funkce
-4) Minimalizace logické funkce
-5) Úprava zminimalizované funkce
-	1) podle dostupných logických obvodů
-	2) pomocí axiomů a odvozených zákonů Booleovy algebry
-6) Nakreslení logické sítě
-7) Kontrola správnosti navrženého obvodu
+1. Rozbor úlohy
+	1. blokové schéma
+	2. definice IO proměnných
+2. Sestavení tabulky chování
+	1. nalezení závislostí proměnných
+	2. pravdivostní tabulka
+3. Sestavení logické funkce
+4. Minimalizace logické funkce
+5. Úprava zminimalizované funkce
+	1. podle dostupných logických obvodů
+	2. pomocí axiomů a odvozených zákonů Booleovy algebry
+6. Nakreslení logické sítě
+7. Kontrola správnosti navrženého obvodu
 
 # Možnosti realizace
 Viz: CIE_3-1.pdf slide 18-22 (7-13.3 Používané logické funkcea jejich popis ve VHDL)

@@ -46,6 +46,9 @@ nav:
     - databazove_systemy/index.md
     - Relační:
       - databazove_systemy/relacni/navrh.md
+
+  - Hardware a elektronika:
+    - logicke_obvody/kombinacni_logicke_obvody.md
   - Kombinatorika:
     - kombinatorika/index.md
     - kombinatorika/kombinatoricka_pravidla.md
