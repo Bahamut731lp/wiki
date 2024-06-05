@@ -21,6 +21,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/cleneni_programu/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/oop/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/rekurze/</loc>
          <lastmod>2024-06-05</lastmod>
          <changefreq>daily</changefreq>
@@ -82,6 +92,31 @@
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/linearni_algebra/vlastni_cisla_vektory/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/operacni_systemy/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/operacni_systemy/procesy/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/realna_analyza/derivace/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/realna_analyza/diferencial/</loc>
+         <lastmod>2024-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/realna_analyza/integral/</loc>
          <lastmod>2024-06-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
