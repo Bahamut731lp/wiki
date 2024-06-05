@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/linearni_algebra/matice/">
+        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/ciselne_soustavy/">
       
       
-        <link rel="prev" href="../linearni_kombinace/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../vektorove_prostory/">
+        <link rel="next" href="../../kombinatorika/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Matice - Wiki</title>
+        <title>Číselné soustavy - Wiki</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#matice" class="md-skip">
+        <a href="#ciselne-soustavy" class="md-skip">
           Přeskočit obsah
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Matice
+              Číselné soustavy
             
           </span>
         </div>
@@ -241,6 +241,8 @@
       
   
   
+    
+  
   
     
     
@@ -258,17 +260,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../algoritmy_a_programovani/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -285,7 +287,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Algoritmy a programování
@@ -298,9 +300,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../algoritmy_a_programovani/ciselne_soustavy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Číselné soustavy
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -309,6 +331,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dvojkova-soustava" class="md-nav__link">
+    Dvojková soustava
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kodovani-cisel-s-desetinnou-radovou-carkou" class="md-nav__link">
+    Kódování čísel s desetinnou řádovou čárkou
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zaporna-cisla-ve-dvojkove-soustave" class="md-nav__link">
+    Záporná čísla ve dvojkové soustavě
+  </a>
+  
+    <nav class="md-nav" aria-label="Záporná čísla ve dvojkové soustavě">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vyhrazeni-znamenkoveho-bitu" class="md-nav__link">
+    Vyhrazení znaménkového bitu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posunuty-kod" class="md-nav__link">
+    Posunutý kód
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jednickovy-doplnek" class="md-nav__link">
+    Jedničkový doplněk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvojkovy-doplnek" class="md-nav__link">
+    Dvojkový doplněk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -581,8 +678,6 @@
       
   
   
-    
-  
   
     
     
@@ -606,17 +701,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../linearni_algebra/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -633,7 +728,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Lineární algebra
@@ -648,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linearni_kombinace/" class="md-nav__link">
+      <a href="../../linearni_algebra/linearni_kombinace/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -666,18 +761,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../linearni_algebra/matice/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -686,7 +772,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -698,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vektorove_prostory/" class="md-nav__link">
+      <a href="../../linearni_algebra/vektorove_prostory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -718,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vlastni_cisla_vektory/" class="md-nav__link">
+      <a href="../../linearni_algebra/vlastni_cisla_vektory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1037,6 +1122,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dvojkova-soustava" class="md-nav__link">
+    Dvojková soustava
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kodovani-cisel-s-desetinnou-radovou-carkou" class="md-nav__link">
+    Kódování čísel s desetinnou řádovou čárkou
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zaporna-cisla-ve-dvojkove-soustave" class="md-nav__link">
+    Záporná čísla ve dvojkové soustavě
+  </a>
+  
+    <nav class="md-nav" aria-label="Záporná čísla ve dvojkové soustavě">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vyhrazeni-znamenkoveho-bitu" class="md-nav__link">
+    Vyhrazení znaménkového bitu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posunuty-kod" class="md-nav__link">
+    Posunutý kód
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jednickovy-doplnek" class="md-nav__link">
+    Jedničkový doplněk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dvojkovy-doplnek" class="md-nav__link">
+    Dvojkový doplněk
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1051,7 +1199,7 @@
                   
 
   
-    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/linearni_algebra/matice.md" title="Upravit tuto stránku" class="md-content__button md-icon">
+    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/algoritmy_a_programovani/ciselne_soustavy.md" title="Upravit tuto stránku" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -1059,7 +1207,60 @@
   
 
 
-<h1 id="matice">Matice</h1>
+<h1 id="ciselne-soustavy">Číselné soustavy</h1>
+<p>Číselná soustava je systém pro reprezentaci čísel. Definuje způsob, jakým čísla zapisujeme a interpretujeme pomocí symbolů, které nazýváme číslice. Hlavní charakteristikou číselné soustavy je její základ <span class="arithmatex">\(Z\)</span>. Základ udává, kolik symbolů se v soustavě používá a jakou hodnotu má každá pozice v čísle. Libovolné kladné číslo lze tedy zapsat jako</p>
+<div class="arithmatex">\[
+F(Z) = \sum_{i=0}^{m-1} a_i \cdot Z^{i}
+\]</div>
+<h2 id="dvojkova-soustava">Dvojková soustava</h2>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>Dopsat MSB a LSB, a vlastně celý.</p>
+</div>
+<h2 id="kodovani-cisel-s-desetinnou-radovou-carkou">Kódování čísel s desetinnou řádovou čárkou</h2>
+<h2 id="zaporna-cisla-ve-dvojkove-soustave">Záporná čísla ve dvojkové soustavě</h2>
+<ul>
+<li>Vyhrazení znaménkového bitu</li>
+<li>Přičtení konstanty (posunutý kód)</li>
+<li>Jedničkový doplněk</li>
+<li>Dvojkový doplněk</li>
+</ul>
+<h3 id="vyhrazeni-znamenkoveho-bitu">Vyhrazení znaménkového bitu</h3>
+<p>Tato technika spoléhá na to, že jeden bit (většinou MSB) představuje znaménko čísla:</p>
+<ul>
+<li><span class="arithmatex">\(1\)</span> pokud je číslo záporné</li>
+<li><span class="arithmatex">\(0\)</span> pokud je číslo kladné</li>
+</ul>
+<p>Výhodou je jednoduchost tohoto řešení - pomocí kontroly jednoho bitu víme, jestli je číslo kladné, nebo záporné. Obří nevýhodou tohoto řešení je, že se snižuje rozsah čísel, které můžeme reprezentovat. Při použití počáčetního bitu (MSB) se nám rozsah čísel, které můžeme reprezentovat, srazí na polovinu. Tudíž při osmi bitech můžeme najednou reprezentovat jenom čísla v rozsahu <span class="arithmatex">\(\left&lt;-127, 127\right&gt;\)</span>.</p>
+<div class="admonition bug">
+<p class="admonition-title">Kladná a záporná nula</p>
+<p>Při použití vyhrazeného bitu vznikají dvě nuly - ta, která má znaménkový bit 1 a která má znaménkový bit 0.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Nebuď Pepega</p>
+<blockquote>
+<p>Když se při použití MSB sníží rozsah čísel o polovinu, proč nepoužít LSB, když je nejmíň významný???</p>
+</blockquote>
+<p>Kdybych použil LSB a zbytek nechal být, tak pořád ztratím polovinu čísel, ale tentokrát to nebude kvůli omezení rozsahu, ale kvůli tomu, že ztratím možnost vyjadřovat lichá čísla. Je tedy jedno, kde ten bit je, pořád to redukuje reprezentovatelný rozsah.</p>
+</div>
+<h3 id="posunuty-kod">Posunutý kód</h3>
+<p><strong>Posunutý kód</strong> neboli technika <em>přičtení konstanty</em> spoléhá na přičtení dobře zvolené konstanty tak, že se posune číslo nula o konstantu tak, že se z původní nuly stane nejnižší možné číslo.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Například v 8 bitovém systému s posunem <span class="arithmatex">\(N=128\)</span> je číslo nula reprezentováno jako 128 (<span class="arithmatex">\(1000000\)</span>).</p>
+</div>
+<h3 id="jednickovy-doplnek">Jedničkový doplněk</h3>
+<p><strong>Jedničkový doplněk</strong> (též znám jako <em>inverzní kód</em>) reprezentuje záporná čísla tím, že zneguje všechny bity čísla. Je to jednoduché řešení, ovšem hůře se dělají aritmetické operace a opět existují dvě nuly.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>Dopsat jedničkový doplněk</p>
+</div>
+<h3 id="dvojkovy-doplnek">Dvojkový doplněk</h3>
+<p><strong>Dvojkový doplněk</strong> je binární číslo, které je znegované a zvětšené o jedničku. </p>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>Dopsat dvojkový doplněk</p>
+</div>
 
 
 
@@ -1093,7 +1294,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Zápatí" >
         
           
-          <a href="../linearni_kombinace/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Lineární kombinace">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Algoritmy a programování">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1103,20 +1304,20 @@
                 Předchozí
               </span>
               <div class="md-ellipsis">
-                Lineární kombinace
+                Algoritmy a programování
               </div>
             </div>
           </a>
         
         
           
-          <a href="../vektorove_prostory/" class="md-footer__link md-footer__link--next" aria-label="Další: Vektorové prostory">
+          <a href="../../kombinatorika/" class="md-footer__link md-footer__link--next" aria-label="Další: Kombinatorika">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Další
               </span>
               <div class="md-ellipsis">
-                Vektorové prostory
+                Kombinatorika
               </div>
             </div>
             <div class="md-footer__button md-icon">
