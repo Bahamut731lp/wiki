@@ -1,1 +1,20 @@
 {% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+
+{% if git_page_authors %}
+<div class="md-source-date">
+    <small>
+        Přispěvatelé: 
+        {% if git_info %}
+            {%- for author in git_info.get('page_authors') -%}
+                <span>
+                    {{ author.name }} ({{ author.contribution }})
+                </span>
+            {%- endfor -%}
+        {% endif %}
+    </small>
+</div>
+{% endif %}
+{% endblock %}

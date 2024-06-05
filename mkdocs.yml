@@ -1,12 +1,16 @@
 site_name: Wiki
-site_url: https://bahamut731lp.github.io/wiki
 dev_addr: "0.0.0.0:8000"
+
+site_url: https://bahamut731lp.github.io/wiki
+repo_url: https://github.com/bahamut731lp/wiki
+edit_uri: edit/main/docs/
 
 plugins:
   - search
   - blog:
       blog_toc: true
       authors_profiles: true
+  - git-authors
 
 markdown_extensions:
   - admonition
@@ -52,8 +56,9 @@ nav:
   - Signály a informace:
     - signaly_a_informace/index.md
     - signaly_a_informace/signaly.md
-    - signaly_a_informace/systemy.md
     - signaly_a_informace/ad_prevod.md
+    - signaly_a_informace/systemy.md
+    - signaly_a_informace/konvoluce.md
     - signaly_a_informace/fourierovy_rady.md
     - signaly_a_informace/spektrum.md
   - Blog:
@@ -70,10 +75,14 @@ theme:
     - navigation.indexes
     - navigation.sections
     - announce.dismiss
+    - content.action.edit
   palette:
     scheme: slate
     primary: purple
     accent: blue
+  icon:
+    edit: material/pencil 
+    view: material/eye
 
 extra:
   social:
