@@ -61,6 +61,10 @@ nav:
     - linearni_algebra/matice.md
     - linearni_algebra/vektorove_prostory.md
     - linearni_algebra/vlastni_cisla_vektory.md
+  - Reálná analýza:
+    - realna_analyza/derivace.md
+    - realna_analyza/diferencial.md
+    - realna_analyza/integral.md
   - Signály a informace:
     - signaly_a_informace/index.md
     - signaly_a_informace/signaly.md
@@ -70,6 +74,9 @@ nav:
     - signaly_a_informace/fourierovy_rady.md
     - signaly_a_informace/spektrum.md
     - signaly_a_informace/filtry.md
+  - Operační systémy:
+    - operacni_systemy/index.md
+    - operacni_systemy/procesy.md
   - Blog:
     - blog/index.md
 
