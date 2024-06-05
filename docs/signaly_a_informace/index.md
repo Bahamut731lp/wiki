@@ -1,0 +1,1 @@
+# Signály a informace
