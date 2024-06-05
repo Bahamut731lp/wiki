@@ -4,3 +4,7 @@ Spektrum signálu vyjadřuje závislost amplitud a fází harmonických složek 
 - Amplitudové spektrum
 - Fázové spektrum
 
+## Rozmazání spektra
+
+$$\Delta{f} = \frac{f_s}{N}$$
+$$F = \frac{f_s}{N}$$
