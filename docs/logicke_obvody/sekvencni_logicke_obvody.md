@@ -43,9 +43,6 @@ Odpory by měli být v řádech k$\ohm$. Při stisknutí tlačítka prochází R
 - (R=0, S=1) => (R=1, S=1) <=> (R=1, S=0) nebo
 - (R=1, S=0) => (R=1, S=1) <=> (R=0, S=1)
 Z původního stavu se přechází do stavu, kdy jsou obě hodnoty pravdivé. To znamená, že by se mělo jednat o zakázaný stav. Tento problém je řešen tím, že vstupy do RS obvodu jsou invertované, chovají se tedy jako (R=0, S=0). Při prvním kontaktu je přenastavena hodnota v RS obvodu. Tlačítko bude po prvním kontaktu ještě chvíli odskakovat do stavu (R=1, S=1), ale hodnota v paměti se již měnit nebude.
-<<<<<<< HEAD
-## JK flip-flop
-=======
 
 ### JK flip-flop
 Jedná se o dvoustupňový bistabilní synchronní klopný obvod. JK obvod se chová identicky jako RS obvod, ale řeší problém zakázaného stavu. JK obvod se dá popsat jako dva RST obvody. 
