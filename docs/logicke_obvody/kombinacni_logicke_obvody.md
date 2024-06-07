@@ -1,4 +1,8 @@
 # Kombinační logické obvody
+
+!!! warning "Tohle není moje"
+    Tuto sekci ještě musím přepsat, aby byla jednodušší na pochopení :)
+    
 Kombinační obvod nemá vnitřní paměť. Odezva ideálního kombinačního obvodu v čase $t$ je podmíněna
 pouze vstupními hodnotami v čase $t$. (V realitě je třeba počítat se zanedbatelným zpožděním při změně vstupů)
 

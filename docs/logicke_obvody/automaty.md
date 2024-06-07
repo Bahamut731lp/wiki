@@ -1,6 +1,9 @@
 # Automaty
 
 ## Sekvenční automaty
+!!! warning "Tohle není moje"
+    Tuto sekci ještě musím přepsat, aby byla jednodušší na pochopení :)
+
 Obecně všechny systémy, kde počítáme s časem, jakožto s faktorem podmiňujícím chování jsou sekvenční.
 
 Chování a typ automatu je určena pěti parametry:

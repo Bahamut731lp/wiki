@@ -1,4 +1,8 @@
 # Sčítačky
+
+!!! warning "Tohle není moje"
+    Tuto sekci ještě musím přepsat, aby byla jednodušší na pochopení :)
+    
 ## Sčítání celých nezáporných čísel
 U sčítaček nezáporných čísel rozlišujeme přenos do vyššího řádu (carry) a a přenos z posledního řádu (overflow). Hodnota overflow = 1 je třeba ošetřit jako chybový stav.
 

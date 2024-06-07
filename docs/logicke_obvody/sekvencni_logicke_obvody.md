@@ -1,6 +1,9 @@
 # Sekvenční logické obvody
 Jedná se o obvody, jejichž výstupy jsou závislé na vstupních hodnotách a vnitřním stavem obvodu. 
 
+!!! warning "Tohle není moje"
+    Tuto sekci ještě musím přepsat, aby byla jednodušší na pochopení :)
+
 ## Klopné obvody
 Klopné obvody jsou elektronickými obvody, které skokové překlápí mezi dvěma napěťovými stavy. Existují tři základní typy dle počtu stabilních stavů
 
