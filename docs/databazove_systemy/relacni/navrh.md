@@ -57,8 +57,40 @@ Relační model databází je založen na konceptu relací, které představují
 |Hodnota|Hodnota je konkrétní instance atributu. Jedná se o datový prvek v buňce tabulky.|
 
 ### Integritní omezení
+Integritní omezení jsou pravidla, která zajišťují správnost, přesnost a konzistenci dat v databázích. Jsou klíčová pro udržení integrity databáze a pro zajištění toho, že data jsou v souladu s očekávanými pravidly a vztahy.
 
-- Omezení primárního klíče: Každý řádek v tabulce musí mít jedinečnou hodnotu primárního klíče.
-- Omezení cizího klíče: Hodnota cizího klíče v jedné tabulce musí odpovídat hodnotě primárního klíče v jiné tabulce, na kterou odkazuje.
-- Omezení entity: Žádný atribut s definovanou doménou nesmí obsahovat prázdnou hodnotu.
-- Omezení referenční integrity: Smazání nebo aktualizace záznamu v tabulce nesmí vést k narušení referenční integrity s jinými tabulkami.
+- __Doménová integrita__: Hodnoty v každém sloupci tabulky spadají do specifikované domény, což je definováno datovým typem sloupce, povolenými hodnotami, rozsahy nebo dalšími omezeními.
+
+```sql
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Age INT CHECK (Age >= 18 AND Age <= 65)
+);
+```
+
+- __Entitní integrita__: Každá tabulka má primární klíč, a že tento klíč je jedinečný a ne-NULL. Primární klíč identifikuje každý řádek v tabulce jednoznačně.
+
+```sql
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    StudentName VARCHAR(100) NOT NULL
+);
+```
+
+- __Referenční integrita__: Vztahy mezi tabulkami jsou zachovány správně. To znamená, že cizí klíče musí odkazovat na existující hodnoty v referenčních tabulkách, a že se správně aktualizují nebo mažou při změně či smazání referenčních záznamů.
+
+```sql
+CREATE TABLE Courses (
+    CourseID INT PRIMARY KEY,
+    CourseName VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Enrollments (
+    EnrollmentID INT PRIMARY KEY,
+    StudentID INT,
+    CourseID INT,
+    FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
+);
+```
