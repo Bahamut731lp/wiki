@@ -51,7 +51,10 @@ nav:
       - databazove_systemy/relacni/aktualizacni_anomalie.md
 
   - Hardware a elektronika:
+    - logicke_obvody/prevodniky.md
     - logicke_obvody/kombinacni_logicke_obvody.md
+    - logicke_obvody/sekvencni_logicke_obvody.md
+    - logicke_obvody/automaty.md
   - Matematika:
     - Kombinatorika:
       - kombinatorika/index.md
