@@ -1,5 +1,5 @@
 # Integrace
-__Integrace__ je operace inverzní k [derivaci](derivace.md), která vyjadřuje součet nekonečně mnoha hodnot.
+__Integrace__ je operace opačná k [derivaci](derivace.md), která vyjadřuje součet nekonečně mnoha hodnot.
 
 - __Neurčitý integrál__ vyjadřuje primitivní funkci $F(x)$, která je antiderivací funkce $f(x)$ a tudíž pro ní platí $(F(x))' = f(x)$.
     - Funkční hodnota primitivní funkce $F(x)$ je limitní kumulativní součet hodnot funkce $f(x)$
