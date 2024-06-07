@@ -2,7 +2,7 @@
 
 !!! warning "Tohle není moje"
     Tuto sekci ještě musím přepsat, aby byla jednodušší na pochopení :)
-    
+
 ## Sčítání celých nezáporných čísel
 U sčítaček nezáporných čísel rozlišujeme přenos do vyššího řádu (carry) a a přenos z posledního řádu (overflow). Hodnota overflow = 1 je třeba ošetřit jako chybový stav.
 
@@ -34,6 +34,7 @@ příklad $7_D*5_D$
 | počítej součin | 0001 | 110 | 111      |
 | přičti součin  | 1000 | 110 |          |
 | posuň C1 a C0  | 0100 | 011 |          |
+
 $111_B * 101_B =0100011_B$
 $7_D*5_D=35_D$
 
