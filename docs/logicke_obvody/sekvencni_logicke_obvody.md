@@ -1,6 +1,9 @@
 # Sekvenční logické obvody
 Jedná se o obvody, jejichž výstupy jsou závislé na vstupních hodnotách a vnitřním stavem obvodu. 
 
+# Klopné obvody
+Klopné obvody jsou elektronickými obvody, které skokové překlápí mezi dvěma napěťovými stavy. Existují tři základní typy dle počtu stabilních stavů.
+
 !!! warning "Tohle není moje"
     Tuto sekci ještě musím přepsat, aby byla jednodušší na pochopení :)
 
@@ -12,6 +15,7 @@ Klopné obvody jsou elektronickými obvody, které skokové překlápí mezi dv�
 - Bistabilní - Klopné obvody se dvěma stabilními stavy. Lze je využít jako paměťové prvky a dále se dělí na synchronní a asynchronní. Synchronní BKO mění svůj stav při změně vstupního signálu a asynchronní mění svůj stav pouze v časech dle hodinového signálu. Posledním důležitým rozdělením je zda jsou jednostupňové nebo dvoustupňové.
 	- Jednostupňové - Prakticky nevyužívané kvůli hazardním stavům
 	- Dvoustupňové - Tyto obvody zaručují kromě definovaného okamžiku zápisu do klopného obvodu i definovaný okamžik rozšíření vnitřního stavu na výstup obvodu. Tato vlastnost je nezbytná pro konstrukci většiny sekvenčních obvodů, neboť umožňuje konstruovat zařízení tak, že v daný okamžik reagují pouze určené klopné obvody. 
+
 
 ### RS flip-flop
 Jedná se o jednostupňový/dvoustupňový bistabilní asynchronní klopný obvod. Při aktivním vstupu S je vnitřní stav nastaven na log. 1. Při aktivním vstupu R je vnitřní stav nastaven na log. 0. Pokud jsou oba vstupy neaktivní, stav zůstává beze změny. Pokud jsou aktivní oba stavy, tak má obvod nedefinované chování, tomuto stavu říkáme zakázaný. Je tedy nutné se tomuto stavu vyvarovat.
@@ -29,6 +33,7 @@ pozn: chování je nedefinované protože jsou logická hradla tvořena tranzist
 nějací obrázkovači zde?
 
 Z RS Klopného obvodu jde vytvořit obvod RST, který je již synchronním. Je k tomu nutný vstup pro synchronizační signál a jeho připojení na logická hradla NAND/NOR
+
 #### Ošetřené tlačítko
 Mechanický přepínač – tlačítko při sepnutí nebo rozepnutí obvodu způsobí několik zákmitů výstupního napětí. Lze ošetřit pomocí RS obvodu.
 

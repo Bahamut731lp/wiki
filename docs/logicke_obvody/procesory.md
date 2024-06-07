@@ -31,7 +31,7 @@ O přidělení sběrnice se musí zařízení žádat procesor. Způsoby přidě
 	- jestliže může žádosti vyhovět, začne procesor postupně vysílat adresy jednotlivých PZ. žádající jednotka odešle zprávu Potvrzení výběru.
 	- procesor začne testovat další žádosti po dokončení činnosti PZ
 	- procesor může začít odpovídat buď od adresy následující nebo adresy s nejvyšší prioritou
-
+ 
 ## Vstupně výstupní operace
 Přímé dotazování by bylo neefektivní a proto se využívá různých optimalizací:
 
@@ -50,8 +50,10 @@ Věci co procesor dělá pro běh programu.
 3. Operand Fetch - načtení operandů pro ALU
 4. Instruction Execution - provedení výpočtu v ALU
 5. Write Back - uložení výsledku do paměti
+
 Po instrukčním cyklu může následovat zpracování přerušení.
 
+>>>>>>> a304191bfeefa248e30c1be0986a2858a6471fb3
 ## Funkce mikroprocesoru
 - Matematické a logické operace v ALU
 - Přesun dat mezi různými pozicemi
