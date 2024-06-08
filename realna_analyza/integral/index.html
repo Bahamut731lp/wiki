@@ -633,6 +633,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -669,11 +679,111 @@
   
   
     <li class="md-nav__item">
+      <a href="../../logicke_obvody/prevodniky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Převodníky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../logicke_obvody/kombinacni_logicke_obvody/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Kombinační logické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/sekvencni_logicke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sekvenční logické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/automaty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automaty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/aritmeticke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sčítačky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/procesory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procesor
   </span>
   
 
@@ -1239,6 +1349,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Integrace
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1248,6 +1369,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#veci-co-se-hodi-znat" class="md-nav__link">
+    Věci co se hodí znát
+  </a>
+  
+    <nav class="md-nav" aria-label="Věci co se hodí znát">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-partes" class="md-nav__link">
+    Per partes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substituce" class="md-nav__link">
+    Substituce
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1664,6 +1831,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#veci-co-se-hodi-znat" class="md-nav__link">
+    Věci co se hodí znát
+  </a>
+  
+    <nav class="md-nav" aria-label="Věci co se hodí znát">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-partes" class="md-nav__link">
+    Per partes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#substituce" class="md-nav__link">
+    Substituce
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1698,6 +1900,21 @@
 </ul>
 </li>
 </ul>
+<h2 id="veci-co-se-hodi-znat">Věci co se hodí znát</h2>
+<h3 id="per-partes">Per partes</h3>
+<p>Per partes se využívá pro integraci součinu funkcí.
+<span class="arithmatex">\(<span class="arithmatex">\(\int f(x)g'(x)dx=f(x)g(x)-\int f'(x)g(x)dx\)</span>\)</span>
+lze substituovat jako 
+$$
+\int u \cdot v'dx=u\cdot v-\int u'\cdot vdx
+$$
+Co to znamená? Pokud máš součin nebo podíl, tak jde řešit metodou per partes. U integrálu zvolíš co bude <em>u</em> a <em>v</em>. Jeden výběr bude pravděpodobně lepší. Jak to poznat? Integrál ve výrazu <span class="arithmatex">\(u\cdot v-\int u'\cdot vdx\)</span> bude jednodušší na výpočet. Názorná ukázka
+https://youtu.be/gZvICMtNbeQ?t=456</p>
+<h3 id="substituce">Substituce</h3>
+<p>Pokud lze vyjádřit <span class="arithmatex">\(h(x)\)</span> jako <span class="arithmatex">\(f(g(x)) \cdot g'(x)\)</span>, pak platí:
+<span class="arithmatex">\(<span class="arithmatex">\(\int h(x)dx =\int f(g(x)) \cdot g'(x)dx=\int f(z)dz=F(z)+C=F(g(x))+C\)</span>\)</span></p>
+<p>Co to znamená? Pokud máš složenou funkci, tak jde vyřešit substitucí. Názorná ukázka
+https://youtu.be/Qx_NnL2iSGM?t=472</p>
 
 
 
@@ -1710,7 +1927,9 @@
     <small>
         Přispěvatelé: 
         <span>
-                    Kevin Daněk (100.0%)
+                    DANKnespl (77.78%)
+                </span><span>
+                    Kevin Daněk (22.22%)
                 </span>
     </small>
 </div>

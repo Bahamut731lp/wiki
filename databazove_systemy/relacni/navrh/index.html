@@ -717,6 +717,16 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -753,11 +763,111 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../logicke_obvody/prevodniky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Převodníky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../logicke_obvody/kombinacni_logicke_obvody/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Kombinační logické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/sekvencni_logicke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sekvenční logické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/automaty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automaty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/aritmeticke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sčítačky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/procesory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procesor
   </span>
   
 
@@ -1887,12 +1997,40 @@ Zaměstnanec má 0 nebo 1 projekt, a projekt musí mít jednoho zaměstnance.</p
 </tbody>
 </table>
 <h3 id="integritni-omezeni">Integritní omezení</h3>
+<p>Integritní omezení jsou pravidla, která zajišťují správnost, přesnost a konzistenci dat v databázích. Jsou klíčová pro udržení integrity databáze a pro zajištění toho, že data jsou v souladu s očekávanými pravidly a vztahy.</p>
 <ul>
-<li>Omezení primárního klíče: Každý řádek v tabulce musí mít jedinečnou hodnotu primárního klíče.</li>
-<li>Omezení cizího klíče: Hodnota cizího klíče v jedné tabulce musí odpovídat hodnotě primárního klíče v jiné tabulce, na kterou odkazuje.</li>
-<li>Omezení entity: Žádný atribut s definovanou doménou nesmí obsahovat prázdnou hodnotu.</li>
-<li>Omezení referenční integrity: Smazání nebo aktualizace záznamu v tabulce nesmí vést k narušení referenční integrity s jinými tabulkami.</li>
+<li><strong>Doménová integrita</strong>: Hodnoty v každém sloupci tabulky spadají do specifikované domény, což je definováno datovým typem sloupce, povolenými hodnotami, rozsahy nebo dalšími omezeními.</li>
 </ul>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Employees</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">EmployeeID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Age</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">Age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">18</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Age</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">65</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>Entitní integrita</strong>: Každá tabulka má primární klíč, a že tento klíč je jedinečný a ne-NULL. Primární klíč identifikuje každý řádek v tabulce jednoznačně.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Students</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">StudentID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">StudentName</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>Referenční integrita</strong>: Vztahy mezi tabulkami jsou zachovány správně. To znamená, že cizí klíče musí odkazovat na existující hodnoty v referenčních tabulkách, a že se správně aktualizují nebo mažou při změně či smazání referenčních záznamů.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Courses</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">CourseID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CourseName</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Enrollments</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">EnrollmentID</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">StudentID</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CourseID</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
+<span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">StudentID</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Students</span><span class="p">(</span><span class="n">StudentID</span><span class="p">),</span>
+<span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">CourseID</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Courses</span><span class="p">(</span><span class="n">CourseID</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
 
 
 
