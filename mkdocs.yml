@@ -54,8 +54,8 @@ nav:
     - logicke_obvody/prevodniky.md
     - logicke_obvody/kombinacni_logicke_obvody.md
     - logicke_obvody/sekvencni_logicke_obvody.md
-    - logicke_obvody/automaty.md
     - logicke_obvody/aritmeticke_obvody.md
+    - logicke_obvody/automaty.md
     - logicke_obvody/procesory.md
   - Matematika:
     - Kombinatorika:

@@ -1,5 +1,5 @@
 # Číselné charakteristiky
-Každé rozdělení pravděpodobnosti je jednoznačně popsání distribuční funkcí a pravděpodobnostní funkcí (popř. hustotou pravděpodobnosti). Číselné charakteristiky rozdělení pravděpodobnosti slouží k jeho popsání pomocí několika čísel, které charakterizují [náhodnou veličinu](statistika/teorie_pravdepodobnosti/nahodna_velicina.md).
+Každé rozdělení pravděpodobnosti je jednoznačně popsání distribuční funkcí a pravděpodobnostní funkcí (popř. hustotou pravděpodobnosti). Číselné charakteristiky rozdělení pravděpodobnosti slouží k jeho popsání pomocí několika čísel, které charakterizují [náhodnou veličinu](nahodna_velicina.md).
 
 ## Obecný moment
 Obecný moment $r$-tého řádu náhodné veličiny $x$ je definován jako střední hodnota r-té mocniny náhodné veličiny.
