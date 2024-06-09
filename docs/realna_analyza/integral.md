@@ -10,13 +10,29 @@ __Integrace__ je operace opačná k [derivaci](derivace.md), která vyjadřuje s
 
 ### Per partes
 Per partes se využívá pro integraci součinu funkcí.
+
 $$\int f(x)g'(x)dx=f(x)g(x)-\int f'(x)g(x)dx$$
+
 lze substituovat jako 
+
 $$
 \int u \cdot v'dx=u\cdot v-\int u'\cdot vdx
 $$
+
 Co to znamená? Pokud máš součin nebo podíl, tak jde řešit metodou per partes. U integrálu zvolíš co bude *u* a *v*. Jeden výběr bude pravděpodobně lepší. Jak to poznat? Integrál ve výrazu $u\cdot v-\int u'\cdot vdx$ bude jednodušší na výpočet. Názorná ukázka
 https://youtu.be/gZvICMtNbeQ?t=456
+
+### DI-Metoda
+DI metoda je abstrakcí metody per-partes, která operace z per-partes uspořádá do tabulky.
+
+!!! example "DI Metoda"
+    - Sloupec $D$ je pro členy, které se derivují
+    - Sloupec $I$ je pro členy, které se integrují
+    - Šipky mezi diagonálními prvky směrem doprava dolů označují součin prvků
+    - První sloupec se znaménkem říká znaménko celého členu (Výsledné znaménko závisí také na znaménkách jednotlivých prvků).
+    - Poslední řádek DI metody se zapíše pod integrál
+
+    ![DI Metoda](../images/di_metoda.JPG)
 
 ### Substituce
 Pokud lze vyjádřit $h(x)$ jako $f(g(x)) \cdot g'(x)$, pak platí:
@@ -728,7 +744,7 @@ Příklady jsou převzaty od doc. Václava Fiňka z Technické univerzity v Libe
         &= \boxed{\sqrt{\pi}}\\
     \end{align}$$
 
-???+ example "4.63: Výpočet"
+???+ example "4.63: Výpočtěte"
     $$\Large \int_{1}^{e} \frac{\ln(x)}{x\cdot(1+2\ln(x)+\ln^2(x))}\;dx$$
 
     !!! tip "Substituce"
@@ -761,7 +777,7 @@ Příklady jsou převzaty od doc. Václava Fiňka z Technické univerzity v Libe
         &= \boxed{\ln|2| -\frac{1}{2}} \\
     \end{align}$$
 
-???+ example "4.64: Výpočet"
+???+ example "4.64: Výpočtěte"
     $$\Large \int_{0}^{\pi} 2x^2\cdot\cos(2x)\;dx$$
 
     $$\large
