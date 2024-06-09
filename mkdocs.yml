@@ -36,7 +36,6 @@ nav:
   - Domů: index.md
   - Algoritmy a programování:
     - algoritmy_a_programovani/index.md
-    - algoritmy_a_programovani/ciselne_soustavy.md
     - algoritmy_a_programovani/algoritmizace.md
     - algoritmy_a_programovani/slozitost.md
     - algoritmy_a_programovani/vyhledavani_razeni.md
@@ -51,6 +50,7 @@ nav:
       - databazove_systemy/relacni/aktualizacni_anomalie.md
 
   - Hardware a elektronika:
+    - logicke_obvody/ciselne_soustavy.md
     - logicke_obvody/prevodniky.md
     - logicke_obvody/kombinacni_logicke_obvody.md
     - logicke_obvody/sekvencni_logicke_obvody.md
