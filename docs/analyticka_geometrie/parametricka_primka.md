@@ -1,5 +1,4 @@
 # Parametrická rovnice přímky
-
 Parametrická rovnice přímky v rovině vyjadřuje všechny body přímky jako funkce jednoho parametru. Přímka je určena dvěma body, nebo jedním bodem a směrovým vektorem.
 
 !!! abstract "Parametrická rovnice přímky"
