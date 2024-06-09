@@ -16,11 +16,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/ciselne_soustavy/</loc>
-         <lastmod>2024-06-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/cleneni_programu/</loc>
          <lastmod>2024-06-09</lastmod>
          <changefreq>daily</changefreq>
@@ -137,6 +132,11 @@
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/logicke_obvody/automaty/</loc>
+         <lastmod>2024-06-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/logicke_obvody/ciselne_soustavy/</loc>
          <lastmod>2024-06-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
