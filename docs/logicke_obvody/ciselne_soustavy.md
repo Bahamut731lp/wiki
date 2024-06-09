@@ -10,6 +10,17 @@ $$
     Dopsat MSB a LSB, a vlastně celý.
 
 ## Kódování čísel s desetinnou řádovou čárkou
+Čísla s pevnou řádovou tečkou (fixed-point numbers) mají pevně stanovenou pozici desetinné tečky v čísle. Tento formát je jednodušší na implementaci, ale nabízí omezenější rozsah a přesnost než čísla s pohyblivou řádovou tečkou. Čísla jsou reprezentována jako celá čísla, ale s předem definovaným místem pro desetinnou tečku. Vhodné pro aplikace, kde je rozsah a přesnost předem známá a není třeba ji dynamicky měnit.
+
+## Kódování čísel s pohyblivou řádovou tečkou
+Čísla s pohyblivou řádovou tečkou (floating-point numbers) mají proměnnou pozici desetinné tečky, což umožňuje reprezentaci velmi velkých i velmi malých čísel s vysokou přesností. Nejrozšířenější standard pro tyto čísla je IEEE 754.
+
+$$\text{Hodnota} = (-1)^\text{S} \cdot (1 + \text{M}) \times 2^{(\text{E} - \text{B})}$$
+
+- Znak (S): Určuje znaménko čísla.
+- Exponent (E): Upravuje hodnotu posunutím o bias.
+- Mantisa (M): Reprezentuje základní hodnotu čísla.
+- Posun (B): Počítá se podle $2^{(n-1)-1}$, kde $n$ je počet bitů určených pro exponent. Umožňuje reprezentovat záporné exponenty.
 
 ## Záporná čísla ve dvojkové soustavě
 
