@@ -24,15 +24,15 @@ Tato technika spoléhá na to, že jeden bit (většinou MSB) představuje znam�
 - $1$ pokud je číslo záporné
 - $0$ pokud je číslo kladné
 
-Výhodou je jednoduchost tohoto řešení - pomocí kontroly jednoho bitu víme, jestli je číslo kladné, nebo záporné. Obří nevýhodou tohoto řešení je, že se snižuje rozsah čísel, které můžeme reprezentovat. Při použití počáčetního bitu (MSB) se nám rozsah čísel, které můžeme reprezentovat, srazí na polovinu. Tudíž při osmi bitech můžeme najednou reprezentovat jenom čísla v rozsahu $\left<-127, 127\right>$.
+Výhodou je jednoduchost tohoto řešení - pomocí kontroly jednoho bitu víme, jestli je číslo kladné, nebo záporné. Obří nevýhodou tohoto řešení je, že se snižuje rozsah čísel, které můžeme reprezentovat. Při použití počáčetního bitu (MSB) se nám rozsah kladných čísel, které můžeme reprezentovat, srazí na polovinu. Tudíž při osmi bitech můžeme najednou reprezentovat jenom čísla v rozsahu $\left<-127, 127\right>$ z původního $\left<0, 255\right>$
 
 !!! bug "Kladná a záporná nula"
     Při použití vyhrazeného bitu vznikají dvě nuly - ta, která má znaménkový bit 1 a která má znaménkový bit 0.
 
 !!! warning "Nebuď Pepega"
-    > Když se při použití MSB sníží rozsah čísel o polovinu, proč nepoužít LSB, když je nejmíň významný???
+    > Když se při použití MSB sníží rozsah kladných čísel o polovinu, proč nepoužít LSB, když je nejmíň významný???
 
-    Kdybych použil LSB a zbytek nechal být, tak pořád ztratím polovinu čísel, ale tentokrát to nebude kvůli omezení rozsahu, ale kvůli tomu, že ztratím možnost vyjadřovat lichá čísla. Je tedy jedno, kde ten bit je, pořád to redukuje reprezentovatelný rozsah.
+    Kdybych použil LSB a zbytek nechal být, tak pořád ztratím polovinu kladných čísel, ale tentokrát to nebude kvůli omezení rozsahu, ale kvůli tomu, že ztratím možnost vyjadřovat lichá čísla. Je tedy jedno, kde ten bit je, pořád to redukuje reprezentovatelný rozsah.
 
 
 ### Posunutý kód
