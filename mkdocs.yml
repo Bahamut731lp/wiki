@@ -61,6 +61,7 @@ nav:
     - Analytická geometrie:
       - analyticka_geometrie/parametricka_primka.md
       - analyticka_geometrie/obecna_primka.md
+      - analyticka_geometrie/uhel_mezi_primkami.md
     - Kombinatorika:
       - kombinatorika/index.md
       - kombinatorika/kombinatoricka_pravidla.md
