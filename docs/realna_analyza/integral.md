@@ -228,12 +228,12 @@ Příklady jsou převzaty od doc. Václava Fiňka z Technické univerzity v Libe
         - Monotonie funkce $g(x)$
         ![Monotonie funkce $g$](../images/46_monotonie_funkce_g.png)
         
-        $$
-        \begin{aligned}
-            &= \int_{-1}^{1} f(x) - g(x)\;dx \\
-            &= \int_{-1}^{1} \cos{\left(\frac{\pi{x}}{2}\right)}\;dx - \int_{-1}^{1}x^2\;dx+\int_{-1}^{1}1\;dx \\
-        \end{aligned}
-        $$
+    $$
+    \begin{aligned}
+        &= \int_{-1}^{1} f(x) - g(x)\;dx \\
+        &= \int_{-1}^{1} \cos{\left(\frac{\pi{x}}{2}\right)}\;dx - \int_{-1}^{1}x^2\;dx+\int_{-1}^{1}1\;dx \\
+    \end{aligned}
+    $$
 
     !!! tip "Substituce"
         $$\large\begin{aligned}
