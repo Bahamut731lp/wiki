@@ -2,257 +2,262 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bahamut731lp.github.io/wiki/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/algoritmizace/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/cleneni_programu/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/oop/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/rekurze/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/slozitost/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/algoritmy_a_programovani/vyhledavani_razeni/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/analyticka_geometrie/obecna_primka/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/analyticka_geometrie/parametricka_primka/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bahamut731lp.github.io/wiki/analyticka_geometrie/smernicovy_tvar_primky/</loc>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/analyticka_geometrie/uhel_mezi_primkami/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/blog/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/databazove_systemy/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/databazove_systemy/relacni/aktualizacni_anomalie/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/databazove_systemy/relacni/funkcni_zavislost/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/databazove_systemy/relacni/navrh/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/databazove_systemy/relacni/normalizace/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/databazove_systemy/relacni/sql/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/kombinatorika/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/kombinatorika/kombinatoricka_pravidla/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/linearni_algebra/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/linearni_algebra/linearni_kombinace/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/linearni_algebra/matice/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/linearni_algebra/vektorove_prostory/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/linearni_algebra/vlastni_cisla_vektory/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/logicke_obvody/aritmeticke_obvody/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/logicke_obvody/automaty/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/logicke_obvody/ciselne_soustavy/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/logicke_obvody/kombinacni_logicke_obvody/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/logicke_obvody/prevodniky/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/logicke_obvody/procesory/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/logicke_obvody/sekvencni_logicke_obvody/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/operacni_systemy/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/operacni_systemy/procesy/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/realna_analyza/derivace/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/realna_analyza/diferencial/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/realna_analyza/integral/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/ad_prevod/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/filtry/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/fourierovy_rady/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/konvoluce/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/signaly/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/spektrum/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/signaly_a_informace/systemy/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/statistika/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/statistika/teorie_pravdepodobnosti/ciselne_charakteristiky/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/statistika/teorie_pravdepodobnosti/jevy/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/statistika/teorie_pravdepodobnosti/nahodna_velicina/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/statistika/teorie_pravdepodobnosti/podminena_pravdepodobnost/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bahamut731lp.github.io/wiki/statistika/teorie_pravdepodobnosti/pravdepodobnost/</loc>
-         <lastmod>2024-06-09</lastmod>
+         <lastmod>2024-06-14</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
