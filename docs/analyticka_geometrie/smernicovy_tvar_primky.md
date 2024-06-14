@@ -1,0 +1,1 @@
+# Směrnicový tvar přímky
