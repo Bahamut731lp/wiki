@@ -59,6 +59,7 @@ nav:
     - logicke_obvody/procesory.md
   - Matematika:
     - Analytická geometrie:
+      - analyticka_geometrie/vektory.md
       - analyticka_geometrie/parametricka_primka.md
       - analyticka_geometrie/obecna_primka.md
       - analyticka_geometrie/uhel_mezi_primkami.md
@@ -82,6 +83,10 @@ nav:
       - realna_analyza/derivace.md
       - realna_analyza/diferencial.md
       - realna_analyza/integral.md
+    - Zjednodušování výrazů:
+      - matematika/zlomky.md
+      - matematika/exponenty.md
+      - matematika/logaritmy.md
   - Signály a informace:
     - signaly_a_informace/index.md
     - signaly_a_informace/signaly.md
