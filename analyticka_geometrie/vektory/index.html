@@ -1,0 +1,3069 @@
+
+<!doctype html>
+<html lang="cs" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/analyticka_geometrie/vektory/">
+      
+      
+        <link rel="prev" href="../../logicke_obvody/procesory/">
+      
+      
+        <link rel="next" href="../parametricka_primka/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
+    
+    
+      
+        <title>Vektorová algebra - Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.76a95c52.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vektorova-algebra" class="md-skip">
+          Přeskočit obsah
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Záhlaví">
+    <a href="../.." title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vektorová algebra
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Hledat" placeholder="Hledat" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Vyhledávání">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Vyčistit" aria-label="Vyčistit" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializace vyhledávání
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bahamut731lp/wiki" title="Přejít do repozitáře" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigace" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Wiki" class="md-nav__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bahamut731lp/wiki" title="Přejít do repozitáře" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Domů
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../algoritmy_a_programovani/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Algoritmy a programování
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmy a programování
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmy_a_programovani/algoritmizace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmizace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmy_a_programovani/slozitost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Složitost
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmy_a_programovani/vyhledavani_razeni/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vyhledávání a řazení
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmy_a_programovani/rekurze/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rekurze
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmy_a_programovani/cleneni_programu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Členění programu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../databazove_systemy/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Databázové systémy
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Databázové systémy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Relační
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Relační
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databazove_systemy/relacni/navrh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Návrh relačních databází
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databazove_systemy/relacni/funkcni_zavislost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funkční závislost
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databazove_systemy/relacni/normalizace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Normální formy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databazove_systemy/relacni/aktualizacni_anomalie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aktualizační anomálie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hardware a elektronika
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware a elektronika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/ciselne_soustavy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Číselné soustavy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/prevodniky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Převodníky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/kombinacni_logicke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kombinační logické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/sekvencni_logicke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sekvenční logické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/aritmeticke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aritmetické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/automaty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automaty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logicke_obvody/procesory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procesor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Matematika
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Matematika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Analytická geometrie
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Analytická geometrie
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Vektorová algebra
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Vektorová algebra
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#priklady" class="md-nav__link">
+    <span class="md-ellipsis">
+      Příklady
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Příklady">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uloha-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Úloha 2.7
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Úloha 2.7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-urcete-souradnice-vektoru-u-ab-a-v-ac-a-jejich-velikost" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) Určete souřadnice vektorů \(u = AB\) a \(v = AC\) a jejich velikost.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="a) Určete souřadnice vektorů \(u = AB\) a \(v = AC\) a jejich velikost.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-urcete-souradnice-bodu-x-pro-ktery-plati-ax-v-frac12u" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) Určete souřadnice bodu \(X\), pro který platí \(AX = v - \frac{1}{2}u\).
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="b) Určete souřadnice bodu \(X\), pro který platí \(AX = v - \frac{1}{2}u\).">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-urcete-souradnice-stredu-usecky-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      c) Určete souřadnice středu úsečky \(AB\).
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="c) Určete souřadnice středu úsečky \(AB\).">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-overte-ze-body-a-b-c-jsou-vrcholy-trojuhelniku" class="md-nav__link">
+    <span class="md-ellipsis">
+      d) Ověřte, že body \(A, B, C\) jsou vrcholy trojúhelníku.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="d) Ověřte, že body \(A, B, C\) jsou vrcholy trojúhelníku.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-urcete-chybejici-souradnice-bodu-r-tak-aby-r-in-leftrightarrow-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      e) Určete chybějící souřadnice bodu \(R\) tak, aby \(R \in \leftrightarrow AB\)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="e) Určete chybějící souřadnice bodu \(R\) tak, aby \(R \in \leftrightarrow AB\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-urcete-souradnice-teziste-trojuhelniku-abc-a-delku-jeho-teznice-t_c" class="md-nav__link">
+    <span class="md-ellipsis">
+      f) Určete souřadnice těžiště trojúhelníku ABC a délku jeho těžnice \(t_c\).
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-urcete-souradnice-bodu-d-tak-aby-abcd-byl-rovnobeznik" class="md-nav__link">
+    <span class="md-ellipsis">
+      g) Určete souřadnice bodu \(D\) tak, aby \(ABCD\) byl rovnoběžník.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h-urcete-souradnice-bodu-e-tak-aby-bod-c-byl-stredem-usecky-be" class="md-nav__link">
+    <span class="md-ellipsis">
+      h) Určete souřadnice bodu \(E\) tak, aby bod \(C\) byl středem úsečky \(BE\).
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-urcete-chybejici-souradnice-bodu-z-tak-aby-cz-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      i) Určete chybějící souřadnice bodu \(Z\) tak, aby \(CZ || AB\).
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parametricka_primka/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parametrická rovnice přímky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../obecna_primka/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Obecná rovnice přímky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uhel_mezi_primkami/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Úhel (odchylka) mezi dvěma přímkami
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../diskretni_matematika/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Diskrétní matematika
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Diskrétní matematika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../diskretni_matematika/teorie_delitelnosti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Úvod do teorie dělitelnosti
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../kombinatorika/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Kombinatorika
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Kombinatorika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kombinatorika/kombinatoricka_pravidla/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kombinatorická pravidla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../statistika/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Statistika
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Statistika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/jevy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pokusy a jevy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/pravdepodobnost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pravděpodobnost
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/podminena_pravdepodobnost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Závislost pokusů
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/nahodna_velicina/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Náhodná veličina
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/ciselne_charakteristiky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Číselné charakteristiky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../linearni_algebra/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lineární algebra
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Lineární algebra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linearni_algebra/linearni_kombinace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lineární kombinace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linearni_algebra/matice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linearni_algebra/vektorove_prostory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vektorové prostory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linearni_algebra/vlastni_cisla_vektory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vlastní čísla a vlastní vektory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reálná analýza
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Reálná analýza
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../realna_analyza/derivace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Derivace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../realna_analyza/diferencial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diferenciál
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../realna_analyza/integral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Zjednodušování výrazů
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Zjednodušování výrazů
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../matematika/zlomky.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../matematika/exponenty.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../matematika/logaritmy.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../signaly_a_informace/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Signály a informace
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Signály a informace
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/signaly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Signál
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/ad_prevod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AD Převod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/systemy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systémy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/konvoluce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Konvoluce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/fourierovy_rady/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourierovy řady
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/spektrum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spektrum signálu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/filtry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filtry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../operacni_systemy/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Operační systémy
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Operační systémy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operacni_systemy/procesy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procesy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archiv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#priklady" class="md-nav__link">
+    <span class="md-ellipsis">
+      Příklady
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Příklady">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uloha-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      Úloha 2.7
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Úloha 2.7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-urcete-souradnice-vektoru-u-ab-a-v-ac-a-jejich-velikost" class="md-nav__link">
+    <span class="md-ellipsis">
+      a) Určete souřadnice vektorů \(u = AB\) a \(v = AC\) a jejich velikost.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="a) Určete souřadnice vektorů \(u = AB\) a \(v = AC\) a jejich velikost.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-urcete-souradnice-bodu-x-pro-ktery-plati-ax-v-frac12u" class="md-nav__link">
+    <span class="md-ellipsis">
+      b) Určete souřadnice bodu \(X\), pro který platí \(AX = v - \frac{1}{2}u\).
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="b) Určete souřadnice bodu \(X\), pro který platí \(AX = v - \frac{1}{2}u\).">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-urcete-souradnice-stredu-usecky-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      c) Určete souřadnice středu úsečky \(AB\).
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="c) Určete souřadnice středu úsečky \(AB\).">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-overte-ze-body-a-b-c-jsou-vrcholy-trojuhelniku" class="md-nav__link">
+    <span class="md-ellipsis">
+      d) Ověřte, že body \(A, B, C\) jsou vrcholy trojúhelníku.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="d) Ověřte, že body \(A, B, C\) jsou vrcholy trojúhelníku.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-urcete-chybejici-souradnice-bodu-r-tak-aby-r-in-leftrightarrow-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      e) Určete chybějící souřadnice bodu \(R\) tak, aby \(R \in \leftrightarrow AB\)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="e) Určete chybějící souřadnice bodu \(R\) tak, aby \(R \in \leftrightarrow AB\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianta-a_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#varianta-b_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianta B
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-urcete-souradnice-teziste-trojuhelniku-abc-a-delku-jeho-teznice-t_c" class="md-nav__link">
+    <span class="md-ellipsis">
+      f) Určete souřadnice těžiště trojúhelníku ABC a délku jeho těžnice \(t_c\).
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-urcete-souradnice-bodu-d-tak-aby-abcd-byl-rovnobeznik" class="md-nav__link">
+    <span class="md-ellipsis">
+      g) Určete souřadnice bodu \(D\) tak, aby \(ABCD\) byl rovnoběžník.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h-urcete-souradnice-bodu-e-tak-aby-bod-c-byl-stredem-usecky-be" class="md-nav__link">
+    <span class="md-ellipsis">
+      h) Určete souřadnice bodu \(E\) tak, aby bod \(C\) byl středem úsečky \(BE\).
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-urcete-chybejici-souradnice-bodu-z-tak-aby-cz-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      i) Určete chybějící souřadnice bodu \(Z\) tak, aby \(CZ || AB\).
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+  
+    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/analyticka_geometrie/vektory.md" title="Upravit tuto stránku" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="vektorova-algebra">Vektorová algebra</h1>
+<h2 id="priklady">Příklady</h2>
+<h3 id="uloha-27">Úloha 2.7</h3>
+<p>Jsou dány souřadnice bodů <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(C\)</span>, <span class="arithmatex">\(R\)</span> a <span class="arithmatex">\(Z\)</span>.</p>
+<ul>
+<li>Varianta A: <span class="arithmatex">\(A[0,1], B[6,3], C[4,5], R[2,r_2], Z[7,z_2]\)</span></li>
+<li>Varianta B: <span class="arithmatex">\(A[1,2,3], B[3,3,6], C[0,1,2], R[0,r_2,r_3], Z[-2,z_2,z_3]\)</span></li>
+</ul>
+<h4 id="a-urcete-souradnice-vektoru-u-ab-a-v-ac-a-jejich-velikost">a) Určete souřadnice vektorů <span class="arithmatex">\(u = AB\)</span> a <span class="arithmatex">\(v = AC\)</span> a jejich velikost.</h4>
+<h5 id="varianta-a">Varianta A</h5>
+<div class="arithmatex">\[\begin{align}
+    \vec{u} &amp;= AB\\
+            &amp;= (B_x - A_x, B_y - A_y)\\
+            &amp;= (6 - 0, 3 - 1)\\
+            &amp;= \boxed{(6, 2)}\\
+            \\
+    \vec{v} &amp;= AC\\
+            &amp;= (C_x - A_x, C_y - A_y)\\
+            &amp;= (4 - 0, 5 - 1)\\
+            &amp;= \boxed{(4, 4)} \\
+            \\
+    |\vec{u}|   &amp;= \sqrt{(u_1)^2 + (u_2)^2}\\
+                &amp;= \sqrt{(6)^2 + (2)^2}\\
+                &amp;= \sqrt{40}\\
+                &amp;= \sqrt{4 \cdot 10}\\
+                &amp;= \sqrt{4} \cdot \sqrt{10}\\
+                &amp;= \boxed{2\cdot\sqrt{10}} \\
+                \\
+    |\vec{v}|   &amp;= \sqrt{(v_1)^2 + (v_2)^2}\\
+                &amp;= \sqrt{(4)^2 + (4)^2}\\
+                &amp;= \sqrt{32}\\
+                &amp;= \sqrt{16 \cdot 2} \\
+                &amp;= \sqrt{16} \cdot \sqrt{2} \\
+                &amp;= \boxed{4\cdot\sqrt{2}}
+\end{align}\]</div>
+<div class="admonition question">
+<p class="admonition-title">Úpravy mocnic u výpočtu velikosti</p>
+<p>Pokud nechápeš úpravy, které jsem dělal s odmocninami, aneb proč se <span class="arithmatex">\(\sqrt{40}\)</span> rovná <span class="arithmatex">\(2\cdot\sqrt{10}\)</span> nebo proč <span class="arithmatex">\(\sqrt{32}\)</span> je <span class="arithmatex">\(4\cdot\sqrt{2}\)</span>, přečti si kapitolu o <a href="../matematika/odmocniny.md#částečné-odmocňování">částečném odmocňování</a>.</p>
+</div>
+<h5 id="varianta-b">Varianta B</h5>
+<div class="arithmatex">\[\begin{align}
+    \vec{u} &amp;= AB \\
+            &amp;= (B_x - A_x, B_y - A_y, B_z - A_z) \\
+            &amp;= (3 - 1, 3 - 2, 6 - 3) \\
+            &amp;= \boxed{(2, 1, 3)}\\
+    \\
+    \vec{v} &amp;= AC \\
+            &amp;= (C_x - A_x, C_y - A_y, C_z - A_z) \\
+            &amp;= (0 - 1, 1 - 2, 2 - 3) \\
+            &amp;= \boxed{(-1, -1, -1)} \\
+            \\
+    |\vec{u}|   &amp;= \sqrt{(u_1)^2 + (u_2)^2 + (u_3)^2} \\
+                &amp;= \sqrt{(2)^2 + (1)^2 + (3)^2}\\
+                &amp;= \sqrt{4 + 1 + 9}\\
+                &amp;= \boxed{\sqrt{14}}\\
+                \\
+    |\vec{v}|   &amp;= \sqrt{(v_1)^2 + (v_2)^2 + (v_3)^2} \\
+                &amp;= \sqrt{(-1)^2 + (-1)^2 + (-1)^2}\\
+                &amp;= \sqrt{1 + 1 + 1}\\
+                &amp;= \boxed{\sqrt{3}}\\
+                \\
+\end{align}\]</div>
+<h4 id="b-urcete-souradnice-bodu-x-pro-ktery-plati-ax-v-frac12u">b) Určete souřadnice bodu <span class="arithmatex">\(X\)</span>, pro který platí <span class="arithmatex">\(AX = v - \frac{1}{2}u\)</span>.</h4>
+<h5 id="varianta-a_1">Varianta A</h5>
+<div class="arithmatex">\[\begin{align}
+AX &amp;= \vec{v} - \frac{1}{2}\vec{u}\\
+AX &amp;= (4, 4) - (3, 1) \\
+AX &amp;= (1, 3)\\
+\\
+X &amp;= A + AX \\
+X &amp;= [0, 1] + (1, 3)\\
+X &amp;= \boxed{[1, 4]}
+\end{align}\]</div>
+<div class="admonition question">
+<p class="admonition-title">Proč tam mám kulaté i hranaté závorky?</p>
+<p>Hranaté závorky se běžně používají k označení bodu, zatímco kulaté k označení vektoru. Principielně je to ovšem jedno a to samé, jenom u bodu uvažujeme, že to je vektor, který má začátek v nule.</p>
+</div>
+<h5 id="varianta-b_1">Varianta B</h5>
+<div class="arithmatex">\[\begin{align}
+AX &amp;= \vec{v} - \frac{1}{2}\vec{u}\\
+AX &amp;= (-1, -1, -1) - \frac{1}{2}(2, 1, 3) \\
+AX &amp;= (-1, -1, -1) -  \left(1, \frac{1}{2}, \frac{3}{2}\right)\\
+AX &amp;= \left(-2, \frac{-3}{2}, \frac{-5}{2}\right)\\
+\\
+X &amp;= A + AX \\
+X &amp;= [1,2,3] + \left(-2, \frac{-3}{2}, \frac{-5}{2}\right)\\
+X &amp;= \left[1,\frac{4}{2},\frac{6}{2}\right] + \left(-2, \frac{-3}{2}, \frac{-5}{2}\right)\\
+X &amp;= \left[1 - 2, \frac{4 - 3}{2}, \frac{6 - 5}{2}\right]\\
+X &amp;= \boxed{\left[-1, \frac{1}{2}, \frac{1}{2}\right]} \\
+\end{align}\]</div>
+<h4 id="c-urcete-souradnice-stredu-usecky-ab">c) Určete souřadnice středu úsečky <span class="arithmatex">\(AB\)</span>.</h4>
+<p>V této úloze je myšlenka taková, že známe vektor <span class="arithmatex">\(\vec{AB}\)</span>, který je stejně velký jako úsečka <span class="arithmatex">\(AB\)</span>. Pokud tedy hledáme střed, který leží přesně v polovině úsečky, stačí nám vzít polovinu vektoru <span class="arithmatex">\(\vec{AB}\)</span> a posunout jeden z bodů správným směrem. Vzhledem k tomu, že vektor <span class="arithmatex">\(\vec{AB}\)</span> začíná v bodě A a končí v bodě <span class="arithmatex">\(B\)</span>, tak při hledání středu začneme také v bodě <span class="arithmatex">\(A\)</span>, akorát se neposuneme o celý vektor, ale jenom o jeho polovinu.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Šlo by to i naopak, mohli bychom začít v bodě <span class="arithmatex">\(B\)</span>, ovšem v ten moment bychom museli jít nadruhou stranu, tzn. že buďto použít vektor <span class="arithmatex">\(\vec{BA}\)</span>, nebo obrátit vektor <span class="arithmatex">\(\vec{AB}\)</span>, což uděláme tak, že před něj dáme mínus (<span class="arithmatex">\(-\vec{AB} = \vec{BA}\)</span>).</p>
+</div>
+<h5 id="varianta-a_2">Varianta A</h5>
+<div class="arithmatex">\[\begin{align}
+S_{AB} &amp;= A + \frac{1}{2}\vec{AB}\\
+S_{AB} &amp;= [0, 1] + \frac{1}{2}(6, 2) \\
+S_{AB} &amp;= [0, 1] + (3, 1) \\
+S_{AB} &amp;= \boxed{[3, 2]}
+\end{align}\]</div>
+<h5 id="varianta-b_2">Varianta B</h5>
+<div class="arithmatex">\[\begin{align}
+S_{AB} &amp;= A + \frac{1}{2}\vec{AB}\\
+S_{AB} &amp;= [1,2,3] + \frac{1}{2}(2, 1, 3) \\
+S_{AB} &amp;= [1,2,3] + \left(1, \frac{1}{2}, \frac{3}{2}\right) \\
+S_{AB} &amp;= \boxed{\left[2, \frac{5}{2}, \frac{9}{2}\right]}
+\end{align}\]</div>
+<h4 id="d-overte-ze-body-a-b-c-jsou-vrcholy-trojuhelniku">d) Ověřte, že body <span class="arithmatex">\(A, B, C\)</span> jsou vrcholy trojúhelníku.</h4>
+<p>Pro existenci trojúhelníku existuje jedna důležitá věta, které se běžně říká <strong>trojúhelníková nerovnost</strong>. Ta tvrdí, že součet dvou libovolných stran trojúhelníku musí být větší, než velikost té třetí strany. V této úloze známe všechny vektory, které tvoří strany trojúhelníku. Můžeme tedy porovnat jejich velikosti a podle toho určit, jestli tvoří trojúhelník nebo ne.</p>
+<p>Postup bude tedy následující:</p>
+<ul>
+<li>Vypsat si velikosti stran AB a AC z předchozích úloh</li>
+<li>Dopočítat velikost chybějící strany BC</li>
+<li>Sestavit nerovnici a dopočítat.</li>
+</ul>
+<h5 id="varianta-a_3">Varianta A</h5>
+<div class="arithmatex">\[\begin{align}
+|AB| &amp;= |\vec{u}| &amp;= 2\cdot\sqrt{10} \\
+|AC| &amp;= |\vec{v}| &amp;= 4\cdot\sqrt{2} \\
+\end{align}\]</div>
+<div class="arithmatex">\[\begin{align}
+\vec{BC}&amp;= (C_x - B_x, C_y - B_y)\\
+        &amp;= (4 - 6, 5 - 3)\\
+        &amp;= \boxed{(-2, 2)}\\
+        \\
+|\vec{BC}|  &amp;= \sqrt{(BC_1)^2 + (BC_2)^2} \\
+            &amp;= \sqrt{(-2)^2 + (2)^2} \\
+            &amp;= \sqrt{4 + 4} \\
+            &amp;= \sqrt{8} \\
+            &amp;= \sqrt{4 \cdot 2} \\
+            &amp;= \boxed{2 \cdot \sqrt{2}}
+            \\
+            \\
+        |AC| + |BC| &amp;\gt |AB| \\
+    4 \cdot \sqrt{2} + 2 \cdot \sqrt{2} &amp;\gt 2 \cdot \sqrt{10} \\
+    6 \cdot \sqrt{2} &amp;\gt 2 \cdot \sqrt{10} \\
+    3 \cdot \sqrt{2} &amp;\gt \sqrt{10} \\
+    3 \cdot \sqrt{2} &amp;\gt \sqrt{5 \cdot 2} \\
+    3 \cdot \sqrt{2} &amp;\gt \sqrt{5} \cdot \sqrt{2} \\
+    3 &amp;\gt \sqrt{5} \\
+    9 &amp;\gt 5 \\
+\end{align}\]</div>
+<p>Jak můžeme vidět z výsledku nerovnice, tak součet dvou stran byl větší než ta třetí. Správně bychom měli spočítat ještě dvě nerovnice, a to <span class="arithmatex">\(|AC| + |AB| &gt; |BC|\)</span> a <span class="arithmatex">\(|BC| + |AB| &gt; |AC|\)</span>, protože to musí platit pro všechny strany. Takže když to vezmu teďko trochu zrychleně:</p>
+<div class="arithmatex">\[\begin{align}
+    |AC| + |AB| &amp;\gt |BC| \\
+    4 \cdot \sqrt{2} + 2 \cdot \sqrt{5} \cdot \sqrt{2} &amp;\gt 2 \cdot \sqrt{2} \\
+    4 + 2 \cdot \sqrt{5} &amp;\gt 2 \\
+    2 + \sqrt{5} &amp;\gt 1 \\
+    4 + 5 &amp;\gt 1 \\
+    9 \gt 1\\
+    \\
+    |BC| + |AB| &amp;\gt |AC| \\
+    2 \cdot \sqrt{2} + 2 \cdot \sqrt{10} &amp;\gt 4 \cdot \sqrt{2} \\
+    \sqrt{2} + \sqrt{10} &amp;\gt 2 \cdot \sqrt{2} \\
+    \sqrt{10} &amp;\gt \sqrt{2} \\
+    10 &amp;\gt 2 \\
+\end{align}\]</div>
+<p>Odpovědí je, že trojúhelník skutečně existuje.</p>
+<h5 id="varianta-b_3">Varianta B</h5>
+<div class="arithmatex">\[\begin{align}
+|AB| &amp;= |\vec{u}| &amp;= \sqrt{14} \\
+|AC| &amp;= |\vec{v}| &amp;= \sqrt{3} \\
+\end{align}\]</div>
+<div class="arithmatex">\[\begin{align}
+\vec{BC}&amp;= (C_x - B_x, C_y - B_y, C_z - B_z)\\
+        &amp;= (0 - 3, 1 - 3, 2 - 6)\\
+        &amp;= \boxed{(-3, -2, 4)}\\
+        \\
+|\vec{BC}|  &amp;= \sqrt{(BC_1)^2 + (BC_2)^2 + (BC_3)^2} \\
+            &amp;= \sqrt{(-3)^2 + (-2)^2 + (4)^2} \\
+            &amp;= \sqrt{9 + 4 + 16} \\
+            &amp;= \boxed{\sqrt{29}} \\
+            \\
+    |AC| + |BC| &amp;\gt |AB| \\
+    \sqrt{3} + \sqrt{29} &amp;\gt \sqrt{14} \\
+    3 + 29 &amp;\gt 14 \\
+    32 &amp;\gt 14 \\
+    \\
+    |AC| + |AB| &amp;\gt |BC| \\
+    \sqrt{3} + \sqrt{14} &amp;\gt \sqrt{29} \\
+    3 + 14 &amp;\gt 29 \\
+    17 &amp;\not{\gt} 29 \\
+\end{align}\]</div>
+<p>Dále nemusíme počítat. Našli jsme totiž případ, kdy trojúhelníková nerovnost neplatí. Závěrem tedy je, že body <span class="arithmatex">\(A, B, C\)</span> v této variantě trojúhelník netvoří.</p>
+<h4 id="e-urcete-chybejici-souradnice-bodu-r-tak-aby-r-in-leftrightarrow-ab">e) Určete chybějící souřadnice bodu <span class="arithmatex">\(R\)</span> tak, aby <span class="arithmatex">\(R \in \leftrightarrow AB\)</span></h4>
+<p>Tato úloha po nás chce, abychom doplnili druhou souřadnici bodu <span class="arithmatex">\(R\)</span> tak, aby tento bod ležel na přímce <span class="arithmatex">\(AB\)</span>. K tomu můžeme použít <a href="../parametricka_primka/">parametrický předpis přímky</a>.</p>
+<p>Postup bude tedy následující:</p>
+<ul>
+<li>Sestavit <a href="../parametricka_primka/">parametrický předpis přímky AB</a> pomocí vektoru <span class="arithmatex">\(\vec{AB}\)</span> a bodu <span class="arithmatex">\(A\)</span>.</li>
+<li>Dosadit za neznámé <span class="arithmatex">\(x\)</span> a <span class="arithmatex">\(y\)</span> souřadnice bodu <span class="arithmatex">\(R\)</span></li>
+<li>Vyjádřit parametr <span class="arithmatex">\(t\)</span> a dopočítat souřadnici <span class="arithmatex">\(r_2\)</span></li>
+</ul>
+<h5 id="varianta-a_4">Varianta A</h5>
+<div class="arithmatex">\[\begin{align}
+A &amp;= [0, 1] \\
+R &amp;= [2, r_2] \\
+R &amp;\in \leftrightarrow AB\\
+\vec{AB} &amp;= (6, 2) \\
+\\
+x &amp;= A_x + t \cdot \vec{AB}_1 \\
+y &amp;= A_y + t \cdot \vec{AB}_2 \\
+\\
+2 &amp;= 0 + t \cdot 6 \\
+r_2 &amp;= 1 + t \cdot 2 \\
+\\
+2 &amp;= 0 + t \cdot 6 \\
+\frac{2}{6} &amp;= t \\
+\boxed{\frac{1}{3}} &amp;= t \\
+\\
+r_2 &amp;= 1 + \frac{1}{3} \cdot 2 \\
+r_2 &amp;= 1 + \frac{2}{3} \\
+r_2 &amp;= \boxed{\frac{5}{3}} \\
+R &amp;= \boxed{\left[2, \frac{5}{3}\right]}
+\end{align}\]</div>
+<h5 id="varianta-b_4">Varianta B</h5>
+<div class="arithmatex">\[\begin{align}
+A &amp;= [1, 2, 3] \\
+R &amp;= [0, r_2, r_3] \\
+R &amp;\in \leftrightarrow AB\\
+\vec{AB} &amp;= (2, 1, 3) \\
+\\
+x &amp;= A_x + t \cdot \vec{AB}_1 \\
+y &amp;= A_y + t \cdot \vec{AB}_2 \\
+z &amp;= A_z + t \cdot \vec{AB}_3 \\
+\\
+0 &amp;= 1 + t \cdot 2 \\
+r_2 &amp;= 2 + t \cdot 1 \\
+r_3 &amp;= 3 + t \cdot 3 \\
+\\
+0 &amp;= 1 + t \cdot 2 \\
+-1 &amp;= 2t \\
+\boxed{\frac{-1}{2}} &amp;= t \\
+\\
+r_2 &amp;= 2 + \frac{-1}{2} \cdot 1 \\
+r_2 &amp;= \frac{4}{2} + \frac{-1}{2}\\
+r_2 &amp;= \boxed{\frac{3}{2}}\\
+\\
+r_3 &amp;= 3 + \frac{-1}{2} \cdot 3 \\
+r_3 &amp;= 3 + \frac{-3}{2}\\
+r_3 &amp;= \frac{6}{2} + \frac{-3}{2}\\
+r_3 &amp;= \boxed{\frac{3}{2}}\\
+\\
+R &amp;= \boxed{\left[0, \frac{3}{2}, \frac{3}{2}\right]}
+\end{align}\]</div>
+<h4 id="f-urcete-souradnice-teziste-trojuhelniku-abc-a-delku-jeho-teznice-t_c">f) Určete souřadnice těžiště trojúhelníku ABC a délku jeho těžnice <span class="arithmatex">\(t_c\)</span>.</h4>
+<p>Tahle úloha bude trochu časově náročnější.</p>
+<p>Postup řešení je následující:</p>
+<ul>
+<li>Najít středy stran trojúhelníku</li>
+</ul>
+<h4 id="g-urcete-souradnice-bodu-d-tak-aby-abcd-byl-rovnobeznik">g) Určete souřadnice bodu <span class="arithmatex">\(D\)</span> tak, aby <span class="arithmatex">\(ABCD\)</span> byl rovnoběžník.</h4>
+<h4 id="h-urcete-souradnice-bodu-e-tak-aby-bod-c-byl-stredem-usecky-be">h) Určete souřadnice bodu <span class="arithmatex">\(E\)</span> tak, aby bod <span class="arithmatex">\(C\)</span> byl středem úsečky <span class="arithmatex">\(BE\)</span>.</h4>
+<h4 id="i-urcete-chybejici-souradnice-bodu-z-tak-aby-cz-ab">i) Určete chybějící souřadnice bodu <span class="arithmatex">\(Z\)</span> tak, aby <span class="arithmatex">\(CZ || AB\)</span>.</h4>
+
+
+
+
+
+
+
+
+  <aside class="md-source-file">
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Přispěvatelé">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:heindrich73@gmail.com">Kevin Daněk</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+
+
+<div class="md-source-date">
+    <small>
+        Přispěvatelé: 
+        <span>
+                    Kevin Daněk (100.0%)
+                </span>
+    </small>
+</div>
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Zápatí" >
+        
+          
+          <a href="../../logicke_obvody/procesory/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Procesor">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Předchozí
+              </span>
+              <div class="md-ellipsis">
+                Procesor
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../parametricka_primka/" class="md-footer__link md-footer__link--next" aria-label="Další: Parametrická rovnice přímky">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Další
+              </span>
+              <div class="md-ellipsis">
+                Parametrická rovnice přímky
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/bahamut731lp" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "content.code.copy", "navigation.footer", "navigation.indexes", "announce.dismiss", "content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Zkop\u00edrov\u00e1no do schr\u00e1nky", "clipboard.copy": "Kop\u00edrovat do schr\u00e1nky", "search.result.more.one": "1 dal\u0161\u00ed na t\u00e9to str\u00e1nce", "search.result.more.other": "# v\u00edce na t\u00e9to str\u00e1nce", "search.result.none": "Nenalezeny \u017e\u00e1dn\u00e9 dokumenty", "search.result.one": "Nalezen\u00fd dokument: 1", "search.result.other": "Nalezen\u00e9 dokumenty: #", "search.result.placeholder": "Pi\u0161te co se m\u00e1 vyhledat", "search.result.term.missing": "Chyb\u011bj\u00edc\u00ed", "select.version": "Vyberte verzi"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
