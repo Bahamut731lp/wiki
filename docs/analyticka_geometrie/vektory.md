@@ -2,6 +2,8 @@
 
 ## Příklady
 
+### Úloha 2.6
+
 ### Úloha 2.7
 Jsou dány souřadnice bodů $A$, $B$, $C$, $R$ a $Z$.
 
@@ -115,90 +117,14 @@ S_{AB} &= \boxed{\left[2, \frac{5}{2}, \frac{9}{2}\right]}
 \end{align}$$
 
 #### d) Ověřte, že body $A, B, C$ jsou vrcholy trojúhelníku.
-Pro existenci trojúhelníku existuje jedna důležitá věta, které se běžně říká __trojúhelníková nerovnost__. Ta tvrdí, že součet dvou libovolných stran trojúhelníku musí být větší, než velikost té třetí strany. V této úloze známe všechny vektory, které tvoří strany trojúhelníku. Můžeme tedy porovnat jejich velikosti a podle toho určit, jestli tvoří trojúhelník nebo ne.
+!!! important "Pořádně si přečti zadání!"
+    Zde je důležitý fakt, že po nás chtějí ověřit, jestli **vrcholy** tvoří trojúhelník. To, že ověřujeme jenom vrcholy, nám razantně snižuje obtížnost výpočtu, protože kdyby se ptali na **strany**, resp. vektory, tak musíme řešit trojúhelníkovou nerovnost.
 
-Postup bude tedy následující:
-
-- Vypsat si velikosti stran AB a AC z předchozích úloh
-- Dopočítat velikost chybějící strany BC
-- Sestavit nerovnici a dopočítat.
+Jak poznáme, jestli vrcholy tvoří trojúhelník? Stačí se podívat, jestli alespoň jeden z bodů není na stejné přímce, jako ty dva ostatní - potřebujeme se totiž vyvarovat situaci, kdy všechny tři body leží na jedné přímce a tím pádem se tam žádný trojúhelník nekoná.
 
 ##### Varianta A
-$$\begin{align}
-|AB| &= |\vec{u}| &= 2\cdot\sqrt{10} \\
-|AC| &= |\vec{v}| &= 4\cdot\sqrt{2} \\
-\end{align}$$
-
-$$\begin{align}
-\vec{BC}&= (C_x - B_x, C_y - B_y)\\
-        &= (4 - 6, 5 - 3)\\
-        &= \boxed{(-2, 2)}\\
-        \\
-|\vec{BC}|  &= \sqrt{(BC_1)^2 + (BC_2)^2} \\
-            &= \sqrt{(-2)^2 + (2)^2} \\
-            &= \sqrt{4 + 4} \\
-            &= \sqrt{8} \\
-            &= \sqrt{4 \cdot 2} \\
-            &= \boxed{2 \cdot \sqrt{2}}
-            \\
-            \\
-        |AC| + |BC| &\gt |AB| \\
-    4 \cdot \sqrt{2} + 2 \cdot \sqrt{2} &\gt 2 \cdot \sqrt{10} \\
-    6 \cdot \sqrt{2} &\gt 2 \cdot \sqrt{10} \\
-    3 \cdot \sqrt{2} &\gt \sqrt{10} \\
-    3 \cdot \sqrt{2} &\gt \sqrt{5 \cdot 2} \\
-    3 \cdot \sqrt{2} &\gt \sqrt{5} \cdot \sqrt{2} \\
-    3 &\gt \sqrt{5} \\
-    9 &\gt 5 \\
-\end{align}$$
-
-Jak můžeme vidět z výsledku nerovnice, tak součet dvou stran byl větší než ta třetí. Správně bychom měli spočítat ještě dvě nerovnice, a to $|AC| + |AB| > |BC|$ a $|BC| + |AB| > |AC|$, protože to musí platit pro všechny strany. Takže když to vezmu teďko trochu zrychleně:
-
-$$\begin{align}
-    |AC| + |AB| &\gt |BC| \\
-    4 \cdot \sqrt{2} + 2 \cdot \sqrt{5} \cdot \sqrt{2} &\gt 2 \cdot \sqrt{2} \\
-    4 + 2 \cdot \sqrt{5} &\gt 2 \\
-    2 + \sqrt{5} &\gt 1 \\
-    4 + 5 &\gt 1 \\
-    9 \gt 1\\
-    \\
-    |BC| + |AB| &\gt |AC| \\
-    2 \cdot \sqrt{2} + 2 \cdot \sqrt{10} &\gt 4 \cdot \sqrt{2} \\
-    \sqrt{2} + \sqrt{10} &\gt 2 \cdot \sqrt{2} \\
-    \sqrt{10} &\gt \sqrt{2} \\
-    10 &\gt 2 \\
-\end{align}$$
-
-Odpovědí je, že trojúhelník skutečně existuje.
 
 ##### Varianta B
-$$\begin{align}
-|AB| &= |\vec{u}| &= \sqrt{14} \\
-|AC| &= |\vec{v}| &= \sqrt{3} \\
-\end{align}$$
-
-$$\begin{align}
-\vec{BC}&= (C_x - B_x, C_y - B_y, C_z - B_z)\\
-        &= (0 - 3, 1 - 3, 2 - 6)\\
-        &= \boxed{(-3, -2, 4)}\\
-        \\
-|\vec{BC}|  &= \sqrt{(BC_1)^2 + (BC_2)^2 + (BC_3)^2} \\
-            &= \sqrt{(-3)^2 + (-2)^2 + (4)^2} \\
-            &= \sqrt{9 + 4 + 16} \\
-            &= \boxed{\sqrt{29}} \\
-            \\
-    |AC| + |BC| &\gt |AB| \\
-    \sqrt{3} + \sqrt{29} &\gt \sqrt{14} \\
-    3 + 29 &\gt 14 \\
-    32 &\gt 14 \\
-    \\
-    |AC| + |AB| &\gt |BC| \\
-    \sqrt{3} + \sqrt{14} &\gt \sqrt{29} \\
-    3 + 14 &\gt 29 \\
-    17 &\not{\gt} 29 \\
-\end{align}$$
-
-Dále nemusíme počítat. Našli jsme totiž případ, kdy trojúhelníková nerovnost neplatí. Závěrem tedy je, že body $A, B, C$ v této variantě trojúhelník netvoří.
 
 #### e) Určete chybějící souřadnice bodu $R$ tak, aby $R \in \leftrightarrow AB$
 Tato úloha po nás chce, abychom doplnili druhou souřadnici bodu $R$ tak, aby tento bod ležel na přímce $AB$. K tomu můžeme použít [parametrický předpis přímky](./parametricka_primka.md).

@@ -51,6 +51,10 @@ nav:
 
   - Gramatiky a automaty:
     - gramatiky_automaty/index.md
+    - gramatiky_automaty/abecedy_slova.md
+    - gramatiky_automaty/formalni_jazyky.md
+    - gramatiky_automaty/automaty.md
+    - gramatiky_automaty/gramatiky.md
   - Hardware a elektronika:
     - logicke_obvody/ciselne_soustavy.md
     - logicke_obvody/prevodniky.md
