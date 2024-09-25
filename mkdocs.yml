@@ -49,6 +49,8 @@ nav:
       - databazove_systemy/relacni/normalizace.md
       - databazove_systemy/relacni/aktualizacni_anomalie.md
 
+  - Gramatiky a automaty:
+    - gramatiky_automaty/index.md
   - Hardware a elektronika:
     - logicke_obvody/ciselne_soustavy.md
     - logicke_obvody/prevodniky.md
