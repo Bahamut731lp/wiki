@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/signaly_a_informace/ad_prevod/">
+        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/gramatiky_automaty/automaty/">
       
       
-        <link rel="prev" href="../signaly/">
+        <link rel="prev" href="../formalni_jazyky/">
       
       
-        <link rel="next" href="../systemy/">
+        <link rel="next" href="../gramatiky/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>AD Převod - Wiki</title>
+        <title>Automat - Wiki</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ad-prevod" class="md-skip">
+        <a href="#automat" class="md-skip">
           Přeskočit obsah
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AD Převod
+              Automat
             
           </span>
         </div>
@@ -612,6 +612,8 @@
       
   
   
+    
+  
   
   
     
@@ -632,16 +634,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../gramatiky_automaty/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -658,7 +660,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Gramatiky a automaty
@@ -674,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gramatiky_automaty/abecedy_slova/" class="md-nav__link">
+      <a href="../abecedy_slova/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gramatiky_automaty/formalni_jazyky/" class="md-nav__link">
+      <a href="../formalni_jazyky/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -713,10 +715,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../gramatiky_automaty/automaty/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Automat
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -725,6 +747,143 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#konecny-automat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konečný automat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Konečný automat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konecne-automaty-podle-pouziti" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konečné automaty podle použití
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Konečné automaty podle použití">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rozpoznavaci-konecny-automat-akceptor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rozpoznávací konečný automat (akceptor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#klasifikacni-konecny-automat-klasifikator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Klasifikační konečný automat (klasifikátor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konecny-automat-s-vystupni-funkci-translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konečný automat s výstupní funkcí (translátor)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Konečný automat s výstupní funkcí (translátor)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mealeyho-typ" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mealeyho typ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mooruv-typ" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moorův typ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlastnosti-konecnych-automatu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vlastnosti konečných automatů
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nedeterministicky-konecny-automat-nka" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nedeterministický konečný automat (NKA)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rozpoznatelnost-jazyka-automatem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rozpoznatelnost jazyka automatem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konfigurace-automatu-a-krok-vypoctu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfigurace automatu a krok výpočtu
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -737,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gramatiky_automaty/gramatiky/" class="md-nav__link">
+      <a href="../gramatiky/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1879,8 +2038,6 @@
       
   
   
-    
-  
   
   
     
@@ -1907,16 +2064,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../signaly_a_informace/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1933,7 +2090,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Signály a informace
@@ -1949,7 +2106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../signaly/" class="md-nav__link">
+      <a href="../../signaly_a_informace/signaly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1967,30 +2124,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    AD Převod
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/ad_prevod/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1999,59 +2136,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Obsah">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Obsah
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vzorkovani" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vzorkování
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Vzorkování">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aliasing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aliasing
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kvantovani" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kvantování
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2064,7 +2148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../systemy/" class="md-nav__link">
+      <a href="../../signaly_a_informace/systemy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2085,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../konvoluce/" class="md-nav__link">
+      <a href="../../signaly_a_informace/konvoluce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2106,7 +2190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fourierovy_rady/" class="md-nav__link">
+      <a href="../../signaly_a_informace/fourierovy_rady/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2127,7 +2211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../spektrum/" class="md-nav__link">
+      <a href="../../signaly_a_informace/spektrum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2148,7 +2232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../filtry/" class="md-nav__link">
+      <a href="../../signaly_a_informace/filtry/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2358,19 +2442,94 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vzorkovani" class="md-nav__link">
+  <a href="#konecny-automat" class="md-nav__link">
     <span class="md-ellipsis">
-      Vzorkování
+      Konečný automat
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Vzorkování">
+    <nav class="md-nav" aria-label="Konečný automat">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#aliasing" class="md-nav__link">
+  <a href="#konecne-automaty-podle-pouziti" class="md-nav__link">
     <span class="md-ellipsis">
-      Aliasing
+      Konečné automaty podle použití
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Konečné automaty podle použití">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rozpoznavaci-konecny-automat-akceptor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rozpoznávací konečný automat (akceptor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#klasifikacni-konecny-automat-klasifikator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Klasifikační konečný automat (klasifikátor)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#konecny-automat-s-vystupni-funkci-translator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konečný automat s výstupní funkcí (translátor)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Konečný automat s výstupní funkcí (translátor)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mealeyho-typ" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mealeyho typ
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mooruv-typ" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moorův typ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlastnosti-konecnych-automatu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vlastnosti konečných automatů
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nedeterministicky-konecny-automat-nka" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nedeterministický konečný automat (NKA)
     </span>
   </a>
   
@@ -2382,9 +2541,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kvantovani" class="md-nav__link">
+  <a href="#rozpoznatelnost-jazyka-automatem" class="md-nav__link">
     <span class="md-ellipsis">
-      Kvantování
+      Rozpoznatelnost jazyka automatem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konfigurace-automatu-a-krok-vypoctu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konfigurace automatu a krok výpočtu
     </span>
   </a>
   
@@ -2406,7 +2574,7 @@
                   
 
   
-    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/signaly_a_informace/ad_prevod.md" title="Upravit tuto stránku" class="md-content__button md-icon">
+    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/gramatiky_automaty/automaty.md" title="Upravit tuto stránku" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -2414,46 +2582,157 @@
   
 
 
-<h1 id="ad-prevod">AD Převod</h1>
-<h2 id="vzorkovani">Vzorkování</h2>
-<p>Vzorkování je proces převodu spojitého signálu na diskrétní signál. To znamená, že místo toho, aby byl signál sledován nepřetržitě, je měřen v pravidelných intervalech. Tomuto intervalu se říká <em>vzorkovací frekvence</em>.</p>
-<div class="admonition quote">
-<p class="admonition-title">Vzorkování signálu</p>
-<p><img alt="Vzorkování" src="../../images/vzorkovani.png" /></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Vzorkovací teorém</p>
-<p>Podle Nyquistova-Shannonova vzorkovacího teorému musí být vzorkovací frekvence alespoň dvojnásobkem nejvyšší frekvence přítomné v signálu, aby mohl být signál přesně rekonstruován bez ztráty informace. Tato frekvence se nazývá <strong>Nyquistova frekvence</strong>.</p>
-<div class="arithmatex">\[
-   f_s &gt; 2 \cdot f_{max} 
-\]</div>
+<h1 id="automat">Automat</h1>
+<p>Automat je abstraktní matematický stroj, který slouží k rozpoznávání formálních jazyků. Automat prochází slova a rozhoduje, jestli patří do daného jazyka. Automaty se klasifikují podle toho, jaké jazyky dokážou rozpoznat (např. regulární, bezkontextové jazyky).</p>
+<h2 id="konecny-automat">Konečný automat</h2>
+<p>Konečný automat (KA) je abstraktní model, který simuluje určitý typ výpočtu. Místo čísel pracuje s symboly. Konečné automaty se používají v různých oblastech, například:</p>
 <ul>
-<li><span class="arithmatex">\(f_s\)</span> je vzorkovací frekvence</li>
-<li><span class="arithmatex">\(f_{max}\)</span> je nejvyšší frekvence</li>
+<li>při návrhu <a href="../../logicke_obvody/sekvencni_logicke_obvody/">sekvenčních logických obvodů</a>,</li>
+<li>při návrhu a implementaci komunikačních protokolů,</li>
+<li>v překladačích programovacích jazyků,</li>
+<li>v úlohách z umělé inteligence,</li>
+<li>při modelování softwarových komponent,</li>
+<li>a v řídicích systémech.</li>
 </ul>
-</div>
-<h3 id="aliasing">Aliasing</h3>
-<p><strong>Aliasing</strong>, česky <em>překlad frekvencí</em> je jev, který vzniká při vzorkování signálu. Vzniká tehdy, když je signál vzorkován frekvencí menší než je dvojnásobek té nejvyšší frekvence. Jinak řečeno, překládání frekvencí vzniká při nedodržení <a href="#vzorkování">Vzorkovacího teorému</a>.</p>
+<p>KA funguje tak, že je vždy v jednom konkrétním stavu z předem definované množiny stavů. Tento stav se může změnit na základě vstupního symbolu (podnětu z okolí), obvykle v diskrétních časových okamžicích. Takto KA postupně zpracovává vstupní symboly a mění své stavy.</p>
+<h3 id="konecne-automaty-podle-pouziti">Konečné automaty podle použití</h3>
+<p>Podle použití rozlišujeme 3 typy KA:</p>
+<h4 id="rozpoznavaci-konecny-automat-akceptor">Rozpoznávací konečný automat (akceptor)</h4>
+<p>Tento typ automatu rozhoduje, zda dané vstupní slovo patří do určitého jazyka. Vydává jasnou odpověď typu ano/ne. Rozpoznávacím konečným automatem nazýváme každou pětici <span class="arithmatex">\(A = (Q, \Sigma, \delta, q_0, F)\)</span>, kde:</p>
+<ul>
+<li><span class="arithmatex">\(Q\)</span> je konečná neprázdná množina stavů</li>
+<li><span class="arithmatex">\(\Sigma\)</span> je vstupní abeceda</li>
+<li><span class="arithmatex">\(\delta\)</span> je přechodová funkce, která určuje, do jakého stavu automat přejde podle aktuálního stavu a přečteného symbolu.</li>
+<li><span class="arithmatex">\(q_0 \in Q\)</span> je počáteční stav</li>
+<li><span class="arithmatex">\(F \in Q\)</span> je konečná neprázdná množina koncových stavů, kde automat může skončit a rozhodnout, že slovo patří do jazyka.</li>
+</ul>
 <div class="admonition abstract">
-<p>Doplnit příklady a výpočty přeložených frekvencí</p>
-</div>
-<p>Aby se zabránilo překladu těchto nežádoucích frekvencí, prožene se signál <a href="../filtry/">dolní propustí</a>. Ideální dolní propust slouží jako práh, který ponechá frekvence pod hranicí a frekvence nad hranicí odstraní. Tím se odstraní frekvence, které by se mohly potenciálně přeložit do těch frekvencí, které nás zajímají, a způsobit tak nežádoucí šum.</p>
-<div class="admonition info">
-<p class="admonition-title">Praxe</p>
-<p>V praxi ideální filtry neexistují a vyšší frekvence jsou pouze utlumeny. I tak je filtrování výhodné, protože utlumením těchto frekvencí zmenšíme dopad, který bude jejich překlad mít.</p>
-</div>
-<h2 id="kvantovani">Kvantování</h2>
-<p>Kvantování je proces převodu spojitého signálu na diskrétní signál tím, že jeho hodnoty jsou zaokrouhleny na nejbližší hodnoty z konečné množiny úrovní. Tento proces se používá po vzorkování signálu.</p>
-<div class="admonition quote">
-<p class="admonition-title">Kvantování signálu</p>
-<p><img alt="Kvantování" src="../../images/kvantovani.png" /></p>
-</div>
-<p>Hladiny (úrovně), na které se signál "zaokrouhluje" se nazývají <strong>kvantizační hladiny</strong> (nebo <strong>kvantizační úrovně</strong>). Ty se rozlišují hlavně na <strong>lineární</strong> a <strong>nelineární</strong>. </p>
+<p class="admonition-title">Jak to funguje?</p>
 <ul>
-<li>Lineární kvantování má úrovně od sebe stejně daleko. Provádí se např. pomocí zaokrouhlování. Aby nedošlo ke znatelnému zkreslení, doporučuje se pro <span class="arithmatex">\(n\)</span>-bitový převodník mít <span class="arithmatex">\(2^n\)</span> kvantizačních hladin. </li>
-<li>Nelineární kvantování se používá tam, kde je zapotřebí konkrétnějši popsat určitou sekci hladin signálu. Příkladem z praxe je např. <a href="https://en.wikipedia.org/wiki/A-law_algorithm">A-Law</a> nebo <a href="https://en.wikipedia.org/wiki/%CE%9C-law_algorithm">Mu-Law</a>.</li>
+<li>Automat čte symboly ze slova jeden po druhém.</li>
+<li>Na základě toho, v jakém stavu je a jaký symbol přečte, se přesune do jiného stavu.</li>
+<li>Automat si nic nepamatuje a nemůže se vracet zpět.</li>
+<li>Pokud po přečtení celého slova skončí v koncovém stavu, slovo patří do daného jazyka.</li>
 </ul>
-<p>Stejně jako u <a href="#vzorkování">vzorkování</a> platí vzorkovací teorém, i u <a href="#kvantování">kvantování</a> platí jistá pravidla, za kterých nedojde ke znatelnému zkreslení signálu. Kvantování není nic jiného, než zaokrouhlování na určité hladiny, tudíž pokuď těhto hladin bude málo, bude se muset více zaokrouhlovat. Chyba kvantování (zaokrouhlení) se ve výsledném signálu projevuje jako <strong>kvantizační šum</strong>, který může zásadně ovlivnit kvalitu výstupního signálu.</p>
+</div>
+<h4 id="klasifikacni-konecny-automat-klasifikator">Klasifikační konečný automat (klasifikátor)</h4>
+<p>Tento automat zařazuje vstupní řetězec do jedné z několika tříd. Rozpoznávací KA je speciálním případem klasifikačního KA, protože rozlišuje pouze mezi dvěma možnostmi (patří/nepatří). Klasifikačním konečným automatem nazýváme každou pětici <span class="arithmatex">\(A = (Q, \Sigma, \delta, q_0, \{Q_i\})\)</span>, kde:</p>
+<ul>
+<li><span class="arithmatex">\(Q\)</span> je konečná neprázdná množina stavů</li>
+<li><span class="arithmatex">\(\Sigma\)</span> je vstupní abeceda.</li>
+<li><span class="arithmatex">\(\delta\)</span> je přechodová funkce, která určuje, do jakého stavu automat přejde podle aktuálního stavu a přečteného symbolu.</li>
+<li><span class="arithmatex">\(q_0 \in Q\)</span> je počáteční stav.</li>
+<li><span class="arithmatex">\(\{Q_i\}\)</span> je rozklad množiny stavů <span class="arithmatex">\(Q\)</span>. Každý stav z Q patří právě do jedné skupiny (třídy) {Qi}. Skupiny jsou navzájem oddělené (disjunktní) a jejich sjednocením dostaneme celou množinu stavů Q.</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Jak to funguje?</p>
+<ul>
+<li>Automat čte symboly ze slova a podle toho, v jakém stavu je, přechází do jiného stavu.</li>
+<li>Každá skupina <span class="arithmatex">\(Q_i\)</span> množiny stavů <span class="arithmatex">\(Q\)</span> odpovídá jedné klasifikační třídě. To znamená, že automat určuje, do které třídy vstupní slovo patří na základě jeho průchodu stavy.</li>
+</ul>
+</div>
+<h4 id="konecny-automat-s-vystupni-funkci-translator">Konečný automat s výstupní funkcí (translátor)</h4>
+<p>Tento typ automatu vytváří výstupní řetězec na základě vstupního řetězce.</p>
+<h5 id="mealeyho-typ">Mealeyho typ</h5>
+<p>S výstupní funkcí Mealyho typu popisujeme uspořádanou šesticí <span class="arithmatex">\(A = (Q, \Sigma, O, \delta, \lambda, q_0)\)</span>, kde:</p>
+<ul>
+<li><span class="arithmatex">\(Q\)</span> je konečná neprázdná množina stavů.</li>
+<li><span class="arithmatex">\(\Sigma\)</span> je vstupní abeceda.</li>
+<li><span class="arithmatex">\(O\)</span> je konečná neprázdná množina výstupních symbolů.</li>
+<li><span class="arithmatex">\(\delta\)</span> je přechodová funkce, která určuje, do jakého stavu automat přejde podle aktuálního stavu a přečteného symbolu.</li>
+<li><span class="arithmatex">\(\lambda\)</span> je výstupní funkce, která určuje, jaký výstup se generuje na základě aktuálního stavu a vstupu.</li>
+<li><span class="arithmatex">\(q_0 \in Q\)</span> je počáteční stav.</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Jak to funguje?</p>
+<ul>
+<li>Automat čte symboly ze slova a podle toho, v jakém stavu je, přechází do jiného stavu.</li>
+<li>Výstupní symbol je jednoznačně definován aktuálním stavem a aktuálním vstupním symbolem.</li>
+<li>Délka výstupního řetězce je stejná jako délka zpracovávaného vstupního řetězce.</li>
+</ul>
+</div>
+<h5 id="mooruv-typ">Moorův typ</h5>
+<p>KA s výstupní funkcí Moorova typu popisujeme uspořádanou
+šesticí <span class="arithmatex">\(A = (Q, \Sigma, O, \delta, \lambda, q_0)\)</span>, kde:</p>
+<ul>
+<li><span class="arithmatex">\(Q\)</span> je konečná neprázdná množina stavů.</li>
+<li><span class="arithmatex">\(\Sigma\)</span> je vstupní abeceda.</li>
+<li><span class="arithmatex">\(O\)</span> je konečná neprázdná množina výstupních symbolů.</li>
+<li><span class="arithmatex">\(\delta\)</span> je přechodová funkce, která určuje, do jakého stavu automat přejde podle aktuálního stavu a přečteného symbolu.</li>
+<li><span class="arithmatex">\(\lambda\)</span> je výstupní funkce, která určuje, jaký výstup se generuje na základě aktuálního stavu.</li>
+<li><span class="arithmatex">\(q_0 \in Q\)</span> je počáteční stav.</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Jak to funguje?</p>
+<ul>
+<li>Automat čte symboly ze slova a podle toho, v jakém stavu je, přechází do jiného stavu.</li>
+<li>Výstupní symbol je jednoznačně definován pouze aktuálním stavem.</li>
+<li>Délka výstupního řetězce je o jedničku větší než délka vstupního řetězce (první znak výstupního řetězce odpovídá počátečnímu stavu).</li>
+</ul>
+</div>
+<h3 id="vlastnosti-konecnych-automatu">Vlastnosti konečných automatů</h3>
+<ul>
+<li>KA si "pamatuje" informace prostřednictvím svého stavu. Nemá žádnou jinou formu paměti.</li>
+<li>Automat přechází do jiného stavu pouze na základě vstupního symbolu. U <strong>deterministického konečného automatu</strong> (DKA) je pro každý stav a vstupní symbol následující stav jednoznačně určen.</li>
+<li>Z aktuálního stavu může KA určit, zda daný vstupní řetězec splňuje určitou vlastnost, ale není možné tento řetězec zrekonstruovat zpětně.</li>
+</ul>
+<h3 id="nedeterministicky-konecny-automat-nka">Nedeterministický konečný automat (NKA)</h3>
+<p>Nedeterministický konečný automat (NKA) popisujeme uspořádanou pěticí <span class="arithmatex">\(A = (Q, \Sigma, \delta, I, F)\)</span>, kde:</p>
+<ul>
+<li><span class="arithmatex">\(Q\)</span> je konečná neprázdná množina stavů.</li>
+<li><span class="arithmatex">\(\Sigma\)</span> je vstupní abeceda.</li>
+<li><span class="arithmatex">\(\delta\)</span> je přechodová funkce, která může mít za výsledek více stavů, nebo klidně i žádný.</li>
+<li><span class="arithmatex">\(I\)</span> je množina počátečních stavů.</li>
+<li><span class="arithmatex">\(F \in Q\)</span> je množina koncových stavů.</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Jak to funguje?</p>
+<ul>
+<li>NKA přijímá slovo, pokud existuje cesta z počátečního stavu do koncového, která odpovídá tomuto slovu.</li>
+<li>Nedeterminismus znamená, že může existovat více cest pro zpracování jednoho slova.</li>
+<li>Výsledek může být různý: NKA může na jedné cestě slovo přijmout, ale na jiné ne.</li>
+<li>Více možností: NKA může mít více cest, kterými se dostane z počátečního stavu do koncového.</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Každý nedeterministický KA lze převést na deterministický KA</p>
+</div>
+<h2 id="rozpoznatelnost-jazyka-automatem">Rozpoznatelnost jazyka automatem</h2>
+<p><a href="../formalni_jazyky/">Formální jazyk</a> <span class="arithmatex">\(L\)</span> je konkrétním automatem <span class="arithmatex">\(A\)</span> rozpoznávaný právě tehdy, pokud ho vstupní slova dostanou do koncového stavu. Množina všech slov, které dostanou automat <span class="arithmatex">\(A\)</span> z počátečního stavu do koncového stavu, se značí <span class="arithmatex">\(L(A)\)</span>.</p>
+<p>Jazyk <span class="arithmatex">\(L\)</span> nad abecedou <span class="arithmatex">\(\Sigma\)</span> je rozpoznatelný konečným automatem právě tehdy, když existuje konečný automat <span class="arithmatex">\(A\)</span>, pro který platí, že je schopný rozeznat každé slovo daného jazyka (<span class="arithmatex">\(L(A) = L\)</span>).</p>
+<h2 id="konfigurace-automatu-a-krok-vypoctu">Konfigurace automatu a krok výpočtu</h2>
+<p>Automat pracuje tím, že postupně zpracovává vstupní slovo a při tom mění své stavy.</p>
+<ul>
+<li><strong>Konfigurace automatu</strong> je dvojice aktuálního stavu <span class="arithmatex">\(q\)</span>, a nepřečtenou částí vstupního slova <span class="arithmatex">\(w\)</span>. Značíme jako <span class="arithmatex">\(&lt;q, w&gt;\)</span></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Všechny možné konfigurace automatu</p>
+<p>Dvojice <span class="arithmatex">\(&lt;q, w&gt;\)</span> vzniká jako kartézský součin množiny stavů <span class="arithmatex">\(Q\)</span> a uzávěru vstupní abecedy <span class="arithmatex">\(\Sigma^*\)</span>. </p>
+</div>
+<ul>
+<li><strong>Počáteční konfigurací</strong> nazýváme stav, kdy je automat v počátečním stavu a ještě nepřečetl žádný symbol ze vstupního slova. <span class="arithmatex">\(&lt;q_0, w&gt;\)</span></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Příklad počáteční konfigurace</p>
+<p>Budeme-li chtít přijmout slovo <span class="arithmatex">\(w = abbc\)</span>, tak počáteční konfiguraci zapíšeme: <span class="arithmatex">\(&lt;q_0, abbc&gt;\)</span></p>
+</div>
+<ul>
+<li><strong>Krok výpočtu</strong> je situace, kdy automat přečte symbol ze vstupního slova a na základě něho přejde do jiného stavu.</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Význam značení</p>
+<p>Krok výpočtu značíme jako zobrazení mezi dvěma konfiguracemi automatu, takže například <span class="arithmatex">\(\left&lt;{q_0, w_0w_1...w_n}\right&gt; \to \left&lt;{q_1, w_1w_2...w_n}\right&gt;\)</span> je přechod automatu ze stavu <span class="arithmatex">\(q_0\)</span> do stavu <span class="arithmatex">\(q_1\)</span> při zpracování prvního symbolu <span class="arithmatex">\(w_0\)</span> slova <span class="arithmatex">\(w\)</span>. Aby takové zobrazení dávalo smysl, musí být v přechodové funkci automatu takový přechod definován - takže <span class="arithmatex">\(\delta{(q_0, w_0)} = q_1\)</span> </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Tranzitivita kroku výpočtu</p>
+<p>Pokud se z konfigurace <span class="arithmatex">\(K_1\)</span> musíme do konfigurace <span class="arithmatex">\(K_2\)</span> dostat přes několik dalších kroků výpočtů, tak značíme relaci jako <span class="arithmatex">\(K_1 \to^* K_2\)</span>.</p>
+<div class="admonition example">
+<div class="arithmatex">\[K_1 \to K_{11} \to K_{12} \to K_{13} \to ... \to K_2 = K_1 \to^* K_2\]</div>
+</div>
+</div>
+<ul>
+<li><strong>Automat přijímá slovo</strong> <span class="arithmatex">\(w\)</span> právě tehdy, když existuje konečný stav <span class="arithmatex">\(q_f \in F\)</span> takový, že se z počátečního stavu <span class="arithmatex">\(q_0\)</span> a vstupního slova <span class="arithmatex">\(w\)</span> lze dostat do konfigurace s konečným stavem a prázdným slovem. <span class="arithmatex">\(\left&lt;q_0, w\right&gt; \to^* \left&lt;q_f, \varepsilon\right&gt;\)</span></li>
+</ul>
 
 
 
@@ -2517,7 +2796,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Zápatí" >
         
           
-          <a href="../signaly/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Signál">
+          <a href="../formalni_jazyky/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Formální jazyky">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2527,20 +2806,20 @@
                 Předchozí
               </span>
               <div class="md-ellipsis">
-                Signál
+                Formální jazyky
               </div>
             </div>
           </a>
         
         
           
-          <a href="../systemy/" class="md-footer__link md-footer__link--next" aria-label="Další: Systémy">
+          <a href="../gramatiky/" class="md-footer__link md-footer__link--next" aria-label="Další: Gramatika">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Další
               </span>
               <div class="md-ellipsis">
-                Systémy
+                Gramatika
               </div>
             </div>
             <div class="md-footer__button md-icon">

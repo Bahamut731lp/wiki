@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/signaly_a_informace/ad_prevod/">
+        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/gramatiky_automaty/gramatiky/">
       
       
-        <link rel="prev" href="../signaly/">
+        <link rel="prev" href="../automaty/">
       
       
-        <link rel="next" href="../systemy/">
+        <link rel="next" href="../../logicke_obvody/ciselne_soustavy/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>AD Převod - Wiki</title>
+        <title>Gramatika - Wiki</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ad-prevod" class="md-skip">
+        <a href="#gramatika" class="md-skip">
           Přeskočit obsah
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AD Převod
+              Gramatika
             
           </span>
         </div>
@@ -612,6 +612,8 @@
       
   
   
+    
+  
   
   
     
@@ -632,16 +634,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../gramatiky_automaty/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -658,7 +660,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Gramatiky a automaty
@@ -674,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gramatiky_automaty/abecedy_slova/" class="md-nav__link">
+      <a href="../abecedy_slova/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gramatiky_automaty/formalni_jazyky/" class="md-nav__link">
+      <a href="../formalni_jazyky/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -716,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gramatiky_automaty/automaty/" class="md-nav__link">
+      <a href="../automaty/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -734,10 +736,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../gramatiky_automaty/gramatiky/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Gramatika
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -746,6 +768,143 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#konecne-a-pomocne-symboly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konečné a pomocné symboly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepisovaci-pravidla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Přepisovací pravidla
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chomskeho-hiearchie-gramatik" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chomského hiearchie gramatik
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chomského hiearchie gramatik">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gramatiky-typu-0-neomezenefrazove-gramatiky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gramatiky typu 0 (neomezené/frázové gramatiky)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gramatiky-typu-1-kontextove-gramatiky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gramatiky typu 1 (kontextové gramatiky)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gramatiky-typu-2-bezkontextove-gramatiky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gramatiky typu 2 (bezkontextové gramatiky)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gramatiky typu 2 (bezkontextové gramatiky)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linearni-gramatika" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lineární gramatika
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gramatiky-typu-3-regularni-gramatiky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gramatiky typu 3 (regulární gramatiky)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gramatiky typu 3 (regulární gramatiky)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regularni-gramatika" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regulární gramatika
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linearni-gramatika_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lineární gramatika
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priklady" class="md-nav__link">
+    <span class="md-ellipsis">
+      Příklady
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1879,8 +2038,6 @@
       
   
   
-    
-  
   
   
     
@@ -1907,16 +2064,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../signaly_a_informace/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1933,7 +2090,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Signály a informace
@@ -1949,7 +2106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../signaly/" class="md-nav__link">
+      <a href="../../signaly_a_informace/signaly/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1967,30 +2124,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    AD Převod
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../signaly_a_informace/ad_prevod/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1999,59 +2136,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Obsah">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Obsah
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vzorkovani" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vzorkování
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Vzorkování">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#aliasing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aliasing
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kvantovani" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kvantování
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2064,7 +2148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../systemy/" class="md-nav__link">
+      <a href="../../signaly_a_informace/systemy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2085,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../konvoluce/" class="md-nav__link">
+      <a href="../../signaly_a_informace/konvoluce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2106,7 +2190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fourierovy_rady/" class="md-nav__link">
+      <a href="../../signaly_a_informace/fourierovy_rady/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2127,7 +2211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../spektrum/" class="md-nav__link">
+      <a href="../../signaly_a_informace/spektrum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2148,7 +2232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../filtry/" class="md-nav__link">
+      <a href="../../signaly_a_informace/filtry/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2358,19 +2442,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vzorkovani" class="md-nav__link">
+  <a href="#konecne-a-pomocne-symboly" class="md-nav__link">
     <span class="md-ellipsis">
-      Vzorkování
+      Konečné a pomocné symboly
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Vzorkování">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prepisovaci-pravidla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Přepisovací pravidla
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chomskeho-hiearchie-gramatik" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chomského hiearchie gramatik
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chomského hiearchie gramatik">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#aliasing" class="md-nav__link">
+  <a href="#gramatiky-typu-0-neomezenefrazove-gramatiky" class="md-nav__link">
     <span class="md-ellipsis">
-      Aliasing
+      Gramatiky typu 0 (neomezené/frázové gramatiky)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gramatiky-typu-1-kontextove-gramatiky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gramatiky typu 1 (kontextové gramatiky)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gramatiky-typu-2-bezkontextove-gramatiky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gramatiky typu 2 (bezkontextové gramatiky)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gramatiky typu 2 (bezkontextové gramatiky)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linearni-gramatika" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lineární gramatika
     </span>
   </a>
   
@@ -2380,13 +2510,51 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#kvantovani" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#gramatiky-typu-3-regularni-gramatiky" class="md-nav__link">
     <span class="md-ellipsis">
-      Kvantování
+      Gramatiky typu 3 (regulární gramatiky)
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Gramatiky typu 3 (regulární gramatiky)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regularni-gramatika" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regulární gramatika
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linearni-gramatika_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lineární gramatika
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priklady" class="md-nav__link">
+    <span class="md-ellipsis">
+      Příklady
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2406,7 +2574,7 @@
                   
 
   
-    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/signaly_a_informace/ad_prevod.md" title="Upravit tuto stránku" class="md-content__button md-icon">
+    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/gramatiky_automaty/gramatiky.md" title="Upravit tuto stránku" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -2414,46 +2582,365 @@
   
 
 
-<h1 id="ad-prevod">AD Převod</h1>
-<h2 id="vzorkovani">Vzorkování</h2>
-<p>Vzorkování je proces převodu spojitého signálu na diskrétní signál. To znamená, že místo toho, aby byl signál sledován nepřetržitě, je měřen v pravidelných intervalech. Tomuto intervalu se říká <em>vzorkovací frekvence</em>.</p>
-<div class="admonition quote">
-<p class="admonition-title">Vzorkování signálu</p>
-<p><img alt="Vzorkování" src="../../images/vzorkovani.png" /></p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Vzorkovací teorém</p>
-<p>Podle Nyquistova-Shannonova vzorkovacího teorému musí být vzorkovací frekvence alespoň dvojnásobkem nejvyšší frekvence přítomné v signálu, aby mohl být signál přesně rekonstruován bez ztráty informace. Tato frekvence se nazývá <strong>Nyquistova frekvence</strong>.</p>
-<div class="arithmatex">\[
-   f_s &gt; 2 \cdot f_{max} 
-\]</div>
+<h1 id="gramatika">Gramatika</h1>
+<p>Gramatika je sada pravidel, která říká, jak můžeme vytvořit slova jazyka z určitého počátečního symbolu. Vytváření slov funguje tak, že začneme s počátečním symbolem a postupně na něj uplatňujeme pravidla, dokud nevytvoříme požadované slovo. Gramatiku <span class="arithmatex">\(G\)</span> zapisujeme jako uspořádanou čtveřici <span class="arithmatex">\(G = (N, T, P, S)\)</span>, kde</p>
 <ul>
-<li><span class="arithmatex">\(f_s\)</span> je vzorkovací frekvence</li>
-<li><span class="arithmatex">\(f_{max}\)</span> je nejvyšší frekvence</li>
+<li><span class="arithmatex">\(N\)</span> je množina <a href="#terminální-a-neterminální-symboly">pomocných symbolů</a> (neterminálů).</li>
+<li><span class="arithmatex">\(T\)</span> je množina <a href="#terminální-a-neterminální-symboly">konečných symbolů</a> (terminálů).</li>
+<li><span class="arithmatex">\(P\)</span> je množina <strong>přepisovacích pravidel</strong>.</li>
+<li><span class="arithmatex">\(S \in N\)</span> je <strong>počáteční symbol</strong>, také znamý jako <em>kořen gramatiky</em>.</li>
 </ul>
-</div>
-<h3 id="aliasing">Aliasing</h3>
-<p><strong>Aliasing</strong>, česky <em>překlad frekvencí</em> je jev, který vzniká při vzorkování signálu. Vzniká tehdy, když je signál vzorkován frekvencí menší než je dvojnásobek té nejvyšší frekvence. Jinak řečeno, překládání frekvencí vzniká při nedodržení <a href="#vzorkování">Vzorkovacího teorému</a>.</p>
 <div class="admonition abstract">
-<p>Doplnit příklady a výpočty přeložených frekvencí</p>
-</div>
-<p>Aby se zabránilo překladu těchto nežádoucích frekvencí, prožene se signál <a href="../filtry/">dolní propustí</a>. Ideální dolní propust slouží jako práh, který ponechá frekvence pod hranicí a frekvence nad hranicí odstraní. Tím se odstraní frekvence, které by se mohly potenciálně přeložit do těch frekvencí, které nás zajímají, a způsobit tak nežádoucí šum.</p>
-<div class="admonition info">
-<p class="admonition-title">Praxe</p>
-<p>V praxi ideální filtry neexistují a vyšší frekvence jsou pouze utlumeny. I tak je filtrování výhodné, protože utlumením těchto frekvencí zmenšíme dopad, který bude jejich překlad mít.</p>
-</div>
-<h2 id="kvantovani">Kvantování</h2>
-<p>Kvantování je proces převodu spojitého signálu na diskrétní signál tím, že jeho hodnoty jsou zaokrouhleny na nejbližší hodnoty z konečné množiny úrovní. Tento proces se používá po vzorkování signálu.</p>
-<div class="admonition quote">
-<p class="admonition-title">Kvantování signálu</p>
-<p><img alt="Kvantování" src="../../images/kvantovani.png" /></p>
-</div>
-<p>Hladiny (úrovně), na které se signál "zaokrouhluje" se nazývají <strong>kvantizační hladiny</strong> (nebo <strong>kvantizační úrovně</strong>). Ty se rozlišují hlavně na <strong>lineární</strong> a <strong>nelineární</strong>. </p>
+<p class="admonition-title">Předpoklady</p>
 <ul>
-<li>Lineární kvantování má úrovně od sebe stejně daleko. Provádí se např. pomocí zaokrouhlování. Aby nedošlo ke znatelnému zkreslení, doporučuje se pro <span class="arithmatex">\(n\)</span>-bitový převodník mít <span class="arithmatex">\(2^n\)</span> kvantizačních hladin. </li>
-<li>Nelineární kvantování se používá tam, kde je zapotřebí konkrétnějši popsat určitou sekci hladin signálu. Příkladem z praxe je např. <a href="https://en.wikipedia.org/wiki/A-law_algorithm">A-Law</a> nebo <a href="https://en.wikipedia.org/wiki/%CE%9C-law_algorithm">Mu-Law</a>.</li>
+<li>Gramatika musí mít nějaké pomocné symboly a konečné symboly.</li>
+<li>Množina přepisovacích pravidel musí být konečná.</li>
 </ul>
-<p>Stejně jako u <a href="#vzorkování">vzorkování</a> platí vzorkovací teorém, i u <a href="#kvantování">kvantování</a> platí jistá pravidla, za kterých nedojde ke znatelnému zkreslení signálu. Kvantování není nic jiného, než zaokrouhlování na určité hladiny, tudíž pokuď těhto hladin bude málo, bude se muset více zaokrouhlovat. Chyba kvantování (zaokrouhlení) se ve výsledném signálu projevuje jako <strong>kvantizační šum</strong>, který může zásadně ovlivnit kvalitu výstupního signálu.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Příklad jednoduché gramatiky</p>
+<p>Máme abecedu <span class="arithmatex">\(\Sigma = \{a,\,b\}\)</span>. Počáteční symbol je <span class="arithmatex">\(S\)</span> a jsou určena dvě přepisová pravidla:</p>
+<ol>
+<li><span class="arithmatex">\(S \to aSb\)</span></li>
+<li><span class="arithmatex">\(S \to ba\)</span></li>
+</ol>
+<p>Proces vytváření slov vypadá následovně:</p>
+<ul>
+<li>Začínáme počátečním symbolem <span class="arithmatex">\(S\)</span>. První slovo, které můžeme vytvořit, je aplikovaním pravidla č. 2 - tím nám vznikne slovo <span class="arithmatex">\(ba\)</span>.</li>
+<li>Začínáme počátečním symbolem <span class="arithmatex">\(S\)</span>. Druhé slovo, které můžeme vytvořit, je použitím prvního pravidla a následně druhého - <span class="arithmatex">\(S \to aSb \to abab\)</span>. </li>
+<li>Začínáme počátečním symbolem <span class="arithmatex">\(S\)</span>. Třetí slovo, které můžeme vytvořit, je dvojitým použitím prvního pravidla a následně druhého - <span class="arithmatex">\(S \to aSb \to aaSbb \to aababb\)</span>. </li>
+</ul>
+<p>Takhle můžeme pokračovat do nekonečna. Jazykem této gramatiky o dvou pravidlech mohou být slova <span class="arithmatex">\(L = \{ba,\,abab,\,aababb,\,...\}\)</span></p>
+</div>
+<h2 id="konecne-a-pomocne-symboly">Konečné a pomocné symboly</h2>
+<ul>
+<li>Konečné symboly (neboli terminály, terminální symboly) jsou symboly, které už nelze dále přepisovat. Konečná slova, která gramatika generuje, obsahují jen tyto symboly.</li>
+<li>Pomocné symboly (neboli neterminály, neterminální symboly) jsou symboly, které slouží k popisu struktury jazyka a dalšímu přepisu. Někdy se jim říká proměnné.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Značení konečných a pomocných symbolů</p>
+<ul>
+<li>Konečné (terminální) symboly se v teorii jazyků označují malými písmeny latinské abecedy (nebo číslicemi)</li>
+<li>Pomocné (neterminální) symboly se značí velkými písmeny nebo slovy ve špičatých závorkách.</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Co je věta a větná forma?</p>
+<ul>
+<li>Větná forma je každý řetězec symbolů, který můžeme vytvořit z počátečního neterminálního symbolu pomocí pravidel gramatiky.</li>
+<li>Věta je případ větné formy, která obsahuje pouze konečné symboly (nejde ji už nijak dále přepisovat).</li>
+</ul>
+</div>
+<h2 id="prepisovaci-pravidla">Přepisovací pravidla</h2>
+<p>Přepisovací pravidla jsou množinou zobrazení, která určují, jak měnit symboly ve slovech. Pravidlo, které vypadá jako <span class="arithmatex">\(\alpha \to \beta\)</span>, znamená: <em>"symboly <span class="arithmatex">\(\alpha\)</span> přepiš na symboly <span class="arithmatex">\(\beta\)</span>"</em>.</p>
+<ul>
+<li>Levá strana pravidla (<span class="arithmatex">\(\alpha\)</span>) může obsahovat libovolnou kombinaci symbolů, ale musí tam být alespoň jeden pomocný (neterminální) symbol.</li>
+<li>Pravá strana pravidla (<span class="arithmatex">\(\beta\)</span>) může obsahovat terminální i neterminální symboly. nebo může být i prázdný.</li>
+</ul>
+<p>Při odvozování nového slova postupně přepisujeme části slov předchozích. Vybereme část, která odpovídá levé straně nějakého pravidla, a nahradíme ji pravou stranou. Zbytek slova před i za výskytem levé strany (tzv. kontext) zůstává stejný.</p>
+<ul>
+<li>Tomuto nahrazení levé strany pravou stranu říkáme <strong>přímé přepsání</strong> a označujeme ho symbolem <span class="arithmatex">\(\Rightarrow\)</span>.</li>
+<li>Pokud můžeme udělat více těchto přímých přepsání zasebou, mluvíme prostě o <strong>přepsání</strong> a zapisujeme to jako <span class="arithmatex">\(w \overset{*}{\Rightarrow} z\)</span>.</li>
+</ul>
+<p>Jazyk <span class="arithmatex">\(L(G)\)</span> generovaný gramatikou <span class="arithmatex">\(G\)</span> je množina všech slov (vět), které můžeme vytvořit z počátečního symbolu pomocí konečného počtu přepisů. Tím, že se jedná o věty, tak jsou složeny jen z konečných (terminálních) symbolů.</p>
+<div class="arithmatex">\[L(G) = \{w | w \in T^* \wedge S \overset{*}{\Rightarrow} w\}\]</div>
+<div class="admonition example">
+<p class="admonition-title">Příklad zápisu gramatiky</p>
+<div class="arithmatex">\[G: S \to 0S1 | 01\]</div>
+<ul>
+<li>Symbol <span class="arithmatex">\(S\)</span> je počáteční symbol a zároveň je neterminálním symbolem.</li>
+<li>Symboly <span class="arithmatex">\(0\)</span> a <span class="arithmatex">\(1\)</span> jsou terminální.</li>
+<li>Tato gramatika má dvě přepisovací pravidla, která jsou oddělena svislou čárou.</li>
+</ul>
+<div class="arithmatex">\[\begin{aligned}
+S &amp;\overset{2}{\Rightarrow} 01 \\
+S &amp;\overset{1}{\Rightarrow} 0S1 \overset{2}{\Rightarrow} 0011 \\
+S &amp;\overset{1}{\Rightarrow} 0S1 \overset{1}{\Rightarrow} 00S11 \overset{1}{\Rightarrow} 000111 \\
+\end{aligned}\]</div>
+</div>
+<h2 id="chomskeho-hiearchie-gramatik">Chomského hiearchie gramatik</h2>
+<p>Chomského hierarchie je rozdělení formálních gramatik podle toho, jak složité jazyky dokážou generovat.</p>
+<div class="admonition quote">
+<p class="admonition-title">Vrstvy chomského Hiearchie</p>
+<p><img alt="chomskeeho_hiearchie" src="../../images/chomskeho_hierarchie.png" /></p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">TLDR tabulka hiearchie</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Typ gramatiky</th>
+<th style="text-align: center;">Generovaný jazyk</th>
+<th style="text-align: center;">Automat</th>
+<th style="text-align: center;">Přepisující pravidla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">G3</td>
+<td style="text-align: center;">Regulární</td>
+<td style="text-align: center;">Konečný automat</td>
+<td style="text-align: center;"><span class="arithmatex">\(\begin{aligned}A &amp;\to a\\ A &amp;\to aB\end{aligned}\)</span> nebo <span class="arithmatex">\(\begin{aligned}A &amp;\to a\\ A &amp;\to Ba\end{aligned}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">G2</td>
+<td style="text-align: center;">Bezkontextový</td>
+<td style="text-align: center;">Nedeterministický zásobníkový automat</td>
+<td style="text-align: center;"><span class="arithmatex">\(A \to \alpha\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">G1</td>
+<td style="text-align: center;">Kontextový</td>
+<td style="text-align: center;">Turingův stroj s omezenými zdroji</td>
+<td style="text-align: center;"><span class="arithmatex">\(\alpha{A}\beta \to \alpha\gamma\beta\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">G0</td>
+<td style="text-align: center;">Neomezený/Frázový</td>
+<td style="text-align: center;">Turingův stroj</td>
+<td style="text-align: center;"><span class="arithmatex">\(\gamma \to \alpha\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><span class="arithmatex">\(a\)</span> je konečný symbol</li>
+<li><span class="arithmatex">\(A, B\)</span> jsou pomocné symboly</li>
+<li><span class="arithmatex">\(\alpha, \beta\)</span> jsou řetězce pomocných a/nebo konečných symbolů.</li>
+<li><span class="arithmatex">\(\gamma\)</span> je řetězec pomocných a/nebo konečných symbolů, ale nesmí být prázdný.</li>
+</ul>
+</div>
+<h3 id="gramatiky-typu-0-neomezenefrazove-gramatiky">Gramatiky typu 0 (neomezené/frázové gramatiky)</h3>
+<p>Tyto gramatiky zahrnují všechny možné formální gramatiky. Generují jazyky, které mohou být rozpoznané Turingovým strojem, což jsou velmi obecné stroje schopné zpracovat širokou škálu problémů. Tyto jazyky se nazývají rekurzivně spočetné jazyky.</p>
+<ul>
+<li>Nejsou zde žádná omezení na tvar pravidel.</li>
+<li>Každé pravidlo má formu: <span class="arithmatex">\(\alpha \to \beta\)</span>.</li>
+<li><span class="arithmatex">\(\alpha\)</span> musí obsahovat alespoň jeden neterminál a může být jakýmkoli řetězcem terminálů a neterminálů.</li>
+<li><span class="arithmatex">\(\beta\)</span> může být libovolný řetězec terminálů a neterminálů.</li>
+</ul>
+<h3 id="gramatiky-typu-1-kontextove-gramatiky">Gramatiky typu 1 (kontextové gramatiky)</h3>
+<p>Tato gramatika generuje kontextové jazyky a je omezená tím, že žádné pravidlo nemůže zkracovat řetězce. Kontextové jazyky může rozpoznat Turingův stroj s omezenými zdroji (tzv. lineárně ohraničený).</p>
+<ul>
+<li>Pravidla musí dodržovat formu <span class="arithmatex">\(\alpha{X}\beta \to \alpha{\gamma}\beta\)</span>.<ul>
+<li><span class="arithmatex">\(X\)</span> je pomocný symbol (neterminál)</li>
+<li><span class="arithmatex">\(\alpha,\,\beta,\,\gamma\)</span> jsou řetězce konečných a/nebo pomocných symbolů (<span class="arithmatex">\(\alpha,\,\beta,\,\gamma \in (T \cup N)^*\)</span>)</li>
+<li><span class="arithmatex">\(\gamma\)</span> nesmí být prázdné slovo <span class="arithmatex">\(\varepsilon\)</span>.</li>
+</ul>
+</li>
+<li>
+<p>Alternativní, ale ekvivalentní, definice: <span class="arithmatex">\(\alpha \to \beta\)</span></p>
+<ul>
+<li><span class="arithmatex">\(\alpha \in (N \cup T)^* . N . (N \cup T)^*\)</span></li>
+<li><span class="arithmatex">\(|\alpha| \le |\beta|\)</span></li>
+</ul>
+</li>
+<li>
+<p>Pravidlo S → ε je povoleno jen, pokud se <span class="arithmatex">\(S\)</span> nevyskytuje na pravé straně žádného jiného pravidla.</p>
+</li>
+</ul>
+<h3 id="gramatiky-typu-2-bezkontextove-gramatiky">Gramatiky typu 2 (bezkontextové gramatiky)</h3>
+<p>Tyto gramatiky generují bezkontextové jazyky, které lze rozpoznat nedeterministickým zásobníkovým automatem.</p>
+<ul>
+<li>
+<p>Pravidla musí dodržet formu <span class="arithmatex">\(X \to \gamma\)</span> kde </p>
+<ul>
+<li><span class="arithmatex">\(X\)</span> je pomocný symbol</li>
+<li><span class="arithmatex">\(\gamma\)</span> je řetězec konečných a/nebo pomocných symbolů (<span class="arithmatex">\(\alpha,\,\beta,\,\gamma \in (T \cup N)^*\)</span>)</li>
+</ul>
+</li>
+<li>
+<p>Na levé straně může být pouze jeden pomocný symbol (není v kontextu).</p>
+</li>
+</ul>
+<h4 id="linearni-gramatika">Lineární gramatika</h4>
+<p>Lineární gramatika spadá do gramatiky typu 2, pokud se v přepisových pravidlech nachází jak levá, tak i pravá lineární gramatika. Jinak řečeno, existuje takové pravidle, které je zapsané nebo ho lze zapsat ve tvaru <span class="arithmatex">\(A \to xBy\)</span>.</p>
+<h3 id="gramatiky-typu-3-regularni-gramatiky">Gramatiky typu 3 (regulární gramatiky)</h3>
+<p>Tyto gramatiky generují regulární jazyky, které jsou nejjednodušší a mohou být rozpoznané konečným automatem (automat bez paměti). U všech přepisovacích pravidel je na levé straně přesně jeden <a href="#terminální-a-neterminální-symboly">neterminál</a> a na pravé straně nejvýše jeden <a href="#terminální-a-neterminální-symboly">neterminál</a>.</p>
+<ul>
+<li>Gramatika může obsahovat pravidlo <span class="arithmatex">\(S \to \varepsilon\)</span>, pokud se <span class="arithmatex">\(S\)</span> nevyskytuje v žádném jiném pravidle na pravé straně.</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Rozdíl mezi regulární a lineární gramatikou</p>
+<ul>
+<li>Regulární gramatika má pouze <strong>jeden</strong> terminál, protože používá prvky z množiny terminálů.</li>
+<li>Lineární gramatika může mít i řetězec terminálů, protože používá prvky z uzávěru množiny terminálů.</li>
+</ul>
+</div>
+<h4 id="regularni-gramatika">Regulární gramatika</h4>
+<p>Regulární gramatika má pravidla ve tvaru</p>
+<ul>
+<li><span class="arithmatex">\(A \to aB\)</span></li>
+<li><span class="arithmatex">\(A \to Ba\)</span></li>
+<li><span class="arithmatex">\(A \to a\)</span></li>
+<li><span class="arithmatex">\(A \to \varepsilon\)</span></li>
+</ul>
+<p>Podle umístění terminálního symbolu se rozlišuje</p>
+<ul>
+<li><strong>levá regulární gramatika</strong>: terminální symbol je na začátku pravé strany (<span class="arithmatex">\(A \to Ba\)</span>)</li>
+<li><strong>pravá regulární gramatika</strong> terminální symbol je na konci pravé strany (<span class="arithmatex">\(A \to aB\)</span>)</li>
+</ul>
+<h4 id="linearni-gramatika_1">Lineární gramatika</h4>
+<p>Do regulárních gramatik spadají také pravidla, která splňují podmínky lineární gramatiky. Lineární gramatika je obecnější definice regulární gramatiky, kdy terminály <span class="arithmatex">\(x\)</span> a <span class="arithmatex">\(y\)</span> nemusíme tahat přímo z množiny terminálů <span class="arithmatex">\(T\)</span>, ale z jejího uzávěru <span class="arithmatex">\(T^*\)</span>. Ten obsahuje kromě terminálů i jejich různé kombinace a opakování. Lineární gramatika splňující pravidla G3 má pravidla ve tvaru:</p>
+<ul>
+<li><span class="arithmatex">\(A \to xB\)</span> (pravá lineární gramatika)</li>
+<li><span class="arithmatex">\(A \to By\)</span> (levá lineární gramatika)</li>
+<li><span class="arithmatex">\(A \to x\)</span></li>
+<li><span class="arithmatex">\(A \to \varepsilon\)</span></li>
+</ul>
+<p>Pokud narazíme na pravidlo typu <span class="arithmatex">\(A \to xBy\)</span>, nebo respektive <span class="arithmatex">\(A \to xB\)</span> a <span class="arithmatex">\(B \to Cy\)</span>, pak se sice jedná o lineární gramatiku, ale splňující podmínky pro G2, ne pro G3.</p>
+<div class="admonition question">
+<p class="admonition-title">Proč nelze kombinovat levou a pravou lineární gramatiku?</p>
+<p>Je to kvůli tomu, jak je definována gramatika typu 3. Ta totiž umí pracovat jenom s případem, kdy je neterminál pouze na jedné straně od terminálu. </p>
+<p>Pokud máme levé i pravé pravidlo, například <span class="arithmatex">\(A \to xB\)</span> a <span class="arithmatex">\(B \to Cy\)</span>, lze ho pomocí tranzitivní vlastnosti spojit v <span class="arithmatex">\(A \to xBy\)</span>, což je přepisovací pravidlo nesplňující podmínky pro G3.</p>
+</div>
+<h3 id="priklady">Příklady</h3>
+<div class="admonition example">
+<p class="admonition-title">Příklad: Jakého typu jsou následující gramatiky?</p>
+<div class="admonition example">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gramatika 1</th>
+<th style="text-align: left;">Vysvětlení pravidel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(S \to abA\)</span></td>
+<td style="text-align: left;">Pravidlo odpovídá pravé lineární gramatice, protože začíná řetězcem terminálů.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(S \to ab\)</span></td>
+<td style="text-align: left;">Pravidlo odpovídá pravé lineární gramatice, protože začíná řetězcem terminálů.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(A \to aaB\)</span></td>
+<td style="text-align: left;">Pravidlo odpovídá pravé lineární gramatice, protože začíná řetězcem terminálů.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(A \to ba\)</span></td>
+<td style="text-align: left;">Pravidlo odpovídá pravé lineární gramatice, protože začíná řetězcem terminálů.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(B \to AB\)</span></td>
+<td style="text-align: left;">Tady nastává průser. V tomto případě pravidle nemá žádné terminály, ale jenom neterminály. Aby pravidlo splňovalo úroveň gramatiky G3, musí tam být alespoň jeden terminál. Podmínky pro G2 již ale splňuje, protože tam je jedno, co je na pravé straně. (tvar <span class="arithmatex">\(A \to \gamma,\,\gamma \in (N \cup T)^*\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(B \to \varepsilon\)</span></td>
+<td style="text-align: left;">Toto pravidlo obecně platí i v G3</td>
+</tr>
+</tbody>
+</table>
+<p>Nejhorším pravidlem v gramatice 1 je tak pravidlo <span class="arithmatex">\(B \to AB\)</span>, které splňuje podmínky G2, a <strong>celá gramatika tak splňuje podmínky pro gramatiku typu 2.</strong></p>
+</div>
+<div class="admonition example">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gramatika 2</th>
+<th style="text-align: left;">Vysvětlení pravidel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(S \to abA\)</span></td>
+<td style="text-align: left;">Pravidlo odpovídá pravé lineární gramatice, protože začíná řetězcem terminálů.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(S \to ab\)</span></td>
+<td style="text-align: left;">Pravidlo odpovídá pravé lineární gramatice, protože začíná řetězcem terminálů.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(A \to Bab\)</span></td>
+<td style="text-align: left;">Pravidlo odpovídá levé lineární gramatice, protože začíná neterminálem, za kterým je řetězec terminálů.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(A \to \varepsilon\)</span></td>
+<td style="text-align: left;">Toto pravidlo obecně platí v G3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(B \to bbB\)</span></td>
+<td style="text-align: left;">TPravidlo odpovídá pravé lineární gramatice, protože začíná řetězcem terminálů.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(B \to b\)</span></td>
+<td style="text-align: left;">Toto pravidlo je obecně jakékoliv z G3</td>
+</tr>
+</tbody>
+</table>
+<p>Nalezli jsme levá i pravá lineární pravidla, takže musíme zpozornět. Když použijeme tranzitivitu, tak zjistíme, že se v množině přepisových pravidel nachází <span class="arithmatex">\(S \to abBab\)</span> </p>
+<div class="arithmatex">\[(S \to abA) + (A \to Bab) = S \to abBab\]</div>
+<p>Pravidlo <span class="arithmatex">\(S \to abBab\)</span> nevyhovuje požadavkům typu 3 (kde terminály musí být pouze na jedné straně), ale vyhovuje předpisu G2 (<span class="arithmatex">\(A \to \gamma,\,\gamma \in (N \cup T)^*\)</span>).</p>
+<p><strong>Celá gramatika tak splňuje podmínky pro gramatiku typu 2.</strong></p>
+</div>
+<div class="admonition example">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gramatika 3</th>
+<th style="text-align: left;">Vysvětlení pravidel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(S \to A\)</span></td>
+<td style="text-align: left;">Pravidlo obecně vyhovující G3, páč <span class="arithmatex">\(S\)</span> je počáteční symbol</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(A \to AbB\)</span></td>
+<td style="text-align: left;">Pravidlo obsahuje více než jeden neterminál. Toto je skupina G2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(A \to a\)</span></td>
+<td style="text-align: left;">Pravidlo obecně vyhovující skupině G3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(AbB \to baB\)</span></td>
+<td style="text-align: left;">Tak tohle je další průser. Obviously to nevyhovuje G3 ani G2, protože na levé straně máme terminály i neterminály. G1 to ale také nevyhovuje - tam je podmínka, že prostředek levé strany musí být neterminál. Tady je <span class="arithmatex">\(b\)</span>, což je terminál. Takže poslední možností je G0.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(AbB \to BAbB\)</span></td>
+<td style="text-align: left;">Stejné odůvodnění jako výše - G3 ani G2 to být nemůže. G1 nám ale tady fungovat bude. Když se podíváme, tak obě strany mají společné <span class="arithmatex">\(bB\)</span> - když si z toho uděláme proměnnou, například <span class="arithmatex">\(\beta \to bB\)</span>, vznikne <span class="arithmatex">\(A\beta \to BA\beta\)</span>. To už podmínky G1 splňuje, konkrétně tu druhou definici, páč levá strana je kratší než pravá.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(B \to b\)</span></td>
+<td style="text-align: left;">Pravidlo vyhovující G3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(B \to \varepsilon\)</span></td>
+<td style="text-align: left;">Pravidlo vyhovující G3</td>
+</tr>
+</tbody>
+</table>
+<p>Protože nejhůř ohodnocené pravidlo bylo G1, tak <strong>celá gramatika splňuje podmínky pro gramatiku typu 1.</strong></p>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Rozhodněte o typu gramatiky</p>
+<div class="arithmatex">\[\begin{aligned}
+    N &amp;= \{A, S\}\\
+    T &amp;= \{0, 1, c\} \\
+    G &amp;= (N, T, P, S) \\
+    \\
+    S &amp;\to 0A1 \\
+    0A &amp;\to 00A1 \\
+    A &amp;\to c
+\end{aligned}\]</div>
+<ul>
+<li>Pravidlo <span class="arithmatex">\(S \to 0A1\)</span> odpovídá G3, protože má terminály z obou konců řetězce.</li>
+<li>Pravidlo <span class="arithmatex">\(0A \to 00A1\)</span> odpovídá skupině G1<ul>
+<li>G3 nelze, protože na levé straně jsou terminální znaky (<span class="arithmatex">\(0c \to 00c1\)</span>) </li>
+<li>G2 nemůže, protože ...</li>
+<li>protože když si vezmeme tvar <span class="arithmatex">\(\alpha{X}\beta \to \alpha{\gamma}\beta\)</span> a dosadíme </li>
+<li><span class="arithmatex">\(\alpha = 0\)</span>, přičemž <span class="arithmatex">\(\alpha\)</span> musí být z uzávěru sjednocení terminálů a neterminálů. To platí, protože 0 je v množině terminálů <span class="arithmatex">\(T\)</span>.</li>
+<li><span class="arithmatex">\(\beta = \varepsilon\)</span>, přičemž <span class="arithmatex">\(\beta\)</span> musí také být z uzávěru sjednocení terminálů a neterminálů - do čehož prázdný řetězec <span class="arithmatex">\(\varepsilon\)</span> patří.</li>
+<li><span class="arithmatex">\(\gamma = 0A1\)</span>, přičemž <span class="arithmatex">\(\gamma\)</span> musí být z pozitivního uzávěru sjednocení terminálů a neterminálů - což je v pořádku, protože <span class="arithmatex">\(\gamma\)</span> není prázdný řetězec a <span class="arithmatex">\(0A1\)</span> je kombinace symbolů z množin terminálů a neterminálů.</li>
+<li>Podmínka <span class="arithmatex">\(A \in N\)</span> platí. </li>
+</ul>
+</li>
+<li>Pravidlo <span class="arithmatex">\(A \to c\)</span> vyhovuje G3.</li>
+</ul>
+<p><strong>Celá gramatika je tak typu G1.</strong></p>
+</div>
 
 
 
@@ -2517,7 +3004,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Zápatí" >
         
           
-          <a href="../signaly/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Signál">
+          <a href="../automaty/" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Automat">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2527,20 +3014,20 @@
                 Předchozí
               </span>
               <div class="md-ellipsis">
-                Signál
+                Automat
               </div>
             </div>
           </a>
         
         
           
-          <a href="../systemy/" class="md-footer__link md-footer__link--next" aria-label="Další: Systémy">
+          <a href="../../logicke_obvody/ciselne_soustavy/" class="md-footer__link md-footer__link--next" aria-label="Další: Číselné soustavy">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Další
               </span>
               <div class="md-ellipsis">
-                Systémy
+                Číselné soustavy
               </div>
             </div>
             <div class="md-footer__button md-icon">
