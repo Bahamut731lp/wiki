@@ -70,6 +70,20 @@ Chomského hierarchie je rozdělení formálních gramatik podle toho, jak slož
 !!! quote "Vrstvy chomského Hiearchie"
     ![chomskeeho_hiearchie](../images/chomskeho_hierarchie.png)
 
+!!! quote "TLDR tabulka hiearchie"
+    |Typ gramatiky|Generovaný jazyk|Automat|Přepisující pravidla|
+    |:--:|:--:|:--:|:--:|
+    |G3|Regulární|Konečný automat|$\begin{aligned}A &\to a\\ A &\to aB\end{aligned}$ nebo $\begin{aligned}A &\to a\\ A &\to Ba\end{aligned}$|
+    |G2|Bezkontextový|Nedeterministický zásobníkový automat|$A \to \alpha$|
+    |G1|Kontextový|Turingův stroj s omezenými zdroji|$\alpha{A}\beta \to \alpha\gamma\beta$|
+    |G0|Neomezený/Frázový|Turingův stroj|$\gamma \to \alpha$|
+
+    - $a$ je konečný symbol
+    - $A, B$ jsou pomocné symboly
+    - $\alpha, \beta$ jsou řetězce pomocných a/nebo konečných symbolů.
+    - $\gamma$ je řetězec pomocných a/nebo konečných symbolů, ale nesmí být prázdný.
+
+
 ### Gramatiky typu 0 (neomezené/frázové gramatiky)
 Tyto gramatiky zahrnují všechny možné formální gramatiky. Generují jazyky, které mohou být rozpoznané Turingovým strojem, což jsou velmi obecné stroje schopné zpracovat širokou škálu problémů. Tyto jazyky se nazývají rekurzivně spočetné jazyky.
 
