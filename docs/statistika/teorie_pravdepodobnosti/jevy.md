@@ -32,4 +32,4 @@ Tím, že je náhodný jev **podmnožinou**, je tak možné provádět množinov
 |Nemožný jev|Jev, který nikdy nenastane|$P = 0$|
 |Podjev|Jev, který nastane pouze tehdy, když nastane jiný jev||
 
-[^1]: To je možné díky [kombinatorickému pravidlu součtu](../../kombinatorika/kombinatoricka_pravidla.md#pravidlo-součtu)
+[^1]: To je možné díky [kombinatorickému pravidlu součtu](../../kombinatorika/kombinatoricka_pravidla.md#pravidlo-souctu)

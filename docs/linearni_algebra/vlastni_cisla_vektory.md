@@ -10,7 +10,7 @@ Vlastnosti vlastních čísel a vektorů:
 - Každá [čtvercová matice](matice.md) má alespoň jedno vlastní číslo.
 - Nenulová [čtvercová matice](matice.md) má tolik vlastních čísel, kolik je její řád.
 - Ke každému vlastnímu číslu λ existuje alespoň jeden nenulový vlastní vektor x.
-- Vlastní vektory příslušné k různým vlastním číslům jsou [lineárně nezávislé](vektorove_prostory.md#lineární-závislost).
+- Vlastní vektory příslušné k různým vlastním číslům jsou [lineárně nezávislé](vektorove_prostory.md#linearni-zavislost).
 
 ## Interpretace 
 Vlastní vektory určují směry, které se po transformaci neměnní. 

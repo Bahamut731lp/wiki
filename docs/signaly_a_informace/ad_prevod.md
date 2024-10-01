@@ -17,7 +17,7 @@ Vzorkování je proces převodu spojitého signálu na diskrétní signál. To z
     - $f_{max}$ je nejvyšší frekvence
 
 ### Aliasing
-__Aliasing__, česky _překlad frekvencí_ je jev, který vzniká při vzorkování signálu. Vzniká tehdy, když je signál vzorkován frekvencí menší než je dvojnásobek té nejvyšší frekvence. Jinak řečeno, překládání frekvencí vzniká při nedodržení [Vzorkovacího teorému](#vzorkování).
+__Aliasing__, česky _překlad frekvencí_ je jev, který vzniká při vzorkování signálu. Vzniká tehdy, když je signál vzorkován frekvencí menší než je dvojnásobek té nejvyšší frekvence. Jinak řečeno, překládání frekvencí vzniká při nedodržení [Vzorkovacího teorému](#vzorkovani).
 
 !!! abstract ""
     Doplnit příklady a výpočty přeložených frekvencí
@@ -38,4 +38,4 @@ Hladiny (úrovně), na které se signál "zaokrouhluje" se nazývají **kvantiza
 - Lineární kvantování má úrovně od sebe stejně daleko. Provádí se např. pomocí zaokrouhlování. Aby nedošlo ke znatelnému zkreslení, doporučuje se pro $n$-bitový převodník mít $2^n$ kvantizačních hladin. 
 - Nelineární kvantování se používá tam, kde je zapotřebí konkrétnějši popsat určitou sekci hladin signálu. Příkladem z praxe je např. [A-Law](https://en.wikipedia.org/wiki/A-law_algorithm) nebo [Mu-Law](https://en.wikipedia.org/wiki/%CE%9C-law_algorithm).
 
-Stejně jako u [vzorkování](#vzorkování) platí vzorkovací teorém, i u [kvantování](#kvantování) platí jistá pravidla, za kterých nedojde ke znatelnému zkreslení signálu. Kvantování není nic jiného, než zaokrouhlování na určité hladiny, tudíž pokuď těhto hladin bude málo, bude se muset více zaokrouhlovat. Chyba kvantování (zaokrouhlení) se ve výsledném signálu projevuje jako **kvantizační šum**, který může zásadně ovlivnit kvalitu výstupního signálu.
+Stejně jako u [vzorkování](#vzorkovani) platí vzorkovací teorém, i u [kvantování](#kvantovani) platí jistá pravidla, za kterých nedojde ke znatelnému zkreslení signálu. Kvantování není nic jiného, než zaokrouhlování na určité hladiny, tudíž pokuď těhto hladin bude málo, bude se muset více zaokrouhlovat. Chyba kvantování (zaokrouhlení) se ve výsledném signálu projevuje jako **kvantizační šum**, který může zásadně ovlivnit kvalitu výstupního signálu.

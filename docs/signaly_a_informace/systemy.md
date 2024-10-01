@@ -9,10 +9,10 @@ __Systém__ je věc, která dokáže vytvářet, zpracovávat či vysílat [sign
 ## Časová závislost systému
 
 ## Impulzní odezva
-__Impulzní odezva__ $h[n]$ je funkce, která popisuje odpověď systému v závislosti na čase. Jinak řečeno, udává, jak systém reaguje na [jednotkový impulz](signaly.md#jednotkový-impulz) v čase.
+__Impulzní odezva__ $h[n]$ je funkce, která popisuje odpověď systému v závislosti na čase. Jinak řečeno, udává, jak systém reaguje na [jednotkový impulz](signaly.md#jednotkovy-impulz) v čase.
 
 !!! important
-    Výstup [LTI systému](#lineární-časově-invariantní-systémy) lze plně právě impulzní odezvou, protože při konvoluci impulzní odezvy se vstupem dostaneme výstup celého systému
+    Výstup [LTI systému](#linearni-casove-invariantni-systemy) lze plně právě impulzní odezvou, protože při konvoluci impulzní odezvy se vstupem dostaneme výstup celého systému
 
     $$\begin{aligned}
     y[n] &= h[n] \ast x[n] \\

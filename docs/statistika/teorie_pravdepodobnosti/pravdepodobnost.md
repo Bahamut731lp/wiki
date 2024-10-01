@@ -2,7 +2,7 @@
 Pravděpodobnost vyjadřuje míru očekávatelnosti výskytu [náhodného jevu](jevy.md), která se označuje číslem v intervalu $\left<0, 1\right>$
 
 ## Klasická pravděpodobnost
-Pokud máme $n$ [elementárních jevů](jevy.md#druhy-náhodných-jevů) a všechny mají stejnou šanci výskytu, tj. $\frac{1}{n}$, potom je při provedení náhodného pokusu pravděpodobnost jevu definována jako
+Pokud máme $n$ [elementárních jevů](jevy.md#druhy-nahodnych-jevu) a všechny mají stejnou šanci výskytu, tj. $\frac{1}{n}$, potom je při provedení náhodného pokusu pravděpodobnost jevu definována jako
 
 $$
 P(A) = \frac{m}{n}

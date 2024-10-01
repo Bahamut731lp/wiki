@@ -283,7 +283,7 @@ $$\Large \int_{0}^{\ln(2)} \frac{5e^x}{15+8e^x+e^{2x}}\;dx$$
     \end{align}
     $$
 
-!!! tip "Rozklad na [parciální zlomky](#rozklad-na-parciální-zlomky)"
+!!! tip "Rozklad na [parciální zlomky](#rozklad-na-parcialni-zlomky)"
     $$\large\begin{aligned}
     \frac{A}{(u+5)} + \frac{B}{(u+3)} = \begin{cases}
     A = -\frac{1}{2} \\

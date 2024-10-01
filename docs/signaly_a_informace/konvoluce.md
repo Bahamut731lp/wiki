@@ -7,7 +7,7 @@ $$\begin{aligned}
 
 Kde $x[n]$ je vstupní (diskrétní) signál a $h[n]$ je konvoluční jádro. Konvoluční jádro určuje, jak moc ovlivní okolní hodnoty výsledek v daném bodě. Výsledná hodnota konvoluce v každém bodě je tak vážený součet hodnot vstupní funkce v malém okolí tohoto bodu.
 
-Mezi dvě nejdůležitější vlastnosti konvoluce patří __komunativita__ $x \ast h = h \ast x$, což nám říká, že oba signály jsou rovnocenné a zaměnitelné, a __asociativita__ $(x \ast h_1) \ast h_2 = x \ast (h_1 \ast h_2)$, což znamená, že můžeme více systémů sloučit do jednoho a získat tak jednu, finální, [impulzní odezvu](systemy.md#impulzní-odezva).
+Mezi dvě nejdůležitější vlastnosti konvoluce patří __komunativita__ $x \ast h = h \ast x$, což nám říká, že oba signály jsou rovnocenné a zaměnitelné, a __asociativita__ $(x \ast h_1) \ast h_2 = x \ast (h_1 \ast h_2)$, což znamená, že můžeme více systémů sloučit do jednoho a získat tak jednu, finální, [impulzní odezvu](systemy.md#impulzni-odezva).
 
 !!! example "Příklad konvoluce"
     $$\begin{aligned}

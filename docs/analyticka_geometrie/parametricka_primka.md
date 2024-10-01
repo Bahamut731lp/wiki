@@ -137,7 +137,7 @@ Prvním krokem je zjištění, jestli mají směrové vektory stejný směr. Pok
 
         Tak to asi úplně není ten vektor $\vec{v}$, který má souřadnice $(7, 1)$. Sčítací metoda nefunguje kvůli tomu, že se k těm dvou rovnicím chováme jako ke dvou různým, což je blbost - je to jeden a ten samý výraz, který určuje vztah pro $a$ - takže to je "jedna rovnice", ale rozepsaná na dvou řádcích. Proto je lepší ten tvar zlomků ($a = \frac{v_1}{u_1} = \frac{v_2}{u_2}$), protože v tom je vidět, že se musí rovnat obojí.
  
-Pokud nejsou vektory násobkem, neboli jsou [lineárně nezávislé](../linearni_algebra/vektorove_prostory.md#lineární-závislost), budou přímky mířit do různých směrů. V takovém se po nás může chtít spočítat průsečík, neboli bod, který mají obě přímky společné.
+Pokud nejsou vektory násobkem, neboli jsou [lineárně nezávislé](../linearni_algebra/vektorove_prostory.md#linearni-zavislost), budou přímky mířit do různých směrů. V takovém se po nás může chtít spočítat průsečík, neboli bod, který mají obě přímky společné.
 
 !!! tip "Hledání průsečíku"
     Uvažujme přímky $p$ a $q$:

@@ -4,7 +4,7 @@
 - Jazyk lze definovat slovně, nebo pomocí gramatiky.
 
 !!! quote ""
-    Když máme abecedu $\Sigma$, formální jazyk $L$ je jakákoli podmnožina všech možných slov, která můžeme vytvořit z abecedy $\Sigma$. Zapisuje se jako $L \subseteq \Sigma^*$ (to znamená, že L je podmnožina [uzávěru](abecedy_slova.md#uzávěr-abecedy) Σ*).
+    Když máme abecedu $\Sigma$, formální jazyk $L$ je jakákoli podmnožina všech možných slov, která můžeme vytvořit z abecedy $\Sigma$. Zapisuje se jako $L \subseteq \Sigma^*$ (to znamená, že L je podmnožina [uzávěru](abecedy_slova.md#uzaver-abecedy) Σ*).
 
 !!! info "Speciální případy jazyka"
     - Prázdný jazyk ($L = ∅$) neobsahuje žádná slova, ani prázdný řetězec ($\varepsilon$).

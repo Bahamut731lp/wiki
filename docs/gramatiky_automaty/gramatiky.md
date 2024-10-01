@@ -1,8 +1,8 @@
 # Gramatika
 Gramatika je sada pravidel, která říká, jak můžeme vytvořit slova jazyka z určitého počátečního symbolu. Vytváření slov funguje tak, že začneme s počátečním symbolem a postupně na něj uplatňujeme pravidla, dokud nevytvoříme požadované slovo. Gramatiku $G$ zapisujeme jako uspořádanou čtveřici $G = (N, T, P, S)$, kde
 
-- $N$ je množina [pomocných symbolů](#terminální-a-neterminální-symboly) (neterminálů).
-- $T$ je množina [konečných symbolů](#terminální-a-neterminální-symboly) (terminálů).
+- $N$ je množina [pomocných symbolů](#konecne-a-pomocne-symboly) (neterminálů).
+- $T$ je množina [konečných symbolů](#konecne-a-pomocne-symboly) (terminálů).
 - $P$ je množina __přepisovacích pravidel__.
 - $S \in N$ je __počáteční symbol__, také znamý jako _kořen gramatiky_.
 
@@ -118,7 +118,7 @@ Tyto gramatiky generují bezkontextové jazyky, které lze rozpoznat nedetermini
 Lineární gramatika spadá do gramatiky typu 2, pokud se v přepisových pravidlech nachází jak levá, tak i pravá lineární gramatika. Jinak řečeno, existuje takové pravidle, které je zapsané nebo ho lze zapsat ve tvaru $A \to xBy$.
 
 ### Gramatiky typu 3 (regulární gramatiky)
-Tyto gramatiky generují regulární jazyky, které jsou nejjednodušší a mohou být rozpoznané konečným automatem (automat bez paměti). U všech přepisovacích pravidel je na levé straně přesně jeden [neterminál](#terminální-a-neterminální-symboly) a na pravé straně nejvýše jeden [neterminál](#terminální-a-neterminální-symboly).
+Tyto gramatiky generují regulární jazyky, které jsou nejjednodušší a mohou být rozpoznané konečným automatem (automat bez paměti). U všech přepisovacích pravidel je na levé straně přesně jeden [neterminál](#konecne-a-pomocne-symboly) a na pravé straně nejvýše jeden [neterminál](#konecne-a-pomocne-symboly).
 
 - Gramatika může obsahovat pravidlo $S \to \varepsilon$, pokud se $S$ nevyskytuje v žádném jiném pravidle na pravé straně.
 
