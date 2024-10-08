@@ -71,7 +71,16 @@ nav:
       - analyticka_geometrie/uhel_mezi_primkami.md
     - Diskrétní matematika:
       - diskretni_matematika/index.md
-      - diskretni_matematika/teorie_delitelnosti.md
+      - Teorie dělitelnosti:
+        - diskretni_matematika/teorie_delitelnosti/index.md
+        - diskretni_matematika/teorie_delitelnosti/delitelnost.md
+        - diskretni_matematika/teorie_delitelnosti/spolecny_delitel.md
+        - diskretni_matematika/teorie_delitelnosti/prvocisla.md
+        - diskretni_matematika/teorie_delitelnosti/spolecny_nasobek.md
+        - diskretni_matematika/teorie_delitelnosti/bezoutova_rovnost.md
+        - diskretni_matematika/teorie_delitelnosti/mobiova_funkce.md
+        - diskretni_matematika/teorie_delitelnosti/eulerova_funkce.md
+
     - Kombinatorika:
       - kombinatorika/index.md
       - kombinatorika/kombinatoricka_pravidla.md

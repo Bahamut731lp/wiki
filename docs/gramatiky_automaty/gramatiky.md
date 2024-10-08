@@ -222,3 +222,15 @@ Pokud narazíme na pravidlo typu $A \to xBy$, nebo respektive $A \to xB$ a $B \t
     - Pravidlo $A \to c$ vyhovuje G3.
 
     **Celá gramatika je tak typu G1.**
+
+
+- L je konečný jazyk (ne, záleží na nás, kde skončíme)
+- L obsahuje prázdné slovo (ne)
+- L obsahuje právě dvě slova délky nejvýše tři
+    $S \to 0A1,\, A\ to 1A0 \mid 1,\,S \to 1B0,\, B \to 1B \mid 1$
+    Obsahuje, protože nejmenší slova, co můžu vygenerovat, je 011 a 110
+- L obsahuje slova pouze liché délky (ne)
+- Každé slovo L obsahuje znak 0 (ano, ze strartovacích)
+- Žádné slovo L neobsahuje souvsilsý řetězec 010101 (ano, tohle nejde vytvořit)
+
+S může být na epsilon pokud to je to startovací symbol a nevyskytuje se poté na pravé straně pravidla. U bezkontextových to není potřeba.
