@@ -17,8 +17,9 @@ Funkce __dolní__ a __horní__ celá část jsou takové funkce, které libovoln
 !!! info "Lomenná část"
     Lomenná část $\{x\}$ reálného čísla $x$ je definována jako desetinná část čísla $x$. Číslu $x$ tak zůstane pouze část za desetinnou čárkou.
 
-    - Funkci lomenná část označujeme symbolem $\{x}\$ nebo pomocí funkce $\frac{x}$
+    - Funkci lomenná část označujeme symbolem $\{x}\$ nebo pomocí funkce $\frac2{x}$
     - Platí $\{x\} = x - \lfloor x \rfloor$
 
-!!! technical "Psaní funkcí v LaTeXu"
-    V klasickém LaTeXu nebo Mathjaxu nejsou funkce $\floor{x}$, $\ceil{x}$ nebo $\frac{x}$ definovaný. V Mathjax konfiguraci jsou tedy definovány jako makra. 
+!!! technical "Psaní těchto funkcí v LaTeXu"
+    - V klasickém LaTeXu nebo Mathjaxu nejsou funkce $\floor{x}$, $\ceil{x}$ nebo $\myfrac{x}$ definovaný. V Mathjax konfiguraci jsou tedy definovány jako makra.
+    - Kvůli tomu, aby se funkce $\myfrac{x}$ netloukla s funkcí pro konstrukci zlomků `\frac`, tak se používá příkaz `\myfrac`.

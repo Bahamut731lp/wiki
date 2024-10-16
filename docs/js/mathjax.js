@@ -7,7 +7,7 @@ window.MathJax = {
         macros: {
             "floor": ["\\mathop{\\rm floor}\\nolimits"],
             "ceil": ["\\mathop{\\rm ceil}\\nolimits"],
-            "frac": ["\\mathop{\\rm frac}\\nolimits"]
+            "myfrac": ["\\mathop{\\rm frac}\\nolimits"]
         }
     },
     options: {
