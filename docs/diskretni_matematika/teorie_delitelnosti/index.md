@@ -10,6 +10,10 @@ Obsah:
 - [Prvočísla](./prvocisla.md)
 - [Společný násobek](./spolecny_nasobek.md)
 - [Bézoutova rovnost](./bezoutova_rovnost.md)
+- [Mobiova funkce](./mobiova_funkce.md)
+- [Eulerova funkce](./eulerova_funkce.md)
+- [Dolní a horní celá část](./dolni_horni_cela_cast.md)
+- [Řetězové zlomky](./retezove_zlomky.md)
 
 Základním kamenem teorie dělitelnosti je množina celých čísel a množina přirozených čísel s nulou. Když se podíváme na operace, které můžeme s celými čísly provádět, tak zjistíme, že je množina celých čísel:
 
