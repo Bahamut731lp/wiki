@@ -80,6 +80,8 @@ nav:
         - diskretni_matematika/teorie_delitelnosti/bezoutova_rovnost.md
         - diskretni_matematika/teorie_delitelnosti/mobiova_funkce.md
         - diskretni_matematika/teorie_delitelnosti/eulerova_funkce.md
+        - diskretni_matematika/teorie_delitelnosti/dolni_horni_cela_cast.md
+        - diskretni_matematika/teorie_delitelnosti/retezove_zlomky.md
 
     - Kombinatorika:
       - kombinatorika/index.md
@@ -143,6 +145,9 @@ extra:
   social:
     - icon: fontawesome/brands/github 
       link: https://github.com/bahamut731lp
+
+extra_css:
+  - stylesheets/extra.css
 
 extra_javascript:
   - js/mathjax.js
