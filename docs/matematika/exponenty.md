@@ -1,0 +1,1 @@
+# Práce s exponenty a mocninami

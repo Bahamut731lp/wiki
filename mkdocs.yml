@@ -64,41 +64,43 @@ nav:
     - logicke_obvody/automaty.md
     - logicke_obvody/procesory.md
   - Matematika:
+    - Reálná analýza:
+      - matematika/funkce/index.md
     - Analytická geometrie:
       - analyticka_geometrie/vektory.md
       - analyticka_geometrie/parametricka_primka.md
       - analyticka_geometrie/obecna_primka.md
       - analyticka_geometrie/uhel_mezi_primkami.md
     - Diskrétní matematika:
-      - diskretni_matematika/index.md
+      - matematika/diskretni_matematika/index.md
       - Teorie dělitelnosti:
-        - diskretni_matematika/teorie_delitelnosti/index.md
-        - diskretni_matematika/teorie_delitelnosti/delitelnost.md
-        - diskretni_matematika/teorie_delitelnosti/spolecny_delitel.md
-        - diskretni_matematika/teorie_delitelnosti/prvocisla.md
-        - diskretni_matematika/teorie_delitelnosti/spolecny_nasobek.md
-        - diskretni_matematika/teorie_delitelnosti/bezoutova_rovnost.md
-        - diskretni_matematika/teorie_delitelnosti/mobiova_funkce.md
-        - diskretni_matematika/teorie_delitelnosti/eulerova_funkce.md
-        - diskretni_matematika/teorie_delitelnosti/dolni_horni_cela_cast.md
-        - diskretni_matematika/teorie_delitelnosti/retezove_zlomky.md
-
-    - Kombinatorika:
-      - kombinatorika/index.md
-      - kombinatorika/kombinatoricka_pravidla.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/index.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/delitelnost.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/spolecny_delitel.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/prvocisla.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/spolecny_nasobek.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/bezoutova_rovnost.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/mobiova_funkce.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/eulerova_funkce.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/dolni_horni_cela_cast.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/retezove_zlomky.md
     - Statistika:
-      - statistika/index.md
-      - statistika/teorie_pravdepodobnosti/jevy.md
-      - statistika/teorie_pravdepodobnosti/pravdepodobnost.md
-      - statistika/teorie_pravdepodobnosti/podminena_pravdepodobnost.md
-      - statistika/teorie_pravdepodobnosti/nahodna_velicina.md
-      - statistika/teorie_pravdepodobnosti/ciselne_charakteristiky.md
-    - Lineární algebra:
-      - linearni_algebra/index.md
-      - linearni_algebra/linearni_kombinace.md
-      - linearni_algebra/matice.md
-      - linearni_algebra/vektorove_prostory.md
-      - linearni_algebra/vlastni_cisla_vektory.md
+      - matematika/statistika/index.md
+      - matematika/statistika/teorie_pravdepodobnosti/jevy.md
+      - matematika/statistika/teorie_pravdepodobnosti/pravdepodobnost.md
+      - matematika/statistika/teorie_pravdepodobnosti/podminena_pravdepodobnost.md
+      - matematika/statistika/teorie_pravdepodobnosti/nahodna_velicina.md
+      - matematika/statistika/teorie_pravdepodobnosti/ciselne_charakteristiky.md
+      - Rozdělení pravděpodobnosti:
+        - matematika/statistika/rozdeleni/hypergeometricke.md
+        - matematika/statistika/rozdeleni/binomicke.md
+        - matematika/statistika/rozdeleni/poissonovo.md
+        - matematika/statistika/rozdeleni/alternativni.md
+        - matematika/statistika/rozdeleni/geometricke.md
+        - matematika/statistika/rozdeleni/multinomicke.md
+    - Kombinatorika:
+      - matematika/kombinatorika/index.md
+      - matematika/kombinatorika/kombinatoricka_pravidla.md
     - Reálná analýza:
       - realna_analyza/derivace.md
       - realna_analyza/diferencial.md
