@@ -32,7 +32,7 @@ Monotónnost funkce je vlastnost, která nám zobecňuje, jakým způsobem se je
     - $\large f(a) \lt f(b)$, tak je funkce **rostoucí** v intervalu $J$.
     - $\large f(a) \gt f(b)$, tak je funkce **klesající** v intervalu $J$.
     - $\large f(a) \le f(b)$, tak je funkce **neklesající** v intervalu $J$.
-    - $\large f(a) \ge f(b)$, tak je funkce **nerostoucí** v intervalu $J$.
+    - $\large f(a) \ge f(b)$, tak je funkce **nerostoucí** v intervalu $J$.                                                                     
 
     !!! note ""
         Monotónnost nazýváme **ryzí**, pokud je buďto pouze rostoucí, nebo pouze klesající.
