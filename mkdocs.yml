@@ -67,7 +67,9 @@ nav:
     - Abstraktní algebra:
       - matematika/abstraktni_algebra/index.md
     - Reálná analýza:
-      - matematika/funkce/index.md
+      - Funkce:
+        - matematika/funkce/index.md
+        - matematika/funkce/inverzni.md
     - Analytická geometrie:
       - analyticka_geometrie/vektory.md
       - analyticka_geometrie/parametricka_primka.md
@@ -75,6 +77,9 @@ nav:
       - analyticka_geometrie/uhel_mezi_primkami.md
     - Diskrétní matematika:
       - matematika/diskretni_matematika/index.md
+      - Algebraické struktury:
+        - matematika/diskretni_matematika/algebraicke_struktury/polynomy.md
+        - matematika/diskretni_matematika/algebraicke_struktury/permutace.md
       - Teorie dělitelnosti:
         - matematika/diskretni_matematika/teorie_delitelnosti/index.md
         - matematika/diskretni_matematika/teorie_delitelnosti/delitelnost.md
@@ -86,6 +91,8 @@ nav:
         - matematika/diskretni_matematika/teorie_delitelnosti/eulerova_funkce.md
         - matematika/diskretni_matematika/teorie_delitelnosti/dolni_horni_cela_cast.md
         - matematika/diskretni_matematika/teorie_delitelnosti/retezove_zlomky.md
+        - matematika/diskretni_matematika/teorie_delitelnosti/kongruence.md
+
     - Statistika:
       - matematika/statistika/index.md
       - matematika/statistika/teorie_pravdepodobnosti/jevy.md
