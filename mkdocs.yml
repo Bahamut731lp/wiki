@@ -1,5 +1,5 @@
 site_name: Wiki
-dev_addr: "0.0.0.0:8000"
+dev_addr: "0.0.0.0:8005"
 
 site_url: https://bahamut731lp.github.io/wiki
 repo_url: https://github.com/bahamut731lp/wiki
@@ -64,6 +64,8 @@ nav:
     - logicke_obvody/automaty.md
     - logicke_obvody/procesory.md
   - Matematika:
+    - Abstraktní algebra:
+      - matematika/abstraktni_algebra/index.md
     - Reálná analýza:
       - matematika/funkce/index.md
     - Analytická geometrie:
