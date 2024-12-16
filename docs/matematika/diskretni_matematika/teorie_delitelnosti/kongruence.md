@@ -56,3 +56,82 @@ Při hledání multiplikativní inverze řešíme podkongruenci $ax \equiv 1 (m)
 !!! todo "Obrázek"
 
 !!! example "Příklad"
+    Vyřeště kongruenci $419x \equiv 17 \pmod{21}$.
+
+    Nejdříve se podíváme, zda-li lze kongruenci zjednodušit. V tomto příkladu je koeficient $a = 419$ větší než modulo $m = 21$, takže koeficient $a$ nahradíme jeho zbytkem po dělení modulem.
+
+    $$\begin{aligned}
+        419x &\equiv 17 \pmod{21} \\
+        20x &\equiv 17 \pmod{21}
+    \end{aligned}$$
+
+    Podíváme se na řešitelnost. $NSD(20, 21) = 1$, takže tato upravená kongruence má právě jedno řešení. Cílem je osamostatnit neznámou na levé straně, tj. najít multiplikativní inverzi k číslu 20 v grupě $\mathbb{Z}_{21}$. Abychom takovou inverzi našli, řešíme kongruenci, a respektive bezoutovu rovnost:
+
+    $$\begin{aligned}
+        20x &\equiv 1 \pmod{21} \\
+        20x + 21y &= 1
+    \end{aligned}$$
+
+    V tomto příkladě nemusíme nutně provádět euklidův algoritmus a rozvoj v přibližné zlomky, protože vidíme, že dosadíme $x = -1$ a $y = 1$, dostaneme $-20 + 21 = 1$, a rovnost bude tudíž platit. $x = -1$ je naše hledaná inverze, ale protože jsme v grupě $\mathbb{Z}_{21}$, převedeme si ji na prvek této grupy. $x = -1 + 21 = 20$.
+
+    $$\begin{aligned}
+        20x &\equiv 17 \pmod{21} \\
+        20x \cdot 20 &\equiv 17 \cdot 20 \pmod{21} \\
+        400x &\equiv 340 \pmod{21} \\
+        (400 \mod{21}) x &\equiv (340 \mod{21}) \\
+        x &\equiv 4 \pmod{21}
+    \end{aligned}$$
+
+    - Partikulárním řešením kongruence $419x \equiv 17 (21)$ je $x_0 = 4$.
+    - Obecným řešením je pak $x = 4 + 21k$, kde $k\in N^+$
+
+## Řešení soustavy lineárních kongruencí
+
+
+!!! example "Příklad"
+    Vyřeště soustavu lineárních kongruencí:
+    
+    $$\begin{aligned}
+        7x &\equiv 84 \pmod{15} \\
+        7x &\equiv 42 \pmod{9} \\
+        7x &\equiv 49 \pmod{10} \\
+        7x &\equiv 21 \pmod{8} \\
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        x &\equiv 12 \pmod{15} \\
+        x &\equiv 6 \pmod{9} \\
+        x &\equiv 7 \pmod{10} \\
+        x &\equiv 3 \pmod{8} \\
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        x &\equiv 12 \pmod{15} \\
+        x = 12 + 15t \\
+        \\
+        x &\equiv 6 \pmod{9} \\
+        12 + 15t &\equiv 6 \pmod{9} \\
+        15t &\equiv -6 \pmod{9} \\
+        15t &\equiv 3 \pmod{9} \\
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        15t &\equiv 1 \pmod{9} \\
+        15x + 9y &= 1 \\
+    \end{aligned}$$
+
+    |Násobky|Zbytky|
+    |:--:|:--:|
+    ||15|
+    ||9|
+    |1|6|
+    |1|3|
+    |2|0|
+
+    |i|-1|0|1|2|
+    |:--:|:--:|:--:|:--:|:--:|
+    |q|-|1|1|2|
+    |P|1|1|2|5|
+    |Q|0|1|1|3|
+
+    15x + 9y &= 1 \\
