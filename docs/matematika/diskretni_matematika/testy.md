@@ -182,12 +182,30 @@ Než začneme s výpočtem, je potřeba ověřit, zda má diofantická rovnice n
             r1 --> r2(179)
         ```
 
-### Zjednodušení rovnice
-Jak jsme zjistili z prvočíselných rozkladů, tak všechny členy rovnice mají ve svých prvočíselných rozkladech společnou 11, proto celou rovnici vydělíme číslem 11.
+#### Řešení rovnice
+Řešení lineární diofantické rovnice začíná zjednodušením rovnice vydělením všech koeficientů jejich největším společným dělitelem (zde 11), což vede k jednodušší rovnici. Dále pomocí rozšířeného Eukleidova algoritmu a tabulky rozvoje v řetězové zlomky najdeme základní řešení rovnice, konkrétně $x=−40$ a $y=−23$. Tyto hodnoty platí pro pravou stranu upravené rovnice $73x - 127y = 1$, nyní je potřeba je upravit, aby byly pro rovnici $73x - 127y = -179$. Nalezené Bezoutovy koeficienty tak vynásobíme pravou stranou, což tady je $-179$ a tím získáme partikulární řešení $x_0 = 7160$ a $y = 4117$.
 
 $$\begin{aligned}
     803x - 1397y &= -1969 \\
-    73x - 127y &= -179
+    73x - 127y &= -179 \\
+    \\
+    73x - 127y &= NSD(73, 127) \\
+    73x - 127y &= 1 \\
+    \\
+    x &= -40 \\
+    y &= -23 \\
+    \\
+    x_0 &= -40 \cdot (-179) \\
+    y_0 &= -23 \cdot (-179) \\
+    \\
+    x_0 &= 7160 \\
+    y_0 &= 4117 \\
+    \\
+    x &= x_0 + k \cdot \frac{b}{NSD(a, b)} \\
+    y &= y_0 - k \cdot \frac{a}{NSD(a, b)} \\
+    \\
+    x &= 7160 + -127k \\
+    y &= 4117 - 73k \\
 \end{aligned}$$
 
 !!! note "Tabulka rozvoje v řetězové zlomky"
@@ -196,3 +214,4 @@ $$\begin{aligned}
     |q|-|1|1|2|1|5|3|
     |P|1|1|2|5|7|40|127|
     |Q|0|1|1|3|4|23|73|
+
