@@ -77,6 +77,7 @@ nav:
       - analyticka_geometrie/uhel_mezi_primkami.md
     - Diskrétní matematika:
       - matematika/diskretni_matematika/index.md
+      - matematika/diskretni_matematika/testy.md
       - Algebraické struktury:
         - matematika/diskretni_matematika/algebraicke_struktury/polynomy.md
         - matematika/diskretni_matematika/algebraicke_struktury/permutace.md

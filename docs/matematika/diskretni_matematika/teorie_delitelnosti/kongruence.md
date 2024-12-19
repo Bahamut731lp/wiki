@@ -135,3 +135,60 @@ Při hledání multiplikativní inverze řešíme podkongruenci $ax \equiv 1 (m)
     |Q|0|1|1|3|
 
     15x + 9y &= 1 \\
+
+## Příklady
+
+!!! example "Nalezněte řešení následující soustavy kongruencí"
+    $$\begin{aligned}
+        24x + 14y + 22z &\equiv 16 \pmod{15} \\
+        33x + 45y + 27z &\equiv 6 \pmod{45} \\
+        16x + 9y + 31z &\equiv 7 \pmod{15} \\
+    \end{aligned}$$
+
+$$\begin{aligned}
+    9x + 14y + 7z &\equiv 1 \pmod{15} \\
+    33x + 0y + 27z &\equiv 6 \pmod{45} \\
+    1x + 9y + 1z &\equiv 7 \pmod{15} \\
+\end{aligned}$$
+
+$$\begin{aligned}
+    9x + 14y + 7z &\equiv 1 \pmod{15} \\
+    11x + 0y + 9z &\equiv 2 \pmod{15} \\
+    1x + 9y + 1z &\equiv 7 \pmod{15} \\
+\end{aligned}$$
+
+Tady mám někdě chybu. Zlatého bludišťáka dostane ten, kdo ji najde. Už vim, když odečítám rovnice od sebe tak nestačí akorát vynásobit -1, ale musím to vzít inverzí... takže když potřebuju odečíst 5y, tak musím od všeho odečíst 10, abych dostal -5y
+
+$$\begin{aligned}
+    1x + 9y + 1z &\equiv 7 \pmod{15} \\
+    9x + 14y + 7z &\equiv 1 \pmod{15} \\
+    11x + 0y + 9 &\equiv 2 \pmod{15} \\
+    \\
+    1x + 9y + 1z &\equiv 7 \pmod{15} \\
+    0x + 5y + 7z &\equiv 1 \pmod{15} \\
+    0x + 6y + 13z &\equiv 0 \pmod{15} \\
+    \\
+    1x + 9y + 1z &\equiv 7 \pmod{15} \\
+    0x + 65y + 91z &\equiv 13 \pmod{15} \\
+    0x + 6y + 13z &\equiv 0 \pmod{15} \\
+    \\
+    1x + 9y + 1z &\equiv 7 \pmod{15} \\
+    0x + 5y + 1z &\equiv 13 \pmod{15} \\
+    0x + 6y + 13z &\equiv 0 \pmod{15} \\
+    \\
+    1x + 4y + 0z &\equiv 9 \pmod{15} \\
+    0x + 5y + 1z &\equiv 13 \pmod{15} \\
+    0x + 1y + 0z &\equiv 11 \pmod{15} \\
+    \\
+    1x + 4y + 0z &\equiv 9 \pmod{15} \\
+    0x + 1y + 0z &\equiv 11 \pmod{15} \\
+    0x + 5y + 1z &\equiv 13 \pmod{15} \\
+    \\
+    1x + 4y + 0z &\equiv 9 \pmod{15} \\
+    0x + 1y + 0z &\equiv 11 \pmod{15} \\
+    0x + 0y + 1z &\equiv 3 \pmod{15} \\
+    \\
+    1x + 0y + 0z &\equiv 10 \pmod{15} \\
+    0x + 1y + 0z &\equiv 11 \pmod{15} \\
+    0x + 0y + 1z &\equiv 3 \pmod{15} \\
+\end{aligned}$$
