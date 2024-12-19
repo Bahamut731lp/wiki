@@ -60,7 +60,7 @@
         r16 --> r18([3])
     ```
 
-???+ quote "Rozklad čísla 268 125"
+???- quote "Rozklad čísla 268 125"
     ```mermaid
     flowchart LR
         r1(268125)
@@ -143,3 +143,56 @@ $$\begin{aligned}
 \varphi(NSN(a,b,c)) &= 972 \cdot 10^4 \cdot 10^2 \cdot 10^1 \cdot 156 \\
 \varphi(NSN(a,b,c)) &= 151632 \cdot 10^7\\
 \end{aligned}$$
+
+### Úloha 2
+!!! example ""
+    Uvažujte diofantickou rovnici $803x - 1397y = -1969$.
+    
+    1. Nalezněte všechna její celočíselná řešení.
+    2. Určete řešení vyhovující podmínce - složka $x$ je největší celé číslo menší než -2020.
+
+#### Ověření řešení diofantické rovnice
+Než začneme s výpočtem, je potřeba ověřit, zda má diofantická rovnice nějaké celočíselné řešení. Pokud rozložíme všechna čísla na prvočinitele, zjistíme, že mají společný faktor 11. Platí, že $NSD(a, b) = 11$. Protože číslo 11 je také součástí prvočíselného rozkladu čísla $c$, znamená to, že největší společný dělitel $a$ a $b$ dělí i číslo $c$. Z toho vyplývá, že diofantická rovnice má řešení.
+
+!!! tip "Řešení diofantické rovnice"
+    Diofantická rovnice $ax + by = c$ má řešení, pokud $NSD(a, b) \mid c$.
+
+!!! note "Rozklady čísel"
+    ???- quote "Rozklad čísla 803"
+        ```mermaid
+        flowchart LR
+            r1(803)
+            r1 --> r3([11])
+            r1 --> r2(73)
+        ```
+
+    ???- quote "Rozklad čísla 1397"
+        ```mermaid
+        flowchart LR
+            r1(1397)
+            r1 --> r3([11])
+            r1 --> r2(127)
+        ```
+
+    ???- quote "Rozklad čísla 1969"
+        ```mermaid
+        flowchart LR
+            r1(1397)
+            r1 --> r3([11])
+            r1 --> r2(179)
+        ```
+
+### Zjednodušení rovnice
+Jak jsme zjistili z prvočíselných rozkladů, tak všechny členy rovnice mají ve svých prvočíselných rozkladech společnou 11, proto celou rovnici vydělíme číslem 11.
+
+$$\begin{aligned}
+    803x - 1397y &= -1969 \\
+    73x - 127y &= -179
+\end{aligned}$$
+
+!!! note "Tabulka rozvoje v řetězové zlomky"
+    |i|-1|0|1|2|3|4|5|
+    |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+    |q|-|1|1|2|1|5|3|
+    |P|1|1|2|5|7|40|127|
+    |Q|0|1|1|3|4|23|73|
