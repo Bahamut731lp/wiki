@@ -287,3 +287,19 @@ Ve výsledku máme tedy následující řešení rovnice:
         22046 - 22225 &= -179 \\
         -179 &= -179
     \end{aligned}$$
+
+#### Nalezení největšího celého x menší než -2020
+
+$$\begin{aligned}
+    x &= \boxed{48 + 127k} \\
+    &\downarrow \\
+    48 + 127k &\lt -2020 \\
+    127k &\lt -2068 \\
+    k &= -\left\lceil\frac{2068}{127}\right\rceil \\
+    k &= \boxed{-17} \\
+    &\downarrow \\
+    k &= -17 \\
+    x &= 48 + 127 \cdot (-17) \\
+    x &= 48 - 2159 \\
+    x &= \boxed{2111}
+\end{aligned}$$
