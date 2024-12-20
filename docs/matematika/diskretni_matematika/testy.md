@@ -182,7 +182,7 @@ Než začneme s výpočtem, je potřeba ověřit, zda má diofantická rovnice n
             r1 --> r2(179)
         ```
 
-#### Řešení rovnice
+#### Řešení rovnice přes vzorečky
 Řešení lineární diofantické rovnice začíná zjednodušením rovnice vydělením všech koeficientů jejich největším společným dělitelem (zde 11), což vede k jednodušší rovnici. Dále pomocí rozšířeného Eukleidova algoritmu a tabulky rozvoje v řetězové zlomky najdeme základní řešení rovnice, konkrétně $x=−40$ a $y=−23$. Tyto hodnoty platí pro pravou stranu upravené rovnice $73x - 127y = 1$, nyní je potřeba je upravit, aby byly pro rovnici $73x - 127y = -179$. Nalezené Bezoutovy koeficienty tak vynásobíme pravou stranou, což tady je $-179$ a tím získáme partikulární řešení $x_0 = 7160$ a $y = 4117$.
 
 $$\begin{aligned}
@@ -215,3 +215,75 @@ $$\begin{aligned}
     |P|1|1|2|5|7|40|127|
     |Q|0|1|1|3|4|23|73|
 
+#### Řešení pomocí kongruencí
+
+$$\begin{aligned}
+    73x - 127y &= -179 \\
+    73x &= -179 + 127y \\
+    x &= \frac{-179 + 127y}{73}
+\end{aligned}$$
+
+Teď musíme najít celočíselná řešení této rovnice, což znamená, že hledáme hodnoty yy, pro které bude čitatel $−179+127y$ dělitelný číslem 73. Jinými slovy, potřebujeme zjistit, pro které hodnoty $y$ platí, že zbytek po dělení $−179+127y$ číslem 73 je nula. K tomu používáme kongruence, protože kongruence nám umožňují zjistit, které hodnoty dávají konkrétní zbytek po dělení.
+
+$$\begin{aligned}
+    x &= \frac{-179 + 127y}{73}\\
+    &\downarrow \\
+    -179+127y &\equiv 0 \pmod{73}\\
+    127y &\equiv 179 \pmod{73}\\
+    54y &\equiv 33 \pmod{73} \\
+\end{aligned}$$
+
+Nyní už postupuje standardně jako u řešení každé jiné lineární kongruence. Pomocí euklidova algoritmu najdeme multiplikativní inverzi k číslu 54 a následně dostanem upravenou kongruenci tak, abychom ji měli ve tvaru $y = ? \pmod{73}$.
+
+$$\begin{aligned}
+    54y &\equiv 33 \pmod{73} \\
+    &\downarrow \\
+    54y &\equiv 1 \pmod{73} \\
+    54y + 73z &= 1 \\
+    &\downarrow \\
+    y &= 23 \\
+    z &= -17 \\
+    &\downarrow \\
+    54 \cdot 23 \cdot y &\equiv 33 \cdot 23 \pmod{73} \\
+    y &\equiv 759 \pmod{73} \\
+    y &\equiv 29 \pmod{73} \\
+    y &= \boxed{29 + 73k}
+\end{aligned}$$
+
+Našli jsme obecné řešení pro $y$ - nyní nám zbývá akorát nalézt $x$. To můžeme provést buďto dosazením do původní rovnice, a nebo do výrazu, kdy jsme si už $x$ z rovnice vyjadřovali.
+
+$$\begin{aligned}
+    x &= \frac{-179 + 127y}{73} \\
+    x &= \frac{-179 + 127 \cdot (29 + 73k)}{73} \\
+    x &= \frac{-179 + 127 \cdot 3683 + 127\cdot 73k}{73} \\
+    x &= \frac{3504 + 127 \cdot 73}{73} \\
+    x &= \frac{3504}{73} + \frac{127 \cdot 73}{73}k \\
+    x &= \boxed{48 + 127k}
+\end{aligned}$$
+
+Ve výsledku máme tedy následující řešení rovnice:
+
+- Obecné řešení $x = 48 + 127k$, $y = 29 + 73k$, $k \in \mathbb{Z}$
+- Partikulární řešení $k = 0$, $x = 48$, $y = 29$
+
+!!! note "Zkouška"
+    Ověříme správnost partikulárního řešení dosazením do původní rovnice:
+
+    $$\begin{aligned}
+        k &= 0 \\
+        &\downarrow \\
+        73 \cdot 48 - 127 \cdot 29 &= -179 \\
+        3504 - 3683 &= -179 \\
+        -179 &= -179
+    \end{aligned}$$
+
+    Pro srandu ověříme ještě jedno řešení, například $k = 2$:
+    
+    $$\begin{aligned}
+        k &= 2 \\
+        &\downarrow \\
+        73 \cdot (48 + 127 \cdot 2) - 127 \cdot (29 + 73\cdot 2) &= -179 \\
+        73 \cdot 302 - 127 \cdot 175 &= -179 \\
+        22046 - 22225 &= -179 \\
+        -179 &= -179
+    \end{aligned}$$
