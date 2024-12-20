@@ -1,0 +1,3963 @@
+
+<!doctype html>
+<html lang="cs" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bahamut731lp.github.io/wiki/matematika/diskretni_matematika/testy/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../algebraicke_struktury/polynomy/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
+    
+    
+      
+        <title>Řešení vzorových testů - Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.76a95c52.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reseni-vzorovych-testu" class="md-skip">
+          Přeskočit obsah
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Záhlaví">
+    <a href="../../.." title="Wiki" class="md-header__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Řešení vzorových testů
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Hledat" placeholder="Hledat" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Vyhledávání">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Vyčistit" aria-label="Vyčistit" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializace vyhledávání
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bahamut731lp/wiki" title="Přejít do repozitáře" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigace" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Wiki" class="md-nav__button md-logo" aria-label="Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bahamut731lp/wiki" title="Přejít do repozitáře" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Domů
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../algoritmy_a_programovani/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Algoritmy a programování
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmy a programování
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algoritmy_a_programovani/algoritmizace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algoritmizace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algoritmy_a_programovani/slozitost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Složitost
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algoritmy_a_programovani/vyhledavani_razeni/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vyhledávání a řazení
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algoritmy_a_programovani/rekurze/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rekurze
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algoritmy_a_programovani/cleneni_programu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Členění programu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../databazove_systemy/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Databázové systémy
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Databázové systémy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Relační
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Relační
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databazove_systemy/relacni/navrh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Návrh relačních databází
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databazove_systemy/relacni/funkcni_zavislost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funkční závislost
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databazove_systemy/relacni/normalizace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Normální formy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../databazove_systemy/relacni/aktualizacni_anomalie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aktualizační anomálie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../gramatiky_automaty/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Gramatiky a automaty
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Gramatiky a automaty
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gramatiky_automaty/abecedy_slova/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abecedy a slova
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gramatiky_automaty/formalni_jazyky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formální jazyky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gramatiky_automaty/automaty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gramatiky_automaty/gramatiky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gramatika
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hardware a elektronika
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware a elektronika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/ciselne_soustavy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Číselné soustavy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/prevodniky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Převodníky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/kombinacni_logicke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kombinační logické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/sekvencni_logicke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sekvenční logické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/aritmeticke_obvody/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aritmetické obvody
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/automaty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automaty
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logicke_obvody/procesory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procesor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Matematika
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Matematika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../abstraktni_algebra/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Abstraktní algebra
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Abstraktní algebra
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reálná analýza
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Reálná analýza
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../funkce/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Funkce
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_2_1" id="__nav_6_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Funkce
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../funkce/inverzni/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inverzní funkce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Analytická geometrie
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Analytická geometrie
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyticka_geometrie/vektory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vektorová algebra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyticka_geometrie/parametricka_primka/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parametrická rovnice přímky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyticka_geometrie/obecna_primka/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Obecná rovnice přímky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analyticka_geometrie/uhel_mezi_primkami/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Úhel (odchylka) mezi dvěma přímkami
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Diskrétní matematika
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            Diskrétní matematika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Řešení vzorových testů
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Řešení vzorových testů
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reseni-k-testu-622020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Řešení k testu 6.2.2020
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Řešení k testu 6.2.2020">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uloha-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Úloha 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Úloha 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rozklady-cisel-na-prvocisla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rozklady čísel na prvočísla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urceni-nsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Určení NSD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pocet-spolecnych-delitelu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Počet společných dělitelů
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urceni-vsech-delitelu-cisla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Určení všech dělitelů čísla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urceni-nsn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Určení NSN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vypocet-eulerovy-funkce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Výpočet Eulerovy funkce
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uloha-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Úloha 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Úloha 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overeni-reseni-diofanticke-rovnice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ověření řešení diofantické rovnice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseni-rovnice-pres-vzorecky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Řešení rovnice přes vzorečky
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseni-pomoci-kongruenci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Řešení pomocí kongruencí
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nalezeni-nejvetsiho-celeho-x-mensi-nez-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nalezení největšího celého x menší než -2020
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uloha-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Úloha 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Úloha 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reseni-soustavy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Řešení soustavy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kolik-celych-cisel-soustave-vyhovuje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kolik celých čísel soustavě vyhovuje?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#najdete-nejvetsi-x-ktere-vyhovuje-podmince" class="md-nav__link">
+    <span class="md-ellipsis">
+      Najděte největší x, které vyhovuje podmínce
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4_3" id="__nav_6_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebraické struktury
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algebraické struktury
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebraicke_struktury/polynomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Polynomy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algebraicke_struktury/permutace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Permutace (Symetrické grupy)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../teorie_delitelnosti/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Teorie dělitelnosti
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_4_4" id="__nav_6_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Teorie dělitelnosti
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/delitelnost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dělitelnost
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/spolecny_delitel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Společný dělitel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/prvocisla/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prvočísla a prvočíselné rozklady
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/spolecny_nasobek/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Společný násobek
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/bezoutova_rovnost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bézoutova rovnost
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/mobiova_funkce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mobiova funkce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/eulerova_funkce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eulerova funkce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/dolni_horni_cela_cast/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dolní a horní celá část
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/retezove_zlomky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Řetězové zlomky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teorie_delitelnosti/kongruence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kongruence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../statistika/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Statistika
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            Statistika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/jevy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pokusy a jevy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/pravdepodobnost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pravděpodobnost
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/podminena_pravdepodobnost/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Závislost pokusů
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/nahodna_velicina/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Náhodná veličina
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/teorie_pravdepodobnosti/ciselne_charakteristiky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Číselné charakteristiky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5_7" id="__nav_6_5_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rozdělení pravděpodobnosti
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Rozdělení pravděpodobnosti
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/rozdeleni/hypergeometricke/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hypergeometrické rozdělení
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/rozdeleni/binomicke/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binomické rozdělení
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/rozdeleni/poissonovo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poissonovo rozdělení
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/rozdeleni/alternativni/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alternativní rozdělení
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/rozdeleni/geometricke/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Geometrické rozdělení
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../statistika/rozdeleni/multinomicke/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multinomické rozdělení
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../kombinatorika/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Kombinatorika
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Kombinatorika
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kombinatorika/kombinatoricka_pravidla/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kombinatorická pravidla
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reálná analýza
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            Reálná analýza
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../realna_analyza/derivace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Derivace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../realna_analyza/diferencial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diferenciál
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../realna_analyza/integral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Zjednodušování výrazů
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            Zjednodušování výrazů
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zlomky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práce se zlomky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exponenty/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práce s exponenty a mocninami
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logaritmy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Logaritmy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../signaly_a_informace/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Signály a informace
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Signály a informace
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signaly_a_informace/signaly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Signál
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signaly_a_informace/ad_prevod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AD Převod
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signaly_a_informace/systemy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systémy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signaly_a_informace/konvoluce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Konvoluce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signaly_a_informace/fourierovy_rady/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourierovy řady
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signaly_a_informace/spektrum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spektrum signálu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../signaly_a_informace/filtry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filtry
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../operacni_systemy/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Operační systémy
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Operační systémy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operacni_systemy/procesy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procesy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archiv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Obsah">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Obsah
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reseni-k-testu-622020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Řešení k testu 6.2.2020
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Řešení k testu 6.2.2020">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uloha-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Úloha 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Úloha 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rozklady-cisel-na-prvocisla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rozklady čísel na prvočísla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urceni-nsd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Určení NSD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pocet-spolecnych-delitelu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Počet společných dělitelů
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urceni-vsech-delitelu-cisla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Určení všech dělitelů čísla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urceni-nsn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Určení NSN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vypocet-eulerovy-funkce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Výpočet Eulerovy funkce
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uloha-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Úloha 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Úloha 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overeni-reseni-diofanticke-rovnice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ověření řešení diofantické rovnice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseni-rovnice-pres-vzorecky" class="md-nav__link">
+    <span class="md-ellipsis">
+      Řešení rovnice přes vzorečky
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseni-pomoci-kongruenci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Řešení pomocí kongruencí
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nalezeni-nejvetsiho-celeho-x-mensi-nez-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nalezení největšího celého x menší než -2020
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uloha-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Úloha 3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Úloha 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reseni-soustavy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Řešení soustavy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kolik-celych-cisel-soustave-vyhovuje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kolik celých čísel soustavě vyhovuje?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#najdete-nejvetsi-x-ktere-vyhovuje-podmince" class="md-nav__link">
+    <span class="md-ellipsis">
+      Najděte největší x, které vyhovuje podmínce
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+  
+    <a href="https://github.com/bahamut731lp/wiki/edit/main/docs/matematika/diskretni_matematika/testy.md" title="Upravit tuto stránku" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="reseni-vzorovych-testu">Řešení vzorových testů</h1>
+<h2 id="reseni-k-testu-622020">Řešení k testu 6.2.2020</h2>
+<h3 id="uloha-1">Úloha 1</h3>
+<div class="admonition example">
+<p>Nechť <span class="arithmatex">\(a = 210 600, b = 117000, c = 268125\)</span>. Určete počet všech společných dělitelů čísel a, b, c a všechny je vypiště (vlastní i nevlastní). Určete <span class="arithmatex">\(\varphi(NSN(a, b, c,))\)</span>, kde <span class="arithmatex">\(\varphi\)</span> označuje Eulerovu funkci.</p>
+</div>
+<h4 id="rozklady-cisel-na-prvocisla">Rozklady čísel na prvočísla</h4>
+<ul>
+<li><span class="arithmatex">\(210600 = 2^3 \cdot 3^4 \cdot 5^2 \cdot 13\)</span></li>
+<li><span class="arithmatex">\(117000 = 2^3 \cdot 3^2 \cdot 5^3 \cdot 13\)</span></li>
+<li><span class="arithmatex">\(238125 = 3^1 \cdot 5^4 \cdot 11 \cdot 13\)</span></li>
+</ul>
+<details class="- quote">
+<summary>Rozklad čísla 210 600</summary>
+<pre class="mermaid"><code>flowchart LR
+    r1(210 600)
+    r1 --&gt; r2(100)
+    r2 --&gt; r4([5])
+    r2 --&gt; r5(20)
+    r5 --&gt; r6([5])
+    r5 --&gt; r7(4)
+    r7 --&gt; r8([2])
+    r7 --&gt; r9([2])
+
+    r1 --&gt; r3(2106)
+    r3 --&gt; r10([2])
+    r3 --&gt; r11(1053)
+    r11 --&gt; r12([3])
+    r11 --&gt; r13(351)
+    r13 --&gt; r14([3])
+    r13 --&gt; r15(117)
+    r15 --&gt; r16([3])
+    r15 --&gt; r17(39)
+    r17 --&gt; r18([3])
+    r17 --&gt; r19([13])</code></pre>
+</details>
+<details class="- quote">
+<summary>Rozklad čísla 117 000</summary>
+<pre class="mermaid"><code>flowchart LR
+    r1(117 000)
+    r1 --&gt; r2(1000)
+    r2 --&gt; r4([5])
+    r2 --&gt; r5(200)
+    r5 --&gt; r6([5])
+    r5 --&gt; r7(40)
+    r7 --&gt; r8(5)
+    r7 --&gt; r9(8)
+    r9 --&gt; r10([2])
+    r9 --&gt; r11(4)
+    r11 --&gt; r12([2])
+    r11 --&gt; r13([2])
+
+    r1 --&gt; r14(117)
+    r14 --&gt; r15([3])
+    r14 --&gt; r16(39)
+    r16 --&gt; r17([13])
+    r16 --&gt; r18([3])</code></pre>
+</details>
+<details class="- quote">
+<summary>Rozklad čísla 268 125</summary>
+<pre class="mermaid"><code>flowchart LR
+    r1(268125)
+    r1 --&gt; r3([5])
+    r1 --&gt; r2(53625)
+    r2 --&gt; r5([5])
+    r2 --&gt; r4(10725)
+    r4 --&gt; r7([5])
+    r4 --&gt; r8(2145)
+    r8 --&gt; r9([5])
+    r8 --&gt; r10(429)
+    r10 --&gt; r11([3])
+    r10 --&gt; r12(143)
+    r12 --&gt; r13([13])
+    r12 --&gt; r14([11])</code></pre>
+</details>
+<h4 id="urceni-nsd">Určení NSD</h4>
+<p>Pokud máme čísla <span class="arithmatex">\(a, b, c\)</span> v jejich prvočíselném rozkladu, můžeme určit největšího společného dělitele. Ten se spočítá jako součin nejvyšších společných mocnic. To znamená, že musíme najít taková čísla a jejich mocniny, která jsou obsažena v každém zkoumaném čísle.</p>
+<p>Pro názornost udělám tabulku četností prvočísel. Vybíráme takové číslo, které je v řádku nejmenší (samozřejmě kromě čísla označující prvočíslo, jehož četnost je popisována). Výsledný nejmenší společný dělitel <span class="arithmatex">\(NSD(a, b, c) = 3 \cdot 5^2 \cdot 13\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Číslo</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">5</th>
+<th style="text-align: center;">11</th>
+<th style="text-align: center;">13</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>210600</strong></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>11700</strong></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>268125</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>NSD</strong></td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;"><strong>1</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="pocet-spolecnych-delitelu">Počet společných dělitelů</h4>
+<p>Počet společných dělitelů čísla lze vypočítat pomocí vztahu:</p>
+<div class="arithmatex">\[\begin{aligned}
+\tau(n) &amp;= (e_1 + 1) \cdot (e_2 + 1) \cdot\quad\ldots\quad\cdot (e_k + 1) \\
+\\
+\tau(NSD(a, b, c)) &amp;= (1 + 1) \cdot (2 + 1) \cdot (1 + 1) \\
+\tau(NSD(a, b, c)) &amp;= 2 \cdot 3 \cdot 2 \\
+\tau(NSD(a, b, c)) &amp;= 12 \\
+\end{aligned}\]</div>
+<h4 id="urceni-vsech-delitelu-cisla">Určení všech dělitelů čísla</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Pořadí</th>
+<th style="text-align: left;">Rozklad</th>
+<th style="text-align: left;">Číslo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^1 \cdot 5^2 \cdot 13^1\)</span></td>
+<td style="text-align: left;">975</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^0 \cdot 5^2 \cdot 13^1\)</span></td>
+<td style="text-align: left;">325</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^1 \cdot 5^1 \cdot 13^1\)</span></td>
+<td style="text-align: left;">195</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^1 \cdot 5^2 \cdot 13^0\)</span></td>
+<td style="text-align: left;">75</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^0 \cdot 5^1 \cdot 13^1\)</span></td>
+<td style="text-align: left;">65</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^1 \cdot 5^0 \cdot 13^1\)</span></td>
+<td style="text-align: left;">39</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^0 \cdot 5^2 \cdot 13^0\)</span></td>
+<td style="text-align: left;">25</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^1 \cdot 5^1 \cdot 13^0\)</span></td>
+<td style="text-align: left;">15</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^0 \cdot 5^0 \cdot 13^1\)</span></td>
+<td style="text-align: left;">13</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^0 \cdot 5^1 \cdot 13^0\)</span></td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^1 \cdot 5^0 \cdot 13^0\)</span></td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;"><span class="arithmatex">\(3^0 \cdot 5^0 \cdot 13^0\)</span></td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="urceni-nsn">Určení NSN</h4>
+<p>K další úloze bude potřeba spočíta nejmenší společný násobek. Ten se spočítá jako podíl součinu všech čísel a největšího společného dělitele.</p>
+<div class="arithmatex">\[\begin{aligned}
+    NSN(a, b, c) &amp;= \frac{a \cdot b \cdot c}{NSD(a, b, c)} \\
+    NSN(a, b, c) &amp;= \frac{(2^3 \cdot 3^4 \cdot 5^2 \cdot 13) \cdot (2^3 \cdot 3^2 \cdot 5^3 \cdot 13) \cdot (3^1 \cdot 5^4 \cdot 11 \cdot 13)}{3 \cdot 5^2 \cdot 13} \\
+    NSN(a, b, c) &amp;= \frac{2^6 \cdot 3^7 \cdot 5^9 \cdot 11 \cdot 13^3}{3 \cdot 5^2 \cdot 13} \\
+    NSN(a, b, c) &amp;= \frac{2^6 \cdot 3^6 \cdot 5^7 \cdot 11 \cdot 13^2}{1} \\
+    NSN(a, b, c) &amp;= 2^6 \cdot 3^6 \cdot 5^7 \cdot 11 \cdot 13^2
+\end{aligned}\]</div>
+<p>Konkrétní číslo nebudeme dopočítávat, protože se na něj zadání neptá a v další části, kde počítáme výsledek Eulerovy funkce, není potřeba.</p>
+<h4 id="vypocet-eulerovy-funkce">Výpočet Eulerovy funkce</h4>
+<div class="arithmatex">\[\begin{aligned}
+\varphi(n) &amp;= (p_1^{e_{1}} - p_1^{e{_1} - 1}) \cdot\quad\ldots\quad\cdot (p_k^{e_{k}} - p_k^{e_{k} - 1}) \\
+\\
+\varphi(NSN(a,b,c)) &amp;= (2^{6} - 2^{5}) \cdot (3^{6} - 3^{5}) \cdot (5^{7} - 5^{6}) \cdot (11^{1} - 11^{0}) \cdot (13^{2} - 13^{1}) \\
+\varphi(NSN(a,b,c)) &amp;= (64 - 32) \cdot (729 - 243) \cdot (78 125 - 15 625) \cdot (11 - 1) \cdot (169 - 13) \\
+\varphi(NSN(a,b,c)) &amp;= 32 \cdot 486 \cdot 62 500 \cdot 10 \cdot 156 \\
+\varphi(NSN(a,b,c)) &amp;= 32 \cdot 486 \cdot 62 500 \cdot 10 \cdot 156 \\
+\varphi(NSN(a,b,c)) &amp;= 32 \cdot 486 \cdot 625 \cdot 100 \cdot 10 \cdot 156 \\
+\varphi(NSN(a,b,c)) &amp;= 972 \cdot 10^4 \cdot 10^2 \cdot 10^1 \cdot 156 \\
+\varphi(NSN(a,b,c)) &amp;= 151632 \cdot 10^7\\
+\end{aligned}\]</div>
+<h3 id="uloha-2">Úloha 2</h3>
+<div class="admonition example">
+<p>Uvažujte diofantickou rovnici <span class="arithmatex">\(803x - 1397y = -1969\)</span>.</p>
+<ol>
+<li>Nalezněte všechna její celočíselná řešení.</li>
+<li>Určete řešení vyhovující podmínce - složka <span class="arithmatex">\(x\)</span> je největší celé číslo menší než -2020.</li>
+</ol>
+</div>
+<h4 id="overeni-reseni-diofanticke-rovnice">Ověření řešení diofantické rovnice</h4>
+<p>Než začneme s výpočtem, je potřeba ověřit, zda má diofantická rovnice nějaké celočíselné řešení. Pokud rozložíme všechna čísla na prvočinitele, zjistíme, že mají společný faktor 11. Platí, že <span class="arithmatex">\(NSD(a, b) = 11\)</span>. Protože číslo 11 je také součástí prvočíselného rozkladu čísla <span class="arithmatex">\(c\)</span>, znamená to, že největší společný dělitel <span class="arithmatex">\(a\)</span> a <span class="arithmatex">\(b\)</span> dělí i číslo <span class="arithmatex">\(c\)</span>. Z toho vyplývá, že diofantická rovnice má řešení.</p>
+<div class="admonition tip">
+<p class="admonition-title">Řešení diofantické rovnice</p>
+<p>Diofantická rovnice <span class="arithmatex">\(ax + by = c\)</span> má řešení, pokud <span class="arithmatex">\(NSD(a, b) \mid c\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Rozklady čísel</p>
+<details class="- quote">
+<summary>Rozklad čísla 803</summary>
+<pre class="mermaid"><code>flowchart LR
+    r1(803)
+    r1 --&gt; r3([11])
+    r1 --&gt; r2(73)</code></pre>
+</details>
+<details class="- quote">
+<summary>Rozklad čísla 1397</summary>
+<pre class="mermaid"><code>flowchart LR
+    r1(1397)
+    r1 --&gt; r3([11])
+    r1 --&gt; r2(127)</code></pre>
+</details>
+<details class="- quote">
+<summary>Rozklad čísla 1969</summary>
+<pre class="mermaid"><code>flowchart LR
+    r1(1397)
+    r1 --&gt; r3([11])
+    r1 --&gt; r2(179)</code></pre>
+</details>
+</div>
+<h4 id="reseni-rovnice-pres-vzorecky">Řešení rovnice přes vzorečky</h4>
+<p>Řešení lineární diofantické rovnice začíná zjednodušením rovnice vydělením všech koeficientů jejich největším společným dělitelem (zde 11), což vede k jednodušší rovnici. Dále pomocí rozšířeného Eukleidova algoritmu a tabulky rozvoje v řetězové zlomky najdeme základní řešení rovnice, konkrétně <span class="arithmatex">\(x=−40\)</span> a <span class="arithmatex">\(y=−23\)</span>. Tyto hodnoty platí pro pravou stranu upravené rovnice <span class="arithmatex">\(73x - 127y = 1\)</span>, nyní je potřeba je upravit, aby byly pro rovnici <span class="arithmatex">\(73x - 127y = -179\)</span>. Nalezené Bezoutovy koeficienty tak vynásobíme pravou stranou, což tady je <span class="arithmatex">\(-179\)</span> a tím získáme partikulární řešení <span class="arithmatex">\(x_0 = 7160\)</span> a <span class="arithmatex">\(y = 4117\)</span>.</p>
+<div class="arithmatex">\[\begin{aligned}
+    803x - 1397y &amp;= -1969 \\
+    73x - 127y &amp;= -179 \\
+    \\
+    73x - 127y &amp;= NSD(73, 127) \\
+    73x - 127y &amp;= 1 \\
+    \\
+    x &amp;= -40 \\
+    y &amp;= -23 \\
+    \\
+    x_0 &amp;= -40 \cdot (-179) \\
+    y_0 &amp;= -23 \cdot (-179) \\
+    \\
+    x_0 &amp;= 7160 \\
+    y_0 &amp;= 4117 \\
+    \\
+    x &amp;= x_0 + k \cdot \frac{b}{NSD(a, b)} \\
+    y &amp;= y_0 - k \cdot \frac{a}{NSD(a, b)} \\
+    \\
+    x &amp;= 7160 + -127k \\
+    y &amp;= 4117 - 73k \\
+\end{aligned}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Tabulka rozvoje v řetězové zlomky</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">i</th>
+<th style="text-align: center;">-1</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">q</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">P</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">127</td>
+</tr>
+<tr>
+<td style="text-align: center;">Q</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">73</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="reseni-pomoci-kongruenci">Řešení pomocí kongruencí</h4>
+<div class="arithmatex">\[\begin{aligned}
+    73x - 127y &amp;= -179 \\
+    73x &amp;= -179 + 127y \\
+    x &amp;= \frac{-179 + 127y}{73}
+\end{aligned}\]</div>
+<p>Teď musíme najít celočíselná řešení této rovnice, což znamená, že hledáme hodnoty yy, pro které bude čitatel <span class="arithmatex">\(−179+127y\)</span> dělitelný číslem 73. Jinými slovy, potřebujeme zjistit, pro které hodnoty <span class="arithmatex">\(y\)</span> platí, že zbytek po dělení <span class="arithmatex">\(−179+127y\)</span> číslem 73 je nula. K tomu používáme kongruence, protože kongruence nám umožňují zjistit, které hodnoty dávají konkrétní zbytek po dělení.</p>
+<div class="arithmatex">\[\begin{aligned}
+    x &amp;= \frac{-179 + 127y}{73}\\
+    &amp;\downarrow \\
+    -179+127y &amp;\equiv 0 \pmod{73}\\
+    127y &amp;\equiv 179 \pmod{73}\\
+    54y &amp;\equiv 33 \pmod{73} \\
+\end{aligned}\]</div>
+<p>Nyní už postupuje standardně jako u řešení každé jiné lineární kongruence. Pomocí euklidova algoritmu najdeme multiplikativní inverzi k číslu 54 a následně dostanem upravenou kongruenci tak, abychom ji měli ve tvaru <span class="arithmatex">\(y = ? \pmod{73}\)</span>.</p>
+<div class="arithmatex">\[\begin{aligned}
+    54y &amp;\equiv 33 \pmod{73} \\
+    &amp;\downarrow \\
+    54y &amp;\equiv 1 \pmod{73} \\
+    54y + 73z &amp;= 1 \\
+    &amp;\downarrow \\
+    y &amp;= 23 \\
+    z &amp;= -17 \\
+    &amp;\downarrow \\
+    54 \cdot 23 \cdot y &amp;\equiv 33 \cdot 23 \pmod{73} \\
+    y &amp;\equiv 759 \pmod{73} \\
+    y &amp;\equiv 29 \pmod{73} \\
+    y &amp;= \boxed{29 + 73k}
+\end{aligned}\]</div>
+<p>Našli jsme obecné řešení pro <span class="arithmatex">\(y\)</span> - nyní nám zbývá akorát nalézt <span class="arithmatex">\(x\)</span>. To můžeme provést buďto dosazením do původní rovnice, a nebo do výrazu, kdy jsme si už <span class="arithmatex">\(x\)</span> z rovnice vyjadřovali.</p>
+<div class="arithmatex">\[\begin{aligned}
+    x &amp;= \frac{-179 + 127y}{73} \\
+    x &amp;= \frac{-179 + 127 \cdot (29 + 73k)}{73} \\
+    x &amp;= \frac{-179 + 127 \cdot 3683 + 127\cdot 73k}{73} \\
+    x &amp;= \frac{3504 + 127 \cdot 73}{73} \\
+    x &amp;= \frac{3504}{73} + \frac{127 \cdot 73}{73}k \\
+    x &amp;= \boxed{48 + 127k}
+\end{aligned}\]</div>
+<p>Ve výsledku máme tedy následující řešení rovnice:</p>
+<ul>
+<li>Obecné řešení <span class="arithmatex">\(x = 48 + 127k\)</span>, <span class="arithmatex">\(y = 29 + 73k\)</span>, <span class="arithmatex">\(k \in \mathbb{Z}\)</span></li>
+<li>Partikulární řešení <span class="arithmatex">\(k = 0\)</span>, <span class="arithmatex">\(x = 48\)</span>, <span class="arithmatex">\(y = 29\)</span></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Zkouška</p>
+<p>Ověříme správnost partikulárního řešení dosazením do původní rovnice:</p>
+<div class="arithmatex">\[\begin{aligned}
+    k &amp;= 0 \\
+    &amp;\downarrow \\
+    73 \cdot 48 - 127 \cdot 29 &amp;= -179 \\
+    3504 - 3683 &amp;= -179 \\
+    -179 &amp;= -179
+\end{aligned}\]</div>
+<p>Pro srandu ověříme ještě jedno řešení, například <span class="arithmatex">\(k = 2\)</span>:</p>
+<div class="arithmatex">\[\begin{aligned}
+    k &amp;= 2 \\
+    &amp;\downarrow \\
+    73 \cdot (48 + 127 \cdot 2) - 127 \cdot (29 + 73\cdot 2) &amp;= -179 \\
+    73 \cdot 302 - 127 \cdot 175 &amp;= -179 \\
+    22046 - 22225 &amp;= -179 \\
+    -179 &amp;= -179
+\end{aligned}\]</div>
+</div>
+<h4 id="nalezeni-nejvetsiho-celeho-x-mensi-nez-2020">Nalezení největšího celého x menší než -2020</h4>
+<div class="arithmatex">\[\begin{aligned}
+    x &amp;= \boxed{48 + 127k} \\
+    &amp;\downarrow \\
+    48 + 127k &amp;\lt -2020 \\
+    127k &amp;\lt -2068 \\
+    k &amp;= -\left\lceil\frac{2068}{127}\right\rceil \\
+    k &amp;= \boxed{-17} \\
+    &amp;\downarrow \\
+    k &amp;= -17 \\
+    x &amp;= 48 + 127 \cdot (-17) \\
+    x &amp;= 48 - 2159 \\
+    x &amp;= \boxed{2111}
+\end{aligned}\]</div>
+<h3 id="uloha-3">Úloha 3</h3>
+<div class="admonition example">
+<p>Uvažujte soustavu kongruencí <span class="arithmatex">\(2x \equiv -6 \pmod{15}\)</span>, <span class="arithmatex">\(2x \equiv 3 \pmod{9}\)</span>, <span class="arithmatex">\(3x \equiv -9 \pmod{10}\)</span>, <span class="arithmatex">\(3x \equiv -15 \pmod{8}\)</span>.</p>
+<ol>
+<li>Uvedenou soustavu vyřešte</li>
+<li>Kolik celých čísel dané soustavě vyhovuje?</li>
+<li>Určete největší <span class="arithmatex">\(x_0\)</span>, které vyhovuje dané kongruenci a navíc platí <span class="arithmatex">\(|x_0 + 2020| &lt; 250\)</span></li>
+</ol>
+</div>
+<h4 id="reseni-soustavy">Řešení soustavy</h4>
+<div class="arithmatex">\[\begin{aligned}
+2x &amp;\equiv -6 \pmod{15} \\
+2x &amp;\equiv 3 \pmod{9} \\
+3x &amp;\equiv -9 \pmod{10} \\
+3x &amp;\equiv -15 \pmod{8} \\
+\\
+2x &amp;\equiv 9 \pmod{15} &amp;/\cdot 8  \\
+2x &amp;\equiv 3 \pmod{9} &amp;/\cdot 5  \\
+3x &amp;\equiv 1 \pmod{10} &amp;/\cdot 7  \\
+3x &amp;\equiv 1 \pmod{8} &amp;/\cdot 3 \\
+\\
+x &amp;\equiv 12 \pmod{15} \\
+x &amp;\equiv 6 \pmod{9} \\
+x &amp;\equiv 7 \pmod{10} \\
+x &amp;\equiv 3 \pmod{8} \\
+\\
+x &amp;= 12+ 15k \\
+x &amp;\equiv 6 \pmod{9} \\
+x &amp;\equiv 7 \pmod{10} \\
+x &amp;\equiv 3 \pmod{8} \\
+&amp;\downarrow \\
+12+ 15k &amp;\equiv 6 \pmod{9} \\
+6k &amp;\equiv 3 \pmod{9} \\
+2k &amp;\equiv 1 \pmod{3} &amp;/\cdot(2) \\
+k &amp;= 2 + 3t \\
+&amp;\downarrow \\
+x &amp;= 12+ 15 \cdot (2 + 3t) \\
+x &amp;\equiv 7 \pmod{10} \\
+x &amp;\equiv 3 \pmod{8} \\
+\\
+x &amp;= 42 + 45t \\
+x &amp;\equiv 7 \pmod{10} \\
+x &amp;\equiv 3 \pmod{8} \\
+&amp;\downarrow \\
+42 + 45t &amp;\equiv 7 \pmod{10} \\
+45t &amp;\equiv -35 \pmod{10} \\
+5t &amp;\equiv 5 \pmod{10}\\
+t &amp;\equiv 1 \pmod{2}
+t &amp;= 1 + 2s \\
+&amp;\downarrow \\
+x &amp;= 42 + 45\cdot(1 + 2s) \\
+x &amp;= 87 + 90s \\
+&amp;\downarrow \\
+x &amp;= 87 + 90s \\
+x &amp;\equiv 3 \pmod{8} \\
+\\
+87 + 90s &amp;\equiv 3 \pmod{8} \\
+7 + 2s &amp;\equiv 3 \pmod{8} \\
+2s &amp;\equiv -4 \pmod{8} \\
+2s &amp;\equiv 4 \pmod{8} \\
+s &amp;\equiv 2 \pmod{4}
+s &amp;= 2 + 4r \\
+&amp;\downarrow \\
+x &amp;= 87 + 90 \cdot (2 + 4r) \\
+x &amp;= \boxed{267 + 360r}
+\end{aligned}\]</div>
+<h4 id="kolik-celych-cisel-soustave-vyhovuje">Kolik celých čísel soustavě vyhovuje?</h4>
+<p>Všechny, máme obecné řešení, amigo.</p>
+<h4 id="najdete-nejvetsi-x-ktere-vyhovuje-podmince">Najděte největší x, které vyhovuje podmínce</h4>
+<div class="arithmatex">\[\begin{aligned}
+    |x_0 + 2020| &amp;\lt 250 \\
+    \\
+    x_0 + 2020 &amp;\lt 250 \\
+    x_0 &amp;\lt -1770 \\
+    267 + 360r &amp;\lt -1770 \\
+    360r &amp;\lt -2037 \\
+    \\
+    r &amp;= -\left\lceil\frac{2037}{360}\right\rceil \\
+    r &amp;= \boxed{-6} \\
+    \\
+    x_0 &amp;= 267 + 360 \cdot (-6) \\
+    x_0 &amp;= 267 - 2160 \\
+    x_0 &amp;= -1893 \\
+    &amp;\downarrow \\
+    |x_0 + 2020| &amp;\lt 250 \\
+    |-1893 + 2020| &amp;\lt 250 \\
+    |127| &amp;\lt 250
+\end{aligned}\]</div>
+
+
+
+
+
+
+
+
+  <aside class="md-source-file">
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Přispěvatelé">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:heindrich73@gmail.com">Kevin Daněk</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+
+
+<div class="md-source-date">
+    <small>
+        Přispěvatelé: 
+        <span>
+                    Kevin Daněk (100.0%)
+                </span>
+    </small>
+</div>
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Zápatí" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Předchozí: Diskrétní matematika">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Předchozí
+              </span>
+              <div class="md-ellipsis">
+                Diskrétní matematika
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../algebraicke_struktury/polynomy/" class="md-footer__link md-footer__link--next" aria-label="Další: Polynomy">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Další
+              </span>
+              <div class="md-ellipsis">
+                Polynomy
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/bahamut731lp" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "content.code.copy", "navigation.footer", "navigation.indexes", "announce.dismiss", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Zkop\u00edrov\u00e1no do schr\u00e1nky", "clipboard.copy": "Kop\u00edrovat do schr\u00e1nky", "search.result.more.one": "1 dal\u0161\u00ed na t\u00e9to str\u00e1nce", "search.result.more.other": "# v\u00edce na t\u00e9to str\u00e1nce", "search.result.none": "Nenalezeny \u017e\u00e1dn\u00e9 dokumenty", "search.result.one": "Nalezen\u00fd dokument: 1", "search.result.other": "Nalezen\u00e9 dokumenty: #", "search.result.placeholder": "Pi\u0161te co se m\u00e1 vyhledat", "search.result.term.missing": "Chyb\u011bj\u00edc\u00ed", "select.version": "Vyberte verzi"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
