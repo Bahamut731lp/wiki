@@ -303,3 +303,95 @@ $$\begin{aligned}
     x &= 48 - 2159 \\
     x &= \boxed{2111}
 \end{aligned}$$
+
+### Úloha 3
+!!! example ""
+    Uvažujte soustavu kongruencí $2x \equiv -6 \pmod{15}$, $2x \equiv 3 \pmod{9}$, $3x \equiv -9 \pmod{10}$, $3x \equiv -15 \pmod{8}$.
+    
+    1. Uvedenou soustavu vyřešte
+    2. Kolik celých čísel dané soustavě vyhovuje?
+    3. Určete největší $x_0$, které vyhovuje dané kongruenci a navíc platí $|x_0 + 2020| < 250$
+
+#### Řešení soustavy
+
+$$\begin{aligned}
+2x &\equiv -6 \pmod{15} \\
+2x &\equiv 3 \pmod{9} \\
+3x &\equiv -9 \pmod{10} \\
+3x &\equiv -15 \pmod{8} \\
+\\
+2x &\equiv 9 \pmod{15} &/\cdot 8  \\
+2x &\equiv 3 \pmod{9} &/\cdot 5  \\
+3x &\equiv 1 \pmod{10} &/\cdot 7  \\
+3x &\equiv 1 \pmod{8} &/\cdot 3 \\
+\\
+x &\equiv 12 \pmod{15} \\
+x &\equiv 6 \pmod{9} \\
+x &\equiv 7 \pmod{10} \\
+x &\equiv 3 \pmod{8} \\
+\\
+x &= 12+ 15k \\
+x &\equiv 6 \pmod{9} \\
+x &\equiv 7 \pmod{10} \\
+x &\equiv 3 \pmod{8} \\
+&\downarrow \\
+12+ 15k &\equiv 6 \pmod{9} \\
+6k &\equiv 3 \pmod{9} \\
+2k &\equiv 1 \pmod{3} &/\cdot(2) \\
+k &= 2 + 3t \\
+&\downarrow \\
+x &= 12+ 15 \cdot (2 + 3t) \\
+x &\equiv 7 \pmod{10} \\
+x &\equiv 3 \pmod{8} \\
+\\
+x &= 42 + 45t \\
+x &\equiv 7 \pmod{10} \\
+x &\equiv 3 \pmod{8} \\
+&\downarrow \\
+42 + 45t &\equiv 7 \pmod{10} \\
+45t &\equiv -35 \pmod{10} \\
+5t &\equiv 5 \pmod{10}\\
+t &\equiv 1 \pmod{2}
+t &= 1 + 2s \\
+&\downarrow \\
+x &= 42 + 45\cdot(1 + 2s) \\
+x &= 87 + 90s \\
+&\downarrow \\
+x &= 87 + 90s \\
+x &\equiv 3 \pmod{8} \\
+\\
+87 + 90s &\equiv 3 \pmod{8} \\
+7 + 2s &\equiv 3 \pmod{8} \\
+2s &\equiv -4 \pmod{8} \\
+2s &\equiv 4 \pmod{8} \\
+s &\equiv 2 \pmod{4}
+s &= 2 + 4r \\
+&\downarrow \\
+x &= 87 + 90 \cdot (2 + 4r) \\
+x &= \boxed{267 + 360r}
+\end{aligned}$$
+
+#### Kolik celých čísel soustavě vyhovuje?
+Všechny, máme obecné řešení, amigo.
+
+#### Najděte největší x, které vyhovuje podmínce
+
+$$\begin{aligned}
+    |x_0 + 2020| &\lt 250 \\
+    \\
+    x_0 + 2020 &\lt 250 \\
+    x_0 &\lt -1770 \\
+    267 + 360r &\lt -1770 \\
+    360r &\lt -2037 \\
+    \\
+    r &= -\left\lceil\frac{2037}{360}\right\rceil \\
+    r &= \boxed{-6} \\
+    \\
+    x_0 &= 267 + 360 \cdot (-6) \\
+    x_0 &= 267 - 2160 \\
+    x_0 &= -1893 \\
+    &\downarrow \\
+    |x_0 + 2020| &\lt 250 \\
+    |-1893 + 2020| &\lt 250 \\
+    |127| &\lt 250
+\end{aligned}$$
