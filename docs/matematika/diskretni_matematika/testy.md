@@ -395,3 +395,199 @@ $$\begin{aligned}
     |-1893 + 2020| &\lt 250 \\
     |127| &\lt 250
 \end{aligned}$$
+
+### Úloha 4
+!!! example ""
+    Nechť $f(x), g(x) \in \mathbb{Z}_7 \mod{(2x^4 + 4x^2 + 5x + 1)}$, kde $f(x) = 6x^3 + 2x^2 + 4$ a $g(x) = 5x^3 + 3x^2 + 2x + 6$.
+
+    1. Spočtěte $f(x) \cdot g(x)$
+    2. Rozhodněte, zda je $f(x)$ ireducibilní nad $\mathbb{Z}_7$. __Své tvrzení řádně zdůvodněte!__
+
+#### Výpočet součinu
+$$\begin{aligned}
+    f(x) \cdot g(x) &= (6x^3 + 2x^2 + 4) \cdot (5x^3 + 3x^2 + 2x + 6) \\
+    &= (30x^6 + 18x^5 + 12x^4 + 36x^3) + (10x^5 + 6x^4 + 4x^3 + 12x^2) + (20x^3 + 12x^2 + 8x + 24) \\
+    &= 30x^6 + 28x^5 + 18x^4 + 60x^3 + 24x^2 + 8x + 24 \\
+    &= 2x^6 + 0x^5 + 4x^4 + 4x^3 + 3x^2 + x + 3 \\
+    &= \boxed{2x^6} + 4x^4 + 4x^3 + 3x^2 + x + 3 
+\end{aligned}$$
+
+|$x^6$  |$x^5$  |$x^4$  |x^3    |x^2    |x^1    |x^0    |
+|:--:   |:--:   |:--:   |:--:   |:--:   |:--:   |:--:   |
+|30     |18     |12     |36     |       |       |       |
+|       |10     |6      |4      |12     |       |       |
+|       |       |       |20     |12     |8      |24     |
+|__30__ |__28__ |__18__ |__60__ |__24__ |__8__  |__24__ |
+
+$$\begin{aligned}
+    \begin{array}{r|l}
+    2x^4 + 4x^2 + 5x + 1 & 2x^6 + 4x^4 + 4x^3 + 3x^2 + x + 3 \\
+    \hline
+        & - (2x^6 + 4x^4 + 5x^3 + x^2) \\
+        \hline
+        & -x^3 + 2x^2 + x + 3 \\
+        & = \boxed{6x^3 + 2x^2 + x + 3} \\
+    \end{array}
+\end{aligned}$$
+
+Výsledek součinu $f(x) \cdot g(x)$ v $\mathbb{Z}_7 \mod{(2x^4 + 4x^2 + 5x + 1)}$ je $6x^3 + 2x^2 + x + 3$.
+
+#### Je polynom ireducibilní?
+Polynom je ireducibilní v $\mathbb{Z}_7$, pokud má v $\mathbb{Z}_7$ alespoň jeden kořen. To znamená, že musí platit $f(x) = 0, x \in \mathbb{Z}$.
+
+$$\begin{aligned}
+    f(0) &= 6\cdot(0)^3 + 2(0)^2 + 4 = 4 \mod{7} \\
+    f(1) &= 6\cdot(1)^3 + 2(1)^2 + 4 = 6 + 2 + 4 = 5 \mod{7} \\
+    f(2) &= 6\cdot(2)^3 + 2(2)^2 + 4 = 6(8\mod{7}) + 2(4) + 4 = 6 + 1 + 4 = 4 \mod{7}\\
+    f(3) &= 6\cdot(3)^3 + 2(3)^2 + 4 = 6(27 \mod{7}) + 2(9 \mod{7}) + 4 = 36 + 4 + 4 = 2 \mod{7} \\
+    f(4) &= 6\cdot(4)^3 + 2(4)^2 + 4 = 6(64 \mod{7}) + 2(16 \mod{7}) + 4 = 6 + 4 + 4 = 0 \mod{7}
+\end{aligned}$$
+
+Dále nemusíme počítat, protože jsme nalezli kořen polynomu $f(x) = 6x^3 + 2x^2 + 4$ v $\mathbb{Z}_7$. Polynom je tedy ireducibilní, protože nejde dále rozložit na součin polynomů.
+
+
+### Úloha 5
+!!! example ""
+    Rozhodněte, zda mnmožina čísel $\{2020 \cdot m \mid m \in \mathbb{Z}\}$ tvoří:
+
+    1. Multiplikativní grupu
+    2. Aditivní grupu
+
+!!! info "Vlastnosti grupy"
+    Pro grupu $G(M, *)$ nad množinou $M$ s operací $*$ musí platit následující vlastnosti:
+    
+    - Operace $*$ je uzavřená vůči množině $M$, tj. $\forall x, y \in M: x * y \in M$
+    - Operace $*$ je asociativní, tj. $\forall x, y, z \in M: x * (y * z) = (x * y) * z$
+    - Pro operaci $*$ existuje neutrální prvek $e$ takový, že $\forall x, \exists e \in M: x * e = e * x = x$
+    - Pro operaci $*$ existuje inverzní prvek $i$ takový, že $\forall x, \exists i \in M: x * i = i * x = e$
+
+#### Multiplikativní grupa
+Uvažujme grupu $G(M, \cdot)$.
+
+##### Uzavřenost operace
+$$\begin{aligned}
+    m, n &\in \mathbb{Z} \\
+    x &= 2020 \cdot m \\
+    y &= 2020 \cdot n \\
+    \\
+    x \cdot y &= (2020 \cdot m) \cdot (2020 \cdot n) \\
+    x \cdot y &= 2020^2 \cdot m \cdot n
+\end{aligned}$$
+
+Operace násobení je pro celá čísla uzavřená, což znamená, že součin $m \cdot n$ také patří mezi celá čísla. Platí ale, že součin tohoto výrazu s číslem $2020^2$ náleží do množiny $M$? Ano, protože prvky množiny $M$ jsou definovány jako násobky čísla 2020, a $2020^2$ je rovněž násobkem 2020. Výsledkem je tedy násobek čísla 2020 vynásobený celým číslem, což odpovídá definici prvků množiny $M$. Proto je operace násobení uzavřená i vůči množině $M$.
+
+$$\begin{aligned}
+    m, n, p &\in \mathbb{Z} \\
+    2020 \cdot p &= 2020^2 \cdot m \cdot n \\
+    p &= 2020 \cdot m \cdot n \\
+    p &\in \mathbb{M}
+\end{aligned}$$
+
+#### Asociativita
+$$\begin{aligned}
+    m, n &\in \mathbb{Z} \\
+    x &= 2020 \cdot m \\
+    y &= 2020 \cdot n \\
+    \\
+    2020 \cdot m \cdot 2020 \cdot n &= 2020 \cdot n \cdot 2020 \cdot m \\
+    2020^2 \cdot m \cdot n &= 2020^2 \cdot m \cdot n
+\end{aligned}$$
+
+#### Existence neutrálního prvku
+$$\begin{aligned}
+    m, n &\in \mathbb{Z} \\
+    x &= 2020 \cdot m \\
+    e &= 2020 \cdot n \\
+    \\
+    x \cdot e &= x \\
+    (2020 \cdot m) \cdot (2020 \cdot n) &= (2020 \cdot m)  & / :(2020 \cdot m)\\
+    (2020 \cdot n) &= 1 \\
+    n &= \frac{1}{2020 \cdot n} \\
+    n &\not\in M
+\end{aligned}$$
+
+Neutrální prvek v grupě $G(M, \cdot)$ neexistuje, protože $\frac{1}{2020 \cdot n}$ není celé číslo.
+
+#### Existence inverzního prvku
+Dokazovat existenci inverzního prvku $i$ nemá smysl, protože jeho definice spoléhá na existenci neutrálního prvku $e$. Ovšem pro názornost zde předvedu, že opravdu neexistuje. Pro násobení v celých číslech je neutrálním prvkem číslo $1$, tudíž budeme uvažovat, že tohle je i neutrální prvek naší množiny $M$ (jak jsme ale dokázali v předchozím odstavci, není to pravda!).
+
+$$\begin{aligned}
+    m, n &\in \mathbb{Z} \\
+    x &= 2020 \cdot m \\
+    i &= 2020 \cdot n \\
+    \\
+    x \cdot i &= e \\
+    (2020 \cdot m) \cdot (2020 \cdot n) &= 1 \\
+    2020^2 \cdot m \cdot n &= 1 \\
+    n &= \frac{1}{2020^2 \cdot m} \\
+    n &\not\in M
+\end{aligned}$$
+
+### Aditivní grupa
+Uvažujme grupu $G(M, +)$.
+
+##### Uzavřenost operace
+$$\begin{aligned}
+    m, n &\in \mathbb{Z} \\
+    x &= 2020 \cdot m \\
+    y &= 2020 \cdot n \\
+    \\
+    x + y &= (2020 \cdot m) + (2020 \cdot n) \\
+    x + y &= 2020 \cdot (m + n)
+\end{aligned}$$
+
+Operace sčítání je pro celá čísla uzavřená, což znamená, že součet $m+n$ také patří mezi celá čísla. Platí ale, že součin tohoto výrazu s číslem $2020$ náleží do množiny $M$? Ano, protože prvky množiny $M$ jsou definovány jako celočíselné násobky čísla 2020. Výsledkem je násobek čísla 2020 vynásobený celým číslem, což odpovídá definici prvků množiny $M$. Proto je operace sčítání uzavřená i vůči množině $M$.
+
+$$\begin{aligned}
+    m, n, p &\in \mathbb{Z} \\
+    2020 \cdot p &= 2020 \cdot (m + n) \\
+    p &= m + n \\
+    p &\in \mathbb{Z}
+\end{aligned}$$
+
+#### Asociativita
+$$\begin{aligned}
+    m, n &\in \mathbb{Z} \\
+    x &= 2020 \cdot m \\
+    y &= 2020 \cdot n \\
+    \\
+    (2020 \cdot m) + (2020 \cdot n) &= (2020 \cdot n) + (2020 \cdot m) \\
+    2020 \cdot (m + n) &= 2020 \cdot (n + m)
+    m + n &= n + m 
+\end{aligned}$$
+
+#### Existence neutrálního prvku
+$$\begin{aligned}
+    m, n &\in \mathbb{Z} \\
+    x &= 2020 \cdot m \\
+    e &= 2020 \cdot n \\
+    \\
+    x \cdot e &= x \\
+    (2020 \cdot m) + (2020 \cdot n) &= (2020 \cdot m)  & / -(2020 \cdot m)\\
+    (2020 \cdot n) &= 0 \\
+    n &= 0 \\
+    n &\in \mathbb{Z}
+\end{aligned}$$
+
+Neutrální prvek v grupě $G(M, +)$ existuje a je to $0$.
+
+#### Existence inverzního prvku
+
+$$\begin{aligned}
+    m, n &\in \mathbb{Z} \\
+    x &= 2020 \cdot m \\
+    i &= 2020 \cdot n \\
+    \\
+    x + i &= e \\
+    (2020 \cdot m) + (2020 \cdot n) &= 0 \\
+    2020 \cdot (m + n) &= 0 &/ :2020 \\
+    m + n &= 0 \\
+    n &= -m \\
+    n &\in \mathbb{Z}
+\end{aligned}$$
+
+### Závěry
+Množina $M = \{2020 \cdot m \mid m \in \mathbb{Z}\}$
+
+1. __Netvoří multiplikativní grupu__ $G(M, \cdot)$, protože neexistuje neutrální a inverzní prvek, který by byl součástí množiny $M$.
+2. __Tvoří aditivní grupu__ $G(M, +)$ s neutrálním prvkem $e = 0$ a inverzním prvkem $i = -m$.
