@@ -483,7 +483,7 @@ $$\begin{aligned}
     p &\in \mathbb{M}
 \end{aligned}$$
 
-#### Asociativita
+##### Asociativita
 $$\begin{aligned}
     m, n &\in \mathbb{Z} \\
     x &= 2020 \cdot m \\
@@ -493,7 +493,7 @@ $$\begin{aligned}
     2020^2 \cdot m \cdot n &= 2020^2 \cdot m \cdot n
 \end{aligned}$$
 
-#### Existence neutrálního prvku
+##### Existence neutrálního prvku
 $$\begin{aligned}
     m, n &\in \mathbb{Z} \\
     x &= 2020 \cdot m \\
@@ -508,7 +508,7 @@ $$\begin{aligned}
 
 Neutrální prvek v grupě $G(M, \cdot)$ neexistuje, protože $\frac{1}{2020 \cdot n}$ není celé číslo.
 
-#### Existence inverzního prvku
+##### Existence inverzního prvku
 Dokazovat existenci inverzního prvku $i$ nemá smysl, protože jeho definice spoléhá na existenci neutrálního prvku $e$. Ovšem pro názornost zde předvedu, že opravdu neexistuje. Pro násobení v celých číslech je neutrálním prvkem číslo $1$, tudíž budeme uvažovat, že tohle je i neutrální prvek naší množiny $M$ (jak jsme ale dokázali v předchozím odstavci, není to pravda!).
 
 $$\begin{aligned}
@@ -523,7 +523,7 @@ $$\begin{aligned}
     n &\not\in M
 \end{aligned}$$
 
-### Aditivní grupa
+#### Aditivní grupa
 Uvažujme grupu $G(M, +)$.
 
 ##### Uzavřenost operace
@@ -545,7 +545,7 @@ $$\begin{aligned}
     p &\in \mathbb{Z}
 \end{aligned}$$
 
-#### Asociativita
+##### Asociativita
 $$\begin{aligned}
     m, n &\in \mathbb{Z} \\
     x &= 2020 \cdot m \\
@@ -556,7 +556,7 @@ $$\begin{aligned}
     m + n &= n + m 
 \end{aligned}$$
 
-#### Existence neutrálního prvku
+##### Existence neutrálního prvku
 $$\begin{aligned}
     m, n &\in \mathbb{Z} \\
     x &= 2020 \cdot m \\
@@ -571,7 +571,7 @@ $$\begin{aligned}
 
 Neutrální prvek v grupě $G(M, +)$ existuje a je to $0$.
 
-#### Existence inverzního prvku
+##### Existence inverzního prvku
 
 $$\begin{aligned}
     m, n &\in \mathbb{Z} \\
@@ -586,7 +586,7 @@ $$\begin{aligned}
     n &\in \mathbb{Z}
 \end{aligned}$$
 
-### Závěry
+#### Závěry
 Množina $M = \{2020 \cdot m \mid m \in \mathbb{Z}\}$
 
 1. __Netvoří multiplikativní grupu__ $G(M, \cdot)$, protože neexistuje neutrální a inverzní prvek, který by byl součástí množiny $M$.
