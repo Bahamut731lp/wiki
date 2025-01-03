@@ -81,7 +81,7 @@
 #### Určení NSD
 Pokud máme čísla $a, b, c$ v jejich prvočíselném rozkladu, můžeme určit největšího společného dělitele. Ten se spočítá jako součin nejvyšších společných mocnic. To znamená, že musíme najít taková čísla a jejich mocniny, která jsou obsažena v každém zkoumaném čísle.
 
-Pro názornost udělám tabulku četností prvočísel. Vybíráme takové číslo, které je v řádku nejmenší (samozřejmě kromě čísla označující prvočíslo, jehož četnost je popisována). Výsledný nejmenší společný dělitel $NSD(a, b, c) = 3 \cdot 5^2 \cdot 13$.
+Pro názornost udělám tabulku četností prvočísel. Vybíráme takové číslo, které je ve sloupci nejmenší (samozřejmě kromě čísla označující prvočíslo, jehož četnost je popisována). Výsledný nejmenší společný dělitel $NSD(a, b, c) = 3 \cdot 5^2 \cdot 13$.
 
 |Číslo|2|3|5|11|13|
 |--:|:--:|:--:|:--:|:--:|:--:|
@@ -119,7 +119,7 @@ $$\begin{aligned}
 |12|$3^0 \cdot 5^0 \cdot 13^0$|1|
 
 #### Určení NSN
-K další úloze bude potřeba spočíta nejmenší společný násobek. Ten se spočítá jako podíl součinu všech čísel a největšího společného dělitele.
+K další úloze bude potřeba spočítat nejmenší společný násobek. Ten se spočítá jako podíl součinu všech čísel a největšího společného dělitele.
 
 $$\begin{aligned}
     NSN(a, b, c) &= \frac{a \cdot b \cdot c}{NSD(a, b, c)} \\
@@ -223,7 +223,7 @@ $$\begin{aligned}
     x &= \frac{-179 + 127y}{73}
 \end{aligned}$$
 
-Teď musíme najít celočíselná řešení této rovnice, což znamená, že hledáme hodnoty yy, pro které bude čitatel $−179+127y$ dělitelný číslem 73. Jinými slovy, potřebujeme zjistit, pro které hodnoty $y$ platí, že zbytek po dělení $−179+127y$ číslem 73 je nula. K tomu používáme kongruence, protože kongruence nám umožňují zjistit, které hodnoty dávají konkrétní zbytek po dělení.
+Teď musíme najít celočíselná řešení této rovnice, což znamená, že hledáme hodnoty $y$, pro které bude čitatel $−179+127y$ dělitelný číslem 73. Jinými slovy, potřebujeme zjistit, pro které hodnoty $y$ platí, že zbytek po dělení $−179+127y$ číslem 73 je nula. K tomu používáme kongruence, protože kongruence nám umožňují zjistit, které hodnoty dávají konkrétní zbytek po dělení.
 
 $$\begin{aligned}
     x &= \frac{-179 + 127y}{73}\\
@@ -233,7 +233,7 @@ $$\begin{aligned}
     54y &\equiv 33 \pmod{73} \\
 \end{aligned}$$
 
-Nyní už postupuje standardně jako u řešení každé jiné lineární kongruence. Pomocí euklidova algoritmu najdeme multiplikativní inverzi k číslu 54 a následně dostanem upravenou kongruenci tak, abychom ji měli ve tvaru $y = ? \pmod{73}$.
+Nyní už postupujeme standardně jako u řešení každé jiné lineární kongruence. Pomocí euklidova algoritmu najdeme multiplikativní inverzi k číslu 54 a následně dostaneme upravenou kongruenci tak, abychom ji měli ve tvaru $y = ? \pmod{73}$.
 
 $$\begin{aligned}
     54y &\equiv 33 \pmod{73} \\
@@ -372,7 +372,7 @@ x &= \boxed{267 + 360r}
 \end{aligned}$$
 
 #### Kolik celých čísel soustavě vyhovuje?
-Všechny, máme obecné řešení, amigo.
+Nekonečně mnoho - ta, pro která je zbytek po dělení 360 roven 267.
 
 #### Najděte největší x, které vyhovuje podmínce
 
@@ -433,7 +433,7 @@ $$\begin{aligned}
 Výsledek součinu $f(x) \cdot g(x)$ v $\mathbb{Z}_7 \mod{(2x^4 + 4x^2 + 5x + 1)}$ je $6x^3 + 2x^2 + x + 3$.
 
 #### Je polynom ireducibilní?
-Polynom je ireducibilní v $\mathbb{Z}_7$, pokud má v $\mathbb{Z}_7$ alespoň jeden kořen. To znamená, že musí platit $f(x) = 0, x \in \mathbb{Z}$.
+Polynom je ireducibilní v $\mathbb{Z}_7$, pokud nemá v $\mathbb{Z}_7$ ani jeden kořen. To znamená, že musí platit $f(x)\neq 0, x \in \mathbb{Z}$.
 
 $$\begin{aligned}
     f(0) &= 6\cdot(0)^3 + 2(0)^2 + 4 = 4 \mod{7} \\
@@ -443,12 +443,12 @@ $$\begin{aligned}
     f(4) &= 6\cdot(4)^3 + 2(4)^2 + 4 = 6(64 \mod{7}) + 2(16 \mod{7}) + 4 = 6 + 4 + 4 = 0 \mod{7}
 \end{aligned}$$
 
-Dále nemusíme počítat, protože jsme nalezli kořen polynomu $f(x) = 6x^3 + 2x^2 + 4$ v $\mathbb{Z}_7$. Polynom je tedy ireducibilní, protože nejde dále rozložit na součin polynomů.
+Dále nemusíme počítat, protože jsme nalezli kořen polynomu $f(x) = 6x^3 + 2x^2 + 4$ v $\mathbb{Z}_7$. Polynom je tedy reducibilní, protože lze dále rozložit na součin polynomů.
 
 
 ### Úloha 5
 !!! example ""
-    Rozhodněte, zda mnmožina čísel $\{2020 \cdot m \mid m \in \mathbb{Z}\}$ tvoří:
+    Rozhodněte, zda množina čísel $\{2020 \cdot m \mid m \in \mathbb{Z}\}$ tvoří:
 
     1. Multiplikativní grupu
     2. Aditivní grupu
@@ -590,4 +590,4 @@ $$\begin{aligned}
 Množina $M = \{2020 \cdot m \mid m \in \mathbb{Z}\}$
 
 1. __Netvoří multiplikativní grupu__ $G(M, \cdot)$, protože neexistuje neutrální a inverzní prvek, který by byl součástí množiny $M$.
-2. __Tvoří aditivní grupu__ $G(M, +)$ s neutrálním prvkem $e = 0$ a inverzním prvkem $i = -m$.
+2. __Tvoří aditivní grupu__ $G(M, +)$ s neutrálním prvkem $e = 0$ a inverzním prvkem $i = -2020 \cdot m$.
