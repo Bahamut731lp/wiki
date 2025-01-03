@@ -1,0 +1,2 @@
+# Vernamův kryptosystém
+Vernamův kryptosystém (též známý jako systém jednorázové tabulky, _one-time pad_ nebo OTP metoda) je symetrický šifrovací systém, který nelze prolomit. Používá náhodný klíč stejné délky jako zpráva. Pokud je klíč skutečně náhodný, použit pouze jednou a utajen, poskytuje absolutní bezpečnost.

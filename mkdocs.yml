@@ -31,6 +31,8 @@ markdown_extensions:
       alternate_style: true 
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 nav:
   - Domů: index.md
@@ -63,6 +65,21 @@ nav:
     - logicke_obvody/aritmeticke_obvody.md
     - logicke_obvody/automaty.md
     - logicke_obvody/procesory.md
+  - Kryptologie:
+    - kryptologie/index.md
+    - kryptologie/kerckhoffuv_princip.md
+    - kryptologie/informacni_entropie.md
+    - kryptologie/vlastnosti_sifer.md
+    - kryptologie/vernamuv_kryptosystem.md
+    - kryptologie/modely_utoku.md
+    - kryptologie/konfuze_difuze.md
+    - kryptologie/symetricka_sifra.md
+    - AES:
+      - kryptologie/aes/index.md
+      - kryptologie/aes/rezimy.md
+      - kryptologie/aes/inicializacni_vektor.md
+      - kryptologie/aes/xor_encrypt_xor.md
+      - kryptologie/aes/xex_based_tweaked_codebook_with_ciphertext_stealing.md
   - Matematika:
     - Abstraktní algebra:
       - matematika/abstraktni_algebra/index.md
