@@ -351,7 +351,7 @@ x &\equiv 3 \pmod{8} \\
 42 + 45t &\equiv 7 \pmod{10} \\
 45t &\equiv -35 \pmod{10} \\
 5t &\equiv 5 \pmod{10}\\
-t &\equiv 1 \pmod{2}
+t &\equiv 1 \pmod{2} \\
 t &= 1 + 2s \\
 &\downarrow \\
 x &= 42 + 45\cdot(1 + 2s) \\
@@ -443,7 +443,7 @@ $$\begin{aligned}
     f(4) &= 6\cdot(4)^3 + 2(4)^2 + 4 = 6(64 \mod{7}) + 2(16 \mod{7}) + 4 = 6 + 4 + 4 = 0 \mod{7}
 \end{aligned}$$
 
-Dále nemusíme počítat, protože jsme nalezli kořen polynomu $f(x) = 6x^3 + 2x^2 + 4$ v $\mathbb{Z}_7$. Polynom je tedy ireducibilní, protože nejde dále rozložit na součin polynomů.
+Dále nemusíme počítat, protože jsme nalezli kořen polynomu $f(x) = 6x^3 + 2x^2 + 4$ v $\mathbb{Z}_7$. Polynom je tedy ireducibilní.
 
 
 ### Úloha 5
@@ -591,3 +591,121 @@ Množina $M = \{2020 \cdot m \mid m \in \mathbb{Z}\}$
 
 1. __Netvoří multiplikativní grupu__ $G(M, \cdot)$, protože neexistuje neutrální a inverzní prvek, který by byl součástí množiny $M$.
 2. __Tvoří aditivní grupu__ $G(M, +)$ s neutrálním prvkem $e = 0$ a inverzním prvkem $i = -m$.
+
+## Řešení k testu 4.3.2021
+
+### Úloha 1
+!!! example ""
+    Nalezněte řešení následující soustavy kongruencí
+
+$$\begin{aligned}
+    24x + 14y + 22z &\equiv 16 \pmod{15} \\
+    33x + 45y + 27z &\equiv 6 \pmod{45} \\
+    16x + 9y + 31z &\equiv 16 \pmod{15} \\
+\end{aligned}$$
+
+Řešení zapiště v soustavě nejmenších nezáporných zbytků vhodného modulu.
+
+!!! bug "Tenhle postup je špatně"
+    Ještě to musím projít a najít chyby.
+
+$$\begin{aligned}
+    24x + 14y + 22z &\equiv 16 \pmod{15} \\
+    33x + 45y + 27z &\equiv 6 \pmod{45} \\
+    16x + 9y + 31z &\equiv 16 \pmod{15} \\
+    \\
+    9x + 14y + 7z &\equiv 1 \pmod{15} \\
+    11x + 0y + 9z &\equiv 2 \pmod{15} \\
+    1x + 9y + 1z &\equiv 1 \pmod{15} \\
+    \\
+    1x + 9y + 1z &\equiv 1 \pmod{15} \\
+    9x + 14y + 7z &\equiv 1 \pmod{15} & /-9 \cdot (1x + 9y + 1z \equiv 1) \\
+    11x + 0y + 9z &\equiv 2 \pmod{15} \\
+    \\
+    1x + 9y + 1z &\equiv 1 \pmod{15} & /-(0x + 8y + 13z \equiv 7) \\
+    0x + 8y + 13z &\equiv 7 \pmod{15} \\
+    11x + 0y + 9z &\equiv 2 \pmod{15} & /-11 \cdot (1x + 9y + 1z \equiv 1) \\
+    \\
+    1x + 1y + 3z &\equiv 9 \pmod{15} \\
+    0x + 8y + 13z &\equiv 7 \pmod{15} & /-(0x + 6y + 13z \equiv 6)\\
+    0x + 6y + 13z &\equiv 6 \pmod{15} \\
+    \\
+    1x + 1y + 3z &\equiv 9 \pmod{15} \\
+    0x + 2y + 0z &\equiv 1 \pmod{15} \\
+    0x + 6y + 13z &\equiv 6 \pmod{15} \\
+    \\
+    1x + 1y + 3z &\equiv 9 \pmod{15} \\
+    0x + 1y + 0z &\equiv 8 \pmod{15} \\
+    0x + 6y + 13z &\equiv 6 \pmod{15} \\
+    \\
+    \\
+    \\
+    1x + 0y + 3z &\equiv 1 \pmod{15} \\
+    0x + 1y + 0z &\equiv 8 \pmod{15} \\
+    0x + 0y + 1z &\equiv 3 \pmod{15} \\
+    \\
+    1x + 0y + 0z &\equiv 7  \pmod{15} \\
+    0x + 1y + 0z &\equiv 8 \pmod{15} \\
+    0x + 0y + 1z &\equiv 3 \pmod{15} \\
+\end{aligned}$$
+
+### Úloha 2
+!!! example ""
+    Uvažujte zdrojovou abecedu $\begin{array}{cccccc}a & b & c & d & e & f \\ 0.3 & 0.2 & 0.2 & 0.1 & 0.1 & 0.1 \end{array}$. Dekódujte text $(.100011)_2$, který vzniknul zakódováním textu o délce 3 znaky, jestliže byla použita metoda DFWLD.
+
+### Úloha 3
+!!! example ""
+    Nechť $f(x), g(x) \in \mathbb{Z}_5 [x]$, kde $f(x) = 3 + x + x^5 + 2x^6$ a $g(x) = 1 + x + 3x^2 + 2x^3 + 4x^4$. Nalezněte $NSD(f(x), g(x))$ a vyjádřete ho ve tvaru $a(x) \cdot f(x) + b(x) \cdot g(x)$.
+
+### Úloha 4
+!!! example ""
+    Rozhodněte, zda číslo $666!$ končí lichým, nebo sudým počtem nul. Své tvrzení řádně zdůvodněte!
+
+    !!! quote ""
+        Základem je si ujasnit co generuje ty nuly na konci. Jsou to násobky 5 krát násobky 2 (sudá čísla). Protože sudých čísel je mnohem víc než násobků 5 a tedy ke každému násobku 5 najdeme sudé číslo, stačí se soustředit na to kolik máš v daném faktoriálu čísel dělitelných 5.
+        Pro 60! tedy stačí spočítat 60/5=12. Ovšem pozor na mocniny 5, v tomto případě je nutno vzít v úvahu pouze druhou mocninu 5, tedy 25. 25=5*5 a je tedy zapotřebí 60/25=2 a zbytek 10, který je irelevantní. Konečný počet 0 je tedy 12+2=14
+        Pro názornost: Kolika nulami končí číslo 1026! ? 1026/5=205(1) 1026/25=41(1) 1026/125=8(26) 1026/625=1(401) 3125 už je větší než 1026 a nemusím se jím tedy zabývat.
+        v ()jsou zbytky které nás nemusejí zajímat.
+        V konečném součtu je tedy na konci 1026! 205+41+8+1=255 nul.
+        Doufám, že ti to pomohlo :)
+
+    $$\begin{aligned}
+        z(666!) &= \left\lceil \frac{666}{5^1} \right\rceil + \left\lceil \frac{666}{5^2} \right\rceil + \left\lceil \frac{666}{5^3} \right\rceil + \left\lceil \frac{666}{5^4} \right\rceil  \\
+        z(666!) &= 133 + 26 + 5 + 1 \\
+        z(666!) &= \boxed{165}
+    \end{aligned}$$
+
+### Úloha 5
+!!! example ""
+    Nechť $\pi, \rho \in S_7$, kde $\pi = (2,4,3,7,1)(3,1,2)(5,6,3,4)$ a $\rho = (3,2,5,4,1)(7,5,3,1)(2,6,1,5,4)$.
+
+    $$\begin{array}
+        1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+        4 & 5 & 7 & 1 & 6 & 3 & 2
+    \end{array}$$
+
+    (1,4)(2,5,6,3,7)
+
+    1. Spočtěte $\pi^{-1}$ a $\rho^{-1}$
+    2. Spočtěte $\pi^{-1} \cdot \rho \cdot \pi$
+
+    Veškeré výsledky zapiště ve tvaru součinu disjunktních cyklů.
+
+## Řešení k testu 9.2.2021
+
+### Úloha 2
+!!! example ""
+    Nechť $\pi, \rho \in S_7$, kde $\pi = \left(\begin{array}1 & 2 & 3 & 4 & 5 & 6 & 7 \\7 & 1 & 4 & 6 & 2 & 3 & 5\end{array}\right)$, $\rho = (2615)(1427)(436)$.
+
+    1. Permutace $\pi, \rho$ zapiště ve tvaru součinu disjunktních cyklů
+    2. Spočtěte $\pi \cdot \rho$
+    3. Ze vztahu $x \cdot \rho^{-1} \cdot x^{-1} = (x \cdot \pi)^{-1}$ vyjádřete $x$ v co nejjednoduším tvaru a dopočtěte jeho hodnotu.
+
+    __Výsledky zapiště vždy ve tvaru součinu disjunktních cyklů__
+
+#### Zápis ve tvaru disjunktních cyklů.
+
+$$\begin{aligned}
+\pi &= (1,7,5,2)(3,4,6) \\
+\rho &= (5,4)(6,)
+\end{aligned}$$
