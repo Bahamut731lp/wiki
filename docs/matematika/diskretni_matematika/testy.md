@@ -122,11 +122,20 @@ $$\begin{aligned}
 K další úloze bude potřeba spočítat nejmenší společný násobek. Ten se spočítá jako podíl součinu všech čísel a největšího společného dělitele.
 
 $$\begin{aligned}
-    NSN(a, b, c) &= \frac{a \cdot b \cdot c}{NSD(a, b, c)} \\
-    NSN(a, b, c) &= \frac{(2^3 \cdot 3^4 \cdot 5^2 \cdot 13) \cdot (2^3 \cdot 3^2 \cdot 5^3 \cdot 13) \cdot (3^1 \cdot 5^4 \cdot 11 \cdot 13)}{3 \cdot 5^2 \cdot 13} \\
-    NSN(a, b, c) &= \frac{2^6 \cdot 3^7 \cdot 5^9 \cdot 11 \cdot 13^3}{3 \cdot 5^2 \cdot 13} \\
-    NSN(a, b, c) &= \frac{2^6 \cdot 3^6 \cdot 5^7 \cdot 11 \cdot 13^2}{1} \\
-    NSN(a, b, c) &= 2^6 \cdot 3^6 \cdot 5^7 \cdot 11 \cdot 13^2
+    NSD(a, b) &= 2^3 \cdot 3^2 \cdot 5^2 \cdot 13 \\
+    NSD(a, c) &= 2^0 \cdot 3^1 \cdot 5^2 \cdot 13 \\
+    NSD(b, c) &= 2^0 \cdot 3^1 \cdot 5^3 \cdot 13 \\
+    NSD(a, b, c) &=  3^1 \cdot 5^2 \cdot 13\\
+    \\
+    a &= 2^3 \cdot 3^4 \cdot 5^2 \cdot 13 \\
+    b &= 2^3 \cdot 3^2 \cdot 5^3 \cdot 13 \\
+    c &= 2^0 \cdot 3^1 \cdot 5^4 \cdot 11 \cdot 13 \\
+\end{aligned}$$
+
+$$\begin{aligned}
+    NSN(a, b, c) &= \frac{(2^3 \cdot 3^4 \cdot 5^2 \cdot 13) \cdot (2^3 \cdot 3^2 \cdot 5^3 \cdot 13) \cdot (3^1 \cdot 5^4 \cdot 11 \cdot 13) \cdot (3^1 \cdot 5^2 \cdot 13)}{(2^3 \cdot 3^2 \cdot 5^2 \cdot 13) \cdot (3^1 \cdot 5^2 \cdot 13) \cdot (3^1 \cdot 5^3 \cdot 13)} \\
+    NSN(a, b, c) &= \frac{2^6 \cdot 3^8 \cdot 5^{11} \cdot 11 \cdot 13^3}{2^3 \cdot 3^4 \cdot 5^7 \cdot 13^3} \\
+    NSN(a, b, c) &= 2^3 \cdot 3^4 \cdot 5^5 \cdot 11
 \end{aligned}$$
 
 Konkrétní číslo nebudeme dopočítávat, protože se na něj zadání neptá a v další části, kde počítáme výsledek Eulerovy funkce, není potřeba.
@@ -135,9 +144,9 @@ Konkrétní číslo nebudeme dopočítávat, protože se na něj zadání neptá
 $$\begin{aligned}
 \varphi(n) &= (p_1^{e_{1}} - p_1^{e{_1} - 1}) \cdot\quad\ldots\quad\cdot (p_k^{e_{k}} - p_k^{e_{k} - 1}) \\
 \\
-\varphi(NSN(a,b,c)) &= (2^{6} - 2^{5}) \cdot (3^{6} - 3^{5}) \cdot (5^{7} - 5^{6}) \cdot (11^{1} - 11^{0}) \cdot (13^{2} - 13^{1}) \\
-\varphi(NSN(a,b,c)) &= (64 - 32) \cdot (729 - 243) \cdot (78 125 - 15 625) \cdot (11 - 1) \cdot (169 - 13) \\
-\varphi(NSN(a,b,c)) &= 32 \cdot 486 \cdot 62 500 \cdot 10 \cdot 156 \\
+\varphi(NSN(a,b,c)) &= (2^{3} - 2^{2}) \cdot (3^{4} - 3^{3}) \cdot (5^{5} - 5^{4}) \cdot (11^{1} - 11^{0}) \\
+\varphi(NSN(a,b,c)) &= (8 - 4) \cdot (81 - 27) \cdot (3125 - 625) \cdot (11 - 1) \\
+\varphi(NSN(a,b,c)) &= 4 \cdot 54 \cdot 62 500 \cdot 10 \cdot 156 \\
 \varphi(NSN(a,b,c)) &= 32 \cdot 486 \cdot 62 500 \cdot 10 \cdot 156 \\
 \varphi(NSN(a,b,c)) &= 32 \cdot 486 \cdot 625 \cdot 100 \cdot 10 \cdot 156 \\
 \varphi(NSN(a,b,c)) &= 972 \cdot 10^4 \cdot 10^2 \cdot 10^1 \cdot 156 \\
@@ -301,7 +310,7 @@ $$\begin{aligned}
     k &= -17 \\
     x &= 48 + 127 \cdot (-17) \\
     x &= 48 - 2159 \\
-    x &= \boxed{2111}
+    x &= \boxed{-2111}
 \end{aligned}$$
 
 ### Úloha 3

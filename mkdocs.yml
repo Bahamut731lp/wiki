@@ -73,13 +73,17 @@ nav:
     - kryptologie/vernamuv_kryptosystem.md
     - kryptologie/modely_utoku.md
     - kryptologie/konfuze_difuze.md
-    - kryptologie/symetricka_sifra.md
     - AES:
       - kryptologie/aes/index.md
       - kryptologie/aes/rezimy.md
       - kryptologie/aes/inicializacni_vektor.md
       - kryptologie/aes/xor_encrypt_xor.md
       - kryptologie/aes/xex_based_tweaked_codebook_with_ciphertext_stealing.md
+    - Hashing:
+      - kryptologie/hashing/index.md
+      - kryptologie/hashing/merkle_damgard.md
+      - kryptologie/hashing/davies-meyer.md
+      - kryptologie/hashing/houba.md
   - Matematika:
     - Abstraktní algebra:
       - matematika/abstraktni_algebra/index.md

@@ -1,0 +1,1 @@
+# Hashovací funkce
