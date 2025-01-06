@@ -1,5 +1,7 @@
 # Řešení vzorových testů
 
+
+
 ## Řešení k testu 6.2.2020
 
 ### Úloha 1
@@ -489,17 +491,18 @@ $$\begin{aligned}
     m, n, p &\in \mathbb{Z} \\
     2020 \cdot p &= 2020^2 \cdot m \cdot n \\
     p &= 2020 \cdot m \cdot n \\
-    p &\in \mathbb{M}
+    p &\in \mathbb{Z}
 \end{aligned}$$
 
 ##### Asociativita
 $$\begin{aligned}
-    m, n &\in \mathbb{Z} \\
+    m, n, o&\in \mathbb{Z} \\
     x &= 2020 \cdot m \\
     y &= 2020 \cdot n \\
+    z &= 2020 \cdot o \\
     \\
-    2020 \cdot m \cdot 2020 \cdot n &= 2020 \cdot n \cdot 2020 \cdot m \\
-    2020^2 \cdot m \cdot n &= 2020^2 \cdot m \cdot n
+    (2020 \cdot m \cdot 2020 \cdot n) \cdot 2020 \cdot o &= 2020 \cdot m \cdot (2020 \cdot n \cdot 2020 \cdot o) \\
+    2020^3 \cdot m \cdot n \cdot o &= 2020^3 \cdot m \cdot n \cdot o
 \end{aligned}$$
 
 ##### Existence neutrálního prvku
@@ -512,7 +515,7 @@ $$\begin{aligned}
     (2020 \cdot m) \cdot (2020 \cdot n) &= (2020 \cdot m)  & / :(2020 \cdot m)\\
     (2020 \cdot n) &= 1 \\
     n &= \frac{1}{2020 \cdot n} \\
-    n &\not\in M
+    n &\not\in Z
 \end{aligned}$$
 
 Neutrální prvek v grupě $G(M, \cdot)$ neexistuje, protože $\frac{1}{2020 \cdot n}$ není celé číslo.
@@ -529,7 +532,7 @@ $$\begin{aligned}
     (2020 \cdot m) \cdot (2020 \cdot n) &= 1 \\
     2020^2 \cdot m \cdot n &= 1 \\
     n &= \frac{1}{2020^2 \cdot m} \\
-    n &\not\in M
+    n &\not\in Z
 \end{aligned}$$
 
 #### Aditivní grupa
@@ -556,13 +559,13 @@ $$\begin{aligned}
 
 ##### Asociativita
 $$\begin{aligned}
-    m, n &\in \mathbb{Z} \\
+    m, n, o&\in \mathbb{Z} \\
     x &= 2020 \cdot m \\
     y &= 2020 \cdot n \\
+    z &= 2020 \cdot o \\
     \\
-    (2020 \cdot m) + (2020 \cdot n) &= (2020 \cdot n) + (2020 \cdot m) \\
-    2020 \cdot (m + n) &= 2020 \cdot (n + m)
-    m + n &= n + m 
+    (2020 \cdot m + 2020 \cdot n) + 2020 \cdot o &= 2020 \cdot m + (2020 \cdot n + 2020 \cdot o) \\
+    2020 \cdot (m + n + o) &= 2020 \cdot (m + n + o)
 \end{aligned}$$
 
 ##### Existence neutrálního prvku
@@ -581,7 +584,6 @@ $$\begin{aligned}
 Neutrální prvek v grupě $G(M, +)$ existuje a je to $0$.
 
 ##### Existence inverzního prvku
-
 $$\begin{aligned}
     m, n &\in \mathbb{Z} \\
     x &= 2020 \cdot m \\
@@ -607,56 +609,13 @@ Množina $M = \{2020 \cdot m \mid m \in \mathbb{Z}\}$
 !!! example ""
     Nalezněte řešení následující soustavy kongruencí
 
-$$\begin{aligned}
-    24x + 14y + 22z &\equiv 16 \pmod{15} \\
-    33x + 45y + 27z &\equiv 6 \pmod{45} \\
-    16x + 9y + 31z &\equiv 16 \pmod{15} \\
-\end{aligned}$$
+    $$\begin{aligned}
+        24x + 14y + 22z &\equiv 16 \pmod{15} \\
+        33x + 45y + 27z &\equiv 6 \pmod{45} \\
+        16x + 9y + 31z &\equiv 16 \pmod{15} \\
+    \end{aligned}$$
 
-Řešení zapiště v soustavě nejmenších nezáporných zbytků vhodného modulu.
-
-!!! bug "Tenhle postup je špatně"
-    Ještě to musím projít a najít chyby.
-
-$$\begin{aligned}
-    24x + 14y + 22z &\equiv 16 \pmod{15} \\
-    33x + 45y + 27z &\equiv 6 \pmod{45} \\
-    16x + 9y + 31z &\equiv 16 \pmod{15} \\
-    \\
-    9x + 14y + 7z &\equiv 1 \pmod{15} \\
-    11x + 0y + 9z &\equiv 2 \pmod{15} \\
-    1x + 9y + 1z &\equiv 1 \pmod{15} \\
-    \\
-    1x + 9y + 1z &\equiv 1 \pmod{15} \\
-    9x + 14y + 7z &\equiv 1 \pmod{15} & /-9 \cdot (1x + 9y + 1z \equiv 1) \\
-    11x + 0y + 9z &\equiv 2 \pmod{15} \\
-    \\
-    1x + 9y + 1z &\equiv 1 \pmod{15} & /-(0x + 8y + 13z \equiv 7) \\
-    0x + 8y + 13z &\equiv 7 \pmod{15} \\
-    11x + 0y + 9z &\equiv 2 \pmod{15} & /-11 \cdot (1x + 9y + 1z \equiv 1) \\
-    \\
-    1x + 1y + 3z &\equiv 9 \pmod{15} \\
-    0x + 8y + 13z &\equiv 7 \pmod{15} & /-(0x + 6y + 13z \equiv 6)\\
-    0x + 6y + 13z &\equiv 6 \pmod{15} \\
-    \\
-    1x + 1y + 3z &\equiv 9 \pmod{15} \\
-    0x + 2y + 0z &\equiv 1 \pmod{15} \\
-    0x + 6y + 13z &\equiv 6 \pmod{15} \\
-    \\
-    1x + 1y + 3z &\equiv 9 \pmod{15} \\
-    0x + 1y + 0z &\equiv 8 \pmod{15} \\
-    0x + 6y + 13z &\equiv 6 \pmod{15} \\
-    \\
-    \\
-    \\
-    1x + 0y + 3z &\equiv 1 \pmod{15} \\
-    0x + 1y + 0z &\equiv 8 \pmod{15} \\
-    0x + 0y + 1z &\equiv 3 \pmod{15} \\
-    \\
-    1x + 0y + 0z &\equiv 7  \pmod{15} \\
-    0x + 1y + 0z &\equiv 8 \pmod{15} \\
-    0x + 0y + 1z &\equiv 3 \pmod{15} \\
-\end{aligned}$$
+    Řešení zapiště v soustavě nejmenších nezáporných zbytků vhodného modulu.
 
 ### Úloha 2
 !!! example ""
