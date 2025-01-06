@@ -3576,9 +3576,120 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sdilene-tajemstvi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sdílené tajemství
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sdílené tajemství">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#diffie-hellman" class="md-nav__link">
     <span class="md-ellipsis">
       Diffie-Hellman
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsa" class="md-nav__link">
+    <span class="md-ellipsis">
+      RSA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecdh" class="md-nav__link">
+    <span class="md-ellipsis">
+      ECDH
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asymetricke-sifry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asymetrické šifry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asymetrické šifry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rsa_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RSA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#record-protokol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Record Protokol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handshake-protokol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Handshake Protokol
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pristupove-systemy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Přístupové systémy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stavebni-prvky-kryptografie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stavební prvky kryptografie
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kvantova-distribuce-klice-quantum-key-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kvantová distribuce klíče (Quantum Key Distribution)
     </span>
   </a>
   
@@ -3658,9 +3769,24 @@ H(X) = -\sum_{x \in X} p(x) \cdot \log{p(x)}
 <p>Například znalost, že určité číslo nevyhraje v loterii, nese velmi malou informaci, a má tak nízkou entropii, protože jakékoli určité číslo téměř určitě nevyhraje. Ale znalost, že určité číslo v loterii vyhraje, má vysokou informační hodnotu a tudíž velkou entropii, protože informuje o události s velmi nízkou pravděpodobností.</p>
 </div>
 <p>V šifrovacím systému chceme mít co největší možnou entropii, tj. nejvyšší možnou míru nepředvídatelnosti, ohledně zprávy a klíče. Pokud má zpráva velkou entropii, není její výskyt vůbec překvapivý, stejně tak jako výskyt jiné zprávy (mají stejnou pravděpodobnost výskytu). Podobně uvažujeme i u klíče, kde chceme dosáhnout maximální entropie. Pokud mají všechny klíče stejnou pravděpodobnost výskytu, je entropie maximální, protože nedokážeme předvídat.</p>
+<div class="admonition tip">
+<p class="admonition-title">Entropie hesla</p>
+<p>Entropie hesla je klíčovým faktorem pro jeho bezpečnost. V podstatě označuje, jak těžké by bylo uhádnout heslo pomocí útoků jako je hrubá síla nebo útok na slovník. Pokud heslo obsahuje vysokou entropii, znamená to, že je těžké předvídat nebo rozluštit, což výrazně zvyšuje bezpečnost účtu. Entropie hesla se vypočítá podle počtu možných kombinací znaků, které heslo používá, a jeho délky. Vzorec pro výpočet entropie hesla je:</p>
+<div class="arithmatex">\[
+    H = L \cdot \log⁡_2{(N)}
+\]</div>
+<p>kde <span class="arithmatex">\(H\)</span> je entropie v bitech, <span class="arithmatex">\(L\)</span> je délka hesla, a <span class="arithmatex">\(N\)</span> je počet možných znaků v abecedě (např. pro alfanumerické heslo by <span class="arithmatex">\(N\)</span> bylo 62, pokud používáte malá a velká písmena a číslice).</p>
+</div>
 <h3 id="nahodna-a-pseudonahledna-cisla">Náhodná a pseudonáhledná čísla</h3>
-<div class="admonition bug">
-<p class="admonition-title">TODO</p>
+<p>Entropie úzce souvisí s generováním čísel. Vyšší entropie znamená vyšší úroveň náhodnosti a obtížnější předvídatelnost, což je zásadní pro bezpečnost kryptografických operací.</p>
+<p>Generování náhodných a pseudonáhodných čísel lze rozdělit do dvou kategorií:</p>
+<ol>
+<li><strong>Pravá náhodná čísla</strong> (TRNG - True Random Number Generators): Tato čísla jsou generována na základě fyzikálních jevů, jako je šum v elektronických obvodech nebo radioaktivní rozpad. Jsou skutečně náhodná a nepředvídatelná, ale jejich generování může být pomalejší a náročnější na hardware.</li>
+<li><strong>Pseudonáhodná čísla</strong> (PRNG - Pseudorandom Number Generators): Tato čísla jsou generována algoritmicky a při stejném počátečním stavu (seed) produkují stejnou posloupnost čísel. I když nejsou skutečně náhodná, mohou být dostatečně nepředvídatelná pro mnoho aplikací, zejména pokud jsou inicializována kvalitním seedem s vysokou entropií.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Je potřeba vysoké entropie</p>
+<p>V kryptografii je důležité používat generátory s vysokou entropií, aby byla zajištěna bezpečnost klíčů a dalších tajných hodnot. Nedostatečná entropie může vést k předvídatelným výsledkům a tím k oslabení kryptografických systémů.</p>
 </div>
 <h2 id="perfektni-sifra">Perfektní šifra</h2>
 <p>Aby šifra poskytovala perfektní bezpečnost, musí mít klíč alespoň tak velkou entropii, jakou má zpráva. Jinými slovy, klíč musí být dostatečně dlouhý a složitý, aby skryl veškerou informaci obsaženou ve zprávě. Pokud by klíč nebyl dostatečně náhodný nebo dlouhý, mohl by útočník využít informace obsažené v ciphertextu (zašifrované zprávě) k odvození původního textu. Vernamův kryptosystém, který je také známý jako jednorázová tabulka (one-time pad), je šifrovací technika, která používá náhodný klíč stejné délky jako zpráva. Pokud je klíč skutečně náhodný, použit pouze jednou a utajen, poskytuje absolutní bezpečnost.</p>
@@ -3786,7 +3912,7 @@ H(X) = -\sum_{x \in X} p(x) \cdot \log{p(x)}
 <p class="admonition-title">Možnosti konstrukce klíčovaného hashe z neklíčovaného</p>
 <ul>
 <li>Prefixed MAC <span class="arithmatex">\(MAC = H(K || M)\)</span></li>
-<li>Suffixed MAC $MAC = MAC = H(M || K)</li>
+<li>Suffixed MAC <span class="arithmatex">\(MAC = H(M || K)\)</span></li>
 <li>Enveloping MAC <span class="arithmatex">\(MAC = H(K || M || K)\)</span></li>
 <li>Nested MAC <span class="arithmatex">\(NMAC = H(K2 || H(K1 || M))\)</span></li>
 </ul>
@@ -3800,47 +3926,159 @@ H(X) = -\sum_{x \in X} p(x) \cdot \log{p(x)}
 <p>Při výběru vhodné konstrukce je důležité zvážit specifické požadavky aplikace, včetně požadavků na výkon, bezpečnost a kompatibilitu s existujícími systémy. Moderní kryptografické protokoly často využívají kombinaci šifrování a autentizace, aby zajistily komplexní ochranu dat.</p>
 <h3 id="aes-gcm">AES GCM</h3>
 <p>AES-GCM (Galois/Counter Mode) je autorizovaná šifra s přidruženými daty (AEAD), která kombinuje šifrování a autentizaci do jednoho efektivního procesu. AES-GCM využívá blokovou šifru AES v režimu Counter (CTR) pro šifrování a Galoisovu funkci pro autentizaci. Při šifrování se inicializační vektor (IV) kombinuje s počítadlem, které se inkrementuje pro každý blok dat. Tato kombinace se šifruje pomocí AES, a výsledek se XORuje s plaintextem, čímž vzniká ciphertext. Současně se pomocí Galoisovy funkce generuje autentizační tag, který zajišťuje integritu a autenticitu jak šifrovaných dat, tak přidružených dat (AAD).</p>
-<h2 id="diffie-hellman">Diffie-Hellman</h2>
-<div class="admonition bug">
-<p class="admonition-title">TODO: Checknout s DIM materiály</p>
-</div>
+<h2 id="sdilene-tajemstvi">Sdílené tajemství</h2>
+<h3 id="diffie-hellman">Diffie-Hellman</h3>
 <p>Diffie-Hellmanova výměna klíčů je kryptografický protokol, který umožňuje dvěma stranám bezpečně sdílet tajný klíč přes nezabezpečený kanál. Tento sdílený klíč může být následně použit pro šifrování komunikace pomocí symetrických šifer.</p>
-<h1 id="otazky-ke-zkousce-kas">Otázky ke zkoušce KAS</h1>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Pojmy kryptografie a kryptoanalýza.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Základní funkce šifrování.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Kerckhoffův princip.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Vermanův kryptosystém.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Bezpečnost šifry, její kvantitativní vyjádření. V současnosti doporučené hodnoty.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Modely útoku na šifru, bezpečnostní cíle a koncepty.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Náhodná čísla v kryptografii</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Pojem entropie v informatice.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generování náhodných a pseudonáhodných čísel.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Entropie hesel.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Rozdělení symetrických šifer. </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Principy konfúze a difúze.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Blokové šifry, princip konstrukce.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> AES, základní principy.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Módy použití blokových šifer ECB, CBC, CTR.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Proudové šifry. Základní principy, příklady současných a minulých proudových šifer.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Hashovací funkce. Definice, požadavky na kryptografickou hashovací funkci. </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Narozeninový útok, "ró" útok.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Konstrukce hashovacích funkcí.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Davies Meyerova konstrukce, "houba".</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Používané hashovací funkce.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Hashování s klíčem, MAC, PRF.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Možnosti konstrukce klíčovaného hashe z neklíčovaného.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Symetrické šifry s autentizací. Možné konstrukce.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Autorizovaná šifra s přidruženými daty. AES GCM</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Diffie Hellmanova funkce, její použití.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Protokoly pro tvorbu sdíleného tajemství.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Asymetrické kryptosystémy, základní principy, výhody a nevýhody oproti symetrickým šifrám.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> RSA.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> TLS - funkce, základní principy, protokoly, použitá kryptografie.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Přístupové kryptosystémy. Základní principy, autorizace, autentizace. Příklady protokolů.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Stavební prvky kryptografie - základní kryptografické funkce a proměnné.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Kvantová distribuce klíče - základní princip.</li>
+<div class="admonition info">
+<p class="admonition-title">Jak funguje Diffie-Hellman?</p>
+<ul>
+<li><strong>Veřejná dohoda</strong>: Obě strany se veřejně dohodnou na dvou hodnotách: velkém prvočísle <span class="arithmatex">\(p\)</span> a základně <span class="arithmatex">\(g\)</span>, které jsou veřejně známé a nemusí být chráněny.</li>
+<li><strong>Výběr tajných klíčů</strong>: Každá strana si zvolí tajný klíč: Alice zvolí <span class="arithmatex">\(a\)</span> a Bob <span class="arithmatex">\(b\)</span>.</li>
+<li><strong>Výpočet veřejných hodnot</strong>: Alice vypočítá <span class="arithmatex">\(A = g^a \mod{p}\)</span> a Bob <span class="arithmatex">\(A = B^b \mod{p}\)</span>.</li>
+<li><strong>Výměna veřejných hodnot</strong>: Alice a Bob si vymění hodnoty <span class="arithmatex">\(A\)</span> a <span class="arithmatex">\(B\)</span>.</li>
+<li><strong>Výpočet sdíleného klíče</strong>: Alice vypočítá <span class="arithmatex">\(s = B^a \mod{p}\)</span> a Bob <span class="arithmatex">\(s = A^b \mod{p}\)</span>. Díky vlastnostem umocňování v modulární aritmetice platí, že <span class="arithmatex">\(s\)</span> je stejný pro obě strany.</li>
 </ul>
+</div>
+<div class="admonition quote">
+<p><img alt="diffie_helman" src="../images/DiffieHellman.png" /></p>
+</div>
+<h3 id="rsa">RSA</h3>
+<p>RSA je asymetrický protokol, který využívá veřejný a soukromý klíč pro šifrování a dešifrování dat. Může být použit pro bezpečnou výměnu tajného klíče mezi stranami. Tento klíč se poté používá k šifrování komunikace pomocí symetrických šifer.</p>
+<h3 id="ecdh">ECDH</h3>
+<p>Tento protokol je vylepšením klasického Diffie-Hellmana a používá elliptické křivky, což zajišťuje silnou bezpečnost i při použití menších klíčů. ECDH se často používá v moderních systémech, jako je například v protokolech TLS a VPN.</p>
+<h2 id="asymetricke-sifry">Asymetrické šifry</h2>
+<p>Asymetrické kryptosystémy, známé také jako šifrování s veřejným klíčem, využívají dvojici klíčů: veřejného a soukromého. Veřejný klíč je určen pro šifrování dat a může být volně sdílen, zatímco soukromý klíč slouží k dešifrování a musí být přísně chráněn. Tento princip umožňuje bezpečnou komunikaci mezi stranami, které nemají předchozí sdílený tajný klíč. Asymetrické šifry mají tu výhodu, že <strong>eliminují potřebu bezpečného kanálu pro výměnu klíčů</strong>, protože šifrování probíhá pomocí veřejného klíče. Též zajišťuje autentizaci, identifikaci autora zprávy pomocí veřejného klíče, a ověřuje autentičnost zprávy, protože zprávu nemohl nikdo vytvořit ani pozměnit bez vlastnictví privátního klíče. Nevýhodou je složitější implementace a nižší rychlost.</p>
+<h3 id="rsa_1">RSA</h3>
+<h2 id="tls">TLS</h2>
+<p>TLS (Transport Layer Security) je skupina protokolů používaný k zajištění bezpečné komunikace přes počítačové sítě, například na internetu. Nahrazuje starší protokol SSL (Secure Sockets Layer) a poskytuje následující klíčové funkce:</p>
+<ul>
+<li><strong>Šifrování</strong>: Ochrana přenášených dat před odposlechem.</li>
+<li><strong>Autentizace</strong>: Ověření identity komunikujících stran (např. serveru pomocí certifikátů).</li>
+<li><strong>Integrita</strong>: Zajištění, že data nebyla během přenosu modifikována</li>
+</ul>
+<h2 id="record-protokol">Record Protokol</h2>
+<h2 id="handshake-protokol">Handshake Protokol</h2>
+<p>Handshake protokol slouží k inicializaci zabezpečeného spojení mezi klientem (např. webový prohlížeč) a serverem (např. webový server). Během handshake fáze se dohodnou na šifrovacích algoritmech, vymění si klíče a autentizují se, čímž zajistí, že následující komunikace bude šifrovaná, autentická a integritní.</p>
+<p><img alt="tls_handshake" src="../images/tls_handshake.png" /></p>
+<h2 id="pristupove-systemy">Přístupové systémy</h2>
+<p>Přístupové kryptosystémy zahrnují mechanismy, které se používají pro řízení přístupu uživatelů nebo zařízení k systémům, datům nebo síťovým prostředkům (tzv. <strong>aktiva</strong>). Tyto systémy zajišťují, že pouze oprávněné subjekty mohou provádět akce na chráněných zdrojích.</p>
+<div class="admonition example">
+<p class="admonition-title">Obecné schéma přístupového systému</p>
+<p><img alt="Schéma přístupového systému" src="../images/pristupovy_system_schema.png" /></p>
+</div>
+<p>V obecném případě máme <strong>entitu</strong>, která chce získat přístup ke <strong>chráněným zdrojům</strong> (aktivům). Úkol přístupového systému je zjistit, zda je entita tím, za koho se prokazuje, a zda má právo k danému zdroj přistoupit. Svojí identitu prokazuje entita procesem autentizace, zatímco svojí pravomoc přístupu ke zdroji řídí <strong>autorizace</strong>. </p>
+<div class="admonition question">
+<p class="admonition-title">Co je autentizace?</p>
+<p><strong>Autentizace</strong> je proces slouží k ověření identity uživatele nebo systému. Autentizace může být založena na něčem, co víte (např. heslo), něčem, co máte (např. karty nebo tokeny), nebo něčem, čím jste (biometrické údaje).</p>
+<ul>
+<li><strong>Identita</strong>: Za koho se entita snaží prokázat</li>
+<li><strong>Dokazovací faktor</strong>: Čím se snaží entita ověřuje (např. heslo)</li>
+<li><strong>Ověřovácí faktor</strong>: Čím autorita ověřuje identitu (např. hash hesla v databázi)</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Co je autorizace?</p>
+<p><strong>Autorizace</strong> je proces, kdy se a dochází k ověření</p>
+<p>Po autentizaci systém určuje, jaká práva a přístupy jsou uživateli nebo systému povoleny. Autorizace je založena na předchozím ověření a je řízena pomocí pravidel, jako jsou přístupové seznamy nebo role.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Protokoly</p>
+<ul>
+<li><strong>Autentizační protokoly</strong>:  EAP, Kerberos</li>
+<li><strong>Autorizační protokoly</strong>: OAuth</li>
+<li><strong>Přístupové protokoly</strong>: RADIUS</li>
+</ul>
+</div>
+<h2 id="stavebni-prvky-kryptografie">Stavební prvky kryptografie</h2>
+<ul>
+<li>Proměnné:<ul>
+<li>Utajené<ul>
+<li>Klíče symetrických šifer</li>
+<li>Soukromé klíče asymetrických šifer</li>
+<li>Seeds</li>
+</ul>
+</li>
+<li>Veřejné<ul>
+<li>Veřejné klíče asymetrických šifer (certifikáty)</li>
+<li>Inicializační vektory</li>
+<li>Nonce</li>
+<li>Čísla bloků</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Funkce<ul>
+<li>Šifrovací a dešifrovací funkce<ul>
+<li>Šifrovací funkce <span class="arithmatex">\(ENC\)</span> s parametry pro otevřený text <span class="arithmatex">\(M\)</span> a šifrovací klíč <span class="arithmatex">\(K_E\)</span>: <span class="arithmatex">\(C = ENC(M, K_E)\)</span></li>
+<li>Dešifrovací funkce <span class="arithmatex">\(DEC\)</span> s parametry pro zašifrovaný text <span class="arithmatex">\(C\)</span> a dešifrovací klíč <span class="arithmatex">\(K_D\)</span>: <span class="arithmatex">\(M = DEC(C, K_D)\)</span></li>
+<li>Pro symetrické šifry <span class="arithmatex">\(K_E = K_D\)</span></li>
+<li>Pro asymetrické šifry <span class="arithmatex">\(K_E = K_V\)</span> příjemce, <span class="arithmatex">\(K_D = K_S\)</span> příjemce</li>
+</ul>
+</li>
+<li>Pečetící a verifikační funkce<ul>
+<li>Pečetící funkce zprávy <span class="arithmatex">\(M\)</span> s pečetícím klíčem <span class="arithmatex">\(K_P\)</span>: <span class="arithmatex">\(P = PTC(M, K_P)\)</span></li>
+<li>Verifikační funkce zprávy <span class="arithmatex">\(P\)</span> s ověřovacím klíčem <span class="arithmatex">\(K_O\)</span>: <span class="arithmatex">\(W = VER(P, K_O)\)</span></li>
+<li>Symetrické šifry <span class="arithmatex">\(K_P = K_O\)</span> (např. MAC kódy)</li>
+<li>Asymetrické šifry </li>
+</ul>
+</li>
+<li>Generátor nepředvidatelných čísel <span class="arithmatex">\(N = RNG()\)</span></li>
+<li>Hashovací funkce <span class="arithmatex">\(H(D)\)</span></li>
+<li>Diffie-Helmanova funkce<ul>
+<li><span class="arithmatex">\(A = DHF(V, a)\)</span></li>
+<li><span class="arithmatex">\(B = DHF(U, b)\)</span></li>
+<li><span class="arithmatex">\(DHF(A, b) = DHF(B, a)\)</span></li>
+</ul>
+</li>
+<li>Odvozovací funkce <span class="arithmatex">\(DRNG()\)</span><ul>
+<li><span class="arithmatex">\(B = ODF(S, T)\)</span>, kde <span class="arithmatex">\(S\)</span> je seed a <span class="arithmatex">\(T\)</span> je kontext</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="kvantova-distribuce-klice-quantum-key-distribution">Kvantová distribuce klíče (Quantum Key Distribution)</h2>
+<p>Symetrické šifry jsou kvantově odolné při dostatečné velikosti klíče. Je ovšem potřeba zajistit bezpečný kanál pro přenos klíče. Hlavní myšlenkou QKD je, že informace o klíči je přenášena pomocí kvantových stavů částic, například fotonů. Tyto kvantové stavy mohou být polarizace fotonů, fáze, nebo jiné vlastnosti částic, které jsou kvantově mechanicky reprezentovatelné. </p>
+<p>Důležité je, že měření kvantových stavů ovlivňuje jejich původní hodnotu. Tento jev, známý jako <strong>Heisenbergův princip neurčitosti</strong>, zaručuje, že jakýkoli pokus o odposlech přenosu je detekovatelný.</p>
+<p><img alt="wa" src="../images/walter.jpg" /></p>
+<p>Protokol BB84 používá čtyři různé kvantové stavy, které jsou rozděleny do dvou bází (např. horizontální/vertikální polarizace a diagonální polarizace). </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Báze</th>
+<th style="text-align: center;">0</th>
+<th style="text-align: center;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(+\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\uparrow\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\rightarrow\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\times\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\nearrow\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\searrow\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Protokol funguje následujícím způsobem:</p>
+<ul>
+<li><strong>Přenos kvantových bitů</strong> (qubitů): Alice připraví fotony v náhodných stavech a odesílá je Bobovi. Každý foton reprezentuje jeden bit.</li>
+<li><strong>Náhodné měření</strong>: Bob měří každý přijatý foton v náhodně vybrané bázi.</li>
+<li><strong>Sdílení bází po veřejném kanále</strong>: Po přenosu Alice a Bob veřejně komunikují (např. přes internet) a porovnávají báze, ve kterých fotony připravovali a měřili. Data získaná pomocí nesprávných bází jsou ignorována.</li>
+<li><strong>Generování klíče</strong>: Zbývající data, kde se báze shodují, tvoří tajný klíč.</li>
+<li><strong>Test na přítomnost odposlechu</strong>: Alice a Bob porovnají malou část svého klíče. Pokud zjistí vyšší než očekávanou chybovost, mohou detekovat přítomnost útočníka.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Odolnost vůči odposlechům</p>
+<p>BB84 má odolnost vůči odposlechům založenou na statistice. Útočníkovi nezbývá nic jiného než také měřit náhodně vybranými bázemi, ovšem při volbě špatné báze (50% šance se netrefit) se daný foton přepóluje a i kdyby poté příjemce použil ten správný, tak má šanci naměřit špatnou hodnotu kvůli přepólování do jiné báze.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Kolik bitů je třeba připravit na začátku?</p>
+<p>Je doporučeno připravit minimálně 4x tolik bitů, kolik je požadovaná délka klíče. Je to kvůli tomu, že při náhodném měření statistiky polovina bitů bude změřena špatně a v následném kroku zahozena. Také se poté část bitů použije na ověření přítomnosti odposlechu.</p>
+</div>
 
 
 
