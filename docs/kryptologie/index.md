@@ -51,8 +51,27 @@ Základní myšlenkou teorie informace je, že _informační hodnota_ předávan
 
 V šifrovacím systému chceme mít co největší možnou entropii, tj. nejvyšší možnou míru nepředvídatelnosti, ohledně zprávy a klíče. Pokud má zpráva velkou entropii, není její výskyt vůbec překvapivý, stejně tak jako výskyt jiné zprávy (mají stejnou pravděpodobnost výskytu). Podobně uvažujeme i u klíče, kde chceme dosáhnout maximální entropie. Pokud mají všechny klíče stejnou pravděpodobnost výskytu, je entropie maximální, protože nedokážeme předvídat.
 
+!!! tip "Entropie hesla"
+    Entropie hesla je klíčovým faktorem pro jeho bezpečnost. V podstatě označuje, jak těžké by bylo uhádnout heslo pomocí útoků jako je hrubá síla nebo útok na slovník. Pokud heslo obsahuje vysokou entropii, znamená to, že je těžké předvídat nebo rozluštit, což výrazně zvyšuje bezpečnost účtu. Entropie hesla se vypočítá podle počtu možných kombinací znaků, které heslo používá, a jeho délky. Vzorec pro výpočet entropie hesla je:
+
+    $$
+        H = L \cdot \log⁡_2{(N)}
+    $$
+
+    kde $H$ je entropie v bitech, $L$ je délka hesla, a $N$ je počet možných znaků v abecedě (např. pro alfanumerické heslo by $N$ bylo 62, pokud používáte malá a velká písmena a číslice).
+
 ### Náhodná a pseudonáhledná čísla
-!!! bug "TODO"
+Entropie úzce souvisí s generováním čísel. Vyšší entropie znamená vyšší úroveň náhodnosti a obtížnější předvídatelnost, což je zásadní pro bezpečnost kryptografických operací.
+
+Generování náhodných a pseudonáhodných čísel lze rozdělit do dvou kategorií:
+
+1. __Pravá náhodná čísla__ (TRNG - True Random Number Generators): Tato čísla jsou generována na základě fyzikálních jevů, jako je šum v elektronických obvodech nebo radioaktivní rozpad. Jsou skutečně náhodná a nepředvídatelná, ale jejich generování může být pomalejší a náročnější na hardware.
+2. __Pseudonáhodná čísla__ (PRNG - Pseudorandom Number Generators): Tato čísla jsou generována algoritmicky a při stejném počátečním stavu (seed) produkují stejnou posloupnost čísel. I když nejsou skutečně náhodná, mohou být dostatečně nepředvídatelná pro mnoho aplikací, zejména pokud jsou inicializována kvalitním seedem s vysokou entropií.
+
+!!! tip "Je potřeba vysoké entropie"
+    V kryptografii je důležité používat generátory s vysokou entropií, aby byla zajištěna bezpečnost klíčů a dalších tajných hodnot. Nedostatečná entropie může vést k předvídatelným výsledkům a tím k oslabení kryptografických systémů.
+
+
 
 ## Perfektní šifra
 Aby šifra poskytovala perfektní bezpečnost, musí mít klíč alespoň tak velkou entropii, jakou má zpráva. Jinými slovy, klíč musí být dostatečně dlouhý a složitý, aby skryl veškerou informaci obsaženou ve zprávě. Pokud by klíč nebyl dostatečně náhodný nebo dlouhý, mohl by útočník využít informace obsažené v ciphertextu (zašifrované zprávě) k odvození původního textu. Vernamův kryptosystém, který je také známý jako jednorázová tabulka (one-time pad), je šifrovací technika, která používá náhodný klíč stejné délky jako zpráva. Pokud je klíč skutečně náhodný, použit pouze jednou a utajen, poskytuje absolutní bezpečnost.
@@ -178,7 +197,7 @@ V kryptografii existuje hierarchie mezi KDF (__Key Derivation Function__), PRF a
 
 !!! info "Možnosti konstrukce klíčovaného hashe z neklíčovaného"
     - Prefixed MAC $MAC = H(K || M)$
-    - Suffixed MAC $MAC = MAC = H(M || K)
+    - Suffixed MAC $MAC = H(M || K)$
     - Enveloping MAC $MAC = H(K || M || K)$
     - Nested MAC $NMAC = H(K2 || H(K1 || M))$
 
@@ -198,43 +217,126 @@ Při výběru vhodné konstrukce je důležité zvážit specifické požadavky 
 ### AES GCM
 AES-GCM (Galois/Counter Mode) je autorizovaná šifra s přidruženými daty (AEAD), která kombinuje šifrování a autentizaci do jednoho efektivního procesu. AES-GCM využívá blokovou šifru AES v režimu Counter (CTR) pro šifrování a Galoisovu funkci pro autentizaci. Při šifrování se inicializační vektor (IV) kombinuje s počítadlem, které se inkrementuje pro každý blok dat. Tato kombinace se šifruje pomocí AES, a výsledek se XORuje s plaintextem, čímž vzniká ciphertext. Současně se pomocí Galoisovy funkce generuje autentizační tag, který zajišťuje integritu a autenticitu jak šifrovaných dat, tak přidružených dat (AAD).
 
-## Diffie-Hellman
-!!! bug "TODO: Checknout s DIM materiály"
+## Sdílené tajemství
 
+### Diffie-Hellman
 Diffie-Hellmanova výměna klíčů je kryptografický protokol, který umožňuje dvěma stranám bezpečně sdílet tajný klíč přes nezabezpečený kanál. Tento sdílený klíč může být následně použit pro šifrování komunikace pomocí symetrických šifer.
 
-# Otázky ke zkoušce KAS
+!!! info "Jak funguje Diffie-Hellman?"
+    - __Veřejná dohoda__: Obě strany se veřejně dohodnou na dvou hodnotách: velkém prvočísle $p$ a základně $g$, které jsou veřejně známé a nemusí být chráněny.
+    - __Výběr tajných klíčů__: Každá strana si zvolí tajný klíč: Alice zvolí $a$ a Bob $b$.
+    - __Výpočet veřejných hodnot__: Alice vypočítá $A = g^a \mod{p}$ a Bob $A = B^b \mod{p}$.
+    - __Výměna veřejných hodnot__: Alice a Bob si vymění hodnoty $A$ a $B$.
+    - __Výpočet sdíleného klíče__: Alice vypočítá $s = B^a \mod{p}$ a Bob $s = A^b \mod{p}$. Díky vlastnostem umocňování v modulární aritmetice platí, že $s$ je stejný pro obě strany.
 
-- [X] Pojmy kryptografie a kryptoanalýza.
-- [X] Základní funkce šifrování.
-- [X] Kerckhoffův princip.
-- [X] Vermanův kryptosystém.
-- [ ] Bezpečnost šifry, její kvantitativní vyjádření. V současnosti doporučené hodnoty.
-- [X] Modely útoku na šifru, bezpečnostní cíle a koncepty.
-- [ ] Náhodná čísla v kryptografii
-- [X] Pojem entropie v informatice.
-- [ ] Generování náhodných a pseudonáhodných čísel.
-- [X] Entropie hesel.
-- [X] Rozdělení symetrických šifer. 
-- [X] Principy konfúze a difúze.
-- [X] Blokové šifry, princip konstrukce.
-- [X] AES, základní principy.
-- [X] Módy použití blokových šifer ECB, CBC, CTR.
-- [X] Proudové šifry. Základní principy, příklady současných a minulých proudových šifer.
-- [X] Hashovací funkce. Definice, požadavky na kryptografickou hashovací funkci. 
-- [X] Narozeninový útok, "ró" útok.
-- [X] Konstrukce hashovacích funkcí.
-- [X] Davies Meyerova konstrukce, "houba".
-- [X] Používané hashovací funkce.
-- [X] Hashování s klíčem, MAC, PRF.
-- [X] Možnosti konstrukce klíčovaného hashe z neklíčovaného.
-- [X] Symetrické šifry s autentizací. Možné konstrukce.
-- [X] Autorizovaná šifra s přidruženými daty. AES GCM
-- [ ] Diffie Hellmanova funkce, její použití.
-- [ ] Protokoly pro tvorbu sdíleného tajemství.
-- [ ] Asymetrické kryptosystémy, základní principy, výhody a nevýhody oproti symetrickým šifrám.
-- [ ] RSA.
-- [ ] TLS - funkce, základní principy, protokoly, použitá kryptografie.
-- [ ] Přístupové kryptosystémy. Základní principy, autorizace, autentizace. Příklady protokolů.
-- [ ] Stavební prvky kryptografie - základní kryptografické funkce a proměnné.
-- [ ] Kvantová distribuce klíče - základní princip.
+!!! quote ""
+    ![diffie_helman](../images/DiffieHellman.png)
+
+### RSA
+RSA je asymetrický protokol, který využívá veřejný a soukromý klíč pro šifrování a dešifrování dat. Může být použit pro bezpečnou výměnu tajného klíče mezi stranami. Tento klíč se poté používá k šifrování komunikace pomocí symetrických šifer.
+
+### ECDH
+Tento protokol je vylepšením klasického Diffie-Hellmana a používá elliptické křivky, což zajišťuje silnou bezpečnost i při použití menších klíčů. ECDH se často používá v moderních systémech, jako je například v protokolech TLS a VPN.
+
+## Asymetrické šifry
+Asymetrické kryptosystémy, známé také jako šifrování s veřejným klíčem, využívají dvojici klíčů: veřejného a soukromého. Veřejný klíč je určen pro šifrování dat a může být volně sdílen, zatímco soukromý klíč slouží k dešifrování a musí být přísně chráněn. Tento princip umožňuje bezpečnou komunikaci mezi stranami, které nemají předchozí sdílený tajný klíč. Asymetrické šifry mají tu výhodu, že __eliminují potřebu bezpečného kanálu pro výměnu klíčů__, protože šifrování probíhá pomocí veřejného klíče. Též zajišťuje autentizaci, identifikaci autora zprávy pomocí veřejného klíče, a ověřuje autentičnost zprávy, protože zprávu nemohl nikdo vytvořit ani pozměnit bez vlastnictví privátního klíče. Nevýhodou je složitější implementace a nižší rychlost.
+
+### RSA
+
+## TLS
+TLS (Transport Layer Security) je skupina protokolů používaný k zajištění bezpečné komunikace přes počítačové sítě, například na internetu. Nahrazuje starší protokol SSL (Secure Sockets Layer) a poskytuje následující klíčové funkce:
+
+- __Šifrování__: Ochrana přenášených dat před odposlechem.
+- __Autentizace__: Ověření identity komunikujících stran (např. serveru pomocí certifikátů).
+- __Integrita__: Zajištění, že data nebyla během přenosu modifikována
+
+## Record Protokol
+
+## Handshake Protokol
+Handshake protokol slouží k inicializaci zabezpečeného spojení mezi klientem (např. webový prohlížeč) a serverem (např. webový server). Během handshake fáze se dohodnou na šifrovacích algoritmech, vymění si klíče a autentizují se, čímž zajistí, že následující komunikace bude šifrovaná, autentická a integritní.
+
+![tls_handshake](../images/tls_handshake.png)
+
+## Přístupové systémy
+Přístupové kryptosystémy zahrnují mechanismy, které se používají pro řízení přístupu uživatelů nebo zařízení k systémům, datům nebo síťovým prostředkům (tzv. __aktiva__). Tyto systémy zajišťují, že pouze oprávněné subjekty mohou provádět akce na chráněných zdrojích.
+
+!!! example "Obecné schéma přístupového systému"
+    ![Schéma přístupového systému](../images/pristupovy_system_schema.png)
+
+V obecném případě máme __entitu__, která chce získat přístup ke __chráněným zdrojům__ (aktivům). Úkol přístupového systému je zjistit, zda je entita tím, za koho se prokazuje, a zda má právo k danému zdroj přistoupit. Svojí identitu prokazuje entita procesem autentizace, zatímco svojí pravomoc přístupu ke zdroji řídí __autorizace__. 
+
+!!! question "Co je autentizace?"
+    __Autentizace__ je proces slouží k ověření identity uživatele nebo systému. Autentizace může být založena na něčem, co víte (např. heslo), něčem, co máte (např. karty nebo tokeny), nebo něčem, čím jste (biometrické údaje).
+
+    - __Identita__: Za koho se entita snaží prokázat
+    - __Dokazovací faktor__: Čím se snaží entita ověřuje (např. heslo)
+    - __Ověřovácí faktor__: Čím autorita ověřuje identitu (např. hash hesla v databázi)
+
+!!! question "Co je autorizace?"
+    __Autorizace__ je proces, kdy se a dochází k ověření
+
+    Po autentizaci systém určuje, jaká práva a přístupy jsou uživateli nebo systému povoleny. Autorizace je založena na předchozím ověření a je řízena pomocí pravidel, jako jsou přístupové seznamy nebo role.
+
+!!! info "Protokoly"
+    - __Autentizační protokoly__:  EAP, Kerberos
+    - __Autorizační protokoly__: OAuth
+    - __Přístupové protokoly__: RADIUS
+
+## Stavební prvky kryptografie
+- Proměnné:
+    - Utajené
+        - Klíče symetrických šifer
+        - Soukromé klíče asymetrických šifer
+        - Seeds
+    - Veřejné
+        - Veřejné klíče asymetrických šifer (certifikáty)
+        - Inicializační vektory
+        - Nonce
+        - Čísla bloků
+- Funkce
+    - Šifrovací a dešifrovací funkce
+        - Šifrovací funkce $ENC$ s parametry pro otevřený text $M$ a šifrovací klíč $K_E$: $C = ENC(M, K_E)$
+        - Dešifrovací funkce $DEC$ s parametry pro zašifrovaný text $C$ a dešifrovací klíč $K_D$: $M = DEC(C, K_D)$
+        - Pro symetrické šifry $K_E = K_D$
+        - Pro asymetrické šifry $K_E = K_V$ příjemce, $K_D = K_S$ příjemce
+    - Pečetící a verifikační funkce
+        - Pečetící funkce zprávy $M$ s pečetícím klíčem $K_P$: $P = PTC(M, K_P)$
+        - Verifikační funkce zprávy $P$ s ověřovacím klíčem $K_O$: $W = VER(P, K_O)$
+        - Symetrické šifry $K_P = K_O$ (např. MAC kódy)
+        - Asymetrické šifry 
+    - Generátor nepředvidatelných čísel $N = RNG()$
+    - Hashovací funkce $H(D)$
+    - Diffie-Helmanova funkce
+        - $A = DHF(V, a)$
+        - $B = DHF(U, b)$
+        - $DHF(A, b) = DHF(B, a)$
+    - Odvozovací funkce $DRNG()$
+        - $B = ODF(S, T)$, kde $S$ je seed a $T$ je kontext
+
+## Kvantová distribuce klíče (Quantum Key Distribution)
+Symetrické šifry jsou kvantově odolné při dostatečné velikosti klíče. Je ovšem potřeba zajistit bezpečný kanál pro přenos klíče. Hlavní myšlenkou QKD je, že informace o klíči je přenášena pomocí kvantových stavů částic, například fotonů. Tyto kvantové stavy mohou být polarizace fotonů, fáze, nebo jiné vlastnosti částic, které jsou kvantově mechanicky reprezentovatelné. 
+
+Důležité je, že měření kvantových stavů ovlivňuje jejich původní hodnotu. Tento jev, známý jako __Heisenbergův princip neurčitosti__, zaručuje, že jakýkoli pokus o odposlech přenosu je detekovatelný.
+
+![wa](../images/walter.jpg)
+
+Protokol BB84 používá čtyři různé kvantové stavy, které jsou rozděleny do dvou bází (např. horizontální/vertikální polarizace a diagonální polarizace). 
+
+|Báze|0|1|
+|:--:|:--:|:--:|
+|$+$|$\uparrow$|$\rightarrow$|
+|$\times$|$\nearrow$|$\searrow$|
+
+Protokol funguje následujícím způsobem:
+
+- __Přenos kvantových bitů__ (qubitů): Alice připraví fotony v náhodných stavech a odesílá je Bobovi. Každý foton reprezentuje jeden bit.
+- __Náhodné měření__: Bob měří každý přijatý foton v náhodně vybrané bázi.
+- __Sdílení bází po veřejném kanále__: Po přenosu Alice a Bob veřejně komunikují (např. přes internet) a porovnávají báze, ve kterých fotony připravovali a měřili. Data získaná pomocí nesprávných bází jsou ignorována.
+- __Generování klíče__: Zbývající data, kde se báze shodují, tvoří tajný klíč.
+- __Test na přítomnost odposlechu__: Alice a Bob porovnají malou část svého klíče. Pokud zjistí vyšší než očekávanou chybovost, mohou detekovat přítomnost útočníka.
+
+!!! tip "Odolnost vůči odposlechům"
+    BB84 má odolnost vůči odposlechům založenou na statistice. Útočníkovi nezbývá nic jiného než také měřit náhodně vybranými bázemi, ovšem při volbě špatné báze (50% šance se netrefit) se daný foton přepóluje a i kdyby poté příjemce použil ten správný, tak má šanci naměřit špatnou hodnotu kvůli přepólování do jiné báze.
+
+!!! question "Kolik bitů je třeba připravit na začátku?"
+    Je doporučeno připravit minimálně 4x tolik bitů, kolik je požadovaná délka klíče. Je to kvůli tomu, že při náhodném měření statistiky polovina bitů bude změřena špatně a v následném kroku zahozena. Také se poté část bitů použije na ověření přítomnosti odposlechu.
