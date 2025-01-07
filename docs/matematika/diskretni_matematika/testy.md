@@ -3,7 +3,7 @@
 ## Řešení příkladů z PDF
 
 ### Úloha 1
-!!! example ""
+!!! example "Zadání"
     Převeďte následující čísla do číselných soustav: 
     
     $$\begin{aligned}
@@ -149,7 +149,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 ### Úloha 2
-!!! example ""
+!!! example "Zadání"
     Pomocí euklidova algoritmu nalezněte $NSD(a, b), kde$
     
     1. 106050, 156450
@@ -248,6 +248,102 @@ $$\begin{aligned}
         5 & 0
     \end{array}$$
 </div>
+
+### Úloha 3
+!!! example "Zadání"
+    Pomocí euklidova algoritmu nalezněte $NSN(a, b), kde$
+    
+    1. 13440, 19740
+    2. 11550, 16950
+
+<div class="grid cards" markdown>
+
+-   1) $NSD(13440, 19740) = 420$
+
+    ---
+
+    $$\begin{array}{rr}
+        & 19740 \\
+        & 13440 \\
+        \hline
+        1 & 6300 \\
+        2 & 840 \\
+        7 & \boxed{420} \\
+        2 & 0
+    \end{array}$$
+
+-   2) $NSD(11550, 16950) = 150$
+
+    ---
+
+    $$\begin{array}{rr}
+        & 16950 \\
+        & 11550 \\
+        \hline
+        1 & 5400 \\
+        2 & 750 \\
+        7 & \boxed{150} \\
+        5 & 0
+    \end{array}$$
+</div>
+
+<div class="grid cards" markdown>
+-   $NSN(13440, 19740)$
+
+    $$\begin{aligned}
+        &= \frac{13440 \cdot 19740}{420} \\
+        &= \frac{1344 \cdot 19740}{42} \\
+        &= \frac{672 \cdot 19740}{21} \\
+        &= 672 \cdot 940 \\
+        &= \boxed{63168}
+    \end{aligned}$$
+
+-   $NSN(11550, 16950)$
+
+    $$\begin{aligned}
+        &= \frac{11550 \cdot 16950}{150} \\
+        &= \frac{1155 \cdot 16950}{15} \\
+        &= 77 \cdot 16950 \\
+        &= \boxed{1305150}
+    \end{aligned}$$
+</div> 
+
+### Úloha 4
+!!! example "Zadání"
+    Vyjádřete $NSD(13 440,19 740)$ ve tvaru [Bezoutovy rovnosti](./teorie_delitelnosti/bezoutova_rovnost.md).
+
+!!! question "Co je bezoutova rovnost?"
+    Bezoutova rovnost říká, že [největší společný dělitel](./spolecny_delitel.md#spolecny-delitel) dvou přirozených čísel je jejich [lineární kombinace](../linearni_algebra/linearni_kombinace.md).
+
+    $$
+        ax + by = NSD(a, b)
+    $$
+
+!!! tip "Výpočet NSD"
+    $$\begin{array}{rr}
+        & 19740 \\
+        & 13440 \\
+        \hline
+        1 & 6300 \\
+        2 & 840 \\
+        7 & \boxed{420} \\
+        2 & 0
+    \end{array}$$
+
+!!! note "Tabulka rozvoje v řetězové zlomky"
+    |i|-1|0|1|2|3|
+    |:--:|:--:|:--:|:--:|:--:|:--:|
+    |q|-|1|2|7|2|
+    |P|1|1|3|22|47|
+    |Q|0|1|2|15|32|
+
+$$\begin{aligned}
+    19740x + 13440y &= 420 \\
+    47x + 32y &= 1 \\
+    \\
+    x &= 15 \\
+    y &= -22 \\
+\end{aligned}$$
 
 ## Řešení k testu 6.2.2020
 
