@@ -29,7 +29,7 @@ Protože jsou prvky jazyka slova (řetězce), můžeme s nimi provádět i násl
 |Zřetězení|$L_1 . L_2$|Spojí slova z dvou jazyků dohromady, takže každé slovo z prvního jazyka se spojí s každým slovem z druhého jazyka. Výsledek je kartézský součin dvou jazyků.|
 |$n$-tá mocnina|$L^n$|Opakované zřetězení slov ze stejného jazyka. Například druhá mocnina jazyka obsahuje všechna slova vzniklá zřetězením právě dvou slov původního jazyka.|
 |Iterace jazyka|$L^*$|Vytváří všechny možné kombinace slov, včetně opakování a prázdného řetězce.|
-|Pozitivní iterace jazyka|$L^*$|Vytváří všechny možné kombinace slov, včetně opakování.|
+|Pozitivní iterace jazyka|$L^+$|Vytváří všechny možné kombinace slov, včetně opakování.|
 |Zrcadlový obraz jazyka|$L^R$|Pro každé slovo obrátíme pořadí symbolů.|
 
 !!! warning "Nultá mocnina jazyka"
