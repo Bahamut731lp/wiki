@@ -69,7 +69,7 @@ KA s výstupní funkcí Moorova typu popisujeme uspořádanou
 - $Q$ je konečná neprázdná množina stavů.
 - $\Sigma$ je vstupní abeceda.
 - $O$ je konečná neprázdná množina výstupních symbolů.
-- $\delta$ je přechodová funkce, která určuje, do jakého stavu automat přejde podle aktuálního stavu a přečteného symbolu.
+- $\delta$ je přechodová funkce, která určuje, do jakého stavu automat přejde pouze podle aktuálního stavu.
 - $\lambda$ je výstupní funkce, která určuje, jaký výstup se generuje na základě aktuálního stavu.
 - $q_0 \in Q$ je počáteční stav.
 
