@@ -7,9 +7,6 @@ edit_uri: edit/main/docs/
 
 plugins:
   - search
-  - blog:
-      blog_toc: true
-      authors_profiles: true
   - git-authors
 
 markdown_extensions:
@@ -50,7 +47,6 @@ nav:
       - databazove_systemy/relacni/funkcni_zavislost.md
       - databazove_systemy/relacni/normalizace.md
       - databazove_systemy/relacni/aktualizacni_anomalie.md
-
   - Gramatiky a automaty:
     - gramatiky_automaty/index.md
     - gramatiky_automaty/abecedy_slova.md
@@ -58,13 +54,18 @@ nav:
     - gramatiky_automaty/automaty.md
     - gramatiky_automaty/gramatiky.md
   - Hardware a elektronika:
-    - logicke_obvody/ciselne_soustavy.md
-    - logicke_obvody/prevodniky.md
-    - logicke_obvody/kombinacni_logicke_obvody.md
-    - logicke_obvody/sekvencni_logicke_obvody.md
-    - logicke_obvody/aritmeticke_obvody.md
-    - logicke_obvody/automaty.md
-    - logicke_obvody/procesory.md
+    - hardware/index.md
+    - Logické obvody:
+      - hardware/logicke_obvody/ciselne_soustavy.md
+      - hardware/logicke_obvody/prevodniky.md
+      - hardware/logicke_obvody/kombinacni_logicke_obvody.md
+      - hardware/logicke_obvody/sekvencni_logicke_obvody.md
+      - hardware/logicke_obvody/aritmeticke_obvody.md
+      - hardware/logicke_obvody/automaty.md
+      - hardware/logicke_obvody/procesory.md
+    - Architektura počítačů:
+      - hardware/architektura_pocitacu/index.md
+      - hardware/architektura_pocitacu/von_neumann.md
   - Kryptologie:
     - kryptologie/index.md
     - kryptologie/kerckhoffuv_princip.md
@@ -114,7 +115,8 @@ nav:
         - matematika/diskretni_matematika/teorie_delitelnosti/dolni_horni_cela_cast.md
         - matematika/diskretni_matematika/teorie_delitelnosti/retezove_zlomky.md
         - matematika/diskretni_matematika/teorie_delitelnosti/kongruence.md
-
+      - Kódování:
+        - matematika/diskretni_matematika/kodovani/dyadic_fraction_with_least_denominator.md
     - Statistika:
       - matematika/statistika/index.md
       - matematika/statistika/teorie_pravdepodobnosti/jevy.md
@@ -133,9 +135,9 @@ nav:
       - matematika/kombinatorika/index.md
       - matematika/kombinatorika/kombinatoricka_pravidla.md
     - Reálná analýza:
-      - realna_analyza/derivace.md
-      - realna_analyza/diferencial.md
-      - realna_analyza/integral.md
+      - matematika/realna_analyza/derivace.md
+      - matematika/realna_analyza/diferencial.md
+      - matematika/realna_analyza/integral.md
     - Zjednodušování výrazů:
       - matematika/zlomky.md
       - matematika/exponenty.md
@@ -152,8 +154,6 @@ nav:
   - Operační systémy:
     - operacni_systemy/index.md
     - operacni_systemy/procesy.md
-  - Blog:
-    - blog/index.md
 
 theme:
   name: material

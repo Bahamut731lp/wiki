@@ -345,6 +345,40 @@ $$\begin{aligned}
     y &= -22 \\
 \end{aligned}$$
 
+### Úloha 5
+!!! example "Zadání"
+    Určete $NSD(a, b)$ pomocí dvojkového NSD algoritmu.
+
+    1. 112, 161
+    2. 130, 234
+    3. 105, 231
+
+### Úloha 6
+!!! example "Zadání"
+    Rozhodněte, která z následujících čísel jsou prvočísla: 983; 837;
+
+### Úloha 7
+!!! example "Zadání"
+    Určete počet dělitelů a součet dělitelů čísla 17 439 786;
+
+### Úloha 8
+!!! example "Zadání"
+    Pomocí kanonických rozkladů určete NSD/NSN čísel a = 2 598 225, b = 6 101 550.
+
+### Úloha 9
+!!! "Zadání"
+    Určete $\varphi{(n)}$, kde
+
+    1. $\varphi{(2478175)}$
+    2. $\varphi{(367)}$
+
+### Úloha 10
+!!! example "Zadání"
+    Nakreslete grafy funkcí
+
+    1. $1 - 2\lceilx\rceil, x \in \left<-2,2\right>$
+    2. $\left\lfloor\frac{x^2}{2}-3\right\rfloor, x \in \left<-3,3\right>$
+
 ## Řešení k testu 6.2.2020
 
 ### Úloha 1
