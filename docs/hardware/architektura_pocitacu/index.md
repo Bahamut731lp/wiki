@@ -86,6 +86,12 @@ Vlastnosti harvardské architektury oproti von neumannově:
 !!! example ""
     Uveďte charakteristické vlastnosti procesorů typu CISC.
 
+- Rozsáhlá instrukční sada
+- Proměnná délka instrukcí
+- Zpracování instrukce ve více cyklech (CPI 5 až 10)
+- Velký počet adresovacích režimů
+- 
+
 ---
 
 !!! example ""
@@ -162,3 +168,5 @@ $$\begin{aligned}
 
 !!! example ""
     Počítač zpracovává program, který má 5 milionů 1-CPI (jednotaktových instrukcí), 1 milion 2-CPI a 1 milion 3-CPI. Kmitočet hodinových taktů je 100 MHz. Jaká je jeho výkonnost v MIPS?
+
+### Nový stav instrukcí

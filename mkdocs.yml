@@ -66,6 +66,7 @@ nav:
     - Architektura počítačů:
       - hardware/architektura_pocitacu/index.md
       - hardware/architektura_pocitacu/von_neumann.md
+      - hardware/architektura_pocitacu/instruction_set_architecture.md
   - Kryptologie:
     - kryptologie/index.md
     - kryptologie/kerckhoffuv_princip.md
