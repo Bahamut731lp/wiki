@@ -34,6 +34,8 @@ markdown_extensions:
 nav:
   - Domů: index.md
   - Algoritmy a programování:
+    - Strojové učení:
+      - strojove_uceni/apriori.md
     - algoritmy_a_programovani/index.md
     - algoritmy_a_programovani/algoritmizace.md
     - algoritmy_a_programovani/slozitost.md
