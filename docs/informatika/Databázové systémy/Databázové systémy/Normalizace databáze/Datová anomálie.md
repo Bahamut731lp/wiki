@@ -1,0 +1,1 @@
+**Datová anomálie** je situace, kdy bychom měli mít na více řádcích tabulky stejná data, ale z nějakého důvodu stejná nejsou.

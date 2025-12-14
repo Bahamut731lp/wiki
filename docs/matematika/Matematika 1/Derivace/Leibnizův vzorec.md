@@ -1,0 +1,1 @@
+Zobecňění [[Pravidla pro práci s derivacemi#Derivace součinu|součinového pravidla]], které říká, že 

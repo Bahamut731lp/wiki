@@ -1,0 +1,1 @@
+Defekt zobrazení je dimenze [[Jádro zobrazení|jádra zobrazení]].
