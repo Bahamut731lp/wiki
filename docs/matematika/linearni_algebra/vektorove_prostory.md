@@ -1,3 +1,0 @@
-# Vektorové prostory
-
-## Lineární závislost

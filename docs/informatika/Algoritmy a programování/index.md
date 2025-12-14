@@ -1,1 +1,0 @@
-# Algoritmy a programování

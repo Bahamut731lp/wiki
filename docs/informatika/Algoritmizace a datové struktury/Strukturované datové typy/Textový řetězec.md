@@ -1,1 +1,0 @@
-Textový řetězec je [[Datový typ|strukturovaný datový typ]], který bývá chápán jako [[Algoritmizace a datové struktury/Strukturované datové typy/Pole|pole znaků]].

@@ -1,1 +1,0 @@
-**Bisekce** (neboli **metoda půlení intervalu**)

@@ -1,3 +1,0 @@
-# Odmocniny
-
-## Částečné odmocňování

@@ -1,3 +1,0 @@
-**Type Hinting**
-
->[!todo] Dopsat

@@ -1,5 +1,85 @@
-> [!INFO]
-> Tenhle text navazuje na [[Algoritmizace a programování 1/Základy/Algoritmus]]
+# Algoritmus
+
+Postup k řešení nějakého problému.
+
+> [!tldr]
+> - Algoritmus říká, jak řešit problém
+> - Algoritmus by měl být **jednoznačný**, **konečný**, **obecný**, **srozumitelný** a **korektní**
+
+## Vlastnosti algoritmu
+1. **Jednoznačnost**
+2. **Konečnost**
+3. **Obecnost** 
+4. **Srozumitelnost**
+5. **Korektnost** 
+
+---
+### Jednoznačnost
+- Algoritmus je **deterministický**[^2], neboli _předem určený_. 
+- Je tudíž zaručeno, že při zadání stejných vstupních hodnot vždy dostanu stejné výsledky.
+
+### Konečnost
+ - Algoritmus je **rezultativní**[^1]
+ - Proběhne v konečném počtu kroků a vždy vede k nějakému výsledku.
+
+### Obecnost
+- Algoritmus je **hromadný**
+- Řeší určitou sadu problémů, které se liší akorát vstupem.
+
+> Například počítání aritmetického průměru by mělo být nad jakýmikoliv čísly, nejenom na konkrétních číslech.
+
+### Srozumitelnost
+- Algoritmus by měl být **srozumitelný i pro ostatní**
+
+### Korektnost
+ - Algoritmus by měl dát pro správná vstupní data správný výsledek.
+ 
+---
+
+
+[^1]: Rezultativní - Slovo přejaté z anglického slova **resultative**, které je zase odvozeno od slova **result** - výsledek.
+[^2]:Deterministický - významově to znamená *předem určený*, což tady akorát říká, že dopředu víme, jak algoritmus skončí a neměl by tak dělat věci náhodně.
+
+# Algoritmizace
+Postup, kterým vytváříme [[Algoritmizace a programování 1/Základy/Algoritmus|algoritmus]] pro řešení daného problému ($Algoritmizace \rightarrow Algoritmus$).
+
+>[!tldr]
+>- Výsledkem algoritmizace je algoritmus
+>- Kroky algoritmizace:
+>   - Formulace a analýza problému
+>   - Návrh, realizace a ladění řešení 
+
+
+## Postup algoritmizace
+Algoritmizace se běžně dějě v **pěti krocích**
+
+1. **Formulace problému** - Ze zadání se vytvoří konkrétní požadavky, určí se vstupy a výstupy, s čím vším bude program pracovat či komunikovat, ...
+
+2. **Analýza problému** - Popřemýšlíme nad tím, jakými způsoby bychom mohli náš problém vyřešit
+
+3. **Návrh řešení** - Vybere si nějaké řešení a rozvrhneme si, jak ho uděláme ve vybraném programovacím jazyce pomocí dostupných nástrojů
+
+4. **Realizace řešení** - Začneme zapisovat algoritmus, např. pomocí programovacího jazyka.
+
+5. **Ladění řešení** - Algoritmus otestujeme, zda funguje pro různé vstupy a jestli nenastanou nějaké případy, ve kterých by selhal či se nechoval podle našich představ
+
+# Program
+Program je konkrétní implementace [[Algoritmizace a programování 1/Základy/Algoritmus|algoritmu]] pomocí [[Programovací jazyk|programovacího jazyka]].
+
+>[!tldr]
+>Program obsahuje příkazy, které realizují algoritmus.
+
+Programem můžeme myslet v různých situacích různé věci, například:
+- Zdrojový kód
+- Spustitelný soubor
+- Proces běžící na počítači[^1]
+
+## Data a kód programu
+Program zpravidla obsahuje dvě části:
+- **Data** - Vstupní a výstupní informace, ...
+- **Kód** - Instrukce, co dělat s daty
+
+[^1]:Vzhledem k tomu, že již pro program zavedený v paměti existuje právě slovo *proces*, tak bych byl opatrný, jaké z těchto dvou slov používate. (Někteří sysadmini a učitelé jsou na to hákliví :)
 
 ## Kritéria dělení algoritmů
 ### Iterativní vs. Rekurzivní algoritmy
