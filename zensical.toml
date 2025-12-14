@@ -4,6 +4,11 @@ site_description = "Knowledge base for all kinds of things."
 site_author = "Bahamut731lp"
 dev_addr = "localhost:8005"
 
+extra_javascript = [
+    "js/mathjax.js",
+    "https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"
+]
+
 [[project.theme.palette]]
 media = "(prefers-color-scheme: light)"
 scheme = "default"
@@ -28,11 +33,15 @@ features = [
     "content.tooltips"
 ]
 
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.abbr]
 [project.markdown_extensions.attr_list]
 [project.markdown_extensions.pymdownx.snippets]
 [project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.tables]
 [project.markdown_extensions.pymdownx.superfences]
 custom_fences = [
   { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
