@@ -1,4 +1,5 @@
 # SQL
+**Structured Query Language** (zkrat. SQL) je deklarativní, [[Case sensitivity|case insensitive]] jazyk pro přístup a řízení [[Relační datový model|relačních databází]].
 
 - Selekce: Získání vybraných sloupců a řádků z tabulky.
 - Projekce: Vybrání pouze určitých sloupců z tabulky.

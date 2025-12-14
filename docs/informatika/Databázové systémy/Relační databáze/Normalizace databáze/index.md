@@ -1,4 +1,11 @@
-# Normální formy
+# Normalizace databáze
+Normalizace databáze je postup dekompozce, kterým databázi přeorganizujeme tak, aby se redukovaly [[Datová anomálie|datové anomálie]].
+
+>[!tldr]
+>- Normalizace je postup, kterým změníme databázi tak, aby se redukovaly [[Datová anomálie|datové anomálie]]
+>- Anomálie v datech mohou vznikat použitím [[Data Query Language|příkazů pro manipulaci s daty]]
+
+
 Normální formy jsou pravidla, podle kterých určujeme, zda je databáze normalizovaná nebo ne. Pokud relace nesplňují normální formu, rozloží se na menší relace, které už pravidla splňují.
 
 ## První normální forma
