@@ -1,0 +1,1 @@
+# Diskrétná obrazová funkce

@@ -1,0 +1,1 @@
+# Předpzracování obrazu

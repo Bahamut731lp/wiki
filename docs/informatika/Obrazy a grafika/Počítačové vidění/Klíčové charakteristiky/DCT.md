@@ -1,0 +1,1 @@
+# Diskrétní Kosinová Transformace
