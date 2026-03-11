@@ -1,0 +1,11 @@
+services:
+  docs:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/app:cached
+    # Overrides the default command so the container stays running
+    command: sleep infinity
+    # Connect as the non-root 'vscode' user
+    user: vscode

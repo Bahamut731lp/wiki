@@ -1,0 +1,26 @@
+{
+    "name": "Zensical Project",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "docs",
+    "workspaceFolder": "/app",
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.testing.pytestEnabled": true,
+                "editor.formatOnSave": true
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "mhutchie.git-graph",
+                "njpwerner.autodocstring",
+                "tamasfe.even-better-toml"
+            ]
+        }
+    },
+
+    // This matches the 'vscode' user in the Dockerfile/Compose
+    "remoteUser": "vscode"
+}
