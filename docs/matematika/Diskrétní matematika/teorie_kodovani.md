@@ -1,7 +1,9 @@
-# DFWLD
+# Teorie kódování
+
+## DFWLD
 __Dyadic fraction with least denominator__ (zkráceně DFWLD) je druhem aritmetického kódu, který je bezeztrátový nultého řádu.
 
-## Kódování
+### Kódování
 Pro zdrojovou abecedu $A = \left(\begin{array}{cccccc}a & b & c & \ldots \\ p_1 & p_2 & p_3 & \ldots \end{array}\right)$, kde první řádek jsou __znaky zdrojové abecedy__ a druhý řádek jsou __pravděpodobnosti znaků__ kódujeme pomocí DFWLD následujícím způsobem:
 
 1. __Spočítáme si kumulativní pravděpodobnosti znaků__ - Předpokládáme, že zdrojová abeceda je seřazena od nejvyšší pravděpodobnosti po tu nejmenší. Pak kumulativní pravděpodobnost $C(x)$ počítáme jako __ostře menší__, takže se pravděpodobnost toho konkrétního znaku __nepočítá__.
@@ -13,4 +15,4 @@ Pro zdrojovou abecedu $A = \left(\begin{array}{cccccc}a & b & c & \ldots \\ p_1 
 5. __Sestavení dyadického zlomku__ $R = \frac{s}{2^t}$
 6. __Zakódování do binární podoby__ - Výsledné číslo bude mít $t$ znaků. Pokud má číslo méně bitů než $t$, tak se doplní nulami zleva.
 
-## Dekódování
+### Dekódování

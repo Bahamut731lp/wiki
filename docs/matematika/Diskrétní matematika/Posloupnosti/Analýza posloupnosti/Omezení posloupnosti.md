@@ -1,1 +1,0 @@
-# Omezení posloupnosti
