@@ -1,1 +1,0 @@
-# Davies-Meyerova konstrukce
