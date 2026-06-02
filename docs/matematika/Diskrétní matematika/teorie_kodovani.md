@@ -5,7 +5,7 @@ Mějme zdrojovou množinu symbolů a cílovou (kódovou) množinu symbolů. Kód
 Prefixový kód je takový kód, jehož kódová slova nezačínají žádným jiným kódovým slovem. Takový prefixový kód, jehož délka je co nejmenší, nazýváme __minimálním kódem__.
 
 !!! important "Kraftova nerovnost - existence prefixového kódu"
-    Nutná a postačující podmínka existence prefixového kódu se nazývá Kraftova nerovnost. Ta říká, že pokud známe předem dané délky slov, můžeme zjistit, zda tvoří prefixový kód či nikoliv.
+    Kraftova nerovnost je nutnou a postačující podmínkou existence prefixového kódu. Konkrétně říká, že pokud známe předem dané délky slov, můžeme zjistit, zda tvoří prefixový kód či nikoliv.
 
     $$K = \sum_{i=1}^{n} D^{-l_i}$$
 
@@ -17,9 +17,9 @@ Prefixový kód je takový kód, jehož kódová slova nezačínají žádným j
     !!! tip "Saturace prefixového kódu"
         Pomocí hodnoty Kraftovy nerovnosti můžeme také zjistit, jak moc saturovaný daný prefixový kód je:
 
-        - Pokud je $K > 1$, tak prefixový kód neexistuje.
-        - Pokud je $K = 1$, tak je prefixový kód úplný.
-        - Pokud je $K < 1$, tak je prefixový kód neúplný a můžeme ještě slova přidávat.
+        - Pokud je $K > 1$, tak prefixový kód neexistuje - kódových slov je tam moc a dohromady neutvoří prefixový kód.
+        - Pokud je $K = 1$, tak je prefixový kód úplný - už žádné další slovo nemůžeme přidat, ale dohromady tvoří prefixový kód.
+        - Pokud je $K < 1$, tak je prefixový kód neúplný - můžeme ještě slova přidávat tak, aby vznikl prefixový kód.
 
 ### Huffmanova konstrukce
 Huffmanova konstrukce vytváří minimální kód pro zadané znaky a jejich četnosti.
@@ -93,21 +93,29 @@ __Dyadic fraction with least denominator__ (zkráceně DFWLD) je druhem aritmeti
 ## Bezpečnostní kód
 Bezpečnostní kódy jsou takové kódy, které mají za cíl zajistit bezpečnost a integritu přenášené zprávy. Lineární kód je takový kód, ve kterých jsou kódová slova tvořena lineární kombinací bázových slov (minimální množina kódových slov).
 
+### Generující a kontrolní matice
 - __Generující matice__: Matice z bázových slov kódu.
 - __Kontrolní matice__: Matice z transponované parity generující matice a jednotkové matice.
-- __Hammingovská vzdálenost__: Nejmenší počet pozic, na kterých se řetězce liší.
+
+### Hammingovská vzdálenost
+Hammingovská vzdálenost $d_H$ je nejmenší počet pozic, na kterých se dva řetězce liší.
+
+$$d_{H}(x,y) = |\{i \in \{1, \dots, n\} \mid x_i \not= y_i \}|$$
+
+Minimální Hammingovská vzdálenost kódu $C$ je nejmenší možná vzdálenost mezi jakýmikoliv dvěma různými kódovými slovy.
+
+$$d(C) = \min_{x,y \in C \mid x \not= y} d_H(x, y)$$
 
 ### Detekce a oprava chyby
 !!! important "Schopnost detekce chyby"
     Kód detekuje až $k$ chyb tehdy a jen tehdy, když nejmenší Hammingovská vzdálenost mezi dvěma kódovými slovy je alespoň $k+1$. Jinak řečeno, kód detekuje až ${d-1}$ chyb.
 
-    $$\min(H_d) <= 2k+1$$
-
+    $$k_{max} = d(C) - 1$$
 
 !!! important "Schopnost opravy chyby"
     Kód opraví až $k$ chyb tehdy a jen tehdy, když nejmenší Hammingovská vzdálenost mezi dvěma kódovými slovy je alespoň $2k+1$. Jinak řečeno, kód opravuje až $\lfloor \frac{d-1}{2} \rfloor$ chyb.
 
-    $$\min(H_d) <= 2k+1$$
+    $$k_{max} = \lfloor \frac{d(C)-1}{2} \rfloor$$
 
 ### Hammingův kód
 Hammingův kód, např. kód $(7,4)$ je bezpečnostním kódem, který má celkem 7 bitů, z toho 4 pro data, a 3 pro paritu.
