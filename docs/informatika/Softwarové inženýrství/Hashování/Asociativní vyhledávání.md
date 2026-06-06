@@ -1,1 +1,0 @@
-**Asociativní vyhledávání** je hledání porovnáváním klíčů, kde shoda je nalezena tehdy, pokud se klíč prvku rovná hledanému klíči.
