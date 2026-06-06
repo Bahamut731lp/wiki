@@ -1,6 +1,9 @@
 # Teorie kombinatoriky
 
 ## Kombinatorická pravidla
+
+### Pravidlo součtu
+
 ### Pravidlo součinu
 Pravidlo součinu udává počet všech $k$-tic, u kterých
 - 1. prvek lze vybrat $n_1$ způsoby
@@ -10,7 +13,7 @@ Pravidlo součinu udává počet všech $k$-tic, u kterých
 
 Jinak řečeno, výběry se nazvájem neovlivňují.
 
-### Variance
+### Variace
 Variace je libovolná **[[Uspořádaná dvojice|uspořádaná]]** $k$-tice prvků z $n$-prvkové [[Množiny|množiny]].
 
 >[!tldr] TL,DR
@@ -27,56 +30,6 @@ $$
 \end{aligned}
 $$
 
-### Kombinační číslo
-Jak už název napovídá - kombinační číslo nějak souvisí s [[Kombinace|kombinací]]. Je to totiž alternativnější a rychlejší zápis.
-
->$$C(k, n) = { n \choose k}$$
->Čteme jako "$n$ nad $k$"
-
-Říká nám tedy, kolik můžeme vytvořit $k$ členných kombinací z $n$ prvků.
-
->$${n \choose k} = \frac{n!}{k!(n-k)!}$$
->Hodnota kombinačního čísla se počítá stejně jako kombinace.
-
-### Faktoriál
-Faktoriál čísla $n$ je součin všech přirozených čísel menších než $n$
-
-> [!tldr] TL,DR:
->- Faktoriál čísla $n$ je součin přirozených čísel menších než $n$
->- Výsledek se dá odhadnout pomocí **stirlingova vzorce**
->- $0! = 1$
-
-Faktoriál je tedy v matematickém zápise definován jako
-
->[!example] Zápis faktoriálu:
->$$\large n! = 1 \cdot 2 \cdot 3 \cdot ... \cdot (n-1) \cdot n$$
->$$\large n \in \mathbb{N}$$
-
->[!tip] Rozložení faktoriálu:
->$$\large n! = (n-1)! \cdot n$$
-
-### Faktoriál nuly
-Obecně platí pravidlo, že **faktoriál nuly je jedna**.
->[!example] Faktoriál nuly
->$$\large 0! = 1$$
-
->[!help] Proč tomu ale tak je?
-> Jednoduché vysvětlení je pomocí praktického použití faktoriálů. Faktoriály se totiž používají pro výpočet [[Permutace|permutací]].
-> 
-> Nula věcí lze uspořádat pouze do jedné množiny - a to konkrétně do prázdné množiny. 
-
-### Stirlingův vzorec
-Faktoriál díky svému výpočtu hodně rychle nabývá na hodnotě, abychom nemuseli ručně a zdlouhavě provádět výpočet faktoriálu, dá se výsledek odhadnout pomocí **stirlingova vzorce**
-
->[!info] Stirlingův vzorec
->$$\large n!\approx \sqrt{2 \cdot \pi \cdot n} \cdot \left(\frac{n}{e}\right)^n $$
-
-Čím vyšší faktoriál počítáme, tím menší je odchylka.
-
-## Výpočet faktoriálů pomocí logaritmů
-$$\log(n!) \approx \frac{1}{2}\log(2\pi{n}) + n\cdot\log(n) - n\log(e) $$
-
-
 ### Permutace
 Permutace je libovolná uspořádaná $n$-tice prvků z množiny. Mějme například množinu $N$ o pěti prvcích ($|N| = 5$). Permutací je poté jakákoliv pětice, kde se prvky vyskytují alespoň jednou. 
 
@@ -89,8 +42,23 @@ Permutace bez opakování jsou takové uspořádané $n$-tice, kde je každý pr
 
 $$\large P(n) = n!$$
 
-!!! example "Příklad"
-    Mějme množinu $N$, která má tři prvky: $N\in \{a, b,c\}$. Libovolná permutace (bez opakování) těchto prvků je nějaká uspořádáná trojice těchto prkvů, např. *abc, bac,* nebo * cba.*
+!!! abstract "Faktoriál"
+    Faktoriál čísla $n$ je součin všech přirozených čísel menších než $n$
+
+    $$\large n! = 1 \cdot 2 \cdot 3 \cdot ... \cdot (n-1) \cdot n$$
+
+    !!! tip "Faktoriál nuly"
+        Jednoduché vysvětlení je pomocí praktického použití faktoriálů. Nula věcí lze uspořádat pouze do jedné množiny - a to konkrétně do prázdné 
+        množiny.
+        
+        $$\large 0! = 1$$ 
+
+    !!! tip "Aproximace faktoriálu"
+        Faktoriál díky svému výpočtu hodně rychle nabývá na hodnotě, abychom nemuseli ručně a zdlouhavě provádět výpočet faktoriálu, dá se výsledek odhadnout pomocí **stirlingova vzorce**
+
+        $$\large n!\approx \sqrt{2 \cdot \pi \cdot n} \cdot \left(\frac{n}{e}\right)^n$$
+
+        Čím vyšší faktoriál počítáme, tím menší je odchylka.
 
 Permutace s opakováním stále vyžaduje, aby se využili všechny prvky, ovšem nyní se může prvek vyskytovat vícekrát.
 
@@ -110,6 +78,14 @@ $$P'(k_1, k_2, ..., k_n)= \frac{(k_1+k_2+...+k_n)!}{k_1!\cdot{k_2!}\cdot{...}\cd
 
     Vidíme, že se písmeno $e$ vyskytuje dvakrát. Vzoreček se nám tedy mírně mění, a vypadá takto: $P'(1,1,1,2,1,1) = \frac{(1+1+1+2+1+1)!}{1!\cdot{1}!\cdot{1}!\cdot{2}!\cdot{1}!\cdot{1}!} = \frac{7!}{2}=2520$
 
+### Kombinace
+Jak už název napovídá - kombinační číslo nějak souvisí s [[Kombinace|kombinací]]. Je to totiž alternativnější a rychlejší zápis.
+
+$$C(k, n) = { n \choose k}$$
+
+Říká nám tedy, kolik můžeme vytvořit $k$ členných kombinací z $n$ prvků.
+
+$${n \choose k} = \frac{n!}{k!(n-k)!}$$
 
 ## Rozdělení objektů do tříd
 Systematická klasifikace 12 základních problémů kombinatoriky, které řeší rozmístění $n$ objektů do $k$ přihrádek (tříd). Výsledek závisí na třech kritériích:
@@ -135,10 +111,10 @@ Systematická klasifikace 12 základních problémů kombinatoriky, které řeš
 
 *Poznámka ke značení:* Výraz $\left\{ \begin{matrix} n \\ k \end{matrix} \right\}$ značí Stirlingovo číslo 2. druhu, symbol $p_k(n)$ značí partition function (funkci rozkladu čísla).
 
-## Stirlingova čísla
+### Stirlingova čísla
 Stirlingova čísla jsou dvě sady číselných řad.
 
-### Stirlingova čísla 2. druhu
+#### Stirlingova čísla 2. druhu
 Stirlingova čísla 2. druhu odpovídají na základní kombinatorickou otázku: **Kolika způsoby lze rozdělit množinu $n$ rozlišitelných prvků do $k$ nerozlišitelných neprázdných přihrádek?**
 
 $$\left\{ \begin{matrix} n \\ k \end{matrix} \right\} = \frac{1}{k!}\sum_{i=0}^{k}(-1)^{k-i}\binom{k}{n}i^n = \sum_{i=0}^{k}\frac{(-1)^{k-i}\cdot i^n}{(k-i)!i!}$$
@@ -171,7 +147,7 @@ $$\left\{ \begin{matrix} n \\ k \end{matrix} \right\} = \frac{1}{k!}\sum_{i=0}^{
     6.  {Karel, Petr} | {Adam, Jan}
     7.  {Karel, Jan} | {Adam, Petr}
 
-### Stirlingova čísla 1. druhu
+#### Stirlingova čísla 1. druhu
 Stirlingova čísla 1. druhu mají primární význam u permutací. Udávají **počet permutací $n$-prvkové množiny, které se skládají z přesně $k$ nezávislých cyklů.**
 
 !!! question "Rekurence"
@@ -249,13 +225,12 @@ Stirlingova čísla 1. druhu mají primární význam u permutací. Udávají **
     $$x^{\underline{3}} = x(x-1)(x-2) = \mathbf{1}x^3 - \mathbf{3}x^2 + \mathbf{2}x$$
     Tyto koeficienty jsou přesně Stirlingova čísla $\left[\begin{matrix} 3 \\ 3 \end{matrix} \right]=1$, $\left[\begin{matrix} 3 \\ 2 \end{matrix} \right]=3$ a $\left[\begin{matrix} 3 \\ 1 \end{matrix} \right]=2$. Vážený součet v čitateli pak dává: $(3 \cdot \mathbf{1}) + (2 \cdot \mathbf{3}) + (1 \cdot \mathbf{2}) = 11$.
 
-    ### Závěr
+    __Závěr__
     Díky tomuto algebraickému propojení víme, že průměrný případ chování kódu přesně kopíruje růst Harmonického čísla. Z matematické analýzy víme, že $H_n \approx \ln n$. 
     
     Pro pole o **milionu prvcích** se proměnná `max` v průměru přepíše pouze **$\ln(1\ 000\ 000) \approx 14\text{-krát}$**. Vnitřek podmínky se spouští tak výjimečně, že na rychlost programu nemá prakticky žádný vliv.
 
----
-## Permutace jako zobrazení
+## Algebraické vlastnosti permutací
 Jestliže máme nějakou množinu $N$, tak permutace je v podstatě akorát přeuspořádání prvků - tedy z množiny $N$ uděláme nějakou množinu $N'$, která má stejné prvky, akorát se liší pořadím prvků. Můžeme tedy tvrdit, že každé přerovnání $n$-tice jí přirazuje další $n$-tici. Vzniká nám tedy zobrazení z množiny $N$ do množiny $N$. Toto zobrazení je prosté. Tím, že se jedná o prosté zobrazení, získává permutace všechny jeho vlastnosti, například možnost **skládat permutace** (skládat zobrazení) nebo vytvářet **inverzní permutaci**
 
 !!! info "Skládání permutací"
@@ -265,7 +240,261 @@ Jestliže máme nějakou množinu $N$, tak permutace je v podstatě akorát pře
 
     ![Image](../../../../images/Pasted image 20211025213122.png)
 
-## Permutační cykly
+### Permutační cykly
 Permutační cyklus je způsob zápisu permutace, kdy opakovaně aplikujeme permutaci, dokud se nedostaneme zpět na počáteční prvek.
 
-## Permutační grupy
+### Permutační grupy
+
+### Věžové polynomy
+Věžové polynomy (Rook Polynomials) jsou elegantní způsob, jak řešit **permutace se zakázanými pozicemi** (např. když konkrétní člověk nesmí dostat konkrétní úkol). Problém se vizualizuje jako umísťování $k$ šachových věží na desku $B$ (množinu povolených políček) tak, aby se navzájem neohrožovaly – tj. nesmí sdílet stejný řádek ani sloupec.
+
+Věžový polynom desky $B$ definujeme jako:
+
+$$R(x, B) = \sum_{k=0}^{\infty} r_k(B)x^k = 1 + r_1(B)x + r_2(B)x^2 + \dots$$
+
+Kde $r_k(B)$ je počet způsobů, jak umístit $k$ neohrožujících se věží.
+
+!!! info "Pravidla pro zjednodušení výpočtu"
+    * **Disjunktní desky:** Pokud lze desku rozdělit na dvě části $B_1$ a $B_2$, které nesdílejí žádný společný řádek ani sloupec, polynom je jejich součinem: $R(x, B) = R(x, B_1) \cdot R(x, B_2)$
+    
+    * **Věta o větvení (Rozklad podle políčka $e$):** Zvolíme jedno políčko $e$. Buď na něj věž nedáme, nebo dáme (tím vyřadíme jeho řádek a sloupec, čímž vznikne redukovaná deska $B_e$): $R(x, B) = R(x, B \setminus \{e\}) + x \cdot R(x, B_e)$
+
+Přes princip inkluze a exkluze pak počet povolených permutací (kdy žádná věž nestojí na zakázaném políčku desky $B$ o velikosti $n \times n$) spočítáme jako:
+
+$$\text{Počet vyhovujících permutací} = \sum_{k=0}^{n} (-1)^k \cdot r_k(B) \cdot (n-k)!$$
+
+## Rekurentní posloupnost
+Rekurentní posloupnost (též _rekurence_) je vyjádření posloupnosti, která k výpočtu libovolného členu využívá jiné členy posloupnosti. Rekurence je dána __rekurentním vztahem__ a __počátečními podmínkami__. S rekurencí se velmi špatně počítají vyšší členy, a proto je vhodné zkoumat, jestli by daná rekurentní posloupnost, vyjádřená rekurentním vztahem, nešla převést na jinou posloupnost, která již vztah bude mít nerekurentní.
+
+### Lineární rekurence s konstatními koeficienty
+1) $a_n = r^n$
+2) Posun kladných mocnin $r$
+
+### Homogenní Lineární Rekurentní Vztahy
+Začněme příkladem. Uvažujme následující rekurenci:
+
+$$a_n = 3a_{n-1} - 2a_{n-2}$$
+
+Našim cílem je najít takovou posloupnost, která má stejné členy, ale není vyjádřená rekurencí. Nejdříve je potřeba zjistit, jaké vlastnosti tato rekurence má. Když se na ní podíváme, tak:
+
+- Je __lineární__, protože neobsahuje členy mocnin 2 a větší (vztah je lineární kombinací členů posloupnosti a konstant)
+- Je __homogenní__, protože do výpočtu nevstupuje žádná další ("vnější") síla. Jinak řečeno, pravá strana rovnice je rovna nule.
+
+Nyní potřebujeme najít způsob, jakým rekurenci vyjádřit bez rekurence. Protože jsou členy rekurence podposloupnosti, musíme najít takovou náhradu, která při výpočtu dalšího členu posloupnosti nezmění tvar. Konstantní 
+
+$$\begin{aligned}
+    a_n &= r^n \\
+    &\downarrow \\
+    a_n &= 3a_{n-1} - 2a_{n-2} \\
+    r^n &= 3r^{n-1} - 2r^{n-2} \\
+    r^n &= 3r^{n} \cdot r^{-1} - 2r^{n} \cdot r^{-2} &/:r^n\\
+    1 &= 3r^{-1} - 2r^{-2} &/:r^{-2}\\
+    r^{2} &= 3r^{1} - 2 \\
+    r^{2} -3r +2 &= 0
+\end{aligned}$$
+
+Tím jsme našli takzvaný __charakteristický polynom__.
+
+!!! note "Sdružené komplexní kořeny"
+    $$\begin{aligned}
+    e^{j\cdot\theta} &= \cos{\theta} + j\cdot\sin{\theta}
+    \end{aligned}$$
+
+### Nehomogenní LRV
+
+### Příklady
+#### Příklad 1
+!!! example "Zadání"
+    Najděte explicitní tvar posloupnosti $a_{n+2}=5a_{n+1}-6a_{n}$ s počátečními podmínkami $a_0=2$ a $a_1=5$.
+
+!!! info "Charakteristický polynom"
+    $$\begin{aligned}
+        a_n &= r^n \\
+        &\downarrow \\
+        \\
+        r^{n+2} &= 5r^{n+1}-6r^n\\
+        r^n\cdot r^2 &= 5 \cdot r^{n} \cdot r^{1} - 6r^{n}\\
+        r^2 &= 5r^1 - 6 \\
+        r^2 - 5r^1 + 6 &= 0
+    \end{aligned}$$
+
+!!! tip "Kořeny charakteristického polynomu"
+    $$\begin{aligned}
+        x_{1,2} &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\
+        x_{1,2} &= \frac{5 \pm \sqrt{25 - 24}}{2} \\
+        x_{1,2} &= \frac{5 \pm 1}{2} \\
+        x_1 &= \boxed{2} \\
+        x_2 &= \boxed{3} \\
+    \end{aligned}$$
+
+$$\begin{aligned}
+    a_n &= \alpha \cdot 2^n + \beta \cdot 3^n \\
+    &\downarrow\\
+    a_0 &= \alpha \cdot 2^0 + \beta \cdot 3^0 \\
+    a_1 &= \alpha \cdot 2^1 + \beta \cdot 3^1 \\
+    &\downarrow\\
+    2 &= \alpha + \beta \\
+    5 &= 2\alpha + 3\beta \\
+    &\downarrow\\
+    \alpha &= 2 - \beta \\
+    5 &= 2\cdot(2 - \beta) + 3\beta \\
+    5 &= 4 + \beta \\
+    &\downarrow\\
+    \beta &= \boxed{1}\\
+    \alpha &= \boxed{1} \\
+    &\downarrow\\
+    a_n &= \boxed{2^n + 3^n}
+\end{aligned}$$
+
+#### Příklad 2
+!!! example "Zadání"
+    Najděte explicitní tvar posloupnosti $a_{n+2}-4a_{n+1}+4a_{n}=0$ s počátečními podmínkami $a_0=1$ a $a_1=4$.
+
+!!! info "Charakteristický polynom"
+    $$\begin{aligned}
+        a_n &= r^n \\
+        &\downarrow \\
+        \\
+        r^{n+2} -4r^{n+1}+4r^n &= 0\\
+        r^n\cdot r^2 - 4 \cdot r^{n} \cdot r^{1} + 4r^{n} &= 0\\
+        r^2 -4r^1 - 4 &= 0
+    \end{aligned}$$
+
+!!! tip "Kořeny charakteristického polynomu"
+    $$\begin{aligned}
+        x_{1,2} &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\
+        x_{1,2} &= \frac{4 \pm \sqrt{16 - 16}}{2} \\
+        x_{1,2} &= \frac{4 \pm 0}{2} \\
+        x_1 &= \boxed{2} \\
+        x_2 &= \boxed{2} \\
+    \end{aligned}$$
+
+$$\begin{aligned}
+    a_n &= (\alpha + \beta \cdot n) \cdot 2^n \\
+    &\downarrow\\
+    1 &= (\alpha + \beta \cdot 0) \cdot 2^0 \\
+    4 &= (\alpha + \beta \cdot 1) \cdot 2^1 \\
+    &\downarrow\\
+    1 &= \alpha \\
+    4 &= 2\alpha + 2\beta \\
+    &\downarrow\\
+    \alpha &= 2 - \beta \\
+    2 &= 2\beta \\
+    1 &= \beta \\
+    &\downarrow\\
+    \beta &= \boxed{1}\\
+    \alpha &= \boxed{1} \\
+    &\downarrow\\
+    a_n &= \boxed{(1+n)\cdot 2^n}
+\end{aligned}$$
+
+#### Příklad 3
+!!! example "Zadání"
+    Najděte explicitní tvar posloupnosti $a_{n+2}+a_n=0$ s počátečními podmínkami $a_0=1$ a $a_1=0$.
+
+!!! info "Charakteristický polynom"
+    $$\begin{aligned}
+        a_n &= r^n \\
+        &\downarrow \\
+        \\
+        r^{n+2}+r^n &= 0 \\
+        r^n \cdot r^2 + r^n &= 0 \\
+        r^2 + 1 &= 0
+    \end{aligned}$$
+
+!!! tip "Kořeny charakteristického polynomu"
+    $$\begin{aligned}
+        x_{1,2} &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\
+        x_{1,2} &= \frac{0 \pm \sqrt{-4}}{2} \\
+        x_{1,2} &= \frac{\pm 2i}{2} \\
+        x_1 &= \boxed{+i} \\
+        x_2 &= \boxed{-i} \\
+    \end{aligned}$$
+
+$$\begin{aligned}
+    a_n &= \rho^n \cdot \left(\alpha\cos{\left(n\cdot\theta\right)} + \beta\sin{\left(n\cdot\theta\right)}\right) \\
+    &\downarrow\\
+    \rho &= \sqrt{0^2 + 1^2}\\
+    \rho &= \boxed{1}\\
+    \theta &= \arccos{\left(\frac{0}{1}\right)}\\
+    \theta &= \boxed{\frac{\pi}{2}}\\
+    &\downarrow\\
+    a_n &= 1^n \cdot \left(\alpha\cos{\left(n\cdot\frac{\pi}{2}\right)} + \beta\sin{\left(n\cdot\frac{\pi}{2}\right)}\right) \\
+    &\downarrow\\
+    1 &= 1^0 \cdot \left(\alpha\cos{\left(0\cdot\frac{\pi}{2}\right)} + \beta\sin{\left(0\cdot\frac{\pi}{2}\right)}\right) \\
+    0 &= 1^1 \cdot \left(\alpha\cos{\left(1\cdot\frac{\pi}{2}\right)} + \beta\sin{\left(1\cdot\frac{\pi}{2}\right)}\right) \\
+    &\downarrow\\
+    1 &= 1 \cdot \left(\alpha\cos{\left(0\right)} + \beta\sin{\left(0\right)}\right) \\
+    0 &= 1 \cdot \left(\alpha\cos{\left(\frac{\pi}{2}\right)} + \beta\sin{\left(\frac{\pi}{2}\right)}\right) \\
+    &\downarrow\\
+    1 &= 1 \cdot \left(\alpha\cdot 1 + \beta\cdot 0\right) \\
+    0 &= 1 \cdot \left(\alpha\cdot 0 + \beta\cdot 1\right) \\
+    &\downarrow\\
+    \alpha &= \boxed{1}\\
+    \beta &= \boxed{0}\\
+    &\downarrow\\
+    a_n &= \boxed{1^n \cdot \cos{\left(n\cdot\frac{\pi}{2}\right)}} \\
+\end{aligned}$$
+
+#### Příklad 4
+!!! example "Zadání"
+    Najděte explicitní tvar posloupnosti $a_{n+3}-3a_{n+2}+3a_{n+1}-a_n=0$ s počátečními podmínkami $a_0=0$, $a_1=1$ a $a_2=4$.
+
+!!! info "Charakteristický polynom"
+    $$\begin{aligned}
+        a_n &= r^n \\
+        &\downarrow \\
+        \\
+        r^{n+3}-3r^{n+2}+3r^{n+1}-r^n &= 0 \\
+        r^{n} \cdot r^{3} - 3\cdot r^{n}\cdot r^{2}+3\cdot r^{n}\cdot r^{1}-r^n &= 0 \\
+        r^3 -3r^2+3r-1 &= 0
+    \end{aligned}$$
+
+!!! tip "Kořeny charakteristického polynomu"
+    Pomocí hornerova schématu. Kandidátní kořeny polynomu $ax^n + ... + b$ musí splňovat $a \mid 1$ a $b \mid 1$. Tudíž množina kandidátních kořenů je $\{\pm 1\}$.
+
+    |x|1|-3|+3|-1|
+    |:--:|:--:|:--:|:--:|:--:|
+    |1|1|-2|1|0|
+
+    $$(r-1)\cdot(r^2 - 2r + 1) = (r-1)^3$$
+
+$$\begin{aligned}
+    a_n &= 1^n \cdot \left(\alpha\cdot n^0 + \beta \cdot n^1 + \gamma \cdot n^2\right) \\
+    &\downarrow\\
+    0 &= 1^0 \cdot \left(\alpha + 0\beta + 0\gamma\right) \\
+    1 &= 1^1 \cdot \left(1\alpha + \beta + \gamma\right) \\
+    4 &= 1^2 \cdot \left(2\beta + 4\gamma\right) \\
+    &\downarrow\\
+    \alpha &= 0 \\
+    1 &= \beta + \gamma \\
+    4 &= 2\beta + 4\gamma \\
+    &\downarrow\\
+    \alpha &= 0 \\
+    \beta &= 1 - \gamma \\
+    4 &= 2\cdot(1 - \gamma) + 4\gamma \\
+    &\downarrow\\
+    \alpha &= 0 \\
+    \beta &= 1 - \gamma \\
+    4 &= 2 + 2\gamma \\
+    &\downarrow\\
+    \alpha &= 0 \\
+    \beta &= 1 - \gamma \\
+    \gamma &= 1 \\
+    &\downarrow\\
+    \alpha &= 0 \\
+    \beta &= 0 \\
+    \gamma &= 1 \\
+    &\downarrow\\
+    a_n &= 1 \cdot \left(0\cdot 1 + 0 \cdot n + 1 \cdot n^2\right) \\
+    a_n &= \boxed{n^2}
+\end{aligned}$$
+
+## Vytvořující (generující funkce)
+Vytvořující funkce umožňují kódovat nekonečné číselné posloupnosti $(a_n)$ do koeficientů formálních mocninných řad. Kombinatorické operace se pak řeší pomocí běžné algebry.
+
+* **Obyčejná vytvořující funkce (OGF):** $A(x) = \sum_{n=0}^{\infty} a_n x^n$
+  Typicky reprezentuje výběr prvků, kde **nezáleží na pořadí** (kombinace, nerozlišitelné objekty).
+  * *Příklad:* Posloupnost samých jedniček $(1, 1, 1, \dots)$ vyjadřuje řada $1 + x + x^2 + \dots$, což odpovídá funkci $\frac{1}{1-x}$.
+* **Exponenciální vytvořující funkce (EGF):** $E(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{n!}$
+  Používá se tam, kde **na pořadí záleží** (permutace, rozlišitelné objekty).
