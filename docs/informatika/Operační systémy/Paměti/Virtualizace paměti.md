@@ -1,1 +1,0 @@
-**Virtualizace paměti** je proces, kdy [[Operační systém|operační systém]] vytváří iluzi souvislé paměti.

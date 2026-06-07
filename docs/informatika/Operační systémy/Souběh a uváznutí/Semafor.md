@@ -1,1 +1,0 @@
-**Semafor** je forma [[Mutex|zámku]], která dokáže přidělovat určitý počet zámků do vyčerpání limitu.

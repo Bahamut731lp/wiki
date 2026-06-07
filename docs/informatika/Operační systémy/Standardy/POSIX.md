@@ -1,1 +1,0 @@
-POSIX (Portable Operating Systom Interface) je standard, který define API [[Operační systém|operačního systému]] (jeho funkcí a parametrů).

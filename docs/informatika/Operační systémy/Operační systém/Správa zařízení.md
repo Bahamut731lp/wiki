@@ -1,1 +1,0 @@
-**Správa zařízení** je proces, při kterém [[Operační systém|operační systém]] řídí připojená zařízení a jejich činnost.
