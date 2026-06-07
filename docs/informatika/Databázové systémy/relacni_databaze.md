@@ -395,17 +395,27 @@ Index vytváří samostatnou strukturu, která obsahuje jen klíč a ukazatel na
 
 ## Transakce
 
-Transakce je posloupnost SQL příkazů, která převádí databázi z jednoho **konzistentního stavu** do druhého. Funguje jako atomická jednotka – buď se provede celá, nebo vůbec.
+Transakce je posloupnost SQL příkazů, která převádí databázi z jednoho **konzistentního stavu** do druhého. Funguje jako atomická jednotka – buď se provede celá, nebo vůbec. Bez transakčního zpracování by souběžný přístup více uživatelů vedl k chaosu – jeden by četl data uprostřed změn druhého, převody peněz by mizely, rezervace by se duplikovaly.
 
-!!! abstract "ACID vlastnosti transakcí"
-    | Vlastnost | Význam |
-    |:--|:--|
-    | **Atomicita** (*Atomicity*) | Transakce je nedělitelná – buď se provedou všechny její operace, nebo žádná. Selhání uprostřed → rollback. |
-    | **Konzistence** (*Consistency*) | Transakce převádí databázi z jednoho konzistentního stavu do druhého. Žádná transakce nesmí porušit integritní omezení. |
-    | **Izolovanost** (*Isolation*) | Souběžné transakce se navzájem neovlivňují – každá vidí databázi, jako by běžela sama. |
-    | **Trvanlivost** (*Durability*) | Úspěšně potvrzená transakce (COMMIT) je trvale uložena – přežije výpadek systému. |
+### ACID
+
+ACID je akronym čtyř vlastností, které každá transakce garantuje. Databázový systém je vynucuje kombinací zámků, logování a správy verzí.
+
+!!! abstract "Čtyři vlastnosti ACID"
+    **Atomicita** (*Atomicity*)
+    :   Transakce je nedělitelná – buď se provedou **všechny** její operace, nebo **žádná**. Selhání uprostřed (výpadek proudu, chyba aplikace, porušení IO) → automatický rollback všeho, co se do té doby provedlo. Atomicita se implementuje pomocí *undo logu* – databáze si před každou změnou uloží původní hodnotu, aby ji mohla v případě rollbacku obnovit.
+
+    **Konzistence** (*Consistency*)
+    :   Transakce převádí databázi z jednoho konzistentního stavu do druhého. Konzistentní stav = žádné integritní omezení (PK, FK, CHECK, UNIQUE) není porušeno. Pokud transakce uprostřed poruší IO (např. `INSERT` s duplicitním PK), je odmítnuta. Konzistence je odpovědností programátora i DBMS – DB zajistí IO, aplikační logiku musí hlídat vývojář.
+
+    **Izolovanost** (*Isolation*)
+    :   Souběžné transakce se navzájem neovlivňují – každá vidí databázi, jako by běžela sama. Dokonalá izolace (`SERIALIZABLE`) je drahá (zámkování), proto standard SQL definuje slabší úrovně, které povolují určité konflikty výměnou za vyšší výkon. Viz [stupně izolace](#stupně-izolace) níže.
+
+    **Trvanlivost** (*Durability*)
+    :   Úspěšně potvrzená transakce (`COMMIT`) je **trvale** uložena – přežije výpadek proudu, restart serveru i pád disku. Implementuje se pomocí *redo logu* (*WAL* – Write-Ahead Log): před zapsáním změn do datových souborů se změna zapíše do logu na disk. Při restartu po výpadku se z logu obnoví všechny committed transakce.
 
 ```sql
+-- Atomický převod peněz: oba UPDATE, nebo nic
 BEGIN TRANSACTION;
     UPDATE Ucty SET zustatek = zustatek - 1000 WHERE id = 1;
     UPDATE Ucty SET zustatek = zustatek + 1000 WHERE id = 2;
@@ -414,13 +424,126 @@ COMMIT;
 -- ROLLBACK;
 ```
 
-!!! info "Úrovně izolace transakcí"
-    | Úroveň | Dirty Read | Non-repeatable Read | Phantom Read |
-    |:--|:--:|:--:|:--:|
-    | **READ UNCOMMITTED** | ✅ Možný | ✅ Možný | ✅ Možný |
-    | **READ COMMITTED** | ❌ | ✅ Možný | ✅ Možný |
-    | **REPEATABLE READ** | ❌ | ❌ | ✅ Možný |
-    | **SERIALIZABLE** | ❌ | ❌ | ❌ |
+### Konflikty
+
+Když běží více transakcí současně a nejsou dostatečně izolované, vznikají následující problémy. Každý z nich reprezentuje jiný typ nekonzistence:
+
+!!! bug "Dirty Read (špinavé čtení)"
+    Transakce $T_1$ čte data, která transakce $T_2$ zapsala, ale ještě **nepotvrdila** (`COMMIT`). Pokud se $T_2$ následně vrátí (`ROLLBACK`), $T_1$ pracovala s daty, která ve skutečnosti nikdy neexistovala.
+
+    | Čas | Transakce A | Transakce B |
+    |:--|:--|:--|
+    | 1 | `BEGIN` | |
+    | 2 | `UPDATE zustatek = 500 WHERE id = 1` | |
+    | 3 | | `SELECT zustatek FROM Ucty WHERE id = 1` – **vidí 500** |
+    | 4 | `ROLLBACK` – vrací původních 1000 | |
+    | 5 | | Transakce B pracovala s hodnotou 500, která nikdy neexistovala |
+
+!!! bug "Non-repeatable Read (neopakovatelné čtení)"
+    Transakce $T_1$ čte stejný řádek dvakrát, ale mezi tím jiná transakce $T_2$ hodnotu **změnila a potvrdila**. $T_1$ podruhé vidí jinou hodnotu.
+
+    | Čas | Transakce A | Transakce B |
+    |:--|:--|:--|
+    | 1 | `BEGIN` | |
+    | 2 | `SELECT zustatek FROM Ucty WHERE id = 1` – **vidí 1000** | |
+    | 3 | | `UPDATE Ucty SET zustatek = 500 WHERE id = 1; COMMIT` |
+    | 4 | `SELECT zustatek FROM Ucty WHERE id = 1` – **vidí 500!** |
+    | 5 | Transakce A viděla dvě různé hodnoty pro tentýž řádek |
+
+!!! bug "Phantom Read (fantómové čtení)"
+    Transakce $T_1$ provede dotaz se stejnou podmínkou dvakrát, ale mezi tím jiná transakce $T_2$ **vložila nový řádek** (nebo smazala existující), který podmínce vyhovuje. $T_1$ podruhé vidí řádky, které předtím neexistovaly.
+
+    | Čas | Transakce A | Transakce B |
+    |:--|:--|:--|
+    | 1 | `BEGIN` | |
+    | 2 | `SELECT COUNT(*) FROM Objednavky WHERE stav = 'nova'` – **10** | |
+    | 3 | | `INSERT INTO Objednavky (...) VALUES (...); COMMIT` |
+    | 4 | `SELECT COUNT(*) FROM Objednavky WHERE stav = 'nova'` – **11!** |
+    | 5 | Transakce A vidí nový řádek, který předtím neexistoval |
+
+!!! bug "Lost Update (ztracená aktualizace)"
+    Dvě transakce čtou stejná data, každá je upraví a zapíše zpět – druhá přepíše změny první, aniž by o nich věděla.
+
+    | Čas | Transakce A | Transakce B |
+    |:--|:--|:--|
+    | 1 | `SELECT zustatek FROM Ucty WHERE id = 1` – **1000** | |
+    | 2 | | `SELECT zustatek FROM Ucty WHERE id = 1` – **1000** |
+    | 3 | `UPDATE Ucty SET zustatek = 500 WHERE id = 1` | |
+    | 4 | | `UPDATE Ucty SET zustatek = 1200 WHERE id = 1; COMMIT` |
+    | 5 | `COMMIT` – ale B už přepsal změnu A! |
+
+    Zůstatek je 500 (co napsala A), přestože B provedl COMMIT později. Záleží na implementaci, ale obě transakce přepsaly práci té druhé.
+
+### Stupně izolace
+
+Standard SQL definuje čtyři úrovně izolace, které představují **kompromis mezi konzistencí a výkonem**. Vyšší izolace = méně konfliktů, ale více zámků a nižší propustnost.
+
+| Úroveň | Dirty Read | Non-repeatable Read | Phantom Read | Lost Update |
+|:--|:--:|:--:|:--:|:--:|
+| **READ UNCOMMITTED** | ✅ Možný | ✅ Možný | ✅ Možný | ✅ Možný |
+| **READ COMMITTED** | ❌ | ✅ Možný | ✅ Možný | ✅ Možný |
+| **REPEATABLE READ** | ❌ | ❌ | ✅ Možný | ❌ |
+| **SERIALIZABLE** | ❌ | ❌ | ❌ | ❌ |
+
+#### READ UNCOMMITTED
+
+Nejslabší úroveň – transakce může číst data, která jiná transakce ještě nepotvrdila (*dirty read*). Prakticky **žádná izolace**.
+
+- **Jak to funguje**: SELECT nebere žádné zámky, ignoruje zámky ostatních.
+- **Výhody**: Maximální výkon, žádné blokování.
+- **Nevýhody**: Prakticky nepoužitelné pro cokoliv, kde záleží na správnosti dat.
+- **Použití**: Pouze pro přibližné agregace, kde na přesnosti nezáleží (např. odhad počtu návštěvníků za poslední minutu).
+
+#### READ COMMITTED
+
+Transakce vidí pouze data potvrzená (`COMMIT`) jinými transakcemi. **Dirty read není možný**. Většina databází (PostgreSQL, Oracle, SQL Server) používá tuto úroveň jako **výchozí**.
+
+- **Jak to funguje**: Každý SELECT vidí snapshot dat platný v okamžiku spuštění dotazu (ne transakce!).
+- **Výhody**: Slušný kompromis – žádné dirty ready, ale stále vysoká propustnost. V PostgreSQL se používá MVCC – writers neblokují readers.
+- **Nevýhody**: Non-repeatable read a phantom read jsou možné – stejný SELECT uvnitř jedné transakce může vrátit různé výsledky.
+- **Použití**: OLTP systémy s vysokou propustností (e-shopy, bankovní dotazy na zůstatek).
+
+#### REPEATABLE READ
+
+Transakce vidí stejná data po celou dobu svého trvání – pokud přečte řádek na začátku transakce, každé další čtení stejného řádku vrátí stejnou hodnotu. **Dirty read ani non-repeatable read nejsou možné**.
+
+- **Jak to funguje**: Při prvním čtení řádku se na něj vezme zámek (nebo se v MVCC zaznamená verze snapshotu platná pro celou transakci).
+- **Výhody**: Konzistentní pohled na data uvnitř transakce – vhodné pro operace, které vyžadují více čtení v konzistentním stavu.
+- **Nevýhody**: Phantom read je stále možný – nové řádky splňující podmínku WHERE se mohou objevit. Více zámků → menší propustnost.
+- **V MySQL InnoDB**: REPEATABLE READ je **výchozí** úroveň a díky *gap lockům* blokuje i phantom ready – chová se téměř jako SERIALIZABLE.
+
+#### SERIALIZABLE
+
+Nejpřísnější úroveň – transakce se chovají, jako by běžely **sériově** (jedna po druhé), i když ve skutečnosti běží souběžně. **Žádné konflikty nejsou možné**.
+
+- **Jak to funguje**: DB používá kombinaci zámků, predikátních zámků (zamyká i rozsahy hodnot, ne jen existující řádky), nebo detekci sériových konfliktů a abort transakcí (SSI – Serializable Snapshot Isolation v PostgreSQL).
+- **Výhody**: Úplná izolace – programátor nemusí řešit žádné souběhové jevy.
+- **Nevýhody**: Nízká propustnost, časté aborty transakcí při konfliktu. Nejhůř škáluje.
+- **Použití**: Finanční systémy, kde je správnost kritická (převody mezi bankami, účetní uzávěrky).
+
+### Jak se izolace implementuje – zámky vs. MVCC
+
+| Mechanismus | Princip | Výhody | Nevýhody | Používá |
+|:--|:--|:--|:--|:--|
+| **Pesimistické zámky** (*Pessimistic Locking*) | Před čtením/zápisem se vezme zámek (shared/exclusive). Ostatní čekají. | Jednoduchý model, garantovaná konzistence. | Nízká propustnost – readeři blokují writery a naopak. | SQL Server (výchozí), starší Oracle. |
+| **Optimistické zámky** (*Optimistic Locking*) | Transakce čte bez zámků, při COMMITu ověří, že data nebyla změněna (např. porovnáním verze). Pokud byla → abort. | Vysoká propustnost při malém konfliktu, ideální pro read-heavy systémy. | Při vysokém konfliktu mnoho abortů a retry. | Aplikační vrstva (JPA `@Version`, Hibernate optimistic). |
+| **MVCC** (*Multi-Version Concurrency Control*) | Každá transakce vidí snapshot databáze v okamžiku svého startu. Writers vytvářejí nové verze řádků, readers čtou staré verze. **Readers nikdy neblokují writers a naopak**. | Vysoká propustnost, ideální pro mixed workloads. | Složitější implementace, režie úklidu starých verzí (VACUUM). | PostgreSQL, MySQL InnoDB, Oracle, SAP HANA. |
+
+!!! info "MVCC v PostgreSQL – jak to funguje"
+    Každý řádek v PostgreSQL nese metadata o tom, která transakce ho vytvořila a která ho smazala. Při SELECTu transakce vidí jen řádky, které:
+
+    - Byly vytvořeny transakcí, která už commitnula **před** startem mé transakce.
+    - Nebyly smazány transakcí, která commitnula **před** startem mé transakce.
+
+    Takže každá transakce pracuje se stabilním snapshotem – bez zámků, bez čekání. Writers mezi sebou soupeří jen o tentýž řádek.
+
+!!! example "Praktická volba stupně izolace"
+    | Scénář | Doporučená úroveň | Proč |
+    |:--|:--|:--|
+    | Zobrazení zůstatku účtu | READ COMMITTED | Stačí vidět poslední potvrzený stav. |
+    | Převod peněz mezi účty | REPEATABLE READ | Musí vidět konzistentní zůstatky obou účtů po celou dobu transakce. |
+    | Generování měsíční účetní uzávěrky | SERIALIZABLE | Nesmí se objevit žádné nové transakce během výpočtu sum. |
+    | Aktuální počet online uživatelů | READ UNCOMMITTED | Orientační údaj, přesnost není kritická. |
 
 ## Triggers a uložené procedury
 
