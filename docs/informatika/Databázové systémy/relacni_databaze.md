@@ -1,24 +1,144 @@
 # Relační databáze
 
-## Návrh relačních databází
-Návrh relační databáze je proces, ve kterém se plánuje, jakým způsobem budou data uložena, organizována a propojena v relační databázové systému. Správný návrh databáze je klíčový pro efektivní a spolehlivé ukládání a manipulaci s daty.
+## Relační schéma
 
-### Konceptuální schéma databáze
-Konceptuální schéma databáze je model, který zobrazuje strukturu dat, jejich vlastnosti a vztahy mezi nimi. Je to vyšší úroveň abstrakce v návrhu databáze, která se zaměřuje na porozumění datovým požadavkům a jejich organizaci bez ohledu na fyzickou implementaci. Tento model je často prezentován pomocí ER diagramu (Entity-Relationship diagram).
+Relační model databáze je založen na konceptu **relací**, které představují tabulky s daty. Relační schéma je plán, který definuje strukturu tabulek – jaké atributy obsahují, jaké mají datové typy a jak jsou mezi sebou propojené.
 
-**Konceptuální model** určuje koncepty a vazby mezi nimi bez nutnosti vázat se na konkrétní [[Databázové systémy|databázový systém]].
+!!! abstract "Základní pojmy relačního modelu"
+    | Pojem | Význam |
+    |:--|:--|
+    | **Relace** (tabulka) | Množina dat organizovaná do sloupců a řádků. Matematicky: relace je podmnožina kartézského součinu domén. |
+    | **Atribut** (sloupec) | Charakteristika popisující vlastnosti entity. Má název a datový typ. |
+    | **$n$-tice** (řádek/záznam) | Jeden konkrétní záznam v tabulce – uspořádaná $n$-tice hodnot odpovídajících atributům. |
+    | **Doména** | Množina povolených hodnot pro daný atribut. Např. doména `Vek` = $\{x \in \mathbb{N} \mid 0 \le x \le 120\}$. |
+    | **Klíč** | Atribut nebo sada atributů, které jednoznačně identifikují každý řádek. |
 
-K zakreslení konceptuálního modelu se používají [[ER Diagram|ER diagramy]] nebo [[Relační datový model|relační schéma]].
+!!! info "Schéma relace – zápis"
+    Schéma relace zapisujeme jako $R(A_1, A_2, \dots, A_n)$, kde $R$ je název relace a $A_i$ jsou atributy. Příklad:
 
-Mezi prvky konceptuálního schématu patří:
+    $$Student(\underline{RČ}, jméno, příjmení, datum\_narození, email)$$
 
-- __Entity__, což jsou objekty, které mají být uloženy v databázi.
-- __Atributy__, což jsou vlastnosti jednotlivých objektů.
-- __Vztahy__, které určují vazby a spojení mezi jednotlivými objekty.
-- __Primární klíč__, který jednoznačně identifikuje objekt.
-- __Cizí klíč__, který odkazuje na primární klíč jiného objektu.
+    Podtržený atribut označuje primární klíč.
 
-???- example "Ukázka ER Diagramu"
+### Klíče
+
+| Typ klíče | Význam | Příklad |
+|:--|:--|:--|
+| **Superklíč** | Libovolná množina atributů, která jednoznačně identifikuje každý řádek. | $\{RČ\}$, $\{RČ, jméno\}$, $\{email\}$ |
+| **Kandidátní klíč** | Minimální superklíč – nelze z něj odebrat žádný atribut bez ztráty jednoznačnosti. | $\{RČ\}$, $\{email\}$ |
+| **Primární klíč** | Jeden vybraný kandidátní klíč. V tabulce může být pouze jeden. Označuje se podtržením. | $\underline{RČ}$ |
+| **Cizí klíč** | Atribut(y) odkazující na primární klíč jiné (nebo stejné) tabulky. Slouží k vyjádření vztahů. | `student_RČ → Student(RČ)` |
+| **Složený klíč** | Klíč tvořený více atributy – žádný z nich sám o sobě neidentifikuje řádek jednoznačně. | $\{student\_RČ, kurz\_ID\}$ u přihlášek |
+
+## Vztahy mezi entitami
+
+Při modelování vztahů mezi tabulkami řešíme dvě otázky: **kolik** entit se účastní vztahu (kardinalita) a **zda musí** se entita vztahu účastnit (parcialita).
+
+### Kardinalita
+
+Kardinalita určuje **maximální počet** entit na obou stranách vztahu:
+
+| Typ | Popis | Příklad |
+|:--|:--|:--|
+| **1 : 1** | Jeden záznam entity A souvisí s maximálně jedním záznamem entity B a naopak. | Osoba ↔ Rodný list |
+| **1 : N** | Jeden záznam A souvisí s více záznamy B, ale B souvisí s maximálně jedním A. | Zákazník → Objednávky |
+| **M : N** | Jeden záznam A souvisí s více B a naopak. Vyžaduje **vazební tabulku**. | Student ↔ Kurz (přes Přihlášky) |
+
+!!! info "Realizace vazby M : N"
+    Vazba M : N se v relačním modelu realizuje **vazební (spojovací) tabulkou**, která obsahuje dva cizí klíče – jeden na každou stranu vazby. Tím se M : N rozloží na dvě vazby 1 : N.
+
+### Parcialita
+
+Parcialita (participační omezení) určuje, zda je účast entity ve vztahu **povinná** nebo **volitelná**:
+
+- **Povinná účast** (`||`): Entita se musí vztahu účastnit. Každý záznam v tabulce A musí mít odpovídající záznam v tabulce B. V SQL: sloupec cizího klíče je `NOT NULL`.
+- **Volitelná účast** (`|o`): Entita se vztahu účastnit může, ale nemusí. Sloupec cizího klíče může být `NULL`.
+
+!!! example "Příklad parciality a kardinality v ER diagramu"
+    ```mermaid
+    erDiagram
+        ZAMESTNANEC ||--o| PROJEKT : "má"
+    ```
+    Zaměstnanec má **0 nebo 1** projekt (volitelná, max. 1), a projekt **musí mít** právě jednoho zaměstnance (povinná, max. 1).
+
+## Integritní omezení
+
+Integritní omezení (IO) jsou pravidla, která zajišťují správnost, přesnost a konzistenci dat. Bez nich by databáze mohla obsahovat nesmyslná data – záporný věk, neexistující cizí klíče, nebo prázdné primární klíče.
+
+### Doménová integrita
+
+Každá hodnota v daném sloupci spadá do definované **domény** – tedy má správný datový typ, spadá do povoleného rozsahu a splňuje případná další omezení.
+
+```sql
+CREATE TABLE Zamestnanci (
+    id INT PRIMARY KEY,
+    jmeno VARCHAR(100) NOT NULL,
+    vek INT CHECK (vek >= 18 AND vek <= 65),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    plat DECIMAL(10,2) DEFAULT 0
+);
+```
+
+!!! info "Prostředky doménové integrity v SQL"
+    | Omezení | Význam |
+    |:--|:--|
+    | `NOT NULL` | Hodnota nesmí být prázdná. |
+    | `UNIQUE` | Všechny hodnoty ve sloupci musí být navzájem různé. |
+    | `CHECK (podmínka)` | Hodnota musí splňovat zadanou logickou podmínku. |
+    | `DEFAULT hodnota` | Pokud hodnota není zadána, použije se implicitní. |
+    | Datový typ | Samotný typ (`INT`, `DATE`, `BOOLEAN`, …) definuje základní doménu. |
+
+### Entitní integrita
+
+Každá tabulka musí mít **primární klíč**, který je jednoznačný a neprázdný (`NOT NULL`). Důsledek: v tabulce nemohou existovat dva řádky se stejným primárním klíčem a žádný řádek nesmí mít primární klíč `NULL`.
+
+```sql
+CREATE TABLE Studenti (
+    student_id INT PRIMARY KEY,   -- entitní integrita: unikátní, NOT NULL
+    jmeno VARCHAR(100) NOT NULL
+);
+```
+
+### Referenční integrita
+
+Cizí klíče musí odkazovat na **existující** hodnoty primárního klíče v referenční tabulce. Zajišťuje, že vztahy mezi tabulkami zůstávají konzistentní.
+
+```sql
+CREATE TABLE Prihlasky (
+    prihlaska_id INT PRIMARY KEY,
+    student_id INT NOT NULL,
+    kurz_id INT NOT NULL,
+    FOREIGN KEY (student_id) REFERENCES Studenti(student_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    FOREIGN KEY (kurz_id) REFERENCES Kurzy(kurz_id)
+);
+```
+
+!!! info "Akce při porušení referenční integrity"
+    Co se stane, když se pokusíme smazat studenta, který má přihlášky?
+
+    | Akce | Chování |
+    |:--|:--|
+    | `ON DELETE CASCADE` | Smažou se i všechny přihlášky daného studenta. |
+    | `ON DELETE SET NULL` | Cizí klíč v přihláškách se nastaví na `NULL`. |
+    | `ON DELETE RESTRICT` | Smazání se odmítne, pokud existují přihlášky. |
+    | `ON DELETE SET DEFAULT` | Cizí klíč se nastaví na výchozí hodnotu. |
+
+### Rekurzivní a ternární vztahy
+
+- **Rekurzivní vztah** – relace, ve které cizí klíč odkazuje na primární klíč té samé tabulky. Např. `Zamestnanec(nadrizeny_id → Zamestnanec(id))`.
+- **Ternární vztah** – vztah mezi třemi entitami. Např. `Lékař–Pacient–Lék (předepisuje)`.
+
+## Návrh relační databáze
+
+Návrh relační databáze je proces, ve kterém plánujeme, jakým způsobem budou data uložena, organizována a propojena. Správný návrh je klíčový pro efektivní a spolehlivé ukládání a manipulaci s daty.
+
+### Konceptuální schéma
+
+Konceptuální schéma je model, který zobrazuje strukturu dat, jejich vlastnosti a vztahy – bez ohledu na fyzickou implementaci. Vyjadřuje **co** chceme ukládat, ne **jak**. Nejčastěji se kreslí pomocí **ER diagramů** (Entity-Relationship).
+
+!!! example "Ukázka ER diagramu"
     ```mermaid
     erDiagram
         CUSTOMER }|..|{ DELIVERY-ADDRESS : has
@@ -31,559 +151,375 @@ Mezi prvky konceptuálního schématu patří:
         PRODUCT ||--o{ ORDER-ITEM : "ordered in"
     ```
 
-### Vztahy mezi entitami
+!!! info "Prvky konceptuálního schématu"
 
-__Parcialita__, neboli _participační omezení_, určuje, zda se musí entita vztahu účastnit či nikoliv. Jinak řečeno, jestli je účast povinná nebo volitelná.
+    - **Entity** – objekty, které mají být uloženy v databázi (Student, Kurz, Učitel).
+    - **Atributy** – vlastnosti entit (jméno, datum narození, kapacita).
+    - **Vztahy** – vazby mezi entitami (Student *je zapsán* do Kurzu).
+    - **Primární klíč** – jednoznačná identifikace entity.
+    - **Cizí klíč** – odkaz na primární klíč jiné entity.
 
-!!! example "Příklad parciality"
-    ```mermaid
-    erDiagram
-        ZAMESTANEC ||--o| PROJEKT : "má"
-    ```
-    Zaměstnanec má 0 nebo 1 projekt, a projekt musí mít jednoho zaměstnance.
+### Od konceptuálního k relačnímu schématu
 
-__Kardinalita__ určuje počet entit, které se mohou vztahu účastnit.
+Proces transformace konceptuálního modelu na relační schéma se řídí těmito kroky:
 
-- Jeden k jednomu (`1:1`): Každý záznam jedné entity je spojen s maximálně jedním záznamem druhé entity.
-- Jeden k mnoha (`1:N`): Každý záznam jedné entity může být spojen s více záznamy druhé entity.
-- Mnoho k mnoha (`M:N`): Každý záznam jedné entity může být spojen s více záznamy druhé entity a naopak.
+1. **Přizpůsobit** konceptuální schéma požadavkům relačního modelu.
+2. **Transformovat** entity na tabulky, atributy na sloupce a vztahy na cizí klíče (případně vazební tabulky).
+3. **Normalizovat** relační schéma (odstranit redundanci).
+4. **Validovat** schéma vůči požadovaným transakcím.
+5. **Konzultovat**, zda návrh odpovídá zadání.
 
-### Relační model
-Relační model databází je založen na konceptu relací, které představují tabulky s daty. Každá relace má sadu sloupců a řádků. Sloupecy definují atributy dat, zatímco řádky představují jednotlivé záznamy.
+### Bottom-up přístup
 
-**ER Diagram** slouží k zakreslení [[Konceptuální model|konceptuálního modelu]].
-
->[!example] Příklad ER Modelu
->
->![[673px-ER_Diagram_MMORPG.png]]
-
-|Konstrukt|Vysvětlitka|
-|:--|:--|
-|Tabulka|Tabulka je soubor dat organizovaný do sloupců a řádků. Sloupec definuje atribut (vlastnost) dat a řádek představuje jednotlivý záznam.|
-|Záznam|Záznam je řádek tabulky, který obsahuje atributy.|
-|Atribut|Atribut je charakteristika, která popisuje vlastnosti entity v relační databázi. Je reprezentován sloupcem v tabulce.|
-|Doména|Doména je množina povolených hodnot pro daný atribut.|
-|Klíč|Klíč je sloupec nebo sada sloupců, které jednoznačně identifikují každý řádek v tabulce.|
-|Primární klíč| Sloupec nebo sada sloupců, které jednoznačně identifikují každý řádek v tabulce. V tabulce může být pouze jeden primární klíč.|
-|Cizí klíč|Sloupec nebo sada sloupců v jedné tabulce, které odkazují na primární klíč v jiné tabulce. Cizí klíče se používají k vytvoření vztahů mezi tabulkami.|
-|Hodnota|Hodnota je konkrétní instance atributu. Jedná se o datový prvek v buňce tabulky.|
-
-**Návrh relačního modelu** je proces, který z konceptuálního schématu vytvoří [[Relační datový model|relační schéma]].
-
->[!tip] Proces návrhu
->1. Přizpůsobit konceptuální schéma
->2. Transformovat konceptuální schéma na relační schéma
->3. Normalizovat relační schéma
->4. Validovat relační schéma vůči požadovaným transakcím
->5. Konzultovat, zda odpovídá zadání
-
-### Přístup Bottom-up
-Cílem **bottom-up přístupu** je seskupování atributů do relací (sloupců do tabulek) tak, aby byly informace uloženy na "nejlepším možném místě".
-
->[!example] Bottom-up přístup
->![[Capyure_1.webp]]
-
-
-#### Integritní omezení
-Integritní omezení jsou pravidla, která zajišťují správnost, přesnost a konzistenci dat v databázích. Jsou klíčová pro udržení integrity databáze a pro zajištění toho, že data jsou v souladu s očekávanými pravidly a vztahy.
-
-- __Doménová integrita__: Hodnoty v každém sloupci tabulky spadají do specifikované domény, což je definováno datovým typem sloupce, povolenými hodnotami, rozsahy nebo dalšími omezeními.
-
-```sql
-CREATE TABLE Employees (
-    EmployeeID INT PRIMARY KEY,
-    Name VARCHAR(100) NOT NULL,
-    Age INT CHECK (Age >= 18 AND Age <= 65)
-);
-```
-
-- __Entitní integrita__: Každá tabulka má primární klíč, a že tento klíč je jedinečný a ne-NULL. Primární klíč identifikuje každý řádek v tabulce jednoznačně.
-
-```sql
-CREATE TABLE Students (
-    StudentID INT PRIMARY KEY,
-    StudentName VARCHAR(100) NOT NULL
-);
-```
-
-- __Referenční integrita__: Vztahy mezi tabulkami jsou zachovány správně. To znamená, že cizí klíče musí odkazovat na existující hodnoty v referenčních tabulkách, a že se správně aktualizují nebo mažou při změně či smazání referenčních záznamů.
-
-```sql
-CREATE TABLE Courses (
-    CourseID INT PRIMARY KEY,
-    CourseName VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE Enrollments (
-    EnrollmentID INT PRIMARY KEY,
-    StudentID INT,
-    CourseID INT,
-    FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
-    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
-);
-```
-
-**Rekurzivní vztah** je [[Relační datový model|relace]], ve které je cizí klíč zároveň primárním klíčem té samé entity.
-**Ternární vztah** je vztah mezi třemi entitami.
+Cílem bottom-up přístupu je **seskupování atributů do relací** tak, aby byly informace uloženy na „nejlepším možném místě". Vycházíme od jednotlivých atributů a postupně je sdružujeme podle logické sounáležitosti a funkčních závislostí.
 
 ## Aktualizační anomálie
-Aktualizační anomálie jsou nežádoucí vedlejší efekty operací nad databází, které vedou k nekonzistenci nebo ztrátě dat. Vyskytují se v databázích, kde není správně navržen datový model, a to obvykle kvůli redundanci dat.
 
-!!! success "Řešení"
-    Aktualizační anomálie lze řešit pomocí procesu zvaného __normalizace__, který zahrnuje rozdělení tabulek do menších tabulek a definování vztahů mezi nimi tak, aby bylo dosaženo odstranění redundantních dat a zajištění konzistence. Při normalizaci se aplikují [normální formy](normalizace.md), které udávají pravidla a omezení pro správný návrh databáze.
+Aktualizační anomálie jsou nežádoucí vedlejší efekty operací nad databází, které vedou k nekonzistenci nebo ztrátě dat. Vznikají v důsledku redundance – opakování stejných dat na více místech.
 
-__Vkládací anomálie__
-Tyto anomálie nastávají, když je pro vložení nového záznamu do databáze nutné zadat redundantní data. Například v tabulce "Studenti" s atributy "Jméno", "Příjmení" a "Kurz" by bylo nutné pro studenta zapsaného do více kurzů vložit do tabulky více záznamů s opakujícími se hodnotami "Jméno" a "Příjmení".
+| Anomálie | Kdy nastává | Příklad |
+|:--|:--|:--|
+| **Vkládací** | Pro vložení nového záznamu je nutné zadat redundantní data, nebo vložení nelze provést vůbec. | Nelze zapsat nový kurz, pokud na něj ještě není přihlášen žádný student. |
+| **Modifikační** | Pro aktualizaci jedné informace je nutné změnit více záznamů. | Změna názvu kurzu vyžaduje přepsat všechny řádky, kde se kurz vyskytuje. |
+| **Mazací** | Smazání záznamu způsobí ztrátu souvisejících dat. | Smazání posledního studenta z kurzu smaže i informaci o kurzu samotném. |
 
-__Modifikační anomálie__
-Tyto anomálie nastávají, když je pro aktualizaci hodnoty v databázi nutné provést změny na více místech.
-
-!!! example "Příklad"
-    Pokud chceme změnit název kurzu v tabulce `StudentCourses`, musíme aktualizovat všechny záznamy, které tento kurz obsahují. Pokud některé z těchto záznamů neaktualizujeme správně, databáze se dostane do nekonzistentního stavu.
-
-__Mazací anomálie__
-Tyto anomálie nastávají, když smazání záznamu z databáze vede k nechtěnému smazání souvisejících dat.
+!!! success "Řešení – normalizace"
+    Aktualizační anomálie se řeší pomocí **normalizace** – procesu dekompozice tabulek na menší, které splňují normální formy a eliminují redundanci.
 
 ## Normální formy
-Normalizace databáze je postup dekompozce, kterým databázi přeorganizujeme tak, aby se redukovaly [[Datová anomálie|datové anomálie]].
 
->[!tldr]
->- Normalizace je postup, kterým změníme databázi tak, aby se redukovaly anomálie.
+Normalizace je systematický proces dekompozice relačního schématu tak, aby se eliminovala redundance a s ní spojené anomálie. Postupuje se po **normálních formách** – každá vyšší forma splňuje všechny požadavky forem nižších.
 
->[!tldr]
->- **1NF**: 
->	- Co hodnota to jedna věc
->	- každý řádek musí mít stejný počet sloupců
->- **2NF**: Každý sloupec musí být (alespoň nepřímo) závislý na celém klíči
->- **3NF**: Každý sloupec musí být přímo závislý na celém klíči
+!!! abstract "Přehled normálních forem"
+    | Forma | Hlavní požadavek | Co odstraňuje |
+    |:--|:--|:--|
+    | **1NF** | Všechny atributy jsou atomické. | Vícehodnotové atributy, opakující se skupiny. |
+    | **2NF** | Žádné částečné závislosti neklíčových atributů na složeném klíči. | Částečné závislosti (netýká se tabulek s jednoduchým PK). |
+    | **3NF** | Žádné tranzitivní závislosti neklíčových atributů. | Tranzitivní závislosti. |
+    | **BCNF** | Každá netriviální funkční závislost $X \to Y$ má $X$ jako superklíč. | Anomálie přežívající 3NF u tabulek s více kandidátními klíči. |
 
->[!error] První normální forma
->Relace je v první normální formě, pokud:
->- Každý atribut obsahuje jenom atomické hodnoty
->- Relace neobsahuje vícehodnotové atributy
->- Všechny $n$-tice mají stejný počet atributů
+### První normální forma (1NF)
 
->[!example] Příklad
->Uvažujme relaci $Studenti(RC, jmeno, prijmeni, adresa, oceneni)$.
->- Adresa může být složena z vícero informací (ulice, PSČ, číslo domu, město, ...)
->- Ocenění může být vícehodnotové
->
->Aby byla relace v **1NF**, lze jí upravit takto:
->- $Studenti(RC, jmeno, prijmeni, ulice, mesto, psc)$
->- $Oceneni(RC, oceneni)$
+!!! success "Podmínky 1NF"
+    Relace je v první normální formě, pokud:
 
->[!warning] Druhá normální forma
->Relace je v druhé normální formě, pokud:
->- Je v **první normální formě**
->- Každý neklíčový atribut je [[Funkční závislost|funkčně závislý]] na celém [[Klíče|klíči]]
->- Pro druhou normální formu postačí i [[Tranzitivnost|tranzitivní]] závislost
+    - Každý atribut obsahuje pouze **atomické** (dále nedělitelné) hodnoty.
+    - Relace neobsahuje vícehodnotové atributy (žádné pole, seznamy, vnořené tabulky v jednom sloupci).
+    - Všechny $n$-tice mají stejný počet atributů.
 
->[!example] Příklad
->Uvažujme relaci $Prihlasky(RC, jmeno, prijmeni, univerzita, adresa\_univerzity)$.
->- Adresa univerzity není funkčně závislá na klíči $\{RC, univerzita\}$
->- Jméno a příjmení také nejsou funkčně závislé na klíči
->
->Aby byla relace v **2NF**, lze jí upravit takto:
->- $Prihlasky(RC, univerzita)$
->- $Lide(RC, jmeno, prijmeni)$
->- $Univerzity(univerzita, adresa\_univerzity)$
+!!! example "Příklad – převod do 1NF"
+    Relace $Studenti(RČ, jméno, příjmení, adresa, ocenění)$:
 
->[!success] Třetí normální forma
->Relace je v třetí normální formě, pokud:
->- Je v **druhé normální formě**
->- Každý neklíčový atribut je závislý pouze na [[Klíče|klíči]]
->- Nesmí existovat [[Tranzitivnost|tranzitivní]] závislosti
+    - `adresa` není atomická – obsahuje ulici, město a PSČ.
+    - `ocenění` je vícehodnotové – student může mít více ocenění.
 
->[!example] Příklad
->Uvažujme relaci $Prihlasky(RC, jmeno, prijmeni, univerzita, adresa\_univerzity)$.
->- Adresa univerzity není funkčně závislá na klíči $\{RC, univerzita\}$
->- Jméno a příjmení také nejsou funkčně závislé na klíči
->
->Aby byla relace v **2NF**, lze jí upravit takto:
->- $Prihlasky(RC, univerzita)$
->- $Lide(RC, jmeno, prijmeni)$
->- $Univerzity(univerzita, adresa\_univerzity)$
+    **Řešení**: Rozložíme na atomické atributy a vícehodnotový atribut přesuneme do samostatné relace:
 
->[!tip] Boyce-Coddova normální forma
->Relace je v Boyce-Coddově normální formě, pokud
->- Je v **třetí normální formě**
->- Pravidla **třetí normální formy** platí pro všechny kandidátní klíče
+    - $Studenti(RČ, jméno, příjmení, ulice, město, PSČ)$
+    - $Ocenění(RČ, ocenění)$
 
-Normální formy jsou pravidla, podle kterých určujeme, zda je databáze normalizovaná nebo ne. Pokud relace nesplňují normální formu, rozloží se na menší relace, které už pravidla splňují.
+### Druhá normální forma (2NF)
 
-### První normální forma
-Cílem první normální formy je eliminovat opakující se skupiny a vícenásobné hodnoty v jednom sloupci.
+!!! warning "Podmínky 2NF"
+    Relace je v druhé normální formě, pokud:
 
-Pro splnění první normální formy je třeba dodržet následující podmínky:
+    - Je v **1NF**.
+    - Každý neklíčový atribut je **plně funkčně závislý** na celém primárním klíči – nikoliv jen na jeho části.
 
-- Každý atribut (sloupec) obsahuje jenom atomické (dále nedělitelné) hodnoty.
-- Všechny záznamy (řádky) mají stejný počet atributů (sloupců).
-- Každý záznam (řádek) je jedinečný.
+    Týká se pouze tabulek se **složeným** primárním klíčem. Pro tabulky s jednoduchým primárním klíčem je splnění 1NF automaticky i 2NF.
 
-!!! example "Příklad"
-    Uvažujme relaci $\text{Studenti}(RC, jmeno, prijmeni, adresa, oceneni)$.
+!!! example "Příklad – porušení 2NF a převod"
+    $Přihlášky(RČ, jméno, příjmení, univerzita, adresa\_univerzity)$ s primárním klíčem $\{RČ, univerzita\}$:
 
-    - Adresa může být složena z vícero informací (ulice, PSČ, číslo domu, město, ...)
-    - Ocenění může být vícehodnotové
+    - `jméno` a `příjmení` závisí pouze na $RČ$ (části klíče) – **částečná závislost**.
+    - `adresa_univerzity` závisí pouze na `univerzita` – taky částečná závislost.
 
-    Aby byla relace v **1NF**, lze jí upravit takto:
+    **Řešení**: Rozložíme na relace, kde jsou neklíčové atributy plně závislé na svém PK:
 
-    - $Studenti(RC, jmeno, prijmeni, ulice, mesto, psc)$
-    - $Oceneni(RC, oceneni)$
-
-### Druhá normální forma
-Cílem druhé normální formy je odstranit částečné závislosti na složeném primárním klíči.
-
-Pro splnění druhé normální formy je třeba dodržet následující podmínky:
-
-- Je v **první normální formě**
-- Všechny neklíčové atributy (sloupce) musí být plně závislé na primárním klíči.
-
-!!! example "Příklad"
-    Uvažujme relaci $Prihlasky(RC, jmeno, prijmeni, univerzita, adresa\_univerzity)$.
-    
-    - Adresa univerzity není funkčně závislá na klíči $\{RC, univerzita\}$
-    - Jméno a příjmení také nejsou funkčně závislé na klíči
-
-    Aby byla relace v **2NF**, lze jí upravit takto:
-    
-    - $Prihlasky(RC, univerzita)$
-    - $Lide(RC, jmeno, prijmeni)$
+    - $Přihlášky(RČ, univerzita)$
+    - $Lidé(RČ, jméno, příjmení)$
     - $Univerzity(univerzita, adresa\_univerzity)$
 
-### Třetí normální forma
-Třetí normální forma si klade za cíl odstranit tranzitivní (přechodné) závislosti. 
+### Třetí normální forma (3NF)
 
-Pro splnění třetí normální formy je třeba dodržet následující podmínky:
+!!! success "Podmínky 3NF"
+    Relace je v třetí normální formě, pokud:
 
-- Je v **druhé normální formě**
-- Všechny neklíčové atributy musí být nezávislé na jiných neklíčových atributech (žádné tranzitivní závislosti).
-- Nesmí existovat přechodné závislosti
+    - Je v **2NF**.
+    - Každý neklíčový atribut je přímo závislý na klíči – nesmí existovat **tranzitivní závislost** (neklíčový atribut závisí na jiném neklíčovém atributu).
 
+!!! example "Příklad – tranzitivní závislost"
+    $Zaměstnanci(id, jméno, oddělení\_id, název\_oddělení)$:
 
+    - $id \to oddělení\_id$ (klíč → neklíčový)
+    - $oddělení\_id \to název\_oddělení$ (neklíčový → neklíčový) ← **tranzitivní závislost**
 
-Normální formy jsou pravidla, podle kterých určujeme, zda je databáze normalizovaná nebo ne.
-Pokud relace nesplňují normální formu, [[Dekompozice|dekomponují]] se na menší relace, které už pravidlo splňují.
+    **Řešení**: Přesuneme tranzitivně závislý atribut do samostatné relace:
+
+    - $Zaměstnanci(id, jméno, oddělení\_id)$
+    - $Oddělení(oddělení\_id, název\_oddělení)$
+
+### Boyce-Coddova normální forma (BCNF)
+
+!!! tip "Podmínky BCNF"
+    Relace je v BCNF, pokud:
+
+    - Je v **3NF**.
+    - Pro každou netriviální funkční závislost $X \to Y$ platí, že $X$ je **superklíč**.
+
+BCNF je striktnější než 3NF – řeší anomálie, které 3NF ponechává v případech, kdy tabulka obsahuje více překrývajících se kandidátních klíčů. V praxi je většina 3NF schémat i BCNF.
+
+## Bezztrátová dekompozice
+
+Dekompozice je proces **rozdělení jedné relace na dvě nebo více menších relací** tak, aby výsledné schéma eliminovalo redundanci a anomálie. Klíčová otázka zní: **ztratíme při rozdělení nějaká data?** Pokud ano, je to ztrátová dekompozice – a to je nepřípustné.
+
+!!! abstract "Bezztrátová dekompozice – definice"
+    Mějme relaci $R$ s množinou funkčních závislostí $F$. Dekompozice $R$ na $R_1$ a $R_2$ je **bezztrátová** právě tehdy, když pro každou instanci $r$ relace $R$ platí:
+
+    $$r = \Pi_{R_1}(r) \bowtie \Pi_{R_2}(r)$$
+
+    Jinými slovy: **přirozené spojení projekcí na $R_1$ a $R_2$ dá přesně původní relaci** – žádné řádky nepřibyly, žádné nezmizely.
+
+!!! info "Jak ověřit, že je dekompozice bezztrátová?"
+    Dekompozice $R$ na $R_1$ a $R_2$ je bezztrátová, pokud platí alespoň jedna z následujících podmínek:
+
+    1. **$R_1 \cap R_2 \to R_1$** – průnik atributů obou relací je superklíčem v $R_1$.
+    2. **$R_1 \cap R_2 \to R_2$** – průnik atributů obou relací je superklíčem v $R_2$.
+
+    Prakticky: **společné atributy obou rozložených relací musí tvořit nadklíč alespoň v jedné z nich**. To znamená, že podle společných atributů lze jednoznačně dohledat zbytek.
+
+!!! example "Příklad – bezztrátová dekompozice"
+    Mějme relaci $Student(RČ, jméno, příjmení, email)$ s primárním klíčem $\underline{RČ}$.
+
+    **Dekompozice**:
+
+    - $R_1(RČ, jméno, příjmení)$
+    - $R_2(RČ, email)$
+
+    **Ověření**: $R_1 \cap R_2 = \{RČ\}$ – a $RČ$ je superklíčem v $R_1$ i $R_2$. → **Bezztrátová**.
+
+    **Proč?** Když $R_1 \bowtie R_2$ spojíme zpět přes $RČ$, dostaneme přesně původní řádky – pro každého studenta se správně spáruje jméno s emailem.
+
+!!! bug "Příklad – ztrátová dekompozice"
+    Mějme relaci $Výuka(učitel, předmět, učebna)$. Předpokládejme, že jeden učitel může učit více předmětů a jeden předmět může být v různých učebnách.
+
+    **Chybná dekompozice**:
+
+    - $R_1(učitel, předmět)$
+    - $R_2(předmět, učebna)$
+
+    **Ověření**: $R_1 \cap R_2 = \{předmět\}$, ale $předmět$ není superklíč v $R_1$ ani $R_2$ (učitel může učit více předmětů, předmět může být ve více učebnách). → **Ztrátová!**
+
+    **Důsledek**: Po spojení $R_1 \bowtie R_2$ vzniknou falešné řádky – všichni učitelé daného předmětu budou spárováni se všemi učebnami, kde se předmět učí, i když tam ve skutečnosti nikdy neučili.
+
+!!! success "Rekonstrukce – správná dekompozice"
+    Aby byla dekompozice bezztrátová, musí jedna z rozložených relací obsahovat klíč původní relace. Správná dekompozice:
+
+    - $R_1(učitel, předmět)$
+    - $R_2(učitel, učebna)$
+
+    $R_1 \cap R_2 = \{učitel\}$ – a pokud $učitel \to předmět$ platí v $R_1$, pak je dekompozice bezztrátová.
 
 ## Indexy
-**Indexování** je mechanismus pro zvýšení výkonnosti databáze. Obsahuje klíč vytvořený z jednoho či více [[Relační datový model|atributů tabulky]] a ukazatel na místo, kde jsou uložena data pro danej klíče.
 
-Když se má vyhledat nějaký záznam (řádek), neprohledává se sekvečně tabulka, ale prohledává se index, který vrátí konkrétní místo na disku.
+Index je datová struktura, která zrychluje vyhledávání záznamů v tabulce. Místo sekvenčního procházení všech řádků se dotaz podívá do indexu, který funguje jako rejstřík – rychle najde ukazatel na data a záznam vrátí.
 
->[!example] Vytvoření indexu
->```sql
->CREATE [UNIQUE] [NONCLUSTERED] INDEX nazev_indexu
->ON tabulka(atribut | seznam_atributu)
->```
+!!! info "Jak indexy fungují"
+    Index obsahuje **klíč** (hodnoty indexovaného atributu nebo kombinace atributů) a **ukazatel** na fyzické umístění záznamu v tabulce. Interně používá vyvážené stromové struktury (typicky $B^+$-strom) nebo hashovací tabulky.
 
->[!example] Smazání indexu
->```sql
->DROP INDEX nazev_indexu
->```
+    Cena za rychlost: zápis (INSERT, UPDATE, DELETE) musí kromě tabulky aktualizovat i všechny indexy.
 
->[!example] Vynucení použití indexu
->```sql
->SELECT *
->FROM tabulka WITH INDEX (nazev_indexu)
->```
+```sql
+-- Vytvoření indexu
+CREATE INDEX idx_prijmeni ON Studenti(prijmeni);
 
->[!faq] Jaké datové struktury používají indexy?
-> Indexy používají [[AVL Stromy|vyvážené stromové struktury]], nebo [[Hashovací funkce|hashovací funkce]].
+-- Unikátní index
+CREATE UNIQUE INDEX idx_email ON Studenti(email);
 
->[!fail] Nevýhody indexování
->Indexování vyžaduje
->- Další místo na disku
->- Režii při vytváření indexů
->- Údržbu - když se změní data, musí se změnit i index
+-- Složený index
+CREATE INDEX idx_jmeno_prijmeni ON Studenti(jmeno, prijmeni);
 
-- Při indexování je potřeba vybalancovat rychlost dotazů a cenu aktualizací indexů.
-- Chybějící indexy a přeindexovanost mohou vést k horšímu výkonnu
+-- Smazání indexu
+DROP INDEX idx_prijmeni;
+```
 
-### Úroveň tabulky (databáze)
-- Jestli má smysl indexovat je otázka, kterou je potřeba zodpovědět pro každou tabulku zvlášť.
+### Typy indexů – přehled
 
-|Čtení|Zápis|Vhodný index|
-|:--:|:--:|:--|
-|Málo|Málo|Otázka, zda má vůbec smysl...|
-|Málo|Hodně|Málo indexů a nad méně atributy|
-|Hodně|Málo|Indexy nad více atributy|
-|Hodně|Hodně|Záleží...|
+| Typ | Popis | Výhody | Nevýhody |
+|:--|:--|:--|:--|
+| **Úzký** | Definovaný nad jedním atributem. | Rychlejší pro jednoduché podmínky, menší režie údržby. | Nepomůže u dotazů filtrujících podle více sloupců. |
+| **Široký (složený)** | Definovaný nad více atributy. | Efektivní pro dotazy s více podmínkami, podporuje *covering queries*. | Větší velikost, vyšší režie při zápisu. |
+| **Hustý** | Odkazuje přímo na konkrétní záznam (každý řádek má položku v indexu). | Přesné, rychlé pro point queries. | Větší velikost indexu. |
+| **Řídký** | Odkazuje na stránku/blok, kde se záznam nachází. | Menší velikost, rychlejší údržba. | Méně přesný – vyžaduje dohledání na stránce. |
+| **Primární** | Index nad primárním klíčem – vytváří se automaticky. | Garantuje jedinečnost PK, rychlé vyhledávání podle PK. | Nelze odstranit bez odstranění PK. |
+| **Sekundární** | Index nad neklíčovým atributem. | Zrychluje dotazy podle jiných kritérií než PK. | Režie při zápisu – nutno udržovat. |
+| **Unikátní** | Vynucuje `UNIQUE` – žádné dvě hodnoty nejsou stejné. | Garance unikátnosti na úrovni DB, ne v aplikaci. | Zpomaluje vkládání (nutnost kontroly). |
 
-### Úroveň dotazu
-- Vhodné vytvořit indexy pro atributy, které se často vyskytují v podmínkách a při spojování tabulek
+### Klastrovaný vs. neklastrovaný index
 
-### Úroveň atributu
-- Většina [[Databázové systémy|databázových systémů]] vytváří automaticky index nad primárním klíčem
-- V indexu je dobré mít jako první atributy používané v podmínkách, až poté atributy s co nejvíce hodnotami
-- Nemá smysl indexovat atributy, které mají málo různých hodnot
+Toto je zásadní architektonické rozhodnutí – týká se **fyzického uspořádání dat** na disku:
 
-## Typy indexů
-|Typ|Vysvětlivka|
-|--:|:--|
-|Úzký|Definovaný pouze nad jedním atributem|
-|Široký|Definovaný nad více atributy|
-|Hustý|Odkazuje na konkrétní záznam|
-|Řídký|Odkazuje na stránku, na které je záznam|
-|Primární|Obsahuje primární klíč|
-|Sekundární|Neobsahuje primární klíč|
-|Jedinečný|Definovaný nad `UNIQUE` atributem|
+#### Klastrovaný index (Clustered)
 
-**Klastrovaný index** (Clustered Index) je setřízen fyzicky na disku podle nějakého [[Relační datový model|atributu]].
-- Při zápisu dat je potřeba znovu setřídit
-- Pro tabulku může být definován jenom jeden
+Data v tabulce jsou **fyzicky seřazena** podle hodnot indexovaného atributu. Listové uzly $B^+$-stromu obsahují přímo celé řádky tabulky.
 
-**Neklastrovaný index** (Unclustered Index) netřídí data tabulky, ale akorát vytváří ukazatele na umístění dat
-- Pro jednu tabulku jich může být vytvořeno víc
+- **Výhody**: Extrémně rychlé pro range queries (`BETWEEN`, `ORDER BY`), data čtena sekvenčně z disku, covering queries.
+- **Nevýhody**: Pouze **jeden** na tabulku (data lze fyzicky seřadit jen jedním způsobem). Při zápisu se musí přesouvat data, nejen index – dražší INSERT/UPDATE. Vhodný pro sloupce, podle kterých se často řadí nebo se dotazuje na rozsahy.
+- **Případ použití**: Primární klíč (většina DB ho automaticky dělá klastrovaným), datum vytvoření u logovacích tabulek.
 
-**Pohled** je virtuální [[Relační datový model|relace]] (tabulka), která je přizpůsobená specifickým potřebám uživatele. Používá se přimárně pro skrývání části dat, pro lepší řízení práv a modulárnímu přístupu k databázi.
+#### Neklastrovaný index (Unclustered)
 
->[!example] Vytvoření pohledu
->```sql
->CREATE VIEW pohled 
->AS ( vnoreny_dotaz )
->```
+Index vytváří samostatnou strukturu, která obsahuje jen klíč a ukazatel na řádek v tabulce. Fyzické pořadí dat se nemění.
 
->[!example] Smazání pohledu
->Při mazání pohledu **nedojde** ke smazání dat.
->```sql
->DROP VIEW pohled 
->```
+- **Výhody**: Lze jich mít **více** na jedné tabulce (typicky desítky). Menší režie při zápisu – přesouvá se jen struktura indexu, ne data. Vhodný pro časté vyhledávací podmínky.
+- **Nevýhody**: Pomalejší pro range queries – ukazatele odkazují na data rozptýlená po disku. Dva kroky: index → ukazatel → data.
+- **Případ použití**: Cizí klíče, často filtrované sloupce (email, stav objednávky), fulltextové vyhledávání.
 
-- K pohledům se z hlediska [[SQL|dotazování]] přistupuje jako ke klasickým tabulkám.
+### Strategie indexování
 
- ## Modifikace dat v pohledu
-- Protože jsou pohledy akorát virtuální relací, není vždy modifikace dat možná.
-- Lze definovat [[Trigger]], který určí, jak mají [[Data Manipulation Language|modifikace]] probíhat
-- Lze také modifikace omezit
+!!! info "Kdy indexovat a kdy ne"
+    | Faktor | Indexovat | Neindexovat |
+    |:--|:--|:--|
+    | **Selektivita** | Vysoká – mnoho různých hodnot (email, RČ). | Nízká – málo hodnot (pohlaví, boolean). |
+    | **Četnost dotazů** | Často filtrované nebo JOINované sloupce. | Zřídka používané. |
+    | **Poměr čtení/zápis** | Hodně čtení, málo zápisů. | Hodně zápisů, málo čtení. |
+    | **Velikost tabulky** | Velké tabulky – sekvenční scan je drahý. | Malé tabulky – sekvenční scan je rychlý. |
+    | **Pořadí ve složeném indexu** | Nejdřív atributy v podmínkách `WHERE`, pak `JOIN`, nakonec `ORDER BY`. | Nahodilé pořadí. |
 
->[!example] Vytvoření pohledu
->Možnost `WITH CHECK OPTION` zajistí, že bude vyhozena výjimka pokaždé, když [[Data Manipulation Language|modifikace]] pohledu nebude v pohledu viditelná.
->```sql
-CREATE VIEW ITPrijati2 AS  
-SELECT sId, uJmeno  
-FROM Prihlasky  
-WHERE obor = 'IT' AND rozhodnuti = 'A'‚  
-WITH CHECK OPTION;
->```
+!!! warning "Přeindexovanost"
+    Příliš mnoho indexů škodí:
+
+    - Každý zápis musí aktualizovat všechny indexy.
+    - Indexy zabírají místo na disku.
+    - Query optimizer může zvolit suboptimální index.
 
 ## Transakce
-**Transakce** označuje souvislou [[Matematika 1/Posloupnosti/Posloupnosti|posloupnost]] [[SQL|příkazů]], která převádí databázi z jednoho konzistentního stavu do druhého.
 
->[!tldr]
->- Transakce řídí přechod z jednoho konzistentního stavu do druhého
->- Zapouzdřují posloupnost příkazů do jednoho bloku
->- Umožňují nezávislý přístup více uživatelům naráz
->- Vytvářejí odolnost vůči poruchám
+Transakce je posloupnost SQL příkazů, která převádí databázi z jednoho **konzistentního stavu** do druhého. Funguje jako atomická jednotka – buď se provede celá, nebo vůbec.
 
-- Při zapnutém režimu `auto_commit` je každý [[SQL|příkaz]] brán jako samostatná transakce
-- Při vypnutém režimu `auto_commit` se musí 
-	- manuálně začít transakce (např. `BEGIN TRANSACTION`)
-	- manuálně ukončit transakce (např. `COMMIT` nebo `ROLLBACK`)
+!!! abstract "ACID vlastnosti transakcí"
+    | Vlastnost | Význam |
+    |:--|:--|
+    | **Atomicita** (*Atomicity*) | Transakce je nedělitelná – buď se provedou všechny její operace, nebo žádná. Selhání uprostřed → rollback. |
+    | **Konzistence** (*Consistency*) | Transakce převádí databázi z jednoho konzistentního stavu do druhého. Žádná transakce nesmí porušit integritní omezení. |
+    | **Izolovanost** (*Isolation*) | Souběžné transakce se navzájem neovlivňují – každá vidí databázi, jako by běžela sama. |
+    | **Trvanlivost** (*Durability*) | Úspěšně potvrzená transakce (COMMIT) je trvale uložena – přežije výpadek systému. |
 
->[!tip] Atomicita
->- Transakce se tváří jako jeden celek a takto tak pracuje.
->- Buďto se provede celá, a nebo vůbec.
+```sql
+BEGIN TRANSACTION;
+    UPDATE Ucty SET zustatek = zustatek - 1000 WHERE id = 1;
+    UPDATE Ucty SET zustatek = zustatek + 1000 WHERE id = 2;
+COMMIT;
+-- Pokud cokoliv selže:
+-- ROLLBACK;
+```
 
->[!tip] Konzistence
->- Transakce převádí [[Databázové systémy|databázový systém]] z jednoho konzistentního stavu do druhého
+!!! info "Úrovně izolace transakcí"
+    | Úroveň | Dirty Read | Non-repeatable Read | Phantom Read |
+    |:--|:--:|:--:|:--:|
+    | **READ UNCOMMITTED** | ✅ Možný | ✅ Možný | ✅ Možný |
+    | **READ COMMITTED** | ❌ | ✅ Možný | ✅ Možný |
+    | **REPEATABLE READ** | ❌ | ❌ | ✅ Možný |
+    | **SERIALIZABLE** | ❌ | ❌ | ❌ |
 
->[!tip] Izolovanost
->- Každá transakce je izolovaná a nemůže pracovat s dílčimi efekty jiných transakcí.
+## Triggers a uložené procedury
 
->[!tip] Trvanlivost
->Úspěšná transakce je uložena do databáze
+### Triggers
 
-- Současné vykonávání transakcí nesmí zapříčinit selhání programu
-- Lze zajistit [[Mutex|zámky]], ale transakce musí být rychlé, aby nezdržovaly.
-- Lze nastavit různé úrovně izolovanosti transakce, čímž lze ovlivnit, jak moc zajistí konzistenci.
+Trigger je procedura uložená na databázovém serveru, která se **automaticky spouští** při definované události na tabulce.
 
-## Triggers a Procedury
-**Trigger** je [[Procedury|procedura]] uložená na [[Databázové systémy|databázovém serveru]], která je automaticky spouštěna po nějaké události na základě spouštěcí podmínky.
-
->[!tldr]
-> - Trigger je procedura, která se automaticky pouští po události v [[Databázové systémy|databázi]]
-> - Používá se na komplexnější [[Integritní omezení|integritní omezení]] či přesunutí části logiky do prostoru databáze.
-> - Syntaxe je hodně závislá na použitém [[Databázové systémy|DBMS]]
-
-```SQL
+```sql
 CREATE TRIGGER jmeno
 BEFORE | AFTER | INSTEAD OF udalost ON tabulka
-[REFERENCING <referencni_promenne> AS <jmena>]
+[REFERENCING referencni_promenne]
 [FOR EACH ROW | FOR EACH STATEMENT]
-WHEN (...)
-[AS]
+WHEN (podminka)
 akce
 ```
 
-### Spouštění triggeru
-- `BEFORE` trigger pracuje s databází **před** provedení dotazu
-	- Výhodné pro validace vstupních dat
-	- Doplňování dat
-- `AFTER` trigger pracuje s databází **po** provedení dotazu,
-	- Výhodné pro aplikační logiku
+!!! info "Načasování a granularita triggeru"
 
-### Granularita
-- **Trigger na úrovni příkazu** (`FOR EACH STATEMENT`) je aktivován jednou pro celý příkaz
-- **Trigger na úrovni řádku** (`FOR EACH ROW`) je aktivován pro každý modifikovaný řádek
+    - **BEFORE** – spouští se před provedením příkazu. Vhodné pro validaci dat, doplnění chybějících hodnot.
+    - **AFTER** – spouští se po provedení. Vhodné pro aplikační logiku, auditní logy, kaskádové akce.
+    - **FOR EACH STATEMENT** – jednou pro celý SQL příkaz.
+    - **FOR EACH ROW** – pro každý modifikovaný řádek zvlášť (pokud je modifikováno 0 řádků, trigger se nespustí).
 
->[!faq] Co když bude množina modifikovaných řádků prázdná?
->V tom případě se **trigger na úrovni příkazu** provede jednou, zatímco **trigger na úrovni řádku** se neprovede ani jednou. 
->
->*Makes sense.*
+!!! example "ON DELETE CASCADE pomocí triggeru"
+    ```sql
+    CREATE TRIGGER tr_cascade
+    AFTER DELETE ON Studenti
+    REFERENCING old_row AS o
+    FOR EACH ROW
+        DELETE FROM Prihlasky WHERE Prihlasky.student_id = o.student_id;
+    ```
 
-## Referenční proměnné
-**Referenční proměnné** jsou takové proměnné, které odkazují na modifikované [[Databázový objekt|databázové objekty]] (řádky, tabulky, ...)
+### Uložené procedury
 
-|Akce|Trigger na úrovni příkazu|Trigger na úrovni řádku|
-|:--:|:--|:--|
-|`INSERT`|`new_table`|`new_row, new_table`|
-|`DELETE`|`old_table`|`old_row, old_table`|
-|`UPDATE`|`new_table, old_table`|`new_row, new_table, old_row, old_table`|
-
->[!example] Příklad ON DELETE CASCADE referenční integrity pomocí triggeru na úrovni řádku
->```sql
->CREATE TRIGGER tr_cascade1
->AFTER DELETE ON Studenti
->REFERENCING old_row AS 0
->FOR EACH ROW
->	DELETE FROM Prihlasky WHERE Prihlasky.sID = 0.sID
-
->[!example] Příklad ON DELETE CASCADE referenční integrity pomocí triggeru na úrovni příkazu
->```sql
->CREATE TRIGGER tr_cascade2
->AFTER DELETE ON Studenti
->REFERENCING old_row AS 0
->FOR EACH STATEMENT
->	DELETE FROM Prihlasky WHERE Prihlasky.sID IN (SELECT sId FROM OT)
->```
-
-**Uložená procedura** je [[Procedury|podprogram]], který je uložený a spouštěný v rámci [[Databázové systémy|databázového serveru]].
-
->[!tldr]
->- Uložená procedura je blok kódu, který je uložen a vykonáván na [[Databázové systémy|databázového serveru]]
->- Používají se pro 
->	- validaci dat
->	- zapouzření často používaných příkazů
->	- Přesun programové logiky do DB
-
->[!example] Vytvoření procedury
->```sql
->CREATE [OR REPLACE] PROCEDURE jmeno
->[
->	(parametr1 [typ] datovy_typ),
->	(parametr2 [typ] datovy_typ),
->	...
->]
->[IS|AS deklarace_promennych]
->BEGIN
->	...
->	[EXCEPTION vyjimky]
->END;
->```
-
->[!example] Volání procedury
->```sql
->EXECUTE jmeno_procedury(parametr1, parametr2, ...);
->```
-
->[!example] Vymazání procedury
->```sql
->DROP PROCEDURE jmeno_procedury;
->```
-
->[!faq] Musí to být nutně [[Procedury|procedura]]?
->Samozřejmě, že ne. Může se také jednat o [[Funkce|funkci.]]
-
-## SQL
-**Structured Query Language** (zkrat. SQL) je deklarativní, [[Case sensitivity|case insensitive]] jazyk pro přístup a řízení [[Relační datový model|relačních databází]].
-
-- Selekce: Získání vybraných sloupců a řádků z tabulky.
-- Projekce: Vybrání pouze určitých sloupců z tabulky.
-- Agregační funkce: Výpočet souhrnných statistik z dat v tabulce (např. SUM, COUNT, AVG, MIN, MAX).
-- Množinové operace: Kombinace výsledků z více dotazů (např. UNION, INTERSECT, EXCEPT).
-- Typy spojení: Spojování dat z více tabulek na základě společných sloupců (např. INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN).
-- Vnořené dotazy: Použití jednoho dotazu uvnitř jiného dotazu pro složitější dotazování.
-
-**Data Control Language** definuje, jak k danému [[Databázový objekt|databázovému objektu]] mohou přistupovat další uživatelé.
-
->[!example] Přidávání práv
->- `WITH GRANT OPTION` umožní uživatelům, aby přidávali stejná či nižší práva dalším uživatelům
->- `PUBLIC` zajistí, že práva dostanou všichni nynější i budoucí uživatelé
->```sql
-GRANT (seznam_privilegii | ALL PRIVILEGES)
-ON nazev_db_objektu
-TO (seznam_autorizacnich_identifikatoru | PUBLIC)
-[WITH GRANT OPTION]
->```
-
->[!example] Odebrání práv
->- `GRANT OPTION` - Právo nebude odebráno, pokud mu bylo přiděleno ještě někým jiným
->- `CASCADE` - Odebrat práva všem, i těm, co je získali pomocí `WITH GRANT OPTION`
->- `RESTRICT` - Neumožní odebrat práva, pokud by `CASCADE` odebíral další práva
->```sql
->REVOKE [GRANT OPTION FOR] (seznam_privilegii | ALL PRIVILEGES)
->ON nazev_db_objektu
->FROM (seznam_autorizacnich_identifikatoru | PUBLIC)
->[RESTRICT | CASCADE]
->```
-
-**Data Defininition Language** je [[Množiny|množina]] [[SQL|SQL příkazů]], které slouží k definování, změně a mazání [[Databázový objekt|databázových objektů]].
-
-Při vytvoření [[Databázový objekt|databázového objektu]] se stává aktuální uživatel jeho vlastníkem.
-```sql
-CREATE TABLE nazev -- Vytvoří tabulku "nazev"
-ALTER TABLE nazev  -- Pozmění tabulku "nazev"
-DROP TABLE nazev   -- Kompletně vymaže tabulku "nazev"
-TRUNK TABLE nazev  -- Vymaže data tabulky "nazev"
-RENAME TABLE nazev -- Přejmenuje tabulku nazev
-```
-
->[!example] Vytvoření tabulky `TEACHERS`
->```sql
->CREATE TABLE Teachers  
->(  
->	id_teacher Integer NOT NULL,  
->	id_office Integer NOT NULL,  
->	email Nvarchar(30) NOT NULL UNIQUE,  
->	name Nvarchar(30) NOT NULL,  
->	surname Nvarchar(30) NOT NULL,  
->	title_before Nvarchar(10) NULL,  
->	title_after Nvarchar(10) NULL,  
->	dob Datetime NOT NULL,  
->	type Integer NOT NULL CHECK (type > 0 AND type < 6)  
->	PRIMARY KEY (id_teacher),  
->	CONSTRAINT fk_TeachOffice FOREIGN KEY (id_office) -- pojmenování IO  
->	REFERENCES Offices(id_office),  
->	CONSTRAINT uc_NameSurnameDob UNIQUE (name,surname,dob) --přes více sloupců  
->);
->```
-
-## Integritní omezení sloupců
-
-|Omezení|Vysvětlivka|
-|--:|:--|
-|`NOT NULL`|Žádná hodnota v daném sloupci nesmí být `NULL`|
-|`UNIQUE`|Všechny hodnoty v sloupci musí být unikátní|
-|`PRIMARY KEY`|Sloupec je primárním klíčem|
-|`REFERENCES`|Sloupec je cizím klíčem, definuje referenční integritu vzhledem k jiné tabulce|
-|`CHECK`|IO zadané logickým výrazem|
-|`DEFAULT`|Slouží k určení implicitní hodnoty sloupce (`NULL` nebo hodnota)|
-
-**Data Manipulation Language** je [[Množiny|množina]] [[SQL|SQL příkazů]], které slouží k aktualizování dat z [[Databázový objekt|databázových objektů]].
+Uložená procedura je blok kódu uložený a spouštěný přímo na databázovém serveru. Používá se pro zapouzdření často používaných příkazů, validaci dat a přesun části logiky do DB.
 
 ```sql
--- Vloží do tabulky název n-tici v závorce za klíčovým slovem VALUES
-INSERT INTO nazev 
-VALUES (...) 
+CREATE PROCEDURE povys_plat(IN zam_id INT, IN zvyseni DECIMAL)
+BEGIN
+    UPDATE Zamestnanci
+    SET plat = plat + zvyseni
+    WHERE id = zam_id;
+END;
 
--- Změní všechny hodnoty v sloupci "sloupec" na "hodnota" podle výběrové podmínky
-UPDATE nazev 
-SET (sloupec = 'hodnota')
-WHERE (...)
-
--- Smaže řádky tabulky podle výběrové podmínky
-DELETE FROM nazev
-WHERE (...)
+-- Volání
+EXECUTE povys_plat(42, 5000);
 ```
 
-**Data Query Language** je je [[Množiny|množina]] [[SQL|SQL příkazů]], které slouží k vybírání dat z [[Databázový objekt|databázových objektů]].
+## Pohledy
+
+Pohled (View) je **virtuální relace** – uložený SQL dotaz, ke kterému se přistupuje jako k tabulce. Data fyzicky neexistují na disku, vznikají dynamicky při dotazu.
+
+```sql
+CREATE VIEW aktivni_studenti AS
+SELECT s.id, s.jmeno, s.prijmeni, p.nazev AS obor
+FROM Studenti s
+JOIN Prihlasky pr ON s.id = pr.student_id
+JOIN Programy p ON pr.program_id = p.id
+WHERE pr.stav = 'aktivni';
+
+-- Dotaz do pohledu (stejně jako do tabulky)
+SELECT * FROM aktivni_studenti WHERE obor = 'IT';
+```
+
+!!! info "Vlastnosti pohledů"
+
+    - Skrývají složitost dotazu – uživatel se ptá jednoduchého SELECT.
+    - Skrývají citlivá data – pohled neobsahuje sloupce, které uživatel nemá vidět.
+    - Zjednodušují řízení práv – `GRANT SELECT ON pohled` místo na celou tabulku.
+    - `WITH CHECK OPTION` – zajistí, že modifikace přes pohled neporuší podmínku WHERE pohledu. Při pokusu o vložení řádku, který by v pohledu nebyl vidět, DB vyhodí výjimku.
+
+## SQL – přehled
+
+Structured Query Language je deklarativní jazyk pro přístup a řízení relačních databází. Dělí se na několik podsad:
+
+| Podmnožina | Význam | Klíčové příkazy |
+|:--|:--|:--|
+| **DQL** – Data Query Language | Dotazování a výběr dat. | `SELECT`, `FROM`, `WHERE`, `JOIN`, `GROUP BY`, `HAVING`, `ORDER BY` |
+| **DML** – Data Manipulation Language | Manipulace s daty. | `INSERT`, `UPDATE`, `DELETE` |
+| **DDL** – Data Definition Language | Definice struktury databáze. | `CREATE TABLE/INDEX/VIEW`, `ALTER TABLE`, `DROP`, `TRUNCATE` |
+| **DCL** – Data Control Language | Řízení přístupových práv. | `GRANT`, `REVOKE` |
+| **TCL** – Transaction Control Language | Řízení transakcí. | `COMMIT`, `ROLLBACK`, `SAVEPOINT` |
+
+!!! example "DDL – vytvoření tabulky včetně integritních omezení"
+    ```sql
+    CREATE TABLE Teachers
+    (
+        id_teacher  INTEGER NOT NULL,
+        id_office   INTEGER NOT NULL,
+        email       NVARCHAR(30) NOT NULL UNIQUE,
+        name        NVARCHAR(30) NOT NULL,
+        surname     NVARCHAR(30) NOT NULL,
+        title_before NVARCHAR(10) NULL,
+        title_after  NVARCHAR(10) NULL,
+        dob         DATETIME NOT NULL,
+        type        INTEGER NOT NULL CHECK (type > 0 AND type < 6),
+        PRIMARY KEY (id_teacher),
+        CONSTRAINT fk_TeachOffice FOREIGN KEY (id_office)
+            REFERENCES Offices(id_office),
+        CONSTRAINT uc_NameSurnameDob UNIQUE (name, surname, dob)
+    );
+    ```
