@@ -1,1 +1,0 @@
-# Ternární operátor
