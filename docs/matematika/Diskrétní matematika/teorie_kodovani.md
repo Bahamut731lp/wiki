@@ -1,121 +1,256 @@
 # Teorie kódování
-Mějme zdrojovou množinu symbolů a cílovou (kódovou) množinu symbolů. Kódem nazýváme zobrazení mezi zdrojovou abecedou a kódovou abecedou. Řetězce symbolů z kódové abecedy nazýváme kódová slova.
 
-## Prefixový kód
-Prefixový kód je takový kód, jehož kódová slova nezačínají žádným jiným kódovým slovem. Takový prefixový kód, jehož délka je co nejmenší, nazýváme __minimálním kódem__.
+Kódování je proces převodu informace z jedné reprezentace do druhé. V teorii kódování rozlišujeme dva hlavní cíle: **komprese** (zmenšení objemu dat) a **zabezpečení** (ochrana proti chybám při přenosu). Základními pojmy jsou:
 
-!!! important "Kraftova nerovnost - existence prefixového kódu"
-    Kraftova nerovnost je nutnou a postačující podmínkou existence prefixového kódu. Konkrétně říká, že pokud známe předem dané délky slov, můžeme zjistit, zda tvoří prefixový kód či nikoliv.
+- **Zdrojová abeceda** $\Sigma$ – množina symbolů, ze kterých se skládá původní zpráva.
+- **Kódová abeceda** $\Gamma$ – množina symbolů používaných v zakódované zprávě (často $\{0, 1\}$ – binární kód).
+- **Kód** – zobrazení $K: \Sigma^* \to \Gamma^*$, které každému slovu ze zdrojové abecedy přiřazuje kódové slovo.
+- **Kódové slovo** – řetězec symbolů kódové abecedy, který reprezentuje zakódovaný symbol nebo zprávu.
 
-    $$K = \sum_{i=1}^{n} D^{-l_i}$$
+## Kompresní kódování
 
-    - Kde $D$ je počet různých symbolů kódové abecedy
-    - a $l_i$ je délka jednotlivých kódových slov.
+Cílem je zmenšit objem dat odstraněním redundance při zachování původní informace. Rozlišujeme bezztrátové (lze obnovit přesnou kopii) a ztrátové (část informace je nenávratně ztracena).
 
-    Pomocí Kraftovy nerovnosti tak můžeme vzít známá kódová slova nad kódovou abecedou a zjistit, jestli tvoří prefixový kód.
-    
-    !!! tip "Saturace prefixového kódu"
-        Pomocí hodnoty Kraftovy nerovnosti můžeme také zjistit, jak moc saturovaný daný prefixový kód je:
+### Prefixový kód
 
-        - Pokud je $K > 1$, tak prefixový kód neexistuje - kódových slov je tam moc a dohromady neutvoří prefixový kód.
-        - Pokud je $K = 1$, tak je prefixový kód úplný - už žádné další slovo nemůžeme přidat, ale dohromady tvoří prefixový kód.
-        - Pokud je $K < 1$, tak je prefixový kód neúplný - můžeme ještě slova přidávat tak, aby vznikl prefixový kód.
+Prefixový kód je takový kód, jehož **žádné kódové slovo není prefixem jiného kódového slova**. Tato vlastnost umožňuje jednoznačné dekódování bez nutnosti oddělovačů – čteme symboly, dokud nerozpoznáme platné kódové slovo, a hned pokračujeme dalším.
+
+!!! example "Příklad prefixového a neprefixového kódu"
+    | Symbol | Prefixový kód | Neprefixový kód |
+    |:--:|:--|:--|
+    | A | 0 | 0 |
+    | B | 10 | 01 |
+    | C | 110 | 011 |
+    | D | 111 | 111 |
+
+    V neprefixovém kódu je `01` prefixem `011` – při čtení `0110...` nevíme, jestli jde o B+A nebo začátek C.
+
+#### Kraftova nerovnost
+
+Kraftova nerovnost je **nutnou a postačující podmínkou** existence prefixového kódu pro dané délky kódových slov.
+
+$$K = \sum_{i=1}^{n} D^{-l_i} \le 1$$
+
+kde $D$ je počet symbolů kódové abecedy (pro binární kód $D = 2$) a $l_i$ je délka $i$-tého kódového slova.
+
+!!! info "Interpretace hodnoty $K$"
+
+    - $K > 1$ – prefixový kód **nemůže existovat**. Součet „prostoru", který kódová slova zabírají, přesahuje kapacitu.
+    - $K = 1$ – prefixový kód je **úplný** (saturuje prostor). Žádné další kódové slovo nelze přidat.
+    - $K < 1$ – prefixový kód je **neúplný**. Lze přidávat další slova.
 
 ### Huffmanova konstrukce
-Huffmanova konstrukce vytváří minimální kód pro zadané znaky a jejich četnosti.
 
-!!! info "Konstrukce kódu"
-    1. Znaky uspořádáme sestupně podle četnosti
-    2. Sečteme poslední 2 pravděpodobnosti a výsledek zařadíme mezi ostatní pravděpodobnosti
-    3. Opakujeme, dokud součet pravděpodobností není 1
-    4. Postupně začneme přiřazovat hranám 0 a 1 - symbol 1 vždy hraně s vyšší pravděpodobností
+Huffmanova konstrukce vytváří **optimální prefixový kód** – minimalizuje váženou délku kódových slov pro zadanou pravděpodobnostní distribuci symbolů.
 
-    !!! note "Přiřazení symbolu hraně"
-        Ono je to v podstatě jedno - důležité je, že při konstrukci musíme být konzistentní. Je tedy možné dát 0 té hraně s vyšší pravděpodobností, ale musíme to tak pak udělat pro celý strom.
+!!! abstract "Algoritmus Huffmanovy konstrukce"
 
-    ![](../../images/huffman-konstrukce.excalidraw.png)
+    1. Seřaď symboly sestupně podle četnosti (nebo vzestupně – obojí funguje, musíme být konzistentní).
+    2. Vezmi dva symboly (nebo podstromy) s **nejnižší četností** a spoj je do jednoho uzlu, jehož četnost je součtem.
+    3. Vlož nový uzel zpět do seznamu a opakuj, dokud nezbude jediný uzel – kořen stromu s četností $1{,}0$.
+    4. Hranám přiřaď symboly $0$ a $1$ (konzistentně – např. levá $0$, pravá $1$).
+    5. Kódové slovo pro symbol = posloupnost bitů na cestě od kořene k listu.
 
-!!! info "Zakódování slova"
-    Jednotlivé symboly zdrojové abecedy nahradíme kódovými slovy, které odpovídají symbolům.
+!!! example "Huffman – krok za krokem"
+    Zdrojová abeceda: $\{A: 0{,}4,\; B: 0{,}3,\; C: 0{,}2,\; D: 0{,}1\}$.
 
-    ![Zakódování slova v Huffmanově kódu](../../images/huffman-zakodovani.excalidraw.png)
+    1. Spoj `D` a `C` → uzel `CD` s četností $0{,}3$.
+    2. Spoj `CD` a `B` → uzel `BCD` s četností $0{,}6$.
+    3. Spoj `BCD` a `A` → kořen s četností $1{,}0$.
 
-!!! info "Dekódování slova"
-    Čteme jednotlivé symboly a pohybujeme se ve zkonstruovaném stromě od kořene (pravděpodobnost 1.0) až k symbolu zdrojové abecedy, přičemž strom procházíme jako kdyby byl konečný automat přijímající symboly. Po nalezení symbolu proces opakujeme.
-
-    ![Dekódování slova v Huffmanově kódu](../../images/huffman-dekodovani.excalidraw.png)
+    Výsledné kódy: `A = 0`, `B = 10`, `C = 110`, `D = 111`. Průměrná délka: $0{,}4\cdot 1 + 0{,}3\cdot 2 + 0{,}2\cdot 3 + 0{,}1\cdot 3 = 1{,}9$ bitů.
 
 !!! tip "Adaptivní Huffmanovo kódování"
-    Adaptivní Huffmanovo kódování aktualizuje kódovací strom při příchozím symbolu. Cílem je častěji vyskytující se symboly upřednostnit a dát blíže ke kořeni kódovacího stromu. Je to časově náročnější, ale dokáže to generovat lepší kompresní poměr než běžná, statická, varianta.
+    Statický Huffman vyžaduje znát četnosti předem a přenášet kódovací strom. **Adaptivní Huffman** aktualizuje strom za běhu podle již zpracované části zprávy. Výhoda: není potřeba strom přenášet, a lépe reaguje na lokální změny v rozložení symbolů.
 
 ### Aritmetické kódování
-Arimeticé kódování nekóduje vstupní abecedu do výstupní abecedy, ale do reálného čísla. Oproti Huffmanově kódování nemá problém s neurčitostí při stejných četnostech symbolu vstupní abecedy. Kód je založen na postupném zmenšování předem daného intervalu tak, aby byl vždy rozdělen v poměru podle četností symbolů (častější symboly mají větší část intervalu).
 
-!!! info "Konstrukce kódu"
-    1. Spočítáme relativní četnosti jednotlivých symbolů, pokud je ještě nemáme.
-    2. Spočítáme kumulativní pravděpodobnosti jednotlivých symbolů.
-    3. Sestavíme počáteční intervaly symbolů
+Aritmetické kódování reprezentuje celou zprávu jediným **reálným číslem** z intervalu $[0, 1)$. Na rozdíl od Huffmana nemá problém s necelými počty bitů na symbol – teoreticky dosahuje entropického optima.
 
-    ![](../../images/aritmeticke-kodovani-konstrukce.excalidraw.png)
+!!! abstract "Princip aritmetického kódování"
 
-!!! info "Zakódování slova"
-    Začínáme s počáteční horní a dolní mezí $\left<L_0, H_0\right)$. Nový interval pro symbol $Z$, který má interval $\left<Z_L, Z_H\right)$ z kumulativních pravděpodobností, se vypočítá jako:
+    1. Rozděl interval $[0, 1)$ na podintervaly podle kumulativních pravděpodobností symbolů.
+    2. První symbol zprávy vybere odpovídající podinterval.
+    3. Tento podinterval se stane novým pracovním intervalem a opět se rozdělí podle pravděpodobností.
+    4. Pokračuj pro každý další symbol – interval se postupně zužuje.
+    5. Pro poslední symbol vyber libovolné číslo z výsledného intervalu. V binární podobě ho zkrať na nejkratší reprezentaci, která stále jednoznačně identifikuje výsledný interval.
+
+!!! info "Vzorec pro výpočet nového intervalu"
+    Pro symbol $Z$ s intervalem kumulativních pravděpodobností $[Z_L, Z_H)$:
+
+    $$[L_i, H_i) = \bigl[L_{i-1} + Z_L \cdot (H_{i-1} - L_{i-1}),\; L_{i-1} + Z_H \cdot (H_{i-1} - L_{i-1})\bigr)$$
+
+Dekódování funguje obráceně – známe výsledné číslo a ptáme se: do kterého podintervalu patří? Podle toho odhalíme první symbol a spočítáme číslo pro další krok:
+
+$$K_i = \frac{K_{i-1} - Z_L}{Z_H - Z_L}$$
+
+Algoritmus dekódování **není konečný** – musíme se zastavit podle vnějšího signálu (např. předem známé délky zprávy nebo speciálního ukončovacího symbolu).
+
+#### DFWLD (Dyadic Fraction with Least Denominator)
+
+DFWLD je konkrétní metoda aritmetického kódování, která jako výsledek vybírá **dyadický zlomek** (zlomek ve tvaru $\frac{s}{2^t}$) s **nejmenším jmenovatelem** – tj. s nejmenším $t$, pro který zlomek stále náleží do výsledného intervalu.
+
+!!! abstract "Postup kódování DFWLD"
+
+    1. Seřaď zdrojovou abecedu sestupně podle pravděpodobností a spočítej kumulativní pravděpodobnosti (ostře menší, tj. $C(p_i) = \sum_{j=1}^{i-1} p_j$).
+    2. Pro každý znak slova počítej nové meze: $a_i = a_{i-1} + l_{i-1} \cdot C(p)$, $l_i = l_{i-1} \cdot p$, kde počáteční $a_0 = 0$, $l_0 = 1$.
+    3. Urči parametr $t \in \mathbb{N}^+$ z nerovnice $t \ge \lceil -\frac{\ln l_n}{\ln 2} \rceil > t-1$.
+    4. Urči parametr $s \in \mathbb{N}$ z nerovnice $a_n \cdot 2^t \le s < (a_n + l_n) \cdot 2^t$. Pokud vyjdou dvě celá čísla, vol sudé.
+    5. Výsledný zlomek: $R = \frac{s}{2^t}$, zapíšeme jako $t$-bitové binární číslo (případně doplníme nulami zleva).
+
+## Bezpečnostní (samoopravné) kódy
+
+Bezpečnostní kódy přidávají k datům **redundanci**, která umožňuje detekovat a případně opravit chyby vzniklé při přenosu nebo ukládání. Na rozdíl od kompresních kódů, které redundanci **odstraňují**, bezpečnostní kódy ji **záměrně přidávají**.
+
+### Hammingova vzdálenost
+
+Hammingova vzdálenost $d_H(x, y)$ je **počet pozic, na kterých se dva řetězce stejné délky liší**. Je to metrika – splňuje trojúhelníkovou nerovnost.
+
+$$d_H(x, y) = |\{\,i \in \{1, \dots, n\} \mid x_i \neq y_i\,\}|$$
+
+Pro binární řetězce lze spočítat jako Hammingovu váhu jejich XOR: $d_H(x, y) = w(x \oplus y)$, kde $w(z)$ je počet jedniček v $z$.
+
+!!! example "Příklad Hammingovy vzdálenosti"
+    $d_H(01101, 01011) = 2$ (liší se na 3. a 5. pozici)
+
+**Minimální Hammingova vzdálenost kódu** $d(C)$ je nejmenší vzdálenost mezi libovolnými dvěma **různými** kódovými slovy:
+
+$$d(C) = \min_{x, y \in C,\, x \neq y} d_H(x, y)$$
+
+Toto číslo určuje veškeré schopnosti kódu:
+
+!!! abstract "Schopnost detekce a opravy chyb"
+
+    - **Detekuje až $d-1$ chyb** – pokud je přijaté slovo vzdáleno od všech kódových slov alespoň o 1, chyba je detekována.
+    - **Opravuje až $\lfloor \frac{d-1}{2} \rfloor$ chyb** – pokud je přijaté slovo blíž k původnímu kódovému slovu než k jakémukoliv jinému.
+
+    $$\begin{aligned}
+    k_{\text{detekce}} &= d(C) - 1 \\[4pt]
+    k_{\text{oprava}} &= \left\lfloor \frac{d(C) - 1}{2} \right\rfloor
+    \end{aligned}$$
+
+### Lineární kódy
+
+Lineární kód je takový kód, kde **lineární kombinace libovolných kódových slov je opět kódové slovo**. Pracujeme nad konečným tělesem – pro binární kódy je to $\mathbb{Z}_2 = \{0, 1\}$ s operacemi modulo 2 (XOR).
+
+Formálně: Binární lineární kód délky $n$ a dimenze $k$ (značíme $[n, k]$-kód) je $k$-dimenzionální podprostor vektorového prostoru $\mathbb{Z}_2^n$. Obsahuje $2^k$ kódových slov.
+
+!!! abstract "Výhody lineárních kódů"
+
+    - **Minimální vzdálenost** = minimální váha nenulového kódového slova: $d(C) = \min_{c \in C,\, c \neq 0} w(c)$ – nemusíme porovnávat všechny dvojice!
+    - **Generující matice** – kompaktní reprezentace celého kódu.
+    - **Kontrolní matice** – umožňuje efektivní detekci a opravu chyb pomocí syndromů.
+
+#### Generující matice $G$
+
+Generující matice $G$ o rozměrech $k \times n$ obsahuje $k$ **lineárně nezávislých** kódových slov (bázi kódu). Zakódování $k$-bitové informační zprávy $u$:
+
+$$c = u \cdot G \quad \text{(vše nad } \mathbb{Z}_2 \text{)}$$
+
+Pro systematický kód má $G$ tvar $G = [I_k \mid P]$, kde $I_k$ je jednotková matice $k \times k$ a $P$ je $k \times (n-k)$ matice paritních bitů. V systematickém kódu prvních $k$ bitů kódového slova tvoří přímo původní zprávu – zbylých $n-k$ bitů je parita.
+
+#### Kontrolní matice $H$
+
+Kontrolní matice $H$ o rozměrech $(n-k) \times n$ slouží k ověření, zda přijaté slovo $r$ patří do kódu:
+
+$$H \cdot r^T = 0 \iff r \in C$$
+
+Pro systematický kód s $G = [I_k \mid P]$ má kontrolní matice tvar $H = [P^T \mid I_{n-k}]$.
+
+**Syndrom** $s = H \cdot r^T$ je $(n-k)$-bitový vektor, který identifikuje chybu. Pokud $s = 0$, přijaté slovo je kódové (bez detekovatelné chyby). Pokud $s \neq 0$, syndrom ukazuje na pozici chyby.
+
+### Hammingovy kódy
+
+Hammingovy kódy jsou rodina perfektních lineárních kódů s minimální vzdáleností $d = 3$ – **detekují 2 chyby a opravují 1**. Jsou definovány pro libovolné $r \ge 2$:
+
+$$n = 2^r - 1,\quad k = 2^r - r - 1,\quad d = 3$$
+
+Parametry: délka $n$, dimenze $k$, $r = n-k$ paritních bitů.
+
+!!! abstract "Nejznámější: Hammingův kód $(7, 4)$"
+
+    - $n = 7$ bitů celkem
+    - $k = 4$ informační bity
+    - $r = 3$ paritní (kontrolní) bity
+    - Dokáže opravit libovolnou jednobitovou chybu
+
+#### Jak se Hammingův kód konstruuje
+
+Kontrolní bity se umisťují na **pozice, které jsou mocninami 2** (pozice 1, 2, 4, 8, …). Informační bity obsadí zbylá místa:
+
+| Pozice | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| Role | $p_1$ | $p_2$ | $d_1$ | $p_4$ | $d_2$ | $d_3$ | $d_4$ |
+| Index (binárně) | 001 | 010 | 011 | 100 | 101 | 110 | 111 |
+
+Každý paritní bit $p_i$ hlídá ty pozice, jejichž binární index má na $i$-tém místě (od LSB) jedničku:
+
+- $p_1$ (pozice 1, bit 0): hlídá pozice, jejichž index končí na `1` – tj. 1, 3, 5, 7.
+- $p_2$ (pozice 2, bit 1): hlídá pozice, jejichž index má jedničku na druhém bitu – 2, 3, 6, 7.
+- $p_4$ (pozice 4, bit 2): hlídá pozice, jejichž index má jedničku na třetím bitu – 4, 5, 6, 7.
+
+!!! example "Zakódování zprávy $d_1d_2d_3d_4 = 1010$ kódem $(7,4)$"
+    Obsadíme pozice:
     
-    $$\left<L_{i-1} + Z_L \cdot (H_{i-1} - L_{i-1}), L_{i-1} + Z_H \cdot (H_{i-1} - L_{i-1})\right)$$
+    | Pozice | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+    |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+    | Hodnota | $p_1$ | $p_2$ | 1 | $p_4$ | 0 | 1 | 0 |
 
-    Pro poslední symbol vstupního slova se z výsledného intervalu vybere reprezentativní hodnota. Nejčastěji taková, která se dobře uchovává v paměti.
+    Spočítáme paritní bity (lichá parita – XOR):
 
-!!! info "Dekódování slova"
-    Začínáme s předchozí, případně počáteční, zakódovanou zprávou $K_{i-1}$ - podle kumulativních pravděpodobností zjistíme, k jakému vstupnímu symbolu $K_{i-1}$ náleží. Poté spočítáme další číslo $K_{i}$ pomocí vzorce:
-    
-    $$\begin{aligned}K_i = \frac{K_{i-1} - Z_L}{Z_H - Z_L}\end{aligned}$$
+    - $p_1 = 1 \oplus 0 \oplus 0 = 1$
+    - $p_2 = 1 \oplus 1 \oplus 0 = 0$
+    - $p_4 = 0 \oplus 1 \oplus 0 = 1$
 
-    Algoritmus dekódování není konečný - musíme se zastavit podle vnějšího signálu (např. předem známé délky zakódované zprávy).
+    Výsledné kódové slovo: **1 0 1 1 0 1 0**
 
-#### DFWLD
-__Dyadic fraction with least denominator__ (zkráceně DFWLD) je druhem aritmetického kódu, který je bezeztrátový nultého řádu.
+#### Oprava chyby pomocí syndromu
 
-!!! info "Zakódování slova"
-    Pro zdrojovou abecedu $A = \left(\begin{array}{cccccc}a & b & c & \ldots \\ p_1 & p_2 & p_3 & \ldots \end{array}\right)$, kde první řádek jsou __znaky zdrojové abecedy__ a druhý řádek jsou __pravděpodobnosti znaků__ kódujeme pomocí DFWLD následujícím způsobem:
+Předpokládejme, že při přenosu došlo k chybě na **pozici 5** – bit se změnil z `0` na `1`. Přijaté slovo: `1 0 1 1 1 1 0`.
 
-    1. __Spočítáme si kumulativní pravděpodobnosti znaků__ - Předpokládáme, že zdrojová abeceda je seřazena od nejvyšší pravděpodobnosti po tu nejmenší. Pak kumulativní pravděpodobnost $C(x)$ počítáme jako __ostře menší__, takže se pravděpodobnost toho konkrétního znaku __nepočítá__.
-    2. __Pro každý znak slova spočítáme novou dolní a horní mez__
-        - dolní mez $a_i = a_{i-1} + l_{i-1} \cdot C(p_i)$
-        - délka intervalu $l_i = l_{i-1} \cdot p_{i}$
-    3. __Určení parametru__ $t \in \mathbb{N}^+$ - Ten spočítáme z nerovnice $t \ge \left\lceil-\frac{\ln{l_n}}{\ln{2}}\right\rceil \gt -t + 1$
-    4. __Určení parametru__ $s \in \mathbb{N}$ - Ten spočítáme z nerovnice $a_n \cdot 2^t \le s \lt (a_n + l_n) \cdot 2^t$. V případě, že nám výjdou dva výsledky, volíme ten sudý.
-    5. __Sestavení dyadického zlomku__ $R = \frac{s}{2^t}$
-    6. __Zakódování do binární podoby__ - Výsledné číslo bude mít $t$ znaků. Pokud má číslo méně bitů než $t$, tak se doplní nulami zleva.
+Spočítáme syndrom – tři kontrolní součty:
 
-!!! info "Dekódování slova"
-    ...
+- $s_1 = p_1 \oplus d_1 \oplus d_2 \oplus d_4 = 1 \oplus 1 \oplus 1 \oplus 0 = 1$
+- $s_2 = p_2 \oplus d_1 \oplus d_3 \oplus d_4 = 0 \oplus 1 \oplus 1 \oplus 0 = 0$
+- $s_4 = p_4 \oplus d_2 \oplus d_3 \oplus d_4 = 1 \oplus 1 \oplus 1 \oplus 0 = 1$
 
-## Bezpečnostní kód
-Bezpečnostní kódy jsou takové kódy, které mají za cíl zajistit bezpečnost a integritu přenášené zprávy. Lineární kód je takový kód, ve kterých jsou kódová slova tvořena lineární kombinací bázových slov (minimální množina kódových slov).
+Syndrom = $(s_4 s_2 s_1)_2 = (101)_2 = 5$ – chyba je na **pozici 5**! Otočíme bit na pozici 5 zpět a dostaneme původní kódové slovo `1 0 1 1 0 1 0`.
 
-### Generující a kontrolní matice
-- __Generující matice__: Matice z bázových slov kódu.
-- __Kontrolní matice__: Matice z transponované parity generující matice a jednotkové matice.
+!!! success "Proč to funguje?"
+    Syndrom je binární reprezentace **pozice chyby**. Každý paritní bit $p_i$ testuje podmnožinu pozic; pokud součet vyjde 1, znamená to, že v dané skupině je lichý počet chyb. Při jedné chybě se syndrom přesně shoduje s binárním indexem chybné pozice.
 
-### Hammingovská vzdálenost
-Hammingovská vzdálenost $d_H$ je nejmenší počet pozic, na kterých se dva řetězce liší.
+#### Rozšířený Hammingův kód $(8, 4)$
 
-$$d_{H}(x,y) = |\{i \in \{1, \dots, n\} \mid x_i \not= y_i \}|$$
+Přidáním **celkové parity** (parita přes všech 7 bitů) vznikne rozšířený Hammingův kód s $d = 4$. Detekuje až 3 chyby a opravuje 1 – a navíc rozliší jednobitovou chybu (syndrom ≠ 0, celková parita sedí) od dvoubitové (syndrom ≠ 0, celková parita nesedí).
 
-Minimální Hammingovská vzdálenost kódu $C$ je nejmenší možná vzdálenost mezi jakýmikoliv dvěma různými kódovými slovy.
+#### Hammingovy kódy v maticové reprezentaci
 
-$$d(C) = \min_{x,y \in C \mid x \not= y} d_H(x, y)$$
+Pro Hammingův kód $(7, 4)$ má generující matice tvar:
 
-### Detekce a oprava chyby
-!!! important "Schopnost detekce chyby"
-    Kód detekuje až $k$ chyb tehdy a jen tehdy, když nejmenší Hammingovská vzdálenost mezi dvěma kódovými slovy je alespoň $k+1$. Jinak řečeno, kód detekuje až ${d-1}$ chyb.
+$$G = \begin{bmatrix}
+1 & 0 & 0 & 0 & | & 1 & 1 & 1 \\
+0 & 1 & 0 & 0 & | & 1 & 0 & 1 \\
+0 & 0 & 1 & 0 & | & 0 & 1 & 1 \\
+0 & 0 & 0 & 1 & | & 1 & 1 & 0
+\end{bmatrix}$$
 
-    $$k_{max} = d(C) - 1$$
+Kontrolní matice:
 
-!!! important "Schopnost opravy chyby"
-    Kód opraví až $k$ chyb tehdy a jen tehdy, když nejmenší Hammingovská vzdálenost mezi dvěma kódovými slovy je alespoň $2k+1$. Jinak řečeno, kód opravuje až $\lfloor \frac{d-1}{2} \rfloor$ chyb.
+$$H = \begin{bmatrix}
+1 & 1 & 0 & 1 & | & 1 & 0 & 0 \\
+1 & 0 & 1 & 1 & | & 0 & 1 & 0 \\
+1 & 1 & 1 & 0 & | & 0 & 0 & 1
+\end{bmatrix}$$
 
-    $$k_{max} = \lfloor \frac{d(C)-1}{2} \rfloor$$
+Pro zakódovanou zprávu $u = [1010]$: $c = u \cdot G = [1\;0\;1\;1\;0\;1\;0]$. Syndrom $H \cdot c^T = [0\;0\;0]^T$ – žádná chyba. Pokud se chyba objeví na pozici $i$, syndrom odpovídá $i$-tému sloupci matice $H$.
 
-### Hammingův kód
-Hammingův kód, např. kód $(7,4)$ je bezpečnostním kódem, který má celkem 7 bitů, z toho 4 pro data, a 3 pro paritu.
+### Další bezpečnostní kódy
+
+| Kód | $d$ | Opravuje | Vlastnosti |
+|:--|:--:|:--|:--|
+| **Hammingův** | 3 | 1 chybu | Perfektní – pokrývá celý prostor. Jednoduchý, efektivní pro nízkou chybovost. |
+| **Rozšířený Hammingův** | 4 | 1 chybu + detekce 3 | Parita navíc – rozliší 1-bit od 2-bit chyby. |
+| **Reedův–Solomonův (RS)** | $n-k+1$ | Až $\frac{n-k}{2}$ symbolových chyb | Pracuje nad symboly (typicky 8 bitů). Použití: CD, DVD, QR kódy, DVB. |
+| **Golayův kód** $\mathcal{G}_{23}$ | 7 | 3 chyby | Perfektní binární kód – $n=23$, $k=12$. Použití: kosmické sondy Voyager. |
+| **LDPC** (Low-Density Parity Check) | Proměnlivá | Mnoho chyb | Blíží se Shannonově kapacitě kanálu. Použití: 5G, WiFi 6, DVB-S2. |
+| **Konvoluční kódy** | Proměnlivá (volná vzdálenost) | Průběžně | Viterbiho algoritmus pro dekódování. Použití: satelitní komunikace, GSM. |

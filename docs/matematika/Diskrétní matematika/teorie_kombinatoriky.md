@@ -4,39 +4,59 @@
 
 ### Pravidlo součtu
 
+Pokud lze úlohu rozložit na několik **disjunktních případů** (navzájem se vylučujících), je celkový počet možností **součtem** možností v jednotlivých případech.
+
+$$|A \cup B| = |A| + |B| \quad \text{pokud } A \cap B = \emptyset$$
+
+!!! example "Příklad"
+    Kolika způsoby si můžu vybrat jídlo, když menu nabízí 3 polévky a 5 hlavních jídel? Předpokládám, že si beru **buď** polévku, **nebo** hlavní jídlo.
+
+    $$3 + 5 = 8 \text{ způsobů}$$
+
 ### Pravidlo součinu
 Pravidlo součinu udává počet všech $k$-tic, u kterých
+
 - 1. prvek lze vybrat $n_1$ způsoby
 - 2. prvek lze vybrat $n_2$ způsoby
 - 3. prvek lze vybrat $n_3$ způsoby
 - ...
 
-Jinak řečeno, výběry se nazvájem neovlivňují.
+Celkový počet: $n_1 \cdot n_2 \cdot \ldots \cdot n_k$.
 
-### Variace
-Variace je libovolná **[[Uspořádaná dvojice|uspořádaná]]** $k$-tice prvků z $n$-prvkové [[Množiny|množiny]].
+!!! example "Příklad"
+    Kolik různých SPZ lze vytvořit, pokud se skládá ze 3 písmen (26 možností) a 4 číslic (10 možností)?
 
->[!tldr] TL,DR
-> - Bez opakování: $\large V(k, n) = \frac{n!}{(n-k)!}$
-> - S opakováním: $\large V'(k, n)= n^k$
+    $$26^3 \cdot 10^4 = 17\,576 \cdot 10\,000 = 175\,760\,000$$
 
-Variace z $n$ prvkové množiny nám dovoluje vytvořit dvojice, trojice, čtveřice, ... k-tice prvků, ve kterých záleží na pořádí, tj.** jsou uspořádané**. Variace vychází z [[Pravidlo součinu|kombinatorického pravidla součinu]].
+## Základní kombinatorické výběry
+
+### Variace (záleží na pořadí)
+
+Variace je libovolná **uspořádaná** $k$-tice prvků z $n$-prvkové množiny. **Záleží na pořadí** – výběr $(A, B)$ je jiný než $(B, A)$. Variace vychází z pravidla součinu.
+
+!!! abstract "Vzorce"
+
+    - **Bez opakování**: $V(k, n) = \frac{n!}{(n-k)!}$ — každý prvek lze použít nejvýše jednou.
+    - **S opakováním**: $V'(k, n) = n^k$ — každý prvek lze použít libovolněkrát.
+
+Variace z $n$ prvkové množiny nám dovoluje vytvořit dvojice, trojice, … $k$-tice prvků, ve kterých **záleží na pořadí**.
 
 $$
 \begin{aligned}
-	V(3, 10) &= 10 \cdot 9 \cdot 8 && \cdot7! \\
-	V(3, 10) &= \frac{10 \cdot 9 \cdot 8 \cdot7!}{7!} \\
+	V(3, 10) &= 10 \cdot 9 \cdot 8 \\
+	V(3, 10) &= \frac{10 \cdot 9 \cdot 8 \cdot 7!}{7!} \\
 	V(3, 10) &= \boxed{\frac{10!}{7!}}
 \end{aligned}
 $$
 
-### Permutace
-Permutace je libovolná uspořádaná $n$-tice prvků z množiny. Mějme například množinu $N$ o pěti prvcích ($|N| = 5$). Permutací je poté jakákoliv pětice, kde se prvky vyskytují alespoň jednou. 
+### Permutace (přeuspořádání všech prvků)
 
-!!! abstract
-    - Bez opakování: $P(n) = n!$
-    - S opakováním: $P'(k_1, k_2, ..., k_n)= \frac{(k_1+k_2+...+k_n)!}{k_1!\cdot{k_2!}\cdot{...}\cdot{k_n}!}$
-    - Permutace jde vyjádřit jako prosté zobrazení
+Permutace je libovolná uspořádaná $n$-tice, která obsahuje **všechny** prvky dané množiny. Jinak řečeno – kolika způsoby lze seřadit $n$ různých prvků.
+
+!!! abstract "Vzorce"
+
+    - **Bez opakování**: $P(n) = n!$ — každý prvek právě jednou.
+    - **S opakováním**: $P'(k_1, \dots, k_n) = \frac{(k_1 + \dots + k_n)!}{k_1! \cdot \ldots \cdot k_n!}$ — některé prvky se opakují.
 
 Permutace bez opakování jsou takové uspořádané $n$-tice, kde je každý prvek použit právě jednou. Kdybychom potřebovali spočítat, kolik různých permutací bez opakování můžeme vytvořit, využijeme k tomu faktoriál.
 
@@ -79,7 +99,7 @@ $$P'(k_1, k_2, ..., k_n)= \frac{(k_1+k_2+...+k_n)!}{k_1!\cdot{k_2!}\cdot{...}\cd
     Vidíme, že se písmeno $e$ vyskytuje dvakrát. Vzoreček se nám tedy mírně mění, a vypadá takto: $P'(1,1,1,2,1,1) = \frac{(1+1+1+2+1+1)!}{1!\cdot{1}!\cdot{1}!\cdot{2}!\cdot{1}!\cdot{1}!} = \frac{7!}{2}=2520$
 
 ### Kombinace
-Jak už název napovídá - kombinační číslo nějak souvisí s [[Kombinace|kombinací]]. Je to totiž alternativnější a rychlejší zápis.
+Jak už název napovídá - kombinační číslo nějak souvisí s kombinací. Je to totiž alternativnější a rychlejší zápis.
 
 $$C(k, n) = { n \choose k}$$
 
@@ -159,12 +179,13 @@ Stirlingova čísla 1. druhu mají primární význam u permutací. Udávají **
     \left[ \begin{matrix} n \\ 1 \end{matrix} \right] &= (n-1)!
     \end{aligned}$$
 
-???- example "Rozpisy cyklů"
+!!! example "Rozpisy cyklů"
     Chceme zjistit $\left[ \begin{matrix} 3 \\ 2 \end{matrix} \right]$, tedy kolik permutací 3 prvků $\{1, 2, 3\}$ má přesně 2 cykly.
     Podle vzorce: 
     $$\left[ \begin{matrix} 3 \\ 2 \end{matrix} \right] = 2 \cdot \left[ \begin{matrix} 2 \\ 2 \end{matrix} \right] + \left[ \begin{matrix} 2 \\ 1 \end{matrix} \right] = 2 \cdot 1 + 1 = \mathbf{3}$$
 
     Všech 3! = 6 možných permutací tří prvků vypadá v cyklickém zápisu takto:
+
     * $(1)(2)(3)$ — 3 cykly
     * $(1\ 2\ 3)$ — 1 cyklus
     * $(1\ 3\ 2)$ — 1 cyklus
@@ -172,7 +193,7 @@ Stirlingova čísla 1. druhu mají primární význam u permutací. Udávají **
     * $\mathbf{(1\ 3)(2)}$ — 2 cykly  | *Prvky 1 a 3 si prohodily místa, 2 zůstal.*
     * $\mathbf{(2\ 3)(1)}$ — 2 cykly  | *Prvky 2 a 3 si prohodily místa, 1 zůstal.*
 
-???- example "Přechod mezi mocninami"
+!!! example "Přechod mezi mocninami"
     V matematické analýze a kombinatorice se často pracuje s tzv. **klesajícím faktoriálem**, který zkracuje zápis variací:
     $$x^{\underline{n}} = x(x-1)(x-2)\dots(x-n+1)$$
 
@@ -189,7 +210,7 @@ Stirlingova čísla 1. druhu mají primární význam u permutací. Udávají **
     $$x^{\underline{3}} = (1 \cdot 2)x^1 + (-1 \cdot 3)x^2 + (1 \cdot 1)x^3 = \mathbf{x^3 - 3x^2 + 2x}$$
     Oba postupy vedou ke stejnému polynomu. Stirlingova čísla 1. druhu tak umožňují počítačovým algebraickým systémům okamžitě roznásobovat složité závorky bez nutnosti krokového násobení.
 
-???- example "Analýza algoritmů"
+!!! example "Analýza algoritmů"
     Představme si algoritmus pro nalezení maxima v poli o velikosti $n$:
 
     ```javascript
@@ -241,9 +262,26 @@ Jestliže máme nějakou množinu $N$, tak permutace je v podstatě akorát pře
     ![Image](../../../../images/Pasted image 20211025213122.png)
 
 ### Permutační cykly
-Permutační cyklus je způsob zápisu permutace, kdy opakovaně aplikujeme permutaci, dokud se nedostaneme zpět na počáteční prvek.
+
+Permutační cyklus je způsob zápisu permutace, kdy opakovaně aplikujeme permutaci, dokud se nedostaneme zpět na počáteční prvek. Každou permutaci $n$-prvkové množiny lze jednoznačně zapsat jako součin nezávislých (disjunktních) cyklů.
+
+!!! example "Příklad"
+    Permutace $\pi = \left(\begin{smallmatrix}1 & 2 & 3 & 4 & 5 \\ 4 & 3 & 2 & 5 & 1\end{smallmatrix}\right)$ má cykly:
+
+    - $1 \to 4 \to 5 \to 1$ → cyklus $(1\,4\,5)$
+    - $2 \to 3 \to 2$ → cyklus $(2\,3)$
+    
+    Zápis: $\pi = (1\,4\,5)(2\,3)$
+
+!!! info "Vlastnosti cyklů"
+
+    - Cyklus délky $k$ lze rozepsat jako $k-1$ transpozic: $(i_1, i_2, \dots, i_k) = (i_1,i_2)(i_1,i_3)\dots(i_1,i_k)$
+    - Umocňování $(i_1, i_2, \dots, i_k)^m$ posouvá prvky o $m \bmod k$ pozic.
+    - Sudá/lichá permutace: $\sigma(\pi) = (-1)^n$, kde $n$ je počet sudých cyklů v rozkladu.
 
 ### Permutační grupy
+
+Množina všech permutací $n$-prvkové množiny se značí $S_n$ a nazývá se **symetrická grupa**. Má $n!$ prvků. Operací je skládání permutací – výsledkem složení dvou permutací je opět permutace z $S_n$. $S_n$ není komutativní pro $n \ge 3$.
 
 ### Věžové polynomy
 Věžové polynomy (Rook Polynomials) jsou elegantní způsob, jak řešit **permutace se zakázanými pozicemi** (např. když konkrétní člověk nesmí dostat konkrétní úkol). Problém se vizualizuje jako umísťování $k$ šachových věží na desku $B$ (množinu povolených políček) tak, aby se navzájem neohrožovaly – tj. nesmí sdílet stejný řádek ani sloupec.
@@ -255,6 +293,7 @@ $$R(x, B) = \sum_{k=0}^{\infty} r_k(B)x^k = 1 + r_1(B)x + r_2(B)x^2 + \dots$$
 Kde $r_k(B)$ je počet způsobů, jak umístit $k$ neohrožujících se věží.
 
 !!! info "Pravidla pro zjednodušení výpočtu"
+
     * **Disjunktní desky:** Pokud lze desku rozdělit na dvě části $B_1$ a $B_2$, které nesdílejí žádný společný řádek ani sloupec, polynom je jejich součinem: $R(x, B) = R(x, B_1) \cdot R(x, B_2)$
     
     * **Věta o větvení (Rozklad podle políčka $e$):** Zvolíme jedno políčko $e$. Buď na něj věž nedáme, nebo dáme (tím vyřadíme jeho řádek a sloupec, čímž vznikne redukovaná deska $B_e$): $R(x, B) = R(x, B \setminus \{e\}) + x \cdot R(x, B_e)$
@@ -266,9 +305,13 @@ $$\text{Počet vyhovujících permutací} = \sum_{k=0}^{n} (-1)^k \cdot r_k(B) \
 ## Rekurentní posloupnost
 Rekurentní posloupnost (též _rekurence_) je vyjádření posloupnosti, která k výpočtu libovolného členu využívá jiné členy posloupnosti. Rekurence je dána __rekurentním vztahem__ a __počátečními podmínkami__. S rekurencí se velmi špatně počítají vyšší členy, a proto je vhodné zkoumat, jestli by daná rekurentní posloupnost, vyjádřená rekurentním vztahem, nešla převést na jinou posloupnost, která již vztah bude mít nerekurentní.
 
-### Lineární rekurence s konstatními koeficienty
-1) $a_n = r^n$
-2) Posun kladných mocnin $r$
+### Lineární rekurence s konstantními koeficienty
+
+Lineární rekurence řádu $k$ s konstantními koeficienty má tvar:
+
+$$a_n = c_1 a_{n-1} + c_2 a_{n-2} + \dots + c_k a_{n-k}$$
+
+kde $c_i$ jsou konstanty. Řešíme substitucí $a_n = r^n$, která převede rekurenci na **charakteristický polynom** stupně $k$.
 
 ### Homogenní Lineární Rekurentní Vztahy
 Začněme příkladem. Uvažujme následující rekurenci:
@@ -295,12 +338,22 @@ $$\begin{aligned}
 
 Tím jsme našli takzvaný __charakteristický polynom__.
 
-!!! note "Sdružené komplexní kořeny"
-    $$\begin{aligned}
-    e^{j\cdot\theta} &= \cos{\theta} + j\cdot\sin{\theta}
-    \end{aligned}$$
+!!! note "Komplexní kořeny"
+    Pokud charakteristický polynom nemá reálné kořeny, použijeme Eulerův vzorec:
+
+    $$e^{i\theta} = \cos{\theta} + i\cdot\sin{\theta}$$
+    
+    Obecné řešení pro komplexně sdružené kořeny $a \pm bi$:
+    $$\rho = \sqrt{a^2 + b^2},\quad \theta = \arctan\frac{b}{a}$$
+    $$a_n = \rho^n \left(\alpha \cos(n\theta) + \beta \sin(n\theta)\right)$$
 
 ### Nehomogenní LRV
+
+Nehomogenní rekurence obsahuje **pravou stranu** $f(n)$:
+
+$$a_n = c_1 a_{n-1} + \dots + c_k a_{n-k} + f(n)$$
+
+Řešení je součtem **obecného řešení homogenní** rovnice a **partikulárního řešení**. Partikulární řešení odhadujeme podle tvaru $f(n)$ – pro $f(n) = n^2$ zkoušíme polynom 2. stupně, pro $f(n) = 3^n$ zkoušíme $\alpha \cdot 3^n$.
 
 ### Příklady
 #### Příklad 1
@@ -495,6 +548,7 @@ Vytvořující funkce umožňují kódovat nekonečné číselné posloupnosti $
 
 * **Obyčejná vytvořující funkce (OGF):** $A(x) = \sum_{n=0}^{\infty} a_n x^n$
   Typicky reprezentuje výběr prvků, kde **nezáleží na pořadí** (kombinace, nerozlišitelné objekty).
+
   * *Příklad:* Posloupnost samých jedniček $(1, 1, 1, \dots)$ vyjadřuje řada $1 + x + x^2 + \dots$, což odpovídá funkci $\frac{1}{1-x}$.
 * **Exponenciální vytvořující funkce (EGF):** $E(x) = \sum_{n=0}^{\infty} a_n \frac{x^n}{n!}$
   Používá se tam, kde **na pořadí záleží** (permutace, rozlišitelné objekty).
